@@ -30,11 +30,15 @@ pub fn list_directory(directory: &str) {
 
 pub fn parse_content(content: String) -> String {
     let matter = Matter::<YAML>::new();
+    // <!-- TEASER_END -->
     let result = matter.parse(&content[..]);
     match result.data {
         Some(data) => {
-            let front_matter: FrontMatter = data.deserialize().unwrap();
-            log::info!("{:?}", front_matter);
+            //let front_matter: FrontMatter = data.deserialize().unwrap();
+            match data.deserialize::<FrontMatter>() {
+                Ok(front_matter) => log::info!("{:?}", front_matter),
+                Err(e) => log::error!("Unable to read front matter. Is it a valid YAML format? Check that your title doesn't contain the ':' character."),
+            }
         }
         None => log::info!("No data found in front matter"),
     }
