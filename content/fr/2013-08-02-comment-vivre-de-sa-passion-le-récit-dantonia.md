@@ -1,5 +1,5 @@
 ---
-title: Comment vivre de sa passion : le récit d'Antonia
+title: "Comment vivre de sa passion : le récit d'Antonia"
 slug: comment-vivre-de-sa-passion-le-récit-dantonia
 date: 2013-08-02 13:00:14+02:00
 tags: Carrière et travail, Carnet d'aventures, Inspiration

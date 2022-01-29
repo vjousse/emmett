@@ -1,5 +1,5 @@
 ---
-title: Travailler moins pour gagner plus : La semaine de 4 heures
+title: "Travailler moins pour gagner plus : La semaine de 4 heures"
 slug: travailler-moins-pour-gagner-plus-la-semaine-de-4-heures
 date: 2012-10-19 11:00:43+02:00
 tags: Développement personnel, Carrière et travail, Livres

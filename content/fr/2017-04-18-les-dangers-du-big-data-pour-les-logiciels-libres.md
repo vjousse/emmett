@@ -1,5 +1,5 @@
 ---
-title: Machine Learning & Big Data : des dangers pour les logiciels libres ?
+title: "Machine Learning & Big Data : des dangers pour les logiciels libres ?"
 slug: les-dangers-du-big-data-pour-les-logiciels-libres
 date: 2017-04-18 06:16:04+02:00
 tags: 

@@ -1,5 +1,5 @@
 ---
-title: Casser la routine avec des enfants : la soirée bougies
+title: "Casser la routine avec des enfants : la soirée bougies"
 slug: casser-la-routine-avec-des-enfants-la-soirée-bougies
 date: 2012-11-27 17:00:10+01:00
 tags: Être parent

@@ -1,5 +1,5 @@
 ---
-title: La troisième compétence : identifier le préjudice
+title: "La troisième compétence : identifier le préjudice"
 slug: la-troisieme-competence-identifier-le-prejudice
 date: 2015-02-24 14:31:51+01:00
 tags: Zen, Traduction, Zen habits

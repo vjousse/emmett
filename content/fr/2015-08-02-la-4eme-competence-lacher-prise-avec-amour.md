@@ -1,5 +1,5 @@
 ---
-title: La 4ème compétence : lâcher prise avec amour
+title: "La 4ème compétence : lâcher prise avec amour"
 slug: la-4eme-competence-lacher-prise-avec-amour
 date: 2015-08-02 23:45:03+02:00
 tags: Traduction, Zen habits, L'unique compétence

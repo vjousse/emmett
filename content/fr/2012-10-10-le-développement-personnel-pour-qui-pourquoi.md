@@ -1,5 +1,5 @@
 ---
-title: Le développement personnel : pour qui, pourquoi
+title: "Le développement personnel : pour qui, pourquoi"
 slug: le-développement-personnel-pour-qui-pourquoi
 date: 2012-10-10 17:00:11+02:00
 tags: Développement personnel, Carrière et travail

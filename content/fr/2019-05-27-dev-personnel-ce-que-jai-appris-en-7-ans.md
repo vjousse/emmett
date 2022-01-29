@@ -1,5 +1,5 @@
 ---
-title: Développement personnel : 7 ans après
+title: "Développement personnel : 7 ans après"
 slug: dev-personnel-ce-que-jai-appris-en-7-ans
 date: 2019-05-27 08:00:00+02:00
 tags: Développement personnel

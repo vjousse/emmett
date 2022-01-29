@@ -1,5 +1,5 @@
 ---
-title: Soirées sans écrans : ça commence aujourd'hui !
+title: "Soirées sans écrans : ça commence aujourd'hui !"
 slug: soirées-sans-écrans-ça-commence-aujourdhui
 date: 2013-04-03 10:50:32+02:00
 tags: Développement personnel, Challenge

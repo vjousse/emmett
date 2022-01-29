@@ -1,5 +1,5 @@
 ---
-title: La deuxième compétence : repérer l'idéal
+title: "La deuxième compétence : repérer l'idéal"
 slug: la-deuxieme-competence-reperer-lideal
 date: 2015-01-19 09:44:03+01:00
 tags: Traduction, Zen habits, L'unique compétence

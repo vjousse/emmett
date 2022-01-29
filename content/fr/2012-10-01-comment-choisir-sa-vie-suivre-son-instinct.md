@@ -1,5 +1,5 @@
 ---
-title: Comment choisir sa vie : suivre son instinct
+title: "Comment choisir sa vie : suivre son instinct"
 slug: comment-choisir-sa-vie-suivre-son-instinct
 date: 2012-10-01 10:00:26+02:00
 tags: Développement personnel, Carrière et travail

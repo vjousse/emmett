@@ -1,5 +1,5 @@
 ---
-title: Consommation énergétique d'Internet : prenons nos responsabilités
+title: "Consommation énergétique d'Internet : prenons nos responsabilités"
 slug: vers-des-sites-internet-plus-ecologiques-et-low-tech
 date: 2019-11-08 14:56:00+01:00
 tags: Internet, Écologie, Low-tech

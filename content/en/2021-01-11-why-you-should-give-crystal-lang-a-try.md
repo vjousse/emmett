@@ -1,5 +1,5 @@
 ---
-title: Why you should give Crystal Lang a try: a quick review
+title: "Why you should give Crystal Lang a try: a quick review"
 slug: why-you-should-give-crystal-lang-a-try-a-quick-review
 date: 2021-01-11 16:00:00+00:00
 tags: crystal, beginner, lucky

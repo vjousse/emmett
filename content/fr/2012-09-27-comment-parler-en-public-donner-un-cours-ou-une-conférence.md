@@ -1,5 +1,5 @@
 ---
-title: Comment parler en public : donner un cours ou une conférence
+title: "Comment parler en public : donner un cours ou une conférence"
 slug: comment-parler-en-public-donner-un-cours-ou-une-conférence
 date: 2012-09-27 10:00:39+02:00
 tags: Développement personnel, Parler en public, Présentation orale

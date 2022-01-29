@@ -1,5 +1,5 @@
 ---
-title: Lucky Framework: upload a file with Shrine while keeping the original filename
+title: "Lucky Framework: upload a file with Shrine while keeping the original filename"
 slug: lucky-fileupload-custom-filename-shrine
 date: 2021-02-05 09:00:00+00:00
 tags: crystal, beginner

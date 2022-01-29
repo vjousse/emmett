@@ -1,5 +1,5 @@
 ---
-title: Recrutement développeur web : comment sortir du lot (cv, lettre de motivation)
+title: "Recrutement développeur web : comment sortir du lot (cv, lettre de motivation)"
 slug: recrutement-développeur-web-comment-sortir-du-lot-cv-lettre-de-motivation
 date: 2012-11-05 17:00:06+01:00
 tags: Carrière et travail

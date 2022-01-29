@@ -1,5 +1,5 @@
 ---
-title: Un an après : les 8 leçons que j'ai retenues
+title: "Un an après : les 8 leçons que j'ai retenues"
 slug: un-an-après-les-8-lecons-que-jai-retenues
 date: 2013-10-01 17:37:27+02:00
 tags: 
