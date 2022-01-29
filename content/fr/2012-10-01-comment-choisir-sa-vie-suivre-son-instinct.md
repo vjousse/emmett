@@ -1,13 +1,13 @@
-<!-- 
-.. title: Comment choisir sa vie : suivre son instinct
-.. slug: comment-choisir-sa-vie-suivre-son-instinct
-.. date: 2012-10-01 10:00:26+02:00
-.. tags: Développement personnel, Carrière et travail
-.. category: 
-.. link: 
-.. description: 
-.. type: text
--->
+---
+title: Comment choisir sa vie : suivre son instinct
+slug: comment-choisir-sa-vie-suivre-son-instinct
+date: 2012-10-01 10:00:26+02:00
+tags: Développement personnel, Carrière et travail
+category: 
+link: 
+description: 
+type: text
+---
 
 <p><strong>Temps de lecture indicatif : 6 minutes.</strong></p>
 

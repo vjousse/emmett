@@ -1,13 +1,13 @@
-<!-- 
-.. title: Comment une tomate m'a rendu plus productif
-.. slug: comment-une-tomate-ma-rendu-plus-productif
-.. date: 2015-09-04 15:39:19+02:00
-.. tags: Développement personnel, Productivité
-.. category: 
-.. link: 
-.. description: 
-.. type: text
--->
+---
+title: Comment une tomate m'a rendu plus productif
+slug: comment-une-tomate-ma-rendu-plus-productif
+date: 2015-09-04 15:39:19+02:00
+tags: Développement personnel, Productivité
+category: 
+link: 
+description: 
+type: text
+---
 
 Je suis un [procrastinateur en chef](https://fr.wikipedia.org/wiki/Procrastination). Vous savez, celui qui a tendance de base, __à remettre tout au lendemain__. Ou plus exactement, à toujours trouver mieux à faire que ce qu'il doit vraiment faire et qu'il n'a pas envie de faire. C'est un souci aussi bien dans la vie professionnelle que personnelle.<!-- TEASER_END -->
 

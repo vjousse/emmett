@@ -1,13 +1,13 @@
-<!-- 
-.. title: Passer de scientifique à écrivain
-.. slug: passer-de-scientifique-a-ecrivain
-.. date: 2014-02-12 21:36:36+01:00
-.. tags: Développement personnel, Inspiration
-.. category: 
-.. link: 
-.. description: 
-.. type: text
--->
+---
+title: Passer de scientifique à écrivain
+slug: passer-de-scientifique-a-ecrivain
+date: 2014-02-12 21:36:36+01:00
+tags: Développement personnel, Inspiration
+category: 
+link: 
+description: 
+type: text
+---
 
 Un scientifique, voilà ce que je suis, je ne sais pas écrire. Je ferai des études d'ingénieur, d'informaticien ou de toute autre bête à poil ras ressemblant à un scientifique. 32 ans que je suis sur cette Terre, et j'y ai cru pendant 31 ans. Les idées reçues lors de ma domestication en tant qu'enfant et jeune adulte sont encore tenaces. Et pourtant, les articles de ce blog sont la plus belle preuve que __chacun peut faire des choses pour lesquelles il se pensait incapable__.
 <!-- TEASER_END -->

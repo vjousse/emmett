@@ -1,13 +1,13 @@
-<!-- 
-.. title: Apporter de la valeur et se passer de statistiques
-.. slug: apporter-de-la-valeur-et-se-passer-de-statistiques
-.. date: 2014-04-24 10:15:59+02:00
-.. tags: Web, Réflexion
-.. category: 
-.. link: 
-.. description: 
-.. type: text
--->
+---
+title: Apporter de la valeur et se passer de statistiques
+slug: apporter-de-la-valeur-et-se-passer-de-statistiques
+date: 2014-04-24 10:15:59+02:00
+tags: Web, Réflexion
+category: 
+link: 
+description: 
+type: text
+---
 
 Le nombre de Like, le nombre de retweets, le nombre d'affichages enregistrés dans Google Analytics, __les chiffres et les statistiques dirigent nos vies numériques__. Si ce n'est pas partagé, ce n'est pas bon, si ce n'est pas visité, c'est un échec, et réciproquement. Et si ces [observables](http://ploum.net/mefiez-vous-des-observables/) dont nous ne pouvons plus nous passer __diminuaient la qualité__ de ce que nous produisons ? Et si se passer de stats pouvait nous être bénéfique ?
 <!-- TEASER_END -->

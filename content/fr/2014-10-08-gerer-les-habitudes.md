@@ -1,13 +1,13 @@
-<!-- 
-.. title: Gérer les habitudes
-.. slug: gerer-les-habitudes
-.. date: 2014-10-08 21:31:56+02:00
-.. tags: Traduction, Zen habits, L'unique compétence
-.. category: 
-.. link: 
-.. description: 
-.. type: text
--->
+---
+title: Gérer les habitudes
+slug: gerer-les-habitudes
+date: 2014-10-08 21:31:56+02:00
+tags: Traduction, Zen habits, L'unique compétence
+category: 
+link: 
+description: 
+type: text
+---
 
 _Cet article fait partie de [la traduction du livre « The one skill » de zenhabits](/blog/traduction-du-livre-the-one-skill-de-zenhabits/)_
 

@@ -1,13 +1,13 @@
-<!-- 
-.. title: Commencer à se passer de Google
-.. slug: commencer-à-se-passer-de-google
-.. date: 2013-06-13 13:31:04+02:00
-.. tags: Web
-.. category: 
-.. link: 
-.. description: 
-.. type: text
--->
+---
+title: Commencer à se passer de Google
+slug: commencer-à-se-passer-de-google
+date: 2013-06-13 13:31:04+02:00
+tags: Web
+category: 
+link: 
+description: 
+type: text
+---
 
 <p><p>Au cas où vous seriez passé à côté, un scandale est en train de faire le tour de net ces derniers jours : <a href="http://www.numerama.com/magazine/26171-prism-la-nsa-a-acces-aux-donnees-de-tous-les-geants-du-web.html">la NSA (l'agence nationale de la sécurité américaine) espionne les américains et des millions d'étrangers</a> sur internet. Peut-être vous. Même s'il était toujours plus ou moins convenu qu'avoir un compte Facebook ou Google comportait un risque pour sa vie privée, <strong>là on parle d'espionnage au niveau mondial par un état</strong>.</p></p>
 <!-- TEASER_END -->

@@ -1,13 +1,13 @@
-<!-- 
-.. title: La liste des sujets à aborder avant qu'il ne soit trop tard
-.. slug: la-liste-des-sujets-à-aborder-avant-quil-ne-soit-trop-tard
-.. date: 2013-10-22 14:13:50+02:00
-.. tags: Courage, Développement personnel, Réflexion
-.. category: 
-.. link: 
-.. description: 
-.. type: text
--->
+---
+title: La liste des sujets à aborder avant qu'il ne soit trop tard
+slug: la-liste-des-sujets-à-aborder-avant-quil-ne-soit-trop-tard
+date: 2013-10-22 14:13:50+02:00
+tags: Courage, Développement personnel, Réflexion
+category: 
+link: 
+description: 
+type: text
+---
 
 La mort reste un __taboo__ dans notre société actuelle. Elle l'était d'ailleurs encore pour moi il n'y a pas si long que ça. J'ai longtemps cru que parler de la mort était quelque chose de triste qui devait donc être évité. C'était avant que je me rende compte de deux choses :
 

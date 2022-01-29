@@ -1,13 +1,13 @@
-<!-- 
-.. title: Elm and Phoenix/Elixir in production for France TV
-.. slug: elm-phoenix-elixir-production
-.. date: 2016-10-09 08:00:00+02:00
-.. tags: functional programming, phoenix, elm, elixir
-.. category: 
-.. link: 
-.. description: 
-.. type: text
--->
+---
+title: Elm and Phoenix/Elixir in production for France TV
+slug: elm-phoenix-elixir-production
+date: 2016-10-09 08:00:00+02:00
+tags: functional programming, phoenix, elm, elixir
+category: 
+link: 
+description: 
+type: text
+---
 
 Are `Elm` and `Phoenix/Elixir` ready for prime time? I'll let you decide: they were both used in live during the __main French political show__ called "[L'émission Politique](https://twitter.com/lepolitique)" to help generate a word cloud based on the guest speech. To the date of this writing, the guests were __Nicolas Sarkozy__ (12 millions viewers), __Arnaud Montebourg__ (9 millions) and lately __Alain Juppé__ (13 millions).
 <!-- TEASER_END -->

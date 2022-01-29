@@ -1,13 +1,13 @@
-<!-- 
-.. title: Être différent
-.. slug: etre-different
-.. date: 2017-03-06 22:39:11+01:00
-.. tags: Développement personnel, Humeur
-.. category: 
-.. link: 
-.. description: 
-.. type: text
--->
+---
+title: Être différent
+slug: etre-different
+date: 2017-03-06 22:39:11+01:00
+tags: Développement personnel, Humeur
+category: 
+link: 
+description: 
+type: text
+---
 
 Être différent est trop souvent vu comme un problème. On se sent seul, incompris et on a peur d'être rejeté. On préfère rentrer dans le rang qu'exprimer notre différence. Et si, être différent était __la seule voix possible__ ?
 

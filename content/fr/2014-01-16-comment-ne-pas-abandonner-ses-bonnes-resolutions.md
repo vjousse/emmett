@@ -1,13 +1,13 @@
-<!-- 
-.. title: Comment ne pas abandonner ses bonnes résolutions ?
-.. slug: comment-ne-pas-abandonner-ses-bonnes-resolutions
-.. date: 2014-01-16 22:41:24+01:00
-.. tags: Développement personnel
-.. category: 
-.. link: 
-.. description: 
-.. type: text
--->
+---
+title: Comment ne pas abandonner ses bonnes résolutions ?
+slug: comment-ne-pas-abandonner-ses-bonnes-resolutions
+date: 2014-01-16 22:41:24+01:00
+tags: Développement personnel
+category: 
+link: 
+description: 
+type: text
+---
 
 Les résolutions de la nouvelle année ne servent à rien. Enfin si, elles servent uniquement à se rendre compte qu'on n'est pas capable d'en tenir une seule, une fois le mois de janvier passé. C'est triste mais c'est comme ça. Ce qui est encore plus triste c'est de se rendre compte que peu de personnes se posent la question essentielle : pourquoi et comment y remédier.
 <!-- TEASER_END -->

@@ -1,13 +1,13 @@
-<!-- 
-.. title: How to pass paramaters to a crossbar.io/autobahn python component
-.. slug: how-to-pass-paramaters-to-a-crossbarioautobahn-python-component
-.. date: 2015-09-19 20:39:20+02:00
-.. tags: python, crossbar
-.. category: 
-.. link: 
-.. description: 
-.. type: text
--->
+---
+title: How to pass paramaters to a crossbar.io/autobahn python component
+slug: how-to-pass-paramaters-to-a-crossbarioautobahn-python-component
+date: 2015-09-19 20:39:20+02:00
+tags: python, crossbar
+category: 
+link: 
+description: 
+type: text
+---
 
 Recently, I've be playing with [crossbar.io](http://crossbar.io), a [WAMP](http://wamp.ws/) router and [Autobahn|Python](http://autobahn.ws/python/) a library for writing WAMP compenents. It's really awesome to create [reactive apps](http://www.reactivemanifesto.org/) and to mix heterogenous applications together (python, JS, scala, PHP, whatever).
 

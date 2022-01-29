@@ -1,13 +1,13 @@
-<!-- 
-.. title: Comment doubler sa vitesse de frappe au clavier
-.. slug: comment-doubler-sa-vitesse-de-frappe-au-clavier
-.. date: 2012-10-17 17:12:07+02:00
-.. tags: Carrière et travail, Productivité
-.. category: 
-.. link: 
-.. description: 
-.. type: text
--->
+---
+title: Comment doubler sa vitesse de frappe au clavier
+slug: comment-doubler-sa-vitesse-de-frappe-au-clavier
+date: 2012-10-17 17:12:07+02:00
+tags: Carrière et travail, Productivité
+category: 
+link: 
+description: 
+type: text
+---
 
 <p>Si comme moi vous passez la majeure partie de votre activité à <strong>taper sur un clavier</strong>, la vitesse de frappe (et la précision) peuvent devenir des atouts importants. Malheureusement en France personne ne nous apprend comment taper correctement. J'ai donc décidé de prendre les choses en main moi même, et je suis passé en quelques mois d'environ 25 mots par minute avec une précision de 90%, à <strong>60 mots par minute avec une précision de 98%</strong>.</p>
 <!-- TEASER_END -->

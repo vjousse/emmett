@@ -1,13 +1,13 @@
-<!-- 
-.. title: Les réponses à toutes les questions que vous vous posez sur Bitcoin, les crypto-monnaies et la blockchain
-.. slug: bitcoin-pourquoi-s-y-interesser-surtout-quand-on-a-plus-de-30-ans
-.. date: 2021-11-19 10:00:00+01:00
-.. tags: bitcoin, crypto
-.. category: 
-.. link: 
-.. description: 
-.. type: text
--->
+---
+title: Les réponses à toutes les questions que vous vous posez sur Bitcoin, les crypto-monnaies et la blockchain
+slug: bitcoin-pourquoi-s-y-interesser-surtout-quand-on-a-plus-de-30-ans
+date: 2021-11-19 10:00:00+01:00
+tags: bitcoin, crypto
+category: 
+link: 
+description: 
+type: text
+---
 
 On entend beaucoup de choses négatives sur Bitcoin (BTC ₿) et les crypto monnaies en général, surtout venant de personnes qui, comme moi, sont nées avant l'an 2000. Et pourtant, ne pas s'intéresser à ce domaine actuellement c'est au mieux de l'ignorance, au pire de la bêtise.
 

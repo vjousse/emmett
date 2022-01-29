@@ -1,13 +1,13 @@
-<!-- 
-.. title: Server side syntax highlighting with Crystal lang, NOIR and Lucky framework
-.. slug: crystal-lang-syntax-highlighting-with-noir-and-lucky.md
-.. date: 2021-06-02 09:00:00+00:00
-.. tags: crystal, luckyframework, noir
-.. category: 
-.. link: 
-.. description: 
-.. type: text
--->
+---
+title: Server side syntax highlighting with Crystal lang, NOIR and Lucky framework
+slug: crystal-lang-syntax-highlighting-with-noir-and-lucky.md
+date: 2021-06-02 09:00:00+00:00
+tags: crystal, luckyframework, noir
+category: 
+link: 
+description: 
+type: text
+---
 
 I hate to rely on Javascript to highlight code. This is something that we can and should do on the backend IMHO: no point in overloading the browser for that. This blog is written in [Crystal and Lucky Framework](https://github.com/vjousse/lucky-blog) and I was using [Prism.js](https://prismjs.com/) to highlight my code as I didn't found a ready to be used solution at that time. It's not the case anymore: [NOIR](https://github.com/MakeNowJust/noir) and some custom renderer for [Github Flavored Mardown library cr-mark-gfm](https://github.com/amauryt/cr-cmark-gfm) did the trick. Here is a little tutorial on how I did it.
 

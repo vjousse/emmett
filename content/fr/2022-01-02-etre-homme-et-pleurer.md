@@ -1,13 +1,13 @@
-<!-- 
-.. title: Être homme et pleurer
-.. slug: etre-homme-et-pleurer
-.. date: 2022-01-02 09:00:00+01:00
-.. tags: Développement personnel, homme
-.. category: 
-.. link: 
-.. description: 
-.. type: text
--->
+---
+title: Être homme et pleurer
+slug: etre-homme-et-pleurer
+date: 2022-01-02 09:00:00+01:00
+tags: Développement personnel, homme
+category: 
+link: 
+description: 
+type: text
+---
 
 J'ai toujours fait partie de ceux qui pleurent. D'aussi loin qu'il m'est possible de m'en rappeler, j'ai toujours pleuré.
 

@@ -1,13 +1,13 @@
-<!-- 
-.. title: Soirées sans écrans : ça commence aujourd'hui !
-.. slug: soirées-sans-écrans-ça-commence-aujourdhui
-.. date: 2013-04-03 10:50:32+02:00
-.. tags: Développement personnel, Challenge
-.. category: 
-.. link: 
-.. description: 
-.. type: text
--->
+---
+title: Soirées sans écrans : ça commence aujourd'hui !
+slug: soirées-sans-écrans-ça-commence-aujourdhui
+date: 2013-04-03 10:50:32+02:00
+tags: Développement personnel, Challenge
+category: 
+link: 
+description: 
+type: text
+---
 
 <p><p>À partir d'aujourd'hui, je passe <strong>les sept prochaines soirées totalement sans écrans</strong> à partir de 19 heures. J'ai besoin moi aussi de quelques coups de pieds au *** de temps en temps (et oui, j'adore me les mettre moi-même). Et histoire que le challenge soit encore plus drôle, <strong>toute personne qui me surprendra à être devant un écran après 19 heures</strong> cette semaine (que ce soit ordinateur ou télé) se verra <strong>offrir un resto</strong>. Alors soyez vigilants ;)</p></p>
 <!-- TEASER_END -->

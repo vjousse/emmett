@@ -1,13 +1,13 @@
-<!-- 
-.. title: La première compétence : remarquer les signaux
-.. slug: la-premiere-competence-remarquer-les-signaux
-.. date: 2014-11-12 09:24:49+01:00
-.. tags: Traduction, Zen habits, L'unique compétence
-.. category: 
-.. link: 
-.. description: 
-.. type: text
--->
+---
+title: La première compétence : remarquer les signaux
+slug: la-premiere-competence-remarquer-les-signaux
+date: 2014-11-12 09:24:49+01:00
+tags: Traduction, Zen habits, L'unique compétence
+category: 
+link: 
+description: 
+type: text
+---
 
 _Cet article fait partie de [la traduction du livre « The one skill » de zenhabits](/blog/traduction-du-livre-the-one-skill-de-zenhabits/)_
 

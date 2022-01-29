@@ -1,13 +1,13 @@
-<!-- 
-.. title: Trust the h^Wtype
-.. slug: trust-the-htype
-.. date: 2012-04-26 20:39:20+02:00
-.. tags: functional programming
-.. category: 
-.. link: 
-.. description: 
-.. type: text
--->
+---
+title: Trust the h^Wtype
+slug: trust-the-htype
+date: 2012-04-26 20:39:20+02:00
+tags: functional programming
+category: 
+link: 
+description: 
+type: text
+---
 
 
 I was used to write a lot of PHP code, mostly using the symfony framework. When I discovered unit testing with PHP, I was like I had discovered a new way of programming.<!-- TEASER_END --> 

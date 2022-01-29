@@ -1,12 +1,12 @@
-<!-- 
-.. title: Randonner 4 jours dans le beaufortain
-.. slug: randonner-4-jours-dans-le-beaufortain
-.. date: 2019-04-14 16:41:00+02:00
-.. tags: Randonnée, Nature
-.. link: 
-.. description: 
-.. type: text
--->
+---
+title: Randonner 4 jours dans le beaufortain
+slug: randonner-4-jours-dans-le-beaufortain
+date: 2019-04-14 16:41:00+02:00
+tags: Randonnée, Nature
+link: 
+description: 
+type: text
+---
 
 Ahhhh le Beaufort… Un sacré fromage, mais aussi une sacrée région et de sacrés paysages. Je vous propose ici un aperçu de __4 jours de randonnée dans le Beaufortain__ en presque autonomie avec ma femme Jess (rando effectuée mi-juillet 2018). Peut-être que quelques informations pourraient être utiles à certain.e.s d'entre vous, qui sait 🙂
 

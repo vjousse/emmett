@@ -1,4 +1,4 @@
-<!-- 
+---
 layout: post
 title:  Simple disk encryption tutorial with archlinux
 excerpt: "Here at AlloMedia, for security reasons, we're encrypting every laptop disk by default. As I'm using archlinux, I went to the wiki to follow how to \"just\" encrypt my disk. And well, the page is a little bit overcrowded, at the very least. Let's clarify that a little bit."
@@ -6,7 +6,7 @@ date: 2018-02-01 09:00:00+01:00
 categories: archlinux
 tags: archlinux tutorial
 slug: simple-disk-encryption-tutorial-with-archlinux
--->
+---
 
 We all love [archlinux](https://www.archlinux.org/), or if we don't, we're using Fedora or Debian, and trolling is (almost) out of the scope of this article.
 

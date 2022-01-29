@@ -1,13 +1,13 @@
-<!-- 
-.. title: Internet : rien n'est gratuit
-.. slug: internet-rien-nest-gratuit
-.. date: 2013-01-11 11:48:33+01:00
-.. tags: Web
-.. category: 
-.. link: 
-.. description: 
-.. type: text
--->
+---
+title: Internet : rien n'est gratuit
+slug: internet-rien-nest-gratuit
+date: 2013-01-11 11:48:33+01:00
+tags: Web
+category: 
+link: 
+description: 
+type: text
+---
 
 <p><p><strong>Temps de lecture indicatif : 3 minutes.</strong></p></p>
 

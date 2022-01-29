@@ -1,13 +1,13 @@
-<!-- 
-.. title: Le petit plus qui fait la différence
-.. slug: le-petit-plus-qui-fait-la-difference
-.. date: 2013-12-26 15:08:25+01:00
-.. tags: Développement personnel, Productivité
-.. category: 
-.. link: 
-.. description: 
-.. type: text
--->
+---
+title: Le petit plus qui fait la différence
+slug: le-petit-plus-qui-fait-la-difference
+date: 2013-12-26 15:08:25+01:00
+tags: Développement personnel, Productivité
+category: 
+link: 
+description: 
+type: text
+---
 
 On a toujours tendance à __attendre la révélation__. L'idée de génie qui fera la différence, celle qui nous rendra riche, celle qui fera de nous quelqu'un d'autre et qui changera notre vie. Le problème, c'est qu'on se trompe sur toute la ligne. Il n'existe pas de moment miracle ou d'idée de génie sortie de nulle part. Tout ce qui existe ce sont de petits moments, des __petites décisions__ qui, misent __bout à bout suffisamment longtemps__, font la différence. C'est clairement moins sexy que l'idée de génie qu'on s'imagine, et pourtant, c'est comme ça que ça marche.
 <!-- TEASER_END -->

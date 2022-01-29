@@ -1,13 +1,13 @@
-<!-- 
-.. title: Gérer les personnes difficiles
-.. slug: gerer-les-personnes-difficiles
-.. date: 2014-10-05 15:48:50+02:00
-.. tags: Zen, Traduction, Zen habits, L'unique compétence
-.. category: 
-.. link: 
-.. description: 
-.. type: text
--->
+---
+title: Gérer les personnes difficiles
+slug: gerer-les-personnes-difficiles
+date: 2014-10-05 15:48:50+02:00
+tags: Zen, Traduction, Zen habits, L'unique compétence
+category: 
+link: 
+description: 
+type: text
+---
 
 _Cet article fait partie de [la traduction du livre « The one skill » de zenhabits](/blog/traduction-du-livre-the-one-skill-de-zenhabits/)_
 

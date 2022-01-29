@@ -1,13 +1,13 @@
-<!-- 
-.. title: J'ai pas le temps : la pire excuse qui soit
-.. slug: jai-pas-le-temps-la-pire-excuse-qui-soit
-.. date: 2012-10-09 17:00:37+02:00
-.. tags: Développement personnel
-.. category: 
-.. link: 
-.. description: 
-.. type: text
--->
+---
+title: J'ai pas le temps : la pire excuse qui soit
+slug: jai-pas-le-temps-la-pire-excuse-qui-soit
+date: 2012-10-09 17:00:37+02:00
+tags: Développement personnel
+category: 
+link: 
+description: 
+type: text
+---
 
 <p>Si il y a bien une et une seule chose que vous avez, c'est du <strong>temps</strong>. Il peut être occupé à plein de choses différentes certes, mais <strong>du temps, vous en avez</strong>. Certaines personnes me disent souvent « J'aimerais bien, mais j'ai pas le temps » ou encore le fameux « ahhh, si seulement j'avais du temps ». Ce que j'entends personnellement quand on me dit ça c'est « <strong>Je fuis</strong> ce que j'ai vraiment envie de faire de ma vie à cause d'un manque de temps que je crée moi même. Si je réalise cela et que j'arrête ce qui génère du bruit dans ma vie et ne m'apporte aucune valeur, je vais finir par devoir affronter qui je voudrais vraiment être. ». Et prendre le contrôle de sa vie en prenant des décisions, ça nous effraie. Commençons par voir comment trouver du temps, on verra comment affronter ses peurs plus tard.</p>
 <!-- TEASER_END -->

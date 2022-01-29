@@ -1,13 +1,13 @@
-<!-- 
-.. title: La vie est belle
-.. slug: la-vie-est-belle
-.. date: 2014-03-20 16:26:06+01:00
-.. tags: Zen, Développement personnel
-.. category: 
-.. link: 
-.. description: 
-.. type: text
--->
+---
+title: La vie est belle
+slug: la-vie-est-belle
+date: 2014-03-20 16:26:06+01:00
+tags: Zen, Développement personnel
+category: 
+link: 
+description: 
+type: text
+---
 
 Hier, j'étais en train de me demander comment j'allais bien pouvoir faire pour payer une facture. Être indépendant c'est chouette, mais on ne contrôle pas toujours les paiements et il arrive que certains mois passent sans une seule rentrée d'argent. Je me disais même qu'être salarié à plein temps avait quand même des avantages : on savait combien on allait toucher à la fin du mois. Je stressais. Je me demandais comment j'allais bien pouvoir faire pour m'en sortir. Et puis j'ai réalisé que le souci ne venait pas de la facture. 
 <!-- TEASER_END -->

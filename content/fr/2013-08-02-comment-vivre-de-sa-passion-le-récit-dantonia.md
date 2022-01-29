@@ -1,13 +1,13 @@
-<!-- 
-.. title: Comment vivre de sa passion : le récit d'Antonia
-.. slug: comment-vivre-de-sa-passion-le-récit-dantonia
-.. date: 2013-08-02 13:00:14+02:00
-.. tags: Carrière et travail, Carnet d'aventures, Inspiration
-.. category: 
-.. link: 
-.. description: 
-.. type: text
--->
+---
+title: Comment vivre de sa passion : le récit d'Antonia
+slug: comment-vivre-de-sa-passion-le-récit-dantonia
+date: 2013-08-02 13:00:14+02:00
+tags: Carrière et travail, Carnet d'aventures, Inspiration
+category: 
+link: 
+description: 
+type: text
+---
 
 <p><p>L'article d'aujourd'hui est un peu particulier. Il inaugure (enfin je l'espère) une série d'articles sur <strong>vos expériences de vie, sur vos aventures</strong> qui valent la peine d'être racontées et qui pourront motiver d'autres personnes.</p></p>
 <!-- TEASER_END -->

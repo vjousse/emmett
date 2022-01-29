@@ -1,13 +1,13 @@
-<!-- 
-.. title: Pourquoi avoir des rêves c'est être réaliste
-.. slug: pourquoi-avoir-des-rêves-cest-être-réaliste
-.. date: 2013-09-03 13:00:15+02:00
-.. tags: Développement personnel, Réflexion, Inspiration
-.. category: 
-.. link: 
-.. description: 
-.. type: text
--->
+---
+title: Pourquoi avoir des rêves c'est être réaliste
+slug: pourquoi-avoir-des-rêves-cest-être-réaliste
+date: 2013-09-03 13:00:15+02:00
+tags: Développement personnel, Réflexion, Inspiration
+category: 
+link: 
+description: 
+type: text
+---
 
 <p><p><em>« Il faut être un peu sérieux. Il va être temps d'arrêter de faire des plans sur la comète. C'est bien beau d'avoir des rêves, mais à un moment il faut redescendre sur Terre »</em>. Et en quel honneur ? Êtes-vous sûr qu'il est <strong>plus raisonnable</strong> de <strong>tirer un trait sur ses rêves</strong> que de passer sa vie à <strong>essayer de les atteindre</strong> ? À mon avis, c'est de la connerie. Comme le dit Paulo Coelho dans <strong><a href="http://www.amazon.fr/gp/product/2290004448/ref=as_li_qf_sp_asin_tl?ie=UTF8&amp;camp=1642&amp;creative=6746&amp;creativeASIN=2290004448&amp;linkCode=as2&amp;tag=vincjous-21">L'alchimiste</a></strong> : <em>« C'est justement la possibilité de réaliser un rêve qui rend la vie intéressante »</em>.</p></p>
 <!-- TEASER_END -->

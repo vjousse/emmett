@@ -1,13 +1,13 @@
-<!-- 
-.. title: Faire le mauvais choix
-.. slug: faire-le-mauvais-choix
-.. date: 2013-09-10 11:01:58+02:00
-.. tags: Développement personnel, Réflexion
-.. category: 
-.. link: 
-.. description: 
-.. type: text
--->
+---
+title: Faire le mauvais choix
+slug: faire-le-mauvais-choix
+date: 2013-09-10 11:01:58+02:00
+tags: Développement personnel, Réflexion
+category: 
+link: 
+description: 
+type: text
+---
 
 <p><p>On regrette souvent d'avoir pris <strong>la mauvaise décision</strong>, d'avoir fait le mauvais choix. Le fameux « Ah si j'avais su ». Tout ça pourquoi ? Parce que le résultat de notre décision est pénible, douloureux, difficile à vivre, non conforme à nos attentes. On a quitté notre zone de confort. Mais est-ce que ce sont les bons critères de jugement ? Est-ce que finalement, s'être mis dans la position de vivre quelque chose de pénible est forcément quelque chose que l'on aurait du éviter ? Il m'est avis que non.</p></p>
 <!-- TEASER_END -->

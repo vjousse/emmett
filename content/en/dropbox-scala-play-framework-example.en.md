@@ -1,16 +1,16 @@
 title: "How to use the Dropbox API with scala and/or Play Framework"
 date: "2014-12-03"
 ---
-<!-- 
-.. title: How to use the Dropbox API with scala and/or Play Framework
-.. slug: dropbox-scala-play-framework-example
-.. date: 2014-12-03 20:39:20+02:00
-.. tags: scala, playframework
-.. category: 
-.. link: 
-.. description: 
-.. type: text
--->
+---
+title: How to use the Dropbox API with scala and/or Play Framework
+slug: dropbox-scala-play-framework-example
+date: 2014-12-03 20:39:20+02:00
+tags: scala, playframework
+category: 
+link: 
+description: 
+type: text
+---
 
 Recently, I had to connect a scala application to a Dropbox account. As I didn't found any good example on how to do so, I decided to write a blog post about it. Here we are.
 

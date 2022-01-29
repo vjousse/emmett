@@ -1,13 +1,13 @@
-<!-- 
-.. title: Je quitte mon emploi
-.. slug: je-quitte-mon-emploi
-.. date: 2013-02-01 10:00:02+01:00
-.. tags: Développement personnel, Carrière et travail
-.. category: 
-.. link: 
-.. description: 
-.. type: text
--->
+---
+title: Je quitte mon emploi
+slug: je-quitte-mon-emploi
+date: 2013-02-01 10:00:02+01:00
+tags: Développement personnel, Carrière et travail
+category: 
+link: 
+description: 
+type: text
+---
 
 <p></p><p><strong>Temps de lecture indicatif : 4 minutes.</strong></p><p></p>
 

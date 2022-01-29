@@ -1,13 +1,13 @@
-<!-- 
-.. title: Comment changer le monde en une question
-.. slug: comment-changer-le-monde-en-une-question
-.. date: 2013-03-26 10:00:57+01:00
-.. tags: Développement personnel, Réflexion
-.. category: 
-.. link: 
-.. description: 
-.. type: text
--->
+---
+title: Comment changer le monde en une question
+slug: comment-changer-le-monde-en-une-question
+date: 2013-03-26 10:00:57+01:00
+tags: Développement personnel, Réflexion
+category: 
+link: 
+description: 
+type: text
+---
 
 <p><p>Rien n'est gravé dans la pierre. <strong>Nous créons le monde que nous voulons créer</strong>. Nous ne pouvons pas changer le monde en une fois, et une bonne fois pour toute. En revanche, nous pouvons changer notre petit monde à nous. Notre monde personnel qui, une fois lié à tous les autres mondes des personnes qui nous entourent, forme le Monde avec un grand M.</p></p>
 <!-- TEASER_END -->

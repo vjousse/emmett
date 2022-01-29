@@ -1,13 +1,13 @@
-<!-- 
-.. title: Mes dernières découvertes #1
-.. slug: mes-dernieres-decouvertes-1
-.. date: 2019-09-04 17:20:00+01:00
-.. tags: Développement personnel, Découvertes
-.. category: 
-.. link: 
-.. description: 
-.. type: text
--->
+---
+title: Mes dernières découvertes #1
+slug: mes-dernieres-decouvertes-1
+date: 2019-09-04 17:20:00+01:00
+tags: Développement personnel, Découvertes
+category: 
+link: 
+description: 
+type: text
+---
 
 J'ai toujours tendance à m'intéresser à pas mal de sujets et je me suis dit que ça intéresserait peut-être d'autres personnes que je partage mes trouvailles, ou les sujets qui me passionnent actuellement. Ça sera le thème de ces (je l'espère nombreux billets) : partager ce que j'ai trouvé intéressant ces derniers temps.
 

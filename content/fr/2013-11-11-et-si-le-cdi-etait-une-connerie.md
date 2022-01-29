@@ -1,13 +1,13 @@
-<!-- 
-.. title: Et si le CDI était une connerie ?
-.. slug: et-si-le-cdi-etait-une-connerie
-.. date: 2013-11-11 22:48:22+01:00
-.. tags: Développement personnel, Carrière et travail, Revenu de base
-.. category: 
-.. link: 
-.. description: 
-.. type: text
--->
+---
+title: Et si le CDI était une connerie ?
+slug: et-si-le-cdi-etait-une-connerie
+date: 2013-11-11 22:48:22+01:00
+tags: Développement personnel, Carrière et travail, Revenu de base
+category: 
+link: 
+description: 
+type: text
+---
 
 Il semblerait que le CDI (Contrat à Durée Indéterminée) soit la solution à tout. Le CDI c'est la solution au travail précaire, le CDI c'est la solution à l'exploitation des travailleurs, le CDI c'est la solution à son prêt bancaire. Le CDI c'est la vie ©. Et si on réfléchissait un peu ? Et si le **CDI était finalement ce qui nous posait le plus de soucis** ?
 <!-- TEASER_END -->

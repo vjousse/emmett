@@ -1,13 +1,13 @@
-<!-- 
-.. title: Elm Europe 2017: What can we do better
-.. slug: elm-europe-2017-what-can-we-do-better
-.. date: 2017-06-13 08:00:00+02:00
-.. tags: functional programming, conference, elm
-.. category: 
-.. link: 
-.. description: 
-.. type: text
--->
+---
+title: Elm Europe 2017: What can we do better
+slug: elm-europe-2017-what-can-we-do-better
+date: 2017-06-13 08:00:00+02:00
+tags: functional programming, conference, elm
+category: 
+link: 
+description: 
+type: text
+---
 
 Last week, I went to my first Elm-only conference ever: Elm Europe 2017 in Paris. At first, I was very excited about it but, in the end, I couldn't help myself but thinking: __we can do better__ next year. Let's discuss why.
 

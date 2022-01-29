@@ -1,13 +1,13 @@
-<!-- 
-.. title: Fin de la traduction de « The One Skill » de zenhabits
-.. slug: fin-traduction-the-one-skill-de-zenhabits
-.. date: 2019-08-26 17:20:00+01:00
-.. tags: Traduction, Zen habits, L'unique compétence
-.. category: 
-.. link: 
-.. description: 
-.. type: text
--->
+---
+title: Fin de la traduction de « The One Skill » de zenhabits
+slug: fin-traduction-the-one-skill-de-zenhabits
+date: 2019-08-26 17:20:00+01:00
+tags: Traduction, Zen habits, L'unique compétence
+category: 
+link: 
+description: 
+type: text
+---
 
 Il y a de ça quelques temps je me suis lancé dans [la traduction du livre « The one skill » de zenhabits](/blog/traduction-du-livre-the-one-skill-de-zenhabits/). Je me rappelle que j m'étais dit à l'époque que si je me mettais de temps en temps à traduire un chapitre, ça devrait le faire sans trop de souci.
 

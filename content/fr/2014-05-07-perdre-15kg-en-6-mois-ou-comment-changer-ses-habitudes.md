@@ -1,13 +1,13 @@
-<!-- 
-.. title: Perdre 15kg en 6 mois ou comment changer ses habitudes
-.. slug: perdre-15kg-en-6-mois-ou-comment-changer-ses-habitudes
-.. date: 2014-05-07 22:43:42+02:00
-.. tags: Développement personnel, Challenge
-.. category: 
-.. link: 
-.. description: 
-.. type: text
--->
+---
+title: Perdre 15kg en 6 mois ou comment changer ses habitudes
+slug: perdre-15kg-en-6-mois-ou-comment-changer-ses-habitudes
+date: 2014-05-07 22:43:42+02:00
+tags: Développement personnel, Challenge
+category: 
+link: 
+description: 
+type: text
+---
 
 En mars 2012 je pesais 86 Kg pour 1m82. En septembre 2012 je ne pesais plus que 71 kg (oui toujours pour 1m82). Mai 2014 : je suis stabilisé entre 71kg et 72kg, ça dépend du nombre de fêtes dans le mois. Chouette alors, mais comment qu'il a fait le gars ?
 <!-- TEASER_END -->

@@ -1,13 +1,13 @@
-<!-- 
-.. title: Voyager en famille en sac à dos
-.. slug: voyager-en-famille-en-sac-a-dos
-.. date: 2014-08-12 21:54:24+02:00
-.. tags: 
-.. category: 
-.. link: 
-.. description: 
-.. type: text
--->
+---
+title: Voyager en famille en sac à dos
+slug: voyager-en-famille-en-sac-a-dos
+date: 2014-08-12 21:54:24+02:00
+tags: 
+category: 
+link: 
+description: 
+type: text
+---
 
 Trois enfants (3, 6 et 9 ans), deux gros sacs à dos pour les parents, deux petits pour les enfants, trois semaines de vadrouille et vingt-huit heures de vol aller-retour sans les escales : voilà de quoi remplir un beau voyage en Thaïlande !
 

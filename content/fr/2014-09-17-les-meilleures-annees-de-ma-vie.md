@@ -1,13 +1,13 @@
-<!-- 
-.. title: Les meilleures années de ma vie
-.. slug: les-meilleures-annees-de-ma-vie
-.. date: 2014-09-17 23:17:04+02:00
-.. tags: Développement personnel, Humeur
-.. category: 
-.. link: 
-.. description: 
-.. type: text
--->
+---
+title: Les meilleures années de ma vie
+slug: les-meilleures-annees-de-ma-vie
+date: 2014-09-17 23:17:04+02:00
+tags: Développement personnel, Humeur
+category: 
+link: 
+description: 
+type: text
+---
 
 Vivre les « meilleurs années de sa vie », __quelle tristesse__. Personne ne vous a jamais conseillé d'en profiter car c'était « les meilleurs années de ta vie » ? Car après c'était plus pareil ? Que ça soit ses parents ou ses proches, on y a généralement le droit à plusieurs moments de sa vie :
 <!-- TEASER_END -->

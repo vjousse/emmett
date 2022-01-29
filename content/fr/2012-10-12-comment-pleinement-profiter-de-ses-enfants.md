@@ -1,13 +1,13 @@
-<!-- 
-.. title: Comment pleinement profiter de ses enfants
-.. slug: comment-pleinement-profiter-de-ses-enfants
-.. date: 2012-10-12 16:00:35+02:00
-.. tags: Être parent, Développement personnel
-.. category: 
-.. link: 
-.. description: 
-.. type: text
--->
+---
+title: Comment pleinement profiter de ses enfants
+slug: comment-pleinement-profiter-de-ses-enfants
+date: 2012-10-12 16:00:35+02:00
+tags: Être parent, Développement personnel
+category: 
+link: 
+description: 
+type: text
+---
 
 <p>Comme le disait un présentateur bien connu <em>« les enfants sont formidables »</em>. Certes, mais ça m'a personnellement pris un certain temps pour pouvoir totalement profiter d'eux. 7 ans après mon premier et maintenant que la dernière va avoir 2 ans (j'ai 3 enfants en tout), voici quelques conseils tirés de mon expérience de papa pour apprendre à <strong>profiter pleinement de vos enfants</strong>.</p>
 <!-- TEASER_END -->

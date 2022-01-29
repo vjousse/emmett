@@ -1,13 +1,13 @@
-<!-- 
-.. title: Gérer la peur
-.. slug: gerer-la-peur
-.. date: 2014-10-03 22:34:09+02:00
-.. tags: Zen habits, L'unique compétence
-.. category: 
-.. link: 
-.. description: 
-.. type: text
--->
+---
+title: Gérer la peur
+slug: gerer-la-peur
+date: 2014-10-03 22:34:09+02:00
+tags: Zen habits, L'unique compétence
+category: 
+link: 
+description: 
+type: text
+---
 
 _Cet article fait partie de [la traduction du livre « The one skill » de zenhabits](/blog/traduction-du-livre-the-one-skill-de-zenhabits/)_
 

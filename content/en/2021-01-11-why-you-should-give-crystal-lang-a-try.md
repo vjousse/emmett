@@ -1,13 +1,13 @@
-<!-- 
-.. title: Why you should give Crystal Lang a try: a quick review
-.. slug: why-you-should-give-crystal-lang-a-try-a-quick-review
-.. date: 2021-01-11 16:00:00+00:00
-.. tags: crystal, beginner, lucky
-.. category: 
-.. link: 
-.. description: 
-.. type: text
--->
+---
+title: Why you should give Crystal Lang a try: a quick review
+slug: why-you-should-give-crystal-lang-a-try-a-quick-review
+date: 2021-01-11 16:00:00+00:00
+tags: crystal, beginner, lucky
+category: 
+link: 
+description: 
+type: text
+---
 
 I've been trying out [Crystal Lang](https://crystal-lang.org/) for a few months now and I have to admit that, I am __really happy__ with it, even if it's not a functional language nor has a very strict compiler. The reason why is pretty simple: it's as __easy to write as any dynamic language__ like Ruby, Python or PHP while still providing a __compiler that is helpful__. Kudos to the Crystal team for that!
 

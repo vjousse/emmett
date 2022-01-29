@@ -1,13 +1,13 @@
-<!-- 
-.. title: J'ai 30 ans et je suis papa
-.. slug: jai-30-ans-je-suis-papa
-.. date: 2014-11-07 11:31:38+01:00
-.. tags: 
-.. category: 
-.. link: 
-.. description: 
-.. type: text
--->
+---
+title: J'ai 30 ans et je suis papa
+slug: jai-30-ans-je-suis-papa
+date: 2014-11-07 11:31:38+01:00
+tags: 
+category: 
+link: 
+description: 
+type: text
+---
 
 — Bon, si je m'endors dans les 5 minutes, il me reste 2H20 de sommeil avant la prochaine tétée, je suis large.
 

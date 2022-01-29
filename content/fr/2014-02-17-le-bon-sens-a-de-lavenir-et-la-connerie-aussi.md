@@ -1,13 +1,13 @@
-<!-- 
-.. title: Le bon sens a de l'avenir, et la connerie aussi
-.. slug: le-bon-sens-a-de-lavenir-et-la-connerie-aussi
-.. date: 2014-02-17 16:35:36+01:00
-.. tags: Humeur, Réflexion
-.. category: 
-.. link: 
-.. description: 
-.. type: text
--->
+---
+title: Le bon sens a de l'avenir, et la connerie aussi
+slug: le-bon-sens-a-de-lavenir-et-la-connerie-aussi
+date: 2014-02-17 16:35:36+01:00
+tags: Humeur, Réflexion
+category: 
+link: 
+description: 
+type: text
+---
 
 Je suis tombé sur ce slogan « publicitaire » récemment, et j'avoue que ça m'a hérissé les poils des orteils. « Le bon sens a de l'avenir ». Utiliser le bon sens comme argument commercial me fait irrémédiablement [penser aux Inconnus](http://www.youtube.com/watch?v=WIxS9-xhGfM) : « il ne faut __pas prendre les gens pour des cons__, mais il ne faut __pas oublier qu'ils le sont__ ».
 <!-- TEASER_END -->

@@ -1,13 +1,13 @@
-<!-- 
-.. title: Manage multiple Crystal Lang versions
-.. slug: manage-multiple-crystal-lang-versions
-.. date: 2021-02-05 09:00:00+00:00
-.. tags: crystal, beginner
-.. category: 
-.. link: 
-.. description: 
-.. type: text
--->
+---
+title: Manage multiple Crystal Lang versions
+slug: manage-multiple-crystal-lang-versions
+date: 2021-02-05 09:00:00+00:00
+tags: crystal, beginner
+category: 
+link: 
+description: 
+type: text
+---
 
 As Crystal 0.36 is now out on [Crystal Lang](https://crystal-lang.org/) you may want to manage multiple versions of the crystal compiler locally. Let's see how to do that quickly and easily.
 

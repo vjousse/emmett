@@ -1,13 +1,13 @@
-<!-- 
-.. title: Comment parler en public : donner un cours ou une conférence
-.. slug: comment-parler-en-public-donner-un-cours-ou-une-conférence
-.. date: 2012-09-27 10:00:39+02:00
-.. tags: Développement personnel, Parler en public, Présentation orale
-.. category: 
-.. link: 
-.. description: 
-.. type: text
--->
+---
+title: Comment parler en public : donner un cours ou une conférence
+slug: comment-parler-en-public-donner-un-cours-ou-une-conférence
+date: 2012-09-27 10:00:39+02:00
+tags: Développement personnel, Parler en public, Présentation orale
+category: 
+link: 
+description: 
+type: text
+---
 
 <p>Parler en public est <strong>effrayant</strong> pour beaucoup de personnes ; cela peut même devenir insurmontable. J'ai été moi même confronté à cette problématique : comment faire pour ne plus avoir peur de parler en public, voire même <strong>d'apprécier parler en public</strong>. Nous allons voir ici quelques astuces pour la fameuse <em>« Présentation PowerPoint »</em> (même si la plupart des conseils restent valable pour nombre de prises de parole en public). Ayant été moi même prof à la FAC et ayant donné des conférences sur mes sujets de recherche universitaire, j'ai appris à gérer <strong>des groupes allant de 10 à 300 personnes</strong>. Voici quelques conseils pour vous aider à faire de même.</p>
 <!-- TEASER_END -->

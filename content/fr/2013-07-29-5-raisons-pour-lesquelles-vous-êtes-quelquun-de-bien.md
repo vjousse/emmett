@@ -1,13 +1,13 @@
-<!-- 
-.. title: 5 raisons pour lesquelles vous êtes quelqu'un de bien
-.. slug: 5-raisons-pour-lesquelles-vous-êtes-quelquun-de-bien
-.. date: 2013-07-29 15:04:12+02:00
-.. tags: Développement personnel, Réflexion
-.. category: 
-.. link: 
-.. description: 
-.. type: text
--->
+---
+title: 5 raisons pour lesquelles vous êtes quelqu'un de bien
+slug: 5-raisons-pour-lesquelles-vous-êtes-quelquun-de-bien
+date: 2013-07-29 15:04:12+02:00
+tags: Développement personnel, Réflexion
+category: 
+link: 
+description: 
+type: text
+---
 
 <p><h2>1 - Vous n'êtes pas ce que les autres pensent de vous.</h2></p>
 

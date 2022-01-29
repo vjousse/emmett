@@ -1,13 +1,13 @@
-<!-- 
-.. title: Un an après : les 8 leçons que j'ai retenues
-.. slug: un-an-après-les-8-lecons-que-jai-retenues
-.. date: 2013-10-01 17:37:27+02:00
-.. tags: 
-.. category: 
-.. link: 
-.. description: 
-.. type: text
--->
+---
+title: Un an après : les 8 leçons que j'ai retenues
+slug: un-an-après-les-8-lecons-que-jai-retenues
+date: 2013-10-01 17:37:27+02:00
+tags: 
+category: 
+link: 
+description: 
+type: text
+---
 
 Il y a de ça un peu plus d'un an je mettais ce blog en ligne. Le but était de partager mes idées, mes découvertes et les différents apprentissages que [ma remise en question personnelle](/blog/le-développement-personnel-pour-qui-pourquoi/) n'allaient pas manquer de provoquer. Alors nous y voilà.
 <!-- TEASER_END -->

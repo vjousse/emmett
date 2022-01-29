@@ -1,13 +1,13 @@
-<!-- 
-.. title: L'invasion qu'on nous cache
-.. slug: linvasion-quon-nous-cache
-.. date: 2013-10-15 12:10:31+02:00
-.. tags: Courage, Développement personnel
-.. category: 
-.. link: 
-.. description: 
-.. type: text
--->
+---
+title: L'invasion qu'on nous cache
+slug: linvasion-quon-nous-cache
+date: 2013-10-15 12:10:31+02:00
+tags: Courage, Développement personnel
+category: 
+link: 
+description: 
+type: text
+---
 
 Je n'en croyais pas mes yeux. Tranquillement assis dans un train, je tombe nez à nez avec cette phrase placardée en énormes lettres sur la première page d'un magazine : « __L'INVASION qu'on nous cache__ ». À côté, une photo toute aussi grande d'une femme portant le niqab. Français, tremblez, on vient vous envahir « votre » pays. L'homme lisant ce magazine est calme, droit, posé : __la peur fait partie intégrante de sa vie, elle est sa vie__.
 <!-- TEASER_END -->

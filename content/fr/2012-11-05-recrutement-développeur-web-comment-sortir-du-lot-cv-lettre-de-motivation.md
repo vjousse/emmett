@@ -1,13 +1,13 @@
-<!-- 
-.. title: Recrutement développeur web : comment sortir du lot (cv, lettre de motivation)
-.. slug: recrutement-développeur-web-comment-sortir-du-lot-cv-lettre-de-motivation
-.. date: 2012-11-05 17:00:06+01:00
-.. tags: Carrière et travail
-.. category: 
-.. link: 
-.. description: 
-.. type: text
--->
+---
+title: Recrutement développeur web : comment sortir du lot (cv, lettre de motivation)
+slug: recrutement-développeur-web-comment-sortir-du-lot-cv-lettre-de-motivation
+date: 2012-11-05 17:00:06+01:00
+tags: Carrière et travail
+category: 
+link: 
+description: 
+type: text
+---
 
 <p></p><p>J'ai l'occasion d'être confronté régulièrement à des lettres de motivation et des CV, si bien qu'à un moment, j'ai juste envie de demander : « est-ce que vous réalisez que quelqu'un va devoir les lire ? ». Je me propose ici de lister les choses qui me paraissent évidentes mais qui ne semblent pas l'être pour tout le monde. Je vous donne ensuite quelques conseils pour sortir du lot et créer les conditions de votre métier de rêve.</p><p></p>
 <!-- TEASER_END -->

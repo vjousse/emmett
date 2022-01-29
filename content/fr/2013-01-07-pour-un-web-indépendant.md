@@ -1,13 +1,13 @@
-<!-- 
-.. title: Pour un Web indépendant
-.. slug: pour-un-web-indépendant
-.. date: 2013-01-07 13:10:11+01:00
-.. tags: Web
-.. category: 
-.. link: 
-.. description: 
-.. type: text
--->
+---
+title: Pour un Web indépendant
+slug: pour-un-web-indépendant
+date: 2013-01-07 13:10:11+01:00
+tags: Web
+category: 
+link: 
+description: 
+type: text
+---
 
 <p><p>J'ai toujours été convaincu que le Web devait être le plus indépendant possible et tourné vers ses utilisateurs, et non vers les publicitaires. Le but étant de ne pas se retrouver avec un <a href="http://www.fdn.fr/internet-libre-ou-minitel-2.html">minitel 2.0</a> matraquant ses utilisateurs à coup de pubs. Charité bien ordonnée commençant par soi même, j'ai mis ce site en ordre :</p></p>
 <!-- TEASER_END -->

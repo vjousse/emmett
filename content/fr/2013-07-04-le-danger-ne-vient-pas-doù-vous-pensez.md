@@ -1,13 +1,13 @@
-<!-- 
-.. title: Le danger ne vient pas d'où vous pensez
-.. slug: le-danger-ne-vient-pas-doù-vous-pensez
-.. date: 2013-07-04 13:00:05+02:00
-.. tags: Développement personnel, Challenge
-.. category: 
-.. link: 
-.. description: 
-.. type: text
--->
+---
+title: Le danger ne vient pas d'où vous pensez
+slug: le-danger-ne-vient-pas-doù-vous-pensez
+date: 2013-07-04 13:00:05+02:00
+tags: Développement personnel, Challenge
+category: 
+link: 
+description: 
+type: text
+---
 
 <p><p>« <em>Si vous pensez que l'aventure est dangereuse, essayez la routine. Elle est mortelle.</em> » — <strong>Paulo Coelho</strong></p></p>
 

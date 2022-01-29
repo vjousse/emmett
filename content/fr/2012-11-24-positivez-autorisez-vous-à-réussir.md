@@ -1,13 +1,13 @@
-<!-- 
-.. title: Positivez : autorisez-vous à réussir !
-.. slug: positivez-autorisez-vous-à-réussir
-.. date: 2012-11-24 14:43:26+01:00
-.. tags: Développement personnel, Carrière et travail
-.. category: 
-.. link: 
-.. description: 
-.. type: text
--->
+---
+title: Positivez : autorisez-vous à réussir !
+slug: positivez-autorisez-vous-à-réussir
+date: 2012-11-24 14:43:26+01:00
+tags: Développement personnel, Carrière et travail
+category: 
+link: 
+description: 
+type: text
+---
 
 <p><p>S'autoriser à y croire, et à croire que l'on va réussir est la clé du succès. Sans toujours nous en rendre compte, <strong>nous nous limitons nous même</strong>, et nous créons des barrières artificielles à notre propre développement personnel.</p></p>
 <!-- TEASER_END -->

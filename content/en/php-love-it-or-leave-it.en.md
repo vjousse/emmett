@@ -1,13 +1,13 @@
-<!-- 
-.. title: PHP: you love it or you leave it
-.. slug: php-you-love-it-or-you-leave-it
-.. date: 2013-10-07 20:39:20+02:00
-.. tags: php
-.. category: 
-.. link: 
-.. description: 
-.. type: text
--->
+---
+title: PHP: you love it or you leave it
+slug: php-you-love-it-or-you-leave-it
+date: 2013-10-07 20:39:20+02:00
+tags: php
+category: 
+link: 
+description: 
+type: text
+---
 
 I do love PHP. Well, to be more precise, I used to love PHP a lot, and I still respect it and people using/improving it. You can do whatever you want with PHP, from the very quick and dirty way, to the bloated framework way (oh c'mon).<!-- TEASER_END -->
 I think this is why people of my generation love PHP, they grew with it like I did. They have learnt Java at school while they were doing PHP and fun stuff at home in the meantime. And to be honest, between Struts/Spring/Hibernate/PutWhateverJavaFrameworkWorksForYouHere and `<?php $_GET['myXssAttack']"; ?>`, the later was a lot more lovely.

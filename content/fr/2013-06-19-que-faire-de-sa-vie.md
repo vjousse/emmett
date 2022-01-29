@@ -1,13 +1,13 @@
-<!-- 
-.. title: Que faire de sa vie ?
-.. slug: que-faire-de-sa-vie
-.. date: 2013-06-19 08:30:43+02:00
-.. tags: Développement personnel, Réflexion
-.. category: 
-.. link: 
-.. description: 
-.. type: text
--->
+---
+title: Que faire de sa vie ?
+slug: que-faire-de-sa-vie
+date: 2013-06-19 08:30:43+02:00
+tags: Développement personnel, Réflexion
+category: 
+link: 
+description: 
+type: text
+---
 
 <p><p>Je ne sais pas ce que je veux faire, mais <strong>je sais ce que je ne veux pas faire</strong>. Ça vous semble familier comme sentiment ? Bienvenue au club ! La question qui suit est généralement : « <strong>mais qu'est-ce que je vais faire de ma vie</strong> » ? Voici la conclusion à laquelle je suis arrivé : pour savoir ce que vous ferez, il faut commencer par <strong>savoir ce que vous voulez être</strong>.</p></p>
 <!-- TEASER_END -->

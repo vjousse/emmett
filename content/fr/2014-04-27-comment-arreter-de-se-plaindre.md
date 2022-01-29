@@ -1,13 +1,13 @@
-<!-- 
-.. title: Comment arrêter de se plaindre ?
-.. slug: comment-arreter-de-se-plaindre
-.. date: 2014-04-27 17:15:11+02:00
-.. tags: Développement personnel
-.. category: 
-.. link: 
-.. description: 
-.. type: text
--->
+---
+title: Comment arrêter de se plaindre ?
+slug: comment-arreter-de-se-plaindre
+date: 2014-04-27 17:15:11+02:00
+tags: Développement personnel
+category: 
+link: 
+description: 
+type: text
+---
 
 Ne pas s'identifier à ses pensées négatives et assumer l'entière responsabilité de ses actes : un bien vaste programme… Je vous propose ici __une traduction__ par mes soins __d'un article de Steve Pavlina__ : [How to stop complaining](http://www.stevepavlina.com/blog/2007/08/how-to-stop-complaining/). J'ai beaucoup aimé cet article car il va droit au but : nous sommes responsables de ce que nous créons.
 <!-- TEASER_END --><hr>

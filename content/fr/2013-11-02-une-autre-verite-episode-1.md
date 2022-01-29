@@ -1,13 +1,13 @@
-<!-- 
-.. title: Une autre vérité — épisode 1
-.. slug: une-autre-verite-episode-1
-.. date: 2013-11-02 22:45:16+01:00
-.. tags: Fiction, Une autre vérité
-.. category: 
-.. link: 
-.. description: 
-.. type: text
--->
+---
+title: Une autre vérité — épisode 1
+slug: une-autre-verite-episode-1
+date: 2013-11-02 22:45:16+01:00
+tags: Fiction, Une autre vérité
+category: 
+link: 
+description: 
+type: text
+---
 
 C'est l'horreur. Il est 10 heures et, comme tous les lundi matin, on fait un débriefing. On ne sait pas ce qu'on a à débriefer, mais on le fait.
 

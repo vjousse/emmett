@@ -1,13 +1,13 @@
-<!-- 
-.. title: On aura été prévenu
-.. slug: on-aura-ete-prevenu
-.. date: 2015-12-05 18:47:11+01:00
-.. tags: Réflexion
-.. category: 
-.. link: 
-.. description: 
-.. type: text
--->
+---
+title: On aura été prévenu
+slug: on-aura-ete-prevenu
+date: 2015-12-05 18:47:11+01:00
+tags: Réflexion
+category: 
+link: 
+description: 
+type: text
+---
 
 Je suis né en 1981. Comme beaucoup de personnes de ma génération, l'Allemagne n'a jamais été un ennemi, bien au contraire. « __L'amitié Franco-Allemande__ » a été une réalité pour moi. Allemand première langue, voyages linguistiques en Allemagne de l'Ouest puis de l'Est, bières, schnaps, j'en passe et des meilleures. J'ai aussi vécu la chute du mur de Berlin : symbole, pour moi, d'un sombre passé que je croyais révolu. Et puis il y a eu la montée du FN en France.<!-- TEASER_END -->
 

@@ -1,13 +1,13 @@
-<!-- 
-.. title: Demain il sera peut-être trop tard
-.. slug: demain-il-sera-peut-être-trop-tard
-.. date: 2013-06-10 12:00:15+02:00
-.. tags: Développement personnel, Réflexion
-.. category: 
-.. link: 
-.. description: 
-.. type: text
--->
+---
+title: Demain il sera peut-être trop tard
+slug: demain-il-sera-peut-être-trop-tard
+date: 2013-06-10 12:00:15+02:00
+tags: Développement personnel, Réflexion
+category: 
+link: 
+description: 
+type: text
+---
 
 <p></p><p>Il éteind la lumière. Le réveil est réglé à 6h30, ce qui lui laisse à peine 6 heures pour oublier sa journée avant qu'une autre ne vienne <strong>dévorer son esprit</strong>. Paul est un homme qui a <a href="/jai-pourtant-tout-ce-quil-faut-pour-etre-heureux/">tout ce qu'il faut pour être heureux</a>. En théorie.</p><p></p>
 <!-- TEASER_END -->

@@ -1,13 +1,13 @@
-<!-- 
-.. title: Le pouvoir du moment présent
-.. slug: le-pouvoir-du-moment-présent
-.. date: 2012-10-25 10:11:07+02:00
-.. tags: Zen, Développement personnel, Livres
-.. category: 
-.. link: 
-.. description: 
-.. type: text
--->
+---
+title: Le pouvoir du moment présent
+slug: le-pouvoir-du-moment-présent
+date: 2012-10-25 10:11:07+02:00
+tags: Zen, Développement personnel, Livres
+category: 
+link: 
+description: 
+type: text
+---
 
 <p></p><p>Être heureux en toutes circonstances, prendre plaisir et ne plus avoir de soucis. Programme alléchant non ? La bonne nouvelle, c'est que vous n'avez <strong>besoin de rien</strong> de plus que ce que vous avez déjà, vous avez juste besoin de le découvrir. Cette découverte c'est : comment profiter de l' « ici-maintenant », puisque c'est de tout façon tout ce qui a une véritable existence.</p><p></p>
 <!-- TEASER_END -->

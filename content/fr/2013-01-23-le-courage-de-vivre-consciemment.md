@@ -1,13 +1,13 @@
-<!-- 
-.. title: Le courage de vivre consciemment
-.. slug: le-courage-de-vivre-consciemment
-.. date: 2013-01-23 11:00:50+01:00
-.. tags: Développement personnel, Carrière et travail
-.. category: 
-.. link: 
-.. description: 
-.. type: text
--->
+---
+title: Le courage de vivre consciemment
+slug: le-courage-de-vivre-consciemment
+date: 2013-01-23 11:00:50+01:00
+tags: Développement personnel, Carrière et travail
+category: 
+link: 
+description: 
+type: text
+---
 
 <p></p><p>Je vous propose ici une <strong>traduction de l'article</strong> <a href="http://www.stevepavlina.com/articles/courage-to-live-consciously.htm">The Courage to Live Consciously de Steve Pavlina</a> (par mes soins). J'adore cet article, c'est un des seuls que je relis régulièrement. Il est très long (c'est quasi un chapitre de livre), mais il en vaut le coup. J'ai essayé de mettre en gras les thèmes principaux pour permettre une lecture en diagonale, mais je vous conseille vraiment de prendre le temps de le lire en entier. <strong>S'il n'y en avait qu'un à lire, ça serait celui-là</strong>. Place à <a href="http://www.stevepavlina.com">Steve Pavlina</a> maintenant.</p><p></p>
 <!-- TEASER_END -->

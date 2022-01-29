@@ -1,13 +1,13 @@
-<!-- 
-.. title: Le secret pour prendre ses responsabilités (et ne plus se comporter en victime)
-.. slug: le-secret-pour-prendre-ses-responsabilités-et-ne-plus-se-comporter-en-victime
-.. date: 2013-04-02 11:01:00+02:00
-.. tags: Développement personnel
-.. category: 
-.. link: 
-.. description: 
-.. type: text
--->
+---
+title: Le secret pour prendre ses responsabilités (et ne plus se comporter en victime)
+slug: le-secret-pour-prendre-ses-responsabilités-et-ne-plus-se-comporter-en-victime
+date: 2013-04-02 11:01:00+02:00
+tags: Développement personnel
+category: 
+link: 
+description: 
+type: text
+---
 
 <p><p>Prendre ses responsabilités n'est pas une question d'âge, vous pouvez avoir 60 ans et ne toujours pas prendre vos responsabilités. Inversement, des personnes de 20 ans ont appris très jeune à le faire.</p></p>
 <!-- TEASER_END -->

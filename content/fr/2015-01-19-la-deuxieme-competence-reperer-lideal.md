@@ -1,13 +1,13 @@
-<!-- 
-.. title: La deuxième compétence : repérer l'idéal
-.. slug: la-deuxieme-competence-reperer-lideal
-.. date: 2015-01-19 09:44:03+01:00
-.. tags: Traduction, Zen habits, L'unique compétence
-.. category: 
-.. link: 
-.. description: 
-.. type: text
--->
+---
+title: La deuxième compétence : repérer l'idéal
+slug: la-deuxieme-competence-reperer-lideal
+date: 2015-01-19 09:44:03+01:00
+tags: Traduction, Zen habits, L'unique compétence
+category: 
+link: 
+description: 
+type: text
+---
 
 Maintenant que vous avez repéré le signal, la partie suivante du processus est de se recentrer sur soi et de chercher ce qui cause ce signal, ce symptôme.
 

@@ -1,13 +1,13 @@
-<!-- 
-.. title: Aidez-moi à trouver un nouveau nom
-.. slug: aidez-moi-a-trouver-un-nouveau-nom
-.. date: 2014-08-19 16:51:36+02:00
-.. tags: 
-.. category: 
-.. link: 
-.. description: 
-.. type: text
--->
+---
+title: Aidez-moi à trouver un nouveau nom
+slug: aidez-moi-a-trouver-un-nouveau-nom
+date: 2014-08-19 16:51:36+02:00
+tags: 
+category: 
+link: 
+description: 
+type: text
+---
 
 _Edit du 26/08/2014 : Les votes sont clos, merci de votre participation. Deboutlesgens.com devient officiellement viserlalune.com !_
 

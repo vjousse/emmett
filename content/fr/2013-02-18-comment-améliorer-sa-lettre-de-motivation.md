@@ -1,13 +1,13 @@
-<!-- 
-.. title: Comment améliorer sa lettre de motivation
-.. slug: comment-améliorer-sa-lettre-de-motivation
-.. date: 2013-02-18 10:00:16+01:00
-.. tags: Carrière et travail
-.. category: 
-.. link: 
-.. description: 
-.. type: text
--->
+---
+title: Comment améliorer sa lettre de motivation
+slug: comment-améliorer-sa-lettre-de-motivation
+date: 2013-02-18 10:00:16+01:00
+tags: Carrière et travail
+category: 
+link: 
+description: 
+type: text
+---
 
 <p><p><em>Temps de lecture indicatif : 6 minutes.</em></p></p>
 

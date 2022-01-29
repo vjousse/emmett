@@ -1,13 +1,13 @@
-<!-- 
-.. title: Gérer les possessions
-.. slug: gerer-les-possessions
-.. date: 2014-10-10 06:00:00+02:00
-.. tags: Traduction, Zen habits, L'unique compétence
-.. category: 
-.. link: 
-.. description: 
-.. type: text
--->
+---
+title: Gérer les possessions
+slug: gerer-les-possessions
+date: 2014-10-10 06:00:00+02:00
+tags: Traduction, Zen habits, L'unique compétence
+category: 
+link: 
+description: 
+type: text
+---
 
 _Cet article fait partie de [la traduction du livre « The one skill » de zenhabits](/blog/traduction-du-livre-the-one-skill-de-zenhabits/)_
 

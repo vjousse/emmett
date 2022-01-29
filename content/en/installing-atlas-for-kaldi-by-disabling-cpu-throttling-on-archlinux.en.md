@@ -1,13 +1,13 @@
-<!-- 
-.. title: Installing ATLAS for Kaldi by disabling CPU Throttling on Archlinux
-.. slug: archlinux-compile-lapack-atlas-kaldi
-.. date: 2015-04-26 20:09:01+02:00
-.. tags: archlinux
-.. category: 
-.. link: 
-.. description: 
-.. type: text
--->
+---
+title: Installing ATLAS for Kaldi by disabling CPU Throttling on Archlinux
+slug: archlinux-compile-lapack-atlas-kaldi
+date: 2015-04-26 20:09:01+02:00
+tags: archlinux
+category: 
+link: 
+description: 
+type: text
+---
 
 I was trying to compile ATLAS (Automatically Tuned Linear Algebra Software) to install [Kaldi](http://kaldi.sourceforge.net/about.html) on my new archlinux computer, and I ran into this error
 :

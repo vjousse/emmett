@@ -1,13 +1,13 @@
-<!-- 
-.. title: On manque enfin de travail, vive le revenu de base !
-.. slug: on-manque-enfin-de-travail-vive-le-revenu-de-base
-.. date: 2013-01-02 11:29:53+01:00
-.. tags: Carrière et travail, Revenu de base
-.. category: 
-.. link: 
-.. description: 
-.. type: text
--->
+---
+title: On manque enfin de travail, vive le revenu de base !
+slug: on-manque-enfin-de-travail-vive-le-revenu-de-base
+date: 2013-01-02 11:29:53+01:00
+tags: Carrière et travail, Revenu de base
+category: 
+link: 
+description: 
+type: text
+---
 
 <p><p>Le travail manque. Je ne pense rien vous apprendre ici. Pourquoi est-ce un problème dans notre société actuelle d'ailleurs ?</p></p>
 

@@ -1,13 +1,13 @@
-<!-- 
-.. title: Adding tailwindcss to your lucky project
-.. slug: adding-tailwindcss-to-lucky-crystal-lang
-.. date: 2020-08-09 20:00:00+02:00
-.. tags: crystal, beginner, tailwindcss
-.. category: 
-.. link: 
-.. description: 
-.. type: text
--->
+---
+title: Adding tailwindcss to your lucky project
+slug: adding-tailwindcss-to-lucky-crystal-lang
+date: 2020-08-09 20:00:00+02:00
+tags: crystal, beginner, tailwindcss
+category: 
+link: 
+description: 
+type: text
+---
 
 A short post about how to add [tailwindcss](https://tailwindcss.com/) to your [lucky](https://www.luckyframework.org/) project.
 _Disclaimer_: I'm new to the [crystal programming language](https://crystal-lang.org/), to the [lucky framework](https://www.luckyframework.org/) and all the frontend stuff including [webpack](https://webpack.js.org/) and [tailwindcss](https://tailwindcss.com/).

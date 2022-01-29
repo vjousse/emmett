@@ -1,13 +1,13 @@
-<!-- 
-.. title: Le jour où j'ai arrêté de fumer
-.. slug: le-jour-ou-jai-arrete-de-fumer
-.. date: 2013-11-15 13:36:57+01:00
-.. tags: Challenge, Inspiration
-.. category: 
-.. link: 
-.. description: 
-.. type: text
--->
+---
+title: Le jour où j'ai arrêté de fumer
+slug: le-jour-ou-jai-arrete-de-fumer
+date: 2013-11-15 13:36:57+01:00
+tags: Challenge, Inspiration
+category: 
+link: 
+description: 
+type: text
+---
 
 _N'étant pas fumeur moi-même, c'est [Tim](https://twitter.com/timbarray) du blog [amicalement-web](http://www.amicalement-web.net) qui nous fait part de son expérience. Un grand merci à lui :)_
 

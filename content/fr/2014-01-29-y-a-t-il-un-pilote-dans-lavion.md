@@ -1,13 +1,13 @@
-<!-- 
-.. title: Y a-t-il un pilote dans l'avion ?
-.. slug: y-a-t-il-un-pilote-dans-lavion
-.. date: 2014-01-29 22:23:23+01:00
-.. tags: Courage, Développement personnel
-.. category: 
-.. link: 
-.. description: 
-.. type: text
--->
+---
+title: Y a-t-il un pilote dans l'avion ?
+slug: y-a-t-il-un-pilote-dans-lavion
+date: 2014-01-29 22:23:23+01:00
+tags: Courage, Développement personnel
+category: 
+link: 
+description: 
+type: text
+---
 
 Apprendre est difficile. Mais si vous n'apprenez plus, vous vous détruisez. Et plus vous vous détruisez, plus il sera long de vous reconstruire. Il n'y pas 36 choix à faire dans la vie : ou __vous choisissez de vous construire__, ou vous __laissez le temps vous déconstruire__. Et par défaut, c'est la deuxième solution qui s'applique.
 <!-- TEASER_END -->

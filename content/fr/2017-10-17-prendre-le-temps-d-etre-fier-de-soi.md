@@ -1,13 +1,13 @@
-<!-- 
-.. title: Prendre le temps d'être fier de soi
-.. slug: prendre-le-temps-d-etre-fier-de-soi
-.. date: 2017-10-17 20:00:58+02:00
-.. tags: Développement personnel
-.. category: 
-.. link: 
-.. description: 
-.. type: text
--->
+---
+title: Prendre le temps d'être fier de soi
+slug: prendre-le-temps-d-etre-fier-de-soi
+date: 2017-10-17 20:00:58+02:00
+tags: Développement personnel
+category: 
+link: 
+description: 
+type: text
+---
 
 On a trop tendance à oublier l'__importance de prendre le temps d'être fier de soi__. Ah ça, pour se reprocher ce qu'on n'aurait pas du faire, il y a du monde, mais dès qu'il faut se féliciter, il n'y a souvent plus personne. Et pourtant, il n'y a pas de petite victoire, surtout quand il s'agit de remonter l'estime que l'on a de nous-mêmes. __Vous avez un potentiel formidable__, votre voisin aussi, alors ne l'oubliez pas.
 

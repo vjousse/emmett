@@ -1,13 +1,13 @@
-<!-- 
-.. title: Développer sa capacité à lâcher prise
-.. slug: developper-sa-capacite-a-lacher-prise
-.. date: 2014-11-06 21:58:51+01:00
-.. tags: Traduction, Zen habits, L'unique compétence
-.. category: 
-.. link: 
-.. description: 
-.. type: text
--->
+---
+title: Développer sa capacité à lâcher prise
+slug: developper-sa-capacite-a-lacher-prise
+date: 2014-11-06 21:58:51+01:00
+tags: Traduction, Zen habits, L'unique compétence
+category: 
+link: 
+description: 
+type: text
+---
 
 _Cet article fait partie de [la traduction du livre « The one skill » de zenhabits](/blog/traduction-du-livre-the-one-skill-de-zenhabits/)_
 

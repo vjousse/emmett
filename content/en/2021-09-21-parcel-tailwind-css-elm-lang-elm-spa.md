@@ -1,13 +1,13 @@
-<!-- 
-.. title: Using Parcel JS with Tailwind CSS, Elm Lang and Elm Spa
-.. slug: 2021-09-21-parcel-tailwind-css-elm-lang-elm-spa
-.. date: 2021-09-21 09:36:00+00:00
-.. tags: elm, tailwind, elm-spa, parcel
-.. category: 
-.. link: 
-.. description: 
-.. type: text
--->
+---
+title: Using Parcel JS with Tailwind CSS, Elm Lang and Elm Spa
+slug: 2021-09-21-parcel-tailwind-css-elm-lang-elm-spa
+date: 2021-09-21 09:36:00+00:00
+tags: elm, tailwind, elm-spa, parcel
+category: 
+link: 
+description: 
+type: text
+---
 
 As I have been struggling to make [Parcel JS](https://v2.parceljs.org/), [Tailwind CSS](https://tailwindcss.com/), [PostCSS](https://postcss.org/), _whatever-the-hell-you-call-it_-CSS, [Elm Lang](https://elm-lang.org/) and [Elm SPA](https://www.elm-spa.dev/) work together I thought that sharing my journey could help some of you. Here it is!
 

@@ -1,13 +1,13 @@
-<!-- 
-.. title: Comment réussir dans la vie : dompter l'échec
-.. slug: comment-réussir-dans-la-vie-dompter-léchec
-.. date: 2012-09-22 10:00:58+02:00
-.. tags: Développement personnel
-.. category: 
-.. link: 
-.. description: 
-.. type: text
--->
+---
+title: Comment réussir dans la vie : dompter l'échec
+slug: comment-réussir-dans-la-vie-dompter-léchec
+date: 2012-09-22 10:00:58+02:00
+tags: Développement personnel
+category: 
+link: 
+description: 
+type: text
+---
 
 <p><em>Ahhhh</em> l'échec, la réussite, la chance, tant de notions qui nous font rêver et pleurer au quotidien. Certains semblent avoir plus de chance que d'autres et il semblerait même que <strong>ça tombe toujours sur les mêmes</strong>. Et si le <em>problème</em> ne venait <strong>pas des autres</strong>, mais <strong>de vous</strong> ?</p>
 <!-- TEASER_END -->

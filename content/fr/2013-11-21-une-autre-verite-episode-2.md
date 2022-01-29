@@ -1,13 +1,13 @@
-<!-- 
-.. title: Une autre vérité — épisode 2
-.. slug: une-autre-verite-episode-2
-.. date: 2013-11-21 08:00:00+01:00
-.. tags: Une autre vérité
-.. category: 
-.. link: 
-.. description: 
-.. type: text
--->
+---
+title: Une autre vérité — épisode 2
+slug: une-autre-verite-episode-2
+date: 2013-11-21 08:00:00+01:00
+tags: Une autre vérité
+category: 
+link: 
+description: 
+type: text
+---
 
 _Ce texte de fiction est le deuxième épisode de la série « Une autre vérité ». [Le début est ici](/blog/fr/une-autre-verite-episode-1)._
 <hr>

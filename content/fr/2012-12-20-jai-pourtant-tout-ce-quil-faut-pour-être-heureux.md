@@ -1,13 +1,13 @@
-<!-- 
-.. title: J'ai pourtant tout ce qu'il faut pour être heureux !
-.. slug: jai-pourtant-tout-ce-quil-faut-pour-être-heureux
-.. date: 2012-12-20 17:03:34+01:00
-.. tags: Développement personnel
-.. category: 
-.. link: 
-.. description: 
-.. type: text
--->
+---
+title: J'ai pourtant tout ce qu'il faut pour être heureux !
+slug: jai-pourtant-tout-ce-quil-faut-pour-être-heureux
+date: 2012-12-20 17:03:34+01:00
+tags: Développement personnel
+category: 
+link: 
+description: 
+type: text
+---
 
 <p><p>Essayer de se persuader que l'on doit être heureux parce que l'on a tout ce qu'il faut pour l'être est une <strong>totale aberration</strong>. Pensez-y un peu 2 secondes. Le fait même de prononcer cette phrase affirme le contraire : si vous aviez tout ce qu'il fallait pour être heureux, vous ne seriez pas en train de vous demander pourquoi vous ne l'êtes pas, ou pas totalement.</p></p>
 <!-- TEASER_END -->

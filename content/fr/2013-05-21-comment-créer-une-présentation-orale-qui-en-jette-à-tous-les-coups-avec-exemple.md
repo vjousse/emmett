@@ -1,13 +1,13 @@
-<!-- 
-.. title: Comment créer une présentation orale qui en jette à tous les coups (avec exemple)
-.. slug: comment-créer-une-présentation-orale-qui-en-jette-à-tous-les-coups-avec-exemple
-.. date: 2013-05-21 14:35:18+02:00
-.. tags: Parler en public, Présentation orale
-.. category: 
-.. link: 
-.. description: 
-.. type: text
--->
+---
+title: Comment créer une présentation orale qui en jette à tous les coups (avec exemple)
+slug: comment-créer-une-présentation-orale-qui-en-jette-à-tous-les-coups-avec-exemple
+date: 2013-05-21 14:35:18+02:00
+tags: Parler en public, Présentation orale
+category: 
+link: 
+description: 
+type: text
+---
 
 <p></p><p>Voici <a href="https://data.jousse.org/opensource/opensource-presentation/opensource-fr.html">un exemple de présentation</a> que je donne actuellement sur <a href="https://data.jousse.org/opensource/opensource-presentation/opensource-fr.html">l'Open Source</a> (utilisez les flèches de votre clavier pour vous déplacer). Et pourtant, <strong>je suis mauvais en design</strong>. Vraiment.</p><p></p>
 <!-- TEASER_END -->

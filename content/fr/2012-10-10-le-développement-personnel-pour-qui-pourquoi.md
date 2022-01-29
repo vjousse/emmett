@@ -1,13 +1,13 @@
-<!-- 
-.. title: Le développement personnel : pour qui, pourquoi
-.. slug: le-développement-personnel-pour-qui-pourquoi
-.. date: 2012-10-10 17:00:11+02:00
-.. tags: Développement personnel, Carrière et travail
-.. category: 
-.. link: 
-.. description: 
-.. type: text
--->
+---
+title: Le développement personnel : pour qui, pourquoi
+slug: le-développement-personnel-pour-qui-pourquoi
+date: 2012-10-10 17:00:11+02:00
+tags: Développement personnel, Carrière et travail
+category: 
+link: 
+description: 
+type: text
+---
 
 <p>Plus j'avance dans la vie plus je réalise qu'il est <strong>important d'apprendre à se connaître</strong>. Pas seulement pour améliorer sa vie au quotidien, mais aussi pour apprendre à connaître les autres et pour comprendre nos comportements au jour le jour. En tant que développeur informatique, apprendre de nouvelles choses est ce qui me motive quotidiennement. C'est ce que je retrouve en pratiquant le développement personnel : <strong>un apprentissage quotidien</strong> et sans limites de soi-même.</p>
 <!-- TEASER_END -->

@@ -1,13 +1,13 @@
-<!--
-.. title: Développement personnel : 7 ans après
-.. slug: dev-personnel-ce-que-jai-appris-en-7-ans
-.. date: 2019-05-27 08:00:00+02:00
-.. tags: Développement personnel
-.. link:
-.. description:
-.. type: text
-.. status: draft
--->
+---
+title: Développement personnel : 7 ans après
+slug: dev-personnel-ce-que-jai-appris-en-7-ans
+date: 2019-05-27 08:00:00+02:00
+tags: Développement personnel
+link:
+description:
+type: text
+status: draft
+---
 
 
 Bientôt 7 ans que le premier post du blog a vu le jour. Ça ne nous rajeunit pas ma bonne dame… Et si on se faisait une petite rétro ?

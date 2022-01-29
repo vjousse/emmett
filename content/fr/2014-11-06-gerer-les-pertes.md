@@ -1,13 +1,13 @@
-<!-- 
-.. title: Gérer les pertes
-.. slug: gerer-les-pertes
-.. date: 2014-11-06 07:24:48+01:00
-.. tags: Traduction, Zen habits, L'unique compétence
-.. category: 
-.. link: 
-.. description: 
-.. type: text
--->
+---
+title: Gérer les pertes
+slug: gerer-les-pertes
+date: 2014-11-06 07:24:48+01:00
+tags: Traduction, Zen habits, L'unique compétence
+category: 
+link: 
+description: 
+type: text
+---
 
 _Cet article fait partie de [la traduction du livre « The one skill » de zenhabits](/blog/traduction-du-livre-the-one-skill-de-zenhabits/)_
 

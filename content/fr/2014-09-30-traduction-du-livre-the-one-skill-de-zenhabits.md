@@ -1,13 +1,13 @@
-<!-- 
-.. title: Traduction du livre « The one skill » de zenhabits
-.. slug: traduction-du-livre-the-one-skill-de-zenhabits
-.. date: 2014-09-30 23:18:34+02:00
-.. tags: Zen, Traduction, Zen habits
-.. category: 
-.. link: 
-.. description: 
-.. type: text
--->
+---
+title: Traduction du livre « The one skill » de zenhabits
+slug: traduction-du-livre-the-one-skill-de-zenhabits
+date: 2014-09-30 23:18:34+02:00
+tags: Zen, Traduction, Zen habits
+category: 
+link: 
+description: 
+type: text
+---
 
 Comme vous le savez peut-être déjà, je suis un fidèle lecteur du [blog de Leo Babauta, zenhabits](http://zenhabits.net/). Son site est dans __le top 25 des blogs mondiaux__ et dans __le top 50 des sites internet selon le Times__. J'adore le message de tranquillité et de simplicité qu'il y véhicule. Comme j'ai pu le faire pour quelques articles de Steve Pavlina ( [Le courage de vivre consciemment](/blog/le-courage-de-vivre-consciemment/) et [Comment arrêter de se plaindre](/blog/comment-arreter-de-se-plaindre/)) j'ai décidé de vous faire __profiter des écrits de Leo en français__.
 <!-- TEASER_END -->

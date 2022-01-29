@@ -1,13 +1,13 @@
-<!-- 
-.. title: Ma double vie
-.. slug: ma-double-vie
-.. date: 2014-08-18 10:53:04+02:00
-.. tags: 
-.. category: 
-.. link: 
-.. description: 
-.. type: text
--->
+---
+title: Ma double vie
+slug: ma-double-vie
+date: 2014-08-18 10:53:04+02:00
+tags: 
+category: 
+link: 
+description: 
+type: text
+---
 
 J'ai un truc à vous avouer, je suis un looser. Si je regarde les 15 dernières années de ma vie, ce n'est qu'__échec, déception et malchance__ :
 <!-- TEASER_END -->

@@ -1,13 +1,13 @@
-<!-- 
-.. title: Amusez-vous !
-.. slug: amusez-vous
-.. date: 2013-03-12 11:55:41+01:00
-.. tags: Développement personnel, Carrière et travail, Zen
-.. category: 
-.. link: 
-.. description: 
-.. type: text
--->
+---
+title: Amusez-vous !
+slug: amusez-vous
+date: 2013-03-12 11:55:41+01:00
+tags: Développement personnel, Carrière et travail, Zen
+category: 
+link: 
+description: 
+type: text
+---
 
 <p><p>« Sois un peu sérieux, il va falloir grandir un jour. Trouve un travail stable avec un salaire confortable pour payer ta maison. C'est une question de bon sens. » Han, que c'est fatiguant, <strong>cette notion de bon sens me rendra toujours perplexe</strong>. « Les gens » n'ont de cesse de reporter leurs peurs et leur propre insécurité sur les autres. Essayez de faire culpabiliser les autres de ne pas vivre le même calvaire qu'eux soulage temporairement ce type de personnes. Et si ces tirades devenaient plutôt « <strong>Sois un peu heureux</strong>, il va bien falloir te faire plaisir un jour, sur ton lit de mort il sera trop tard. Trouve <strong>un travail qui te plait</strong> et qui te permet de t'épanouir, le reste coulera tout seul. C'est une question de bonheur. ». Ça en jette un peu plus je trouve. Et croyez-moi, ce n'est pas qu'un doux rêve.</p></p>
 <!-- TEASER_END -->

@@ -1,13 +1,13 @@
-<!-- 
-.. title: Il y a des jours comme cela
-.. slug: il-y-a-des-jours-comme-cela
-.. date: 2013-01-14 13:00:36+01:00
-.. tags: Réflexion
-.. category: 
-.. link: 
-.. description: 
-.. type: text
--->
+---
+title: Il y a des jours comme cela
+slug: il-y-a-des-jours-comme-cela
+date: 2013-01-14 13:00:36+01:00
+tags: Réflexion
+category: 
+link: 
+description: 
+type: text
+---
 
 <p><p>Il y a des jours comme cela. Des jours, des heures, des minutes qui vous paraissent des années. Vous faites de votre iPhone votre animal de compagnie et de Facebook votre vie sociale. Vous n'avez jamais eu autant d'amis, vous communiquez avec eux via votre mur Facebook et vous pouvez même les « poker » à longueur de journée. Paradoxalement, plus vous avez d'amis, plus vous avez le sentiment d'en manquer.</p></p>
 <!-- TEASER_END -->

@@ -1,13 +1,13 @@
-<!-- 
-.. title: Le bonheur est à portée de la main, voici comment l'attraper
-.. slug: le-bonheur-est-à-portée-de-la-main-voici-comment-lattraper
-.. date: 2013-05-14 11:14:33+02:00
-.. tags: Développement personnel, Réflexion
-.. category: 
-.. link: 
-.. description: 
-.. type: text
--->
+---
+title: Le bonheur est à portée de la main, voici comment l'attraper
+slug: le-bonheur-est-à-portée-de-la-main-voici-comment-lattraper
+date: 2013-05-14 11:14:33+02:00
+tags: Développement personnel, Réflexion
+category: 
+link: 
+description: 
+type: text
+---
 
 <p><p>Nous compliquons tout. Tout doit être contrôlé, mesuré, optimisé, maitrisé et calculé. Nous avons besoin d'une iApp pour tout. Il nous faudra bientôt une iApp pour choisir quelle iApp installer et quels amis fréquenter. Mais nous oublions le facteur essentiel pour attraper ce bonheur qui nous tend les bras : <strong>la simplicité</strong>.</p></p>
 <!-- TEASER_END -->

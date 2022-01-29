@@ -1,13 +1,13 @@
-<!-- 
-.. title: Retraite en silence : incroyable leçon !
-.. slug: retraite-en-silence-deux-jours-sans-parler-sans-portable-sans-montre
-.. date: 2021-06-08 10:00:00+01:00
-.. tags: Développement personnel, Silence
-.. category: 
-.. link: 
-.. description: 
-.. type: text
--->
+---
+title: Retraite en silence : incroyable leçon !
+slug: retraite-en-silence-deux-jours-sans-parler-sans-portable-sans-montre
+date: 2021-06-08 10:00:00+01:00
+tags: Développement personnel, Silence
+category: 
+link: 
+description: 
+type: text
+---
 
 Je viens de vivre une expérience incroyable : __deux jours coupé du monde, de l'électronique et de la parole__. Je savais que ça serait spécial, mais je ne m'attendais pas à en __découvrir autant sur moi__ et à me dire, au bout des deux jours : _mince, c'est déjà fini_ ?
 

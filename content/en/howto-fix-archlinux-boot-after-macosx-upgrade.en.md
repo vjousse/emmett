@@ -1,13 +1,13 @@
-<!-- 
-.. title: How to fix archlinux (rEFInd) boot after Mac OS X upgrade
-.. slug: howto-fix-archlinux-boot-after-macosx-upgrade
-.. date: 2014-01-27 20:39:20+02:00
-.. tags: archlinux, macbook
-.. category: 
-.. link: 
-.. description: 
-.. type: text
--->
+---
+title: How to fix archlinux (rEFInd) boot after Mac OS X upgrade
+slug: howto-fix-archlinux-boot-after-macosx-upgrade
+date: 2014-01-27 20:39:20+02:00
+tags: archlinux, macbook
+category: 
+link: 
+description: 
+type: text
+---
 
 Yesterday I applied the Mac OS X Mavericks 10.9.1 upgrade. And of course, after rebooting, my rEFInd boot had disappeared. Damned, it was booting directly under Mac OS X.
 

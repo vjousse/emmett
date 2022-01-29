@@ -1,13 +1,13 @@
-<!-- 
-.. title: Comment gérer la maladie sereinement
-.. slug: comment-gérer-la-maladie-sereinement
-.. date: 2013-02-02 11:30:53+01:00
-.. tags: Réflexion
-.. category: 
-.. link: 
-.. description: 
-.. type: text
--->
+---
+title: Comment gérer la maladie sereinement
+slug: comment-gérer-la-maladie-sereinement
+date: 2013-02-02 11:30:53+01:00
+tags: Réflexion
+category: 
+link: 
+description: 
+type: text
+---
 
 <p></p><p>À un moment où à un autre, la maladie ou plus généralement la souffrance viendra s'introduire dans votre vie, c'est inévitable. Cela peut aller du simple mal de tête à la maladie chronique incurable. Et pourtant, ce n'est pas la maladie elle même qui importe, c'est la façon dont vous allez la gérer.</p><p></p>
 <!-- TEASER_END -->

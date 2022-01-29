@@ -1,13 +1,13 @@
-<!-- 
-.. title: Aimer vivre
-.. slug: aimer-vivre
-.. date: 2013-04-30 11:17:47+02:00
-.. tags: Non classé
-.. category: 
-.. link: 
-.. description: 
-.. type: text
--->
+---
+title: Aimer vivre
+slug: aimer-vivre
+date: 2013-04-30 11:17:47+02:00
+tags: Non classé
+category: 
+link: 
+description: 
+type: text
+---
 
 <p><ul><br /><li>Pleurer.</li><br /><li>Partager.</li><br /><li>S'aimer.</li><!-- TEASER_END --><br /><li>Souffrir.</li><br /><li>Donner.</li><br /><li>Sourire.</li><br /><li>S'abandonner.</li><br /><li>Savourer.</li><br /><li>Aimer.</li><br /><li>Vivre.</li><br /><li>Vivre.</li><br /><li>Vivre.</li><br /></ul></p>
 

@@ -1,13 +1,13 @@
-<!-- 
-.. title: Travailler par tranches de 25 minutes
-.. slug: travailler-par-tranches-de-25-minutes
-.. date: 2013-10-01 17:38:26+02:00
-.. tags: 
-.. category: 
-.. link: 
-.. description: 
-.. type: text
--->
+---
+title: Travailler par tranches de 25 minutes
+slug: travailler-par-tranches-de-25-minutes
+date: 2013-10-01 17:38:26+02:00
+tags: 
+category: 
+link: 
+description: 
+type: text
+---
 
 Qui n'a jamais eu l'impression, le soir, en rentrant du boulot, de n'avoir rien fait de sa journée ? Vous les connaissez ces journées où vous étiez pourtant au travail de 9h à 18h mais vous avez l'__impression de ne pas avoir été productif__ du tout. Bienvenue au club. J'ai essayé pas mal de choses, des todolist à rallonge aux méthodes de productivité qui étaient censées changer ma vie. Rien n'y a fait jusqu'à ce que je travaille uniquement par __tranches de 25 minutes__.
 <!-- TEASER_END -->

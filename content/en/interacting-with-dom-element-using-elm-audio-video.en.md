@@ -1,13 +1,13 @@
-<!-- 
-.. title: Interacting with a DOM element using Elm (audio/video tag example)
-.. slug: interacting-with-dom-element-using-elm-audio-video
-.. date: 2016-08-03 14:25:20+02:00
-.. tags: elm
-.. category: 
-.. link: 
-.. description: 
-.. type: text
--->
+---
+title: Interacting with a DOM element using Elm (audio/video tag example)
+slug: interacting-with-dom-element-using-elm-audio-video
+date: 2016-08-03 14:25:20+02:00
+tags: elm
+category: 
+link: 
+description: 
+type: text
+---
 
 So, you want to write some [Elm](http://elm-lang.org/) code because you're a Hipster and want to be _in_. Fair enough. But being a Hipster has some downsides too. You soon realize that, even if __Elm__ is cool, it doesn't always provide all the things you may need. For example, how can you __interact with the HTML Audio element or any element not yet covered by the Elm core modules__? Don't worry, uncle Vince is here.
 

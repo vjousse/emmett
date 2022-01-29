@@ -1,14 +1,14 @@
-<!-- 
-.. title: Consommation énergétique d'Internet : prenons nos responsabilités
-.. slug: vers-des-sites-internet-plus-ecologiques-et-low-tech
-.. date: 2019-11-08 14:56:00+01:00
-.. tags: Internet, Écologie, Low-tech
-.. category: 
-.. link: 
-.. description: 
-.. type: text
-.. status: draft
--->
+---
+title: Consommation énergétique d'Internet : prenons nos responsabilités
+slug: vers-des-sites-internet-plus-ecologiques-et-low-tech
+date: 2019-11-08 14:56:00+01:00
+tags: Internet, Écologie, Low-tech
+category: 
+link: 
+description: 
+type: text
+status: draft
+---
 
 On a tendance à l'oublier ou à ne pas vouloir le savoir, mais internet représente environ 15% de la consommation énergétique mondiale. Greenpeace ( https://www.greenpeace.fr/il-est-temps-de-renouveler-internet/ ) nous alertait déjà en 2017 en soulignant que si Internet était un pays, il serait le 3 ème plus gros consommateur d'énergie de la planète après la Chine et les États-Unis. Le think tank français « The Shift Project » ( https://theshiftproject.org/article/climat-insoutenable-usage-video/ ) rappelle que « _Le numérique émet aujourd’hui 4 % des gaz à effet de serre du monde, et sa consommation énergétique s’accroît de 9 % par an._ »
 

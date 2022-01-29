@@ -1,13 +1,13 @@
-<!-- 
-.. title: Machine Learning & Big Data : des dangers pour les logiciels libres ?
-.. slug: les-dangers-du-big-data-pour-les-logiciels-libres
-.. date: 2017-04-18 06:16:04+02:00
-.. tags: 
-.. category: 
-.. link: 
-.. description: 
-.. type: text
--->
+---
+title: Machine Learning & Big Data : des dangers pour les logiciels libres ?
+slug: les-dangers-du-big-data-pour-les-logiciels-libres
+date: 2017-04-18 06:16:04+02:00
+tags: 
+category: 
+link: 
+description: 
+type: text
+---
 
 <!-- https://color.adobe.com/Flat-UI-color-theme-2469224/edit/?copy=true&base=1&rule=Custom&selected=4&name=Copy%20of%20Flat%20UI&mode=rgb&rgbvalues=0.172549,0.243137,0.313725,0.905882,0.298039,0.235294,0.92549,0.941176,0.945098,0.203922,0.596078,0.858824,0.160784,0.501961,0.72549&swatchOrder=0,1,2,3,4 -->
 

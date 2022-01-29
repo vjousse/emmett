@@ -1,13 +1,13 @@
-<!-- 
-.. title: Pourquoi créer des emplois est une mauvaise idée
-.. slug: pourquoi-creer-des-emplois-est-une-mauvaise-idee
-.. date: 2014-04-08 07:00:00+02:00
-.. tags: Revenu de base, Réflexion
-.. category: 
-.. link: 
-.. description: 
-.. type: text
--->
+---
+title: Pourquoi créer des emplois est une mauvaise idée
+slug: pourquoi-creer-des-emplois-est-une-mauvaise-idee
+date: 2014-04-08 07:00:00+02:00
+tags: Revenu de base, Réflexion
+category: 
+link: 
+description: 
+type: text
+---
 
 1981, Mitterand prenait le pouvoir et toute une ribambelle d'enfants en profitait pour voir le jour. Je faisais partie du lot. Un peu plus de 30 ans et quelques enfants plus tard, nous voici en 2014. Il est temps de regarder où les __joggings en peau de pêche__, les __Reebook Pump__ et les __Mystérieuses Cités d'or__ nous ont menés.
 <!-- TEASER_END -->

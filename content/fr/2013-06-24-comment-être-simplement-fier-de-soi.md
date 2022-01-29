@@ -1,13 +1,13 @@
-<!-- 
-.. title: Comment être simplement fier de soi
-.. slug: comment-être-simplement-fier-de-soi
-.. date: 2013-06-24 13:00:26+02:00
-.. tags: Développement personnel, Réflexion
-.. category: 
-.. link: 
-.. description: 
-.. type: text
--->
+---
+title: Comment être simplement fier de soi
+slug: comment-être-simplement-fier-de-soi
+date: 2013-06-24 13:00:26+02:00
+tags: Développement personnel, Réflexion
+category: 
+link: 
+description: 
+type: text
+---
 
 <p>J'ai quelque chose à vous avouer : pendant longtemps, peu importe ce que je faisais, je n'ai jamais vraiment été fier de moi-même. Et j'ai dans l'idée que c'est le cas de pas mal d'entre vous aussi. J'ai récemment trouvé la raison, et la solution qui va avec.</p>
 <!-- TEASER_END -->

@@ -1,13 +1,13 @@
-<!-- 
-.. title: Moins on a de choix, plus on est heureux
-.. slug: moins-on-a-de-choix-plus-on-est-heureux
-.. date: 2013-04-13 14:56:46+02:00
-.. tags: Développement personnel, Réflexion
-.. category: 
-.. link: 
-.. description: 
-.. type: text
--->
+---
+title: Moins on a de choix, plus on est heureux
+slug: moins-on-a-de-choix-plus-on-est-heureux
+date: 2013-04-13 14:56:46+02:00
+tags: Développement personnel, Réflexion
+category: 
+link: 
+description: 
+type: text
+---
 
 <p><p>Il y a de ça un peu plus d'une semaine, j'avais décidé de <a href="/soirees-sans-ecrans-ca-commence-aujourdhui/">passer mes soirées sans aucun écran après 19h</a>. Les bénéfices attendus ont été presque tous au rendez-vous :</p></p>
 <!-- TEASER_END -->

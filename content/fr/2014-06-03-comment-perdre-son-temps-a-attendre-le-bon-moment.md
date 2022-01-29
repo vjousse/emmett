@@ -1,13 +1,13 @@
-<!-- 
-.. title: Comment perdre son temps à attendre le bon moment
-.. slug: comment-perdre-son-temps-a-attendre-le-bon-moment
-.. date: 2014-06-03 11:14:48+02:00
-.. tags: 
-.. category: 
-.. link: 
-.. description: 
-.. type: text
--->
+---
+title: Comment perdre son temps à attendre le bon moment
+slug: comment-perdre-son-temps-a-attendre-le-bon-moment
+date: 2014-06-03 11:14:48+02:00
+tags: 
+category: 
+link: 
+description: 
+type: text
+---
 
 Cette notion de « bon moment », de « déclic » est une vaste fumisterie. Si vous attendez le bon moment, l'inspiration divine pour faire quelque chose, vous pourrez attendre longtemps. C'est d'ailleurs ce à quoi vous finirez par __passer votre vie : attendre__.
 <!-- TEASER_END -->

@@ -1,13 +1,13 @@
-<!-- 
-.. title: Using Archlinux on a Retina (HiDPI) MacBook Pro with Xmonad
-.. slug: archlinux-retina-hidpi-macbookpro-xmonad
-.. date: 2014-12-08 20:39:20+02:00
-.. tags: archlinux, macbook
-.. category: 
-.. link: 
-.. description: 
-.. type: text
--->
+---
+title: Using Archlinux on a Retina (HiDPI) MacBook Pro with Xmonad
+slug: archlinux-retina-hidpi-macbookpro-xmonad
+date: 2014-12-08 20:39:20+02:00
+tags: archlinux, macbook
+category: 
+link: 
+description: 
+type: text
+---
 
 I've recently installed Archlinux on the latest 15" MacBook Pro Retina (late 2013). This model seems to be known under the name "MacbookPro 11,2" (ME293xx/A) on the [Apple website](http://support.apple.com/kb/ht4132). Here is the exact configuration: 15.4"/2.0 Quad-core i7/8GB/256-Flash. The installation was a little bit painful (especially the EFI part), but somehow I found out how to have a bootable Archlinux.<!-- TEASER_END -->The hardest part (understand, the less documented one) was how to have a Desktop with a "normal" font size. Indeed, by default, the resolution of the screen is 2880x1800, thus you need very good eyes to be able to see something.
 

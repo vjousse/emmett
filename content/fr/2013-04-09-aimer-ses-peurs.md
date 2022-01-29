@@ -1,13 +1,13 @@
-<!-- 
-.. title: Aimer ses peurs
-.. slug: aimer-ses-peurs
-.. date: 2013-04-09 12:31:23+02:00
-.. tags: Développement personnel, Réflexion
-.. category: 
-.. link: 
-.. description: 
-.. type: text
--->
+---
+title: Aimer ses peurs
+slug: aimer-ses-peurs
+date: 2013-04-09 12:31:23+02:00
+tags: Développement personnel, Réflexion
+category: 
+link: 
+description: 
+type: text
+---
 
 <p><p>La peur n'est pas quelque chose qu'il faut chercher à éliminer. Le jour où vous apprendrez à <strong>aimer vos peurs</strong>, une nouvelle vie s'ouvrira à vous.</p></p>
 <!-- TEASER_END -->

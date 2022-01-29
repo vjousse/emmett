@@ -1,13 +1,13 @@
-<!-- 
-.. title: La manière paresseuse d'être productif
-.. slug: la-manière-paresseuse-dêtre-productif
-.. date: 2013-04-19 11:54:50+02:00
-.. tags: Carrière et travail, Productivité
-.. category: 
-.. link: 
-.. description: 
-.. type: text
--->
+---
+title: La manière paresseuse d'être productif
+slug: la-manière-paresseuse-dêtre-productif
+date: 2013-04-19 11:54:50+02:00
+tags: Carrière et travail, Productivité
+category: 
+link: 
+description: 
+type: text
+---
 
 <p><p>Faire bien, faire vite, faire plus, encore plus vite. Recommencer. Faire mieux. Recommencer. S'épuiser. Ne rien avoir fait d'autre que <strong>courir après le temps</strong>.</p></p>
 <!-- TEASER_END -->

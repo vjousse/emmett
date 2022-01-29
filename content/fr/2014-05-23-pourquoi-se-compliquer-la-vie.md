@@ -1,13 +1,13 @@
-<!-- 
-.. title: Pourquoi se compliquer la vie ?
-.. slug: pourquoi-se-compliquer-la-vie
-.. date: 2014-05-23 22:15:17+02:00
-.. tags: 
-.. category: 
-.. link: 
-.. description: 
-.. type: text
--->
+---
+title: Pourquoi se compliquer la vie ?
+slug: pourquoi-se-compliquer-la-vie
+date: 2014-05-23 22:15:17+02:00
+tags: 
+category: 
+link: 
+description: 
+type: text
+---
 
 Quelqu'un vous manque ?         ...__Appelez__
 
