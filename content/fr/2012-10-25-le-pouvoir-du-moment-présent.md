@@ -1,7 +1,7 @@
 ---
 title: Le pouvoir du moment présent
 slug: le-pouvoir-du-moment-présent
-date: 2012-10-25 10:11:07+02:00
+date: "2012-10-25 10:11:07+02:00"
 tags: Zen, Développement personnel, Livres
 category: 
 link: 

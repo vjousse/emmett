@@ -1,7 +1,7 @@
 ---
 title: Pourquoi créer des emplois est une mauvaise idée
 slug: pourquoi-creer-des-emplois-est-une-mauvaise-idee
-date: 2014-04-08 07:00:00+02:00
+date: "2014-04-08 07:00:00+02:00"
 tags: Revenu de base, Réflexion
 category: 
 link: 

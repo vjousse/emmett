@@ -1,7 +1,7 @@
 ---
 title: Fin de la traduction de « The One Skill » de zenhabits
 slug: fin-traduction-the-one-skill-de-zenhabits
-date: 2019-08-26 17:20:00+01:00
+date: "2019-08-26 17:20:00+01:00"
 tags: Traduction, Zen habits, L'unique compétence
 category: 
 link: 

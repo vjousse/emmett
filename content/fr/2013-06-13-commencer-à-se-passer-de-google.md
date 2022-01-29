@@ -1,7 +1,7 @@
 ---
 title: Commencer à se passer de Google
 slug: commencer-à-se-passer-de-google
-date: 2013-06-13 13:31:04+02:00
+date: "2013-06-13 13:31:04+02:00"
 tags: Web
 category: 
 link: 

@@ -1,7 +1,7 @@
 ---
 title: Travailler par tranches de 25 minutes
 slug: travailler-par-tranches-de-25-minutes
-date: 2013-10-01 17:38:26+02:00
+date: "2013-10-01 17:38:26+02:00"
 tags: 
 category: 
 link: 

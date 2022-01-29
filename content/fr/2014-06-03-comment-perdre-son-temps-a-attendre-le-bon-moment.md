@@ -1,7 +1,7 @@
 ---
 title: Comment perdre son temps à attendre le bon moment
 slug: comment-perdre-son-temps-a-attendre-le-bon-moment
-date: 2014-06-03 11:14:48+02:00
+date: "2014-06-03 11:14:48+02:00"
 tags: 
 category: 
 link: 

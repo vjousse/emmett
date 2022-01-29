@@ -1,7 +1,7 @@
 ---
 title: Comment améliorer sa lettre de motivation
 slug: comment-améliorer-sa-lettre-de-motivation
-date: 2013-02-18 10:00:16+01:00
+date: "2013-02-18 10:00:16+01:00"
 tags: Carrière et travail
 category: 
 link: 

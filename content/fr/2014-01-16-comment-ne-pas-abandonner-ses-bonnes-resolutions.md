@@ -1,7 +1,7 @@
 ---
 title: Comment ne pas abandonner ses bonnes résolutions ?
 slug: comment-ne-pas-abandonner-ses-bonnes-resolutions
-date: 2014-01-16 22:41:24+01:00
+date: "2014-01-16 22:41:24+01:00"
 tags: Développement personnel
 category: 
 link: 

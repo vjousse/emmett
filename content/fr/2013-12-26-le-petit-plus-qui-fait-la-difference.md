@@ -1,7 +1,7 @@
 ---
 title: Le petit plus qui fait la différence
 slug: le-petit-plus-qui-fait-la-difference
-date: 2013-12-26 15:08:25+01:00
+date: "2013-12-26 15:08:25+01:00"
 tags: Développement personnel, Productivité
 category: 
 link: 

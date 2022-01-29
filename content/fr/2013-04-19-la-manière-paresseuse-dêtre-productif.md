@@ -1,7 +1,7 @@
 ---
 title: La manière paresseuse d'être productif
 slug: la-manière-paresseuse-dêtre-productif
-date: 2013-04-19 11:54:50+02:00
+date: "2013-04-19 11:54:50+02:00"
 tags: Carrière et travail, Productivité
 category: 
 link: 

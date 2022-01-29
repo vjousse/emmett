@@ -1,7 +1,7 @@
 ---
 title: Mes dernières découvertes #1
 slug: mes-dernieres-decouvertes-1
-date: 2019-09-04 17:20:00+01:00
+date: "2019-09-04 17:20:00+01:00"
 tags: Développement personnel, Découvertes
 category: 
 link: 

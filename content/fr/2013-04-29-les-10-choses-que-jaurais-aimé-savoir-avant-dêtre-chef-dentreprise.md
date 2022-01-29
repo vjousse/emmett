@@ -1,7 +1,7 @@
 ---
 title: Les 10 choses que j'aurais aimé savoir avant d'être chef d'entreprise
 slug: les-10-choses-que-jaurais-aimé-savoir-avant-dêtre-chef-dentreprise
-date: 2013-04-29 11:00:07+02:00
+date: "2013-04-29 11:00:07+02:00"
 tags: Carrière et travail
 category: 
 link: 

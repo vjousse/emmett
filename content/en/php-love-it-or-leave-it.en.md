@@ -1,7 +1,7 @@
 ---
 title: "PHP: you love it or you leave it"
 slug: php-you-love-it-or-you-leave-it
-date: 2013-10-07 20:39:20+02:00
+date: "2013-10-07 20:39:20+02:00"
 tags: php
 category: 
 link: 

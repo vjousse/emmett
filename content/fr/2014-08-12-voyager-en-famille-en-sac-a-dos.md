@@ -1,7 +1,7 @@
 ---
 title: Voyager en famille en sac à dos
 slug: voyager-en-famille-en-sac-a-dos
-date: 2014-08-12 21:54:24+02:00
+date: "2014-08-12 21:54:24+02:00"
 tags: 
 category: 
 link: 

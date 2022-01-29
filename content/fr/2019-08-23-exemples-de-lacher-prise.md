@@ -1,7 +1,7 @@
 ---
 title: Exemples de lâcher prise
 slug: exemples-de-lacher-prise
-date: 2019-08-23 23:41:00+01:00
+date: "2019-08-23 23:41:00+01:00"
 tags: Traduction, Zen habits, L'unique compétence
 category: 
 link: 

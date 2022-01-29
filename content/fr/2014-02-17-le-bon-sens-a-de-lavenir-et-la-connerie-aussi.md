@@ -1,7 +1,7 @@
 ---
 title: Le bon sens a de l'avenir, et la connerie aussi
 slug: le-bon-sens-a-de-lavenir-et-la-connerie-aussi
-date: 2014-02-17 16:35:36+01:00
+date: "2014-02-17 16:35:36+01:00"
 tags: Humeur, Réflexion
 category: 
 link: 

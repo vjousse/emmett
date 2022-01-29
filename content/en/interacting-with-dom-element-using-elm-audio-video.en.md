@@ -1,7 +1,7 @@
 ---
 title: Interacting with a DOM element using Elm (audio/video tag example)
 slug: interacting-with-dom-element-using-elm-audio-video
-date: 2016-08-03 14:25:20+02:00
+date: "2016-08-03 14:25:20+02:00"
 tags: elm
 category: 
 link: 

@@ -1,7 +1,7 @@
 ---
 title: Manage multiple Crystal Lang versions
 slug: manage-multiple-crystal-lang-versions
-date: 2021-02-05 09:00:00+00:00
+date: "2021-02-05 09:00:00+00:00"
 tags: crystal, beginner
 category: 
 link: 

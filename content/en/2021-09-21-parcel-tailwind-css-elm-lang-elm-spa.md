@@ -1,7 +1,7 @@
 ---
 title: Using Parcel JS with Tailwind CSS, Elm Lang and Elm Spa
 slug: 2021-09-21-parcel-tailwind-css-elm-lang-elm-spa
-date: 2021-09-21 09:36:00+00:00
+date: "2021-09-21 09:36:00+00:00"
 tags: elm, tailwind, elm-spa, parcel
 category: 
 link: 

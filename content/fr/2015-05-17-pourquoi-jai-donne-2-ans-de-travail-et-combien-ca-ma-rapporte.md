@@ -1,7 +1,7 @@
 ---
 title: Pourquoi j'ai donné 2 ans de travail et combien ça m'a rapporté ?
 slug: pourquoi-jai-donne-2-ans-de-travail-et-combien-ca-ma-rapporte
-date: 2015-05-17 08:18:22+02:00
+date: "2015-05-17 08:18:22+02:00"
 tags: Prix libre
 category: 
 link: 

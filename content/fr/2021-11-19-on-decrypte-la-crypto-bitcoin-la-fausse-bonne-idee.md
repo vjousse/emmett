@@ -1,7 +1,7 @@
 ---
 title: Les réponses à toutes les questions que vous vous posez sur Bitcoin, les crypto-monnaies et la blockchain
 slug: bitcoin-pourquoi-s-y-interesser-surtout-quand-on-a-plus-de-30-ans
-date: 2021-11-19 10:00:00+01:00
+date: "2021-11-19 10:00:00+01:00"
 tags: bitcoin, crypto
 category: 
 link: 

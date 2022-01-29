@@ -1,7 +1,7 @@
 ---
 title: Amusez-vous !
 slug: amusez-vous
-date: 2013-03-12 11:55:41+01:00
+date: "2013-03-12 11:55:41+01:00"
 tags: Développement personnel, Carrière et travail, Zen
 category: 
 link: 

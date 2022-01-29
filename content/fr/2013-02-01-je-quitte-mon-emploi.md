@@ -1,7 +1,7 @@
 ---
 title: Je quitte mon emploi
 slug: je-quitte-mon-emploi
-date: 2013-02-01 10:00:02+01:00
+date: "2013-02-01 10:00:02+01:00"
 tags: Développement personnel, Carrière et travail
 category: 
 link: 

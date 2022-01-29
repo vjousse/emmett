@@ -1,7 +1,7 @@
 ---
 title: Il y a des jours comme cela
 slug: il-y-a-des-jours-comme-cela
-date: 2013-01-14 13:00:36+01:00
+date: "2013-01-14 13:00:36+01:00"
 tags: Réflexion
 category: 
 link: 

@@ -1,7 +1,7 @@
 ---
 title: Comment gérer la maladie sereinement
 slug: comment-gérer-la-maladie-sereinement
-date: 2013-02-02 11:30:53+01:00
+date: "2013-02-02 11:30:53+01:00"
 tags: Réflexion
 category: 
 link: 

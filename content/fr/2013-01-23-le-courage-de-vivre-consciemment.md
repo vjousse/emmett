@@ -1,7 +1,7 @@
 ---
 title: Le courage de vivre consciemment
 slug: le-courage-de-vivre-consciemment
-date: 2013-01-23 11:00:50+01:00
+date: "2013-01-23 11:00:50+01:00"
 tags: Développement personnel, Carrière et travail
 category: 
 link: 

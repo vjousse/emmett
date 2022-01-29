@@ -1,6 +1,6 @@
 ---
 title:  "From python to Go to Rust: an opinionated journey"
-date: 2018-03-22 09:00:00+01:00
+date: "2018-03-22 09:00:00+01:00"
 categories: point of view
 slug: from-python-to-go-to-rust
 tags: rust go elm

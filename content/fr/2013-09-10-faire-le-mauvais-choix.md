@@ -1,7 +1,7 @@
 ---
 title: Faire le mauvais choix
 slug: faire-le-mauvais-choix
-date: 2013-09-10 11:01:58+02:00
+date: "2013-09-10 11:01:58+02:00"
 tags: Développement personnel, Réflexion
 category: 
 link: 

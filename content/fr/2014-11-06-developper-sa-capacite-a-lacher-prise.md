@@ -1,7 +1,7 @@
 ---
 title: Développer sa capacité à lâcher prise
 slug: developper-sa-capacite-a-lacher-prise
-date: 2014-11-06 21:58:51+01:00
+date: "2014-11-06 21:58:51+01:00"
 tags: Traduction, Zen habits, L'unique compétence
 category: 
 link: 

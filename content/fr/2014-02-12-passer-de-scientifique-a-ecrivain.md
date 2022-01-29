@@ -1,7 +1,7 @@
 ---
 title: Passer de scientifique à écrivain
 slug: passer-de-scientifique-a-ecrivain
-date: 2014-02-12 21:36:36+01:00
+date: "2014-02-12 21:36:36+01:00"
 tags: Développement personnel, Inspiration
 category: 
 link: 

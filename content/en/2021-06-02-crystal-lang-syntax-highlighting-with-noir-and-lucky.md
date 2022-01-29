@@ -1,7 +1,7 @@
 ---
 title: Server side syntax highlighting with Crystal lang, NOIR and Lucky framework
 slug: crystal-lang-syntax-highlighting-with-noir-and-lucky.md
-date: 2021-06-02 09:00:00+00:00
+date: "2021-06-02 09:00:00+00:00"
 tags: crystal, luckyframework, noir
 category: 
 link: 

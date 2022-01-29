@@ -1,7 +1,7 @@
 ---
 title: Apporter de la valeur et se passer de statistiques
 slug: apporter-de-la-valeur-et-se-passer-de-statistiques
-date: 2014-04-24 10:15:59+02:00
+date: "2014-04-24 10:15:59+02:00"
 tags: Web, Réflexion
 category: 
 link: 

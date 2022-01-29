@@ -1,7 +1,7 @@
 ---
 title: L'invasion qu'on nous cache
 slug: linvasion-quon-nous-cache
-date: 2013-10-15 12:10:31+02:00
+date: "2013-10-15 12:10:31+02:00"
 tags: Courage, Développement personnel
 category: 
 link: 

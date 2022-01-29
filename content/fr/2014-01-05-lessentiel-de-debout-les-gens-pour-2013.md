@@ -1,7 +1,7 @@
 ---
 title: L'essentiel de Debout les gens pour 2013
 slug: lessentiel-de-debout-les-gens-pour-2013
-date: 2014-01-05 18:39:39+01:00
+date: "2014-01-05 18:39:39+01:00"
 tags: Développement personnel
 category: 
 link: 

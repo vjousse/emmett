@@ -1,7 +1,7 @@
 ---
 title: On aura été prévenu
 slug: on-aura-ete-prevenu
-date: 2015-12-05 18:47:11+01:00
+date: "2015-12-05 18:47:11+01:00"
 tags: Réflexion
 category: 
 link: 

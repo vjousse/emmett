@@ -1,7 +1,7 @@
 ---
 title: Être différent
 slug: etre-different
-date: 2017-03-06 22:39:11+01:00
+date: "2017-03-06 22:39:11+01:00"
 tags: Développement personnel, Humeur
 category: 
 link: 

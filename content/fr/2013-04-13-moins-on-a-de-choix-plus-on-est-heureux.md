@@ -1,7 +1,7 @@
 ---
 title: Moins on a de choix, plus on est heureux
 slug: moins-on-a-de-choix-plus-on-est-heureux
-date: 2013-04-13 14:56:46+02:00
+date: "2013-04-13 14:56:46+02:00"
 tags: Développement personnel, Réflexion
 category: 
 link: 

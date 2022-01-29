@@ -1,7 +1,7 @@
 ---
 title: Demain il sera peut-être trop tard
 slug: demain-il-sera-peut-être-trop-tard
-date: 2013-06-10 12:00:15+02:00
+date: "2013-06-10 12:00:15+02:00"
 tags: Développement personnel, Réflexion
 category: 
 link: 

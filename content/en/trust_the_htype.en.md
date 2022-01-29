@@ -1,7 +1,7 @@
 ---
 title: Trust the h^Wtype
 slug: trust-the-htype
-date: 2012-04-26 20:39:20+02:00
+date: "2012-04-26 20:39:20+02:00"
 tags: functional programming
 category: 
 link: 

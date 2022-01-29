@@ -1,7 +1,7 @@
 ---
 title: Gérer les habitudes
 slug: gerer-les-habitudes
-date: 2014-10-08 21:31:56+02:00
+date: "2014-10-08 21:31:56+02:00"
 tags: Traduction, Zen habits, L'unique compétence
 category: 
 link: 

@@ -1,7 +1,7 @@
 ---
 title: La vie est belle
 slug: la-vie-est-belle
-date: 2014-03-20 16:26:06+01:00
+date: "2014-03-20 16:26:06+01:00"
 tags: Zen, Développement personnel
 category: 
 link: 

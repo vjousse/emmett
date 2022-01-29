@@ -1,7 +1,7 @@
 ---
 title: Using Archlinux on a Retina (HiDPI) MacBook Pro with Xmonad
 slug: archlinux-retina-hidpi-macbookpro-xmonad
-date: 2014-12-08 20:39:20+02:00
+date: "2014-12-08 20:39:20+02:00"
 tags: archlinux, macbook
 category: 
 link: 

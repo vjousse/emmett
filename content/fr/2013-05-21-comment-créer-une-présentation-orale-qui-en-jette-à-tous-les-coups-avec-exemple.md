@@ -1,7 +1,7 @@
 ---
 title: Comment créer une présentation orale qui en jette à tous les coups (avec exemple)
 slug: comment-créer-une-présentation-orale-qui-en-jette-à-tous-les-coups-avec-exemple
-date: 2013-05-21 14:35:18+02:00
+date: "2013-05-21 14:35:18+02:00"
 tags: Parler en public, Présentation orale
 category: 
 link: 

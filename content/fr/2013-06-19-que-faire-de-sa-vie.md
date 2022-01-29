@@ -1,7 +1,7 @@
 ---
 title: Que faire de sa vie ?
 slug: que-faire-de-sa-vie
-date: 2013-06-19 08:30:43+02:00
+date: "2013-06-19 08:30:43+02:00"
 tags: Développement personnel, Réflexion
 category: 
 link: 

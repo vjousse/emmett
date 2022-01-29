@@ -1,7 +1,7 @@
 ---
 title: Les meilleures années de ma vie
 slug: les-meilleures-annees-de-ma-vie
-date: 2014-09-17 23:17:04+02:00
+date: "2014-09-17 23:17:04+02:00"
 tags: Développement personnel, Humeur
 category: 
 link: 

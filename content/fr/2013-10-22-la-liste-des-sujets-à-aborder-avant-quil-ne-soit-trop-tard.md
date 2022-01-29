@@ -1,7 +1,7 @@
 ---
 title: La liste des sujets à aborder avant qu'il ne soit trop tard
 slug: la-liste-des-sujets-à-aborder-avant-quil-ne-soit-trop-tard
-date: 2013-10-22 14:13:50+02:00
+date: "2013-10-22 14:13:50+02:00"
 tags: Courage, Développement personnel, Réflexion
 category: 
 link: 

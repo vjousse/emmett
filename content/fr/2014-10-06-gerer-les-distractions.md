@@ -1,7 +1,7 @@
 ---
 title: Gérer les distractions
 slug: gerer-les-distractions
-date: 2014-10-06 22:26:13+02:00
+date: "2014-10-06 22:26:13+02:00"
 tags: Zen habits, L'unique compétence
 category: 
 link: 

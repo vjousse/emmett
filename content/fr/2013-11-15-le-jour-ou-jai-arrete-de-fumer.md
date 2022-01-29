@@ -1,7 +1,7 @@
 ---
 title: Le jour où j'ai arrêté de fumer
 slug: le-jour-ou-jai-arrete-de-fumer
-date: 2013-11-15 13:36:57+01:00
+date: "2013-11-15 13:36:57+01:00"
 tags: Challenge, Inspiration
 category: 
 link: 

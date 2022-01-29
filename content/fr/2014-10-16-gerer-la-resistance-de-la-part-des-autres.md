@@ -1,7 +1,7 @@
 ---
 title: Gérer la résistance de la part des autres
 slug: gerer-la-resistance-de-la-part-des-autres
-date: 2014-10-16 17:52:22+02:00
+date: "2014-10-16 17:52:22+02:00"
 tags: Traduction, Zen habits, L'unique compétence
 category: 
 link: 

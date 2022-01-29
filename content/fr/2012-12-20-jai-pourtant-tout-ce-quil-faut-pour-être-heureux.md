@@ -1,7 +1,7 @@
 ---
 title: J'ai pourtant tout ce qu'il faut pour être heureux !
 slug: jai-pourtant-tout-ce-quil-faut-pour-être-heureux
-date: 2012-12-20 17:03:34+01:00
+date: "2012-12-20 17:03:34+01:00"
 tags: Développement personnel
 category: 
 link: 

@@ -1,7 +1,7 @@
 ---
 title: Comment agir après le lâcher prise
 slug: comment-agir-apres-le-lacher-prise
-date: 2019-08-23 14:42:00+01:00
+date: "2019-08-23 14:42:00+01:00"
 tags: Traduction, Zen habits, L'unique compétence
 category: 
 link: 

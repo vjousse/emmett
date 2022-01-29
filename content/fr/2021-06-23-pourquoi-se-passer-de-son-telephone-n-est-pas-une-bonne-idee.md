@@ -1,7 +1,7 @@
 ---
 title: "Dépendance au téléphone portable : comment s'en libérer"
 slug: retraite-en-silence-deux-jours-sans-parler-sans-portable-sans-montre
-date: 2020-06-08 10:00:00+01:00
+date: "2020-06-08 10:00:00+01:00"
 tags: Développement personnel, Silence
 category: 
 link: 

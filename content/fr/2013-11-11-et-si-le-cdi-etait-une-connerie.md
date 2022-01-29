@@ -1,7 +1,7 @@
 ---
 title: Et si le CDI était une connerie ?
 slug: et-si-le-cdi-etait-une-connerie
-date: 2013-11-11 22:48:22+01:00
+date: "2013-11-11 22:48:22+01:00"
 tags: Développement personnel, Carrière et travail, Revenu de base
 category: 
 link: 

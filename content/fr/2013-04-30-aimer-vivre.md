@@ -1,7 +1,7 @@
 ---
 title: Aimer vivre
 slug: aimer-vivre
-date: 2013-04-30 11:17:47+02:00
+date: "2013-04-30 11:17:47+02:00"
 tags: Non classé
 category: 
 link: 

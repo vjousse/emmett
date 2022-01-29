@@ -1,7 +1,7 @@
 ---
 title: "Comment passer à côté de sa vie : les 8 excuses bidon que vous regretterez"
 slug: comment-passer-à-côté-de-sa-vie-les-8-excuses-bidon-que-vous-regretterez
-date: 2013-03-22 11:07:26+01:00
+date: "2013-03-22 11:07:26+01:00"
 tags: Développement personnel
 category: 
 link: 

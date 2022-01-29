@@ -1,7 +1,7 @@
 ---
 title: Comment pleinement profiter de ses enfants
 slug: comment-pleinement-profiter-de-ses-enfants
-date: 2012-10-12 16:00:35+02:00
+date: "2012-10-12 16:00:35+02:00"
 tags: Être parent, Développement personnel
 category: 
 link: 

@@ -1,7 +1,7 @@
 ---
 title: Aidez-moi à trouver un nouveau nom
 slug: aidez-moi-a-trouver-un-nouveau-nom
-date: 2014-08-19 16:51:36+02:00
+date: "2014-08-19 16:51:36+02:00"
 tags: 
 category: 
 link: 

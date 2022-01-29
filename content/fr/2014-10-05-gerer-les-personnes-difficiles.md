@@ -1,7 +1,7 @@
 ---
 title: Gérer les personnes difficiles
 slug: gerer-les-personnes-difficiles
-date: 2014-10-05 15:48:50+02:00
+date: "2014-10-05 15:48:50+02:00"
 tags: Zen, Traduction, Zen habits, L'unique compétence
 category: 
 link: 

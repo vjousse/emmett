@@ -1,7 +1,7 @@
 ---
 title: Elm Europe 2017: What can we do better
 slug: elm-europe-2017-what-can-we-do-better
-date: 2017-06-13 08:00:00+02:00
+date: "2017-06-13 08:00:00+02:00"
 tags: functional programming, conference, elm
 category: 
 link: 

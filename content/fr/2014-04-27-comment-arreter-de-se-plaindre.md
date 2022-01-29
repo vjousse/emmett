@@ -1,7 +1,7 @@
 ---
 title: Comment arrêter de se plaindre ?
 slug: comment-arreter-de-se-plaindre
-date: 2014-04-27 17:15:11+02:00
+date: "2014-04-27 17:15:11+02:00"
 tags: Développement personnel
 category: 
 link: 

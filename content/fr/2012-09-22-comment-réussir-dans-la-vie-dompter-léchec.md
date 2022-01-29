@@ -1,7 +1,7 @@
 ---
 title: "Comment réussir dans la vie : dompter l'échec"
 slug: comment-réussir-dans-la-vie-dompter-léchec
-date: 2012-09-22 10:00:58+02:00
+date: "2012-09-22 10:00:58+02:00"
 tags: Développement personnel
 category: 
 link: 

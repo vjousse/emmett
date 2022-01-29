@@ -1,7 +1,7 @@
 ---
 title: Être homme et pleurer
 slug: etre-homme-et-pleurer
-date: 2022-01-02 09:00:00+01:00
+date: "2022-01-02 09:00:00+01:00"
 tags: Développement personnel, homme
 category: 
 link: 

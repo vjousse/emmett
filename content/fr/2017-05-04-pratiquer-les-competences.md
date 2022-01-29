@@ -1,7 +1,7 @@
 ---
 title: Pratiquer les compétences
 slug: pratiquer-les-competences
-date: 2017-05-04 21:53:00+01:00
+date: "2017-05-04 21:53:00+01:00"
 tags: Traduction, Zen habits, L'unique compétence
 category: 
 link: 

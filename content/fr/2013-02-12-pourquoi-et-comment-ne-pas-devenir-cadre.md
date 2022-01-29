@@ -1,7 +1,7 @@
 ---
 title: Pourquoi et comment ne pas devenir cadre
 slug: pourquoi-et-comment-ne-pas-devenir-cadre
-date: 2013-02-12 10:00:12+01:00
+date: "2013-02-12 10:00:12+01:00"
 tags: Développement personnel, Carrière et travail
 category: 
 link: 

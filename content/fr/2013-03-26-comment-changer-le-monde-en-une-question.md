@@ -1,7 +1,7 @@
 ---
 title: Comment changer le monde en une question
 slug: comment-changer-le-monde-en-une-question
-date: 2013-03-26 10:00:57+01:00
+date: "2013-03-26 10:00:57+01:00"
 tags: Développement personnel, Réflexion
 category: 
 link: 

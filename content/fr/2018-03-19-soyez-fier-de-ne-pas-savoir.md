@@ -1,7 +1,7 @@
 ---
 title: Soyez fier de ne pas savoir
 slug: soyez-fier-de-ne-pas-savoir
-date: 2018-03-19 06:50:39+02:00
+date: "2018-03-19 06:50:39+02:00"
 tags: Développement personnel
 status: draft
 category: 

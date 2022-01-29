@@ -1,7 +1,7 @@
 ---
 title: Setting up a low-tech server
 slug: setting-up-a-low-tech-server
-date: 2015-04-26 20:09:01+02:00
+date: "2015-04-26 20:09:01+02:00"
 tags: archlinux
 category: 
 link: 

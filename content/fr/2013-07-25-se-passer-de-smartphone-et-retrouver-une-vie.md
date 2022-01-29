@@ -1,7 +1,7 @@
 ---
 title: Se passer de Smartphone et retrouver une vie
 slug: se-passer-de-smartphone-et-retrouver-une-vie
-date: 2013-07-25 17:49:47+02:00
+date: "2013-07-25 17:49:47+02:00"
 tags: Challenge
 category: 
 link: 

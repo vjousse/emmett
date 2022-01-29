@@ -1,7 +1,7 @@
 ---
 title: Gérer le changement
 slug: gerer-le-changement
-date: 2014-11-03 11:02:26+01:00
+date: "2014-11-03 11:02:26+01:00"
 tags: Traduction, Zen habits, L'unique compétence
 category: 
 link: 

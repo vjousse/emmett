@@ -1,7 +1,7 @@
 ---
 title: 5 raisons pour lesquelles vous êtes quelqu'un de bien
 slug: 5-raisons-pour-lesquelles-vous-êtes-quelquun-de-bien
-date: 2013-07-29 15:04:12+02:00
+date: "2013-07-29 15:04:12+02:00"
 tags: Développement personnel, Réflexion
 category: 
 link: 

@@ -1,7 +1,7 @@
 ---
 title: Aimer ses peurs
 slug: aimer-ses-peurs
-date: 2013-04-09 12:31:23+02:00
+date: "2013-04-09 12:31:23+02:00"
 tags: Développement personnel, Réflexion
 category: 
 link: 

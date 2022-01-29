@@ -1,7 +1,7 @@
 ---
 title: J'ai pas le temps : la pire excuse qui soit
 slug: jai-pas-le-temps-la-pire-excuse-qui-soit
-date: 2012-10-09 17:00:37+02:00
+date: "2012-10-09 17:00:37+02:00"
 tags: Développement personnel
 category: 
 link: 

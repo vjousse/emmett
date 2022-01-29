@@ -1,7 +1,7 @@
 ---
 title: Gérer la procrastination
 slug: gerer-la-procrastination
-date: 2014-10-01 22:36:28+02:00
+date: "2014-10-01 22:36:28+02:00"
 tags: Zen habits, L'unique compétence
 category: 
 link: 

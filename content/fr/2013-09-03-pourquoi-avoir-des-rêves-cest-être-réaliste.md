@@ -1,7 +1,7 @@
 ---
 title: Pourquoi avoir des rêves c'est être réaliste
 slug: pourquoi-avoir-des-rêves-cest-être-réaliste
-date: 2013-09-03 13:00:15+02:00
+date: "2013-09-03 13:00:15+02:00"
 tags: Développement personnel, Réflexion, Inspiration
 category: 
 link: 

@@ -1,7 +1,7 @@
 ---
 title: How to fix archlinux (rEFInd) boot after Mac OS X upgrade
 slug: howto-fix-archlinux-boot-after-macosx-upgrade
-date: 2014-01-27 20:39:20+02:00
+date: "2014-01-27 20:39:20+02:00"
 tags: archlinux, macbook
 category: 
 link: 

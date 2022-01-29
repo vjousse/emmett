@@ -1,7 +1,7 @@
 ---
 title: Prendre le temps d'être fier de soi
 slug: prendre-le-temps-d-etre-fier-de-soi
-date: 2017-10-17 20:00:58+02:00
+date: "2017-10-17 20:00:58+02:00"
 tags: Développement personnel
 category: 
 link: 

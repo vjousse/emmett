@@ -1,7 +1,7 @@
 ---
 title: On manque enfin de travail, vive le revenu de base !
 slug: on-manque-enfin-de-travail-vive-le-revenu-de-base
-date: 2013-01-02 11:29:53+01:00
+date: "2013-01-02 11:29:53+01:00"
 tags: Carrière et travail, Revenu de base
 category: 
 link: 

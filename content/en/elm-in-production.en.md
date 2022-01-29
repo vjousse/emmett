@@ -1,7 +1,7 @@
 ---
 title: Elm and Phoenix/Elixir in production for France TV
 slug: elm-phoenix-elixir-production
-date: 2016-10-09 08:00:00+02:00
+date: "2016-10-09 08:00:00+02:00"
 tags: functional programming, phoenix, elm, elixir
 category: 
 link: 

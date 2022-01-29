@@ -1,7 +1,7 @@
 ---
 title: Une autre vérité — épisode 1
 slug: une-autre-verite-episode-1
-date: 2013-11-02 22:45:16+01:00
+date: "2013-11-02 22:45:16+01:00"
 tags: Fiction, Une autre vérité
 category: 
 link: 

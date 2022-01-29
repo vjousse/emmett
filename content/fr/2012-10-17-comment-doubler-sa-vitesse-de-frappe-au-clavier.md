@@ -1,7 +1,7 @@
 ---
 title: Comment doubler sa vitesse de frappe au clavier
 slug: comment-doubler-sa-vitesse-de-frappe-au-clavier
-date: 2012-10-17 17:12:07+02:00
+date: "2012-10-17 17:12:07+02:00"
 tags: Carrière et travail, Productivité
 category: 
 link: 

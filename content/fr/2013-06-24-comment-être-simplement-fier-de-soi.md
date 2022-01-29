@@ -1,7 +1,7 @@
 ---
 title: Comment être simplement fier de soi
 slug: comment-être-simplement-fier-de-soi
-date: 2013-06-24 13:00:26+02:00
+date: "2013-06-24 13:00:26+02:00"
 tags: Développement personnel, Réflexion
 category: 
 link: 

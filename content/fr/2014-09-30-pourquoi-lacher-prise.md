@@ -1,7 +1,7 @@
 ---
 title: Pourquoi lâcher prise
 slug: pourquoi-lacher-prise
-date: 2014-09-30 23:22:57+02:00
+date: "2014-09-30 23:22:57+02:00"
 tags: Zen habits, L'unique compétence
 category: 
 link: 

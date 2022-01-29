@@ -1,7 +1,7 @@
 ---
 title: Le secret pour prendre ses responsabilités (et ne plus se comporter en victime)
 slug: le-secret-pour-prendre-ses-responsabilités-et-ne-plus-se-comporter-en-victime
-date: 2013-04-02 11:01:00+02:00
+date: "2013-04-02 11:01:00+02:00"
 tags: Développement personnel
 category: 
 link: 

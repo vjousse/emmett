@@ -1,7 +1,7 @@
 ---
 title: Gérer la peur
 slug: gerer-la-peur
-date: 2014-10-03 22:34:09+02:00
+date: "2014-10-03 22:34:09+02:00"
 tags: Zen habits, L'unique compétence
 category: 
 link: 

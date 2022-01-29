@@ -1,7 +1,7 @@
 ---
 title: Ma double vie
 slug: ma-double-vie
-date: 2014-08-18 10:53:04+02:00
+date: "2014-08-18 10:53:04+02:00"
 tags: 
 category: 
 link: 

@@ -1,7 +1,7 @@
 ---
 title: "Positivez : autorisez-vous à réussir !"
 slug: positivez-autorisez-vous-à-réussir
-date: 2012-11-24 14:43:26+01:00
+date: "2012-11-24 14:43:26+01:00"
 tags: Développement personnel, Carrière et travail
 category: 
 link: 

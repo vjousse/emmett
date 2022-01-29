@@ -1,7 +1,7 @@
 ---
 title: Gérer les pertes
 slug: gerer-les-pertes
-date: 2014-11-06 07:24:48+01:00
+date: "2014-11-06 07:24:48+01:00"
 tags: Traduction, Zen habits, L'unique compétence
 category: 
 link: 

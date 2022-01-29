@@ -1,7 +1,7 @@
 ---
 title: Traduction du livre « The one skill » de zenhabits
 slug: traduction-du-livre-the-one-skill-de-zenhabits
-date: 2014-09-30 23:18:34+02:00
+date: "2014-09-30 23:18:34+02:00"
 tags: Zen, Traduction, Zen habits
 category: 
 link: 

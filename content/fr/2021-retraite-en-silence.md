@@ -1,7 +1,7 @@
 ---
 title: "Retraite en silence : incroyable leçon !"
 slug: retraite-en-silence-deux-jours-sans-parler-sans-portable-sans-montre
-date: 2021-06-08 10:00:00+01:00
+date: "2021-06-08 10:00:00+01:00"
 tags: Développement personnel, Silence
 category: 
 link: 

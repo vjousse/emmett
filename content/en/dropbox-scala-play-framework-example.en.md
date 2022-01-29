@@ -1,10 +1,10 @@
 title: "How to use the Dropbox API with scala and/or Play Framework"
-date: "2014-12-03"
+date: ""2014-12-03""
 ---
 ---
 title: How to use the Dropbox API with scala and/or Play Framework
 slug: dropbox-scala-play-framework-example
-date: 2014-12-03 20:39:20+02:00
+date: "2014-12-03 20:39:20+02:00"
 tags: scala, playframework
 category: 
 link: 

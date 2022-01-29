@@ -1,7 +1,7 @@
 ---
 title: Adding tailwindcss to your lucky project
 slug: adding-tailwindcss-to-lucky-crystal-lang
-date: 2020-08-09 20:00:00+02:00
+date: "2020-08-09 20:00:00+02:00"
 tags: crystal, beginner, tailwindcss
 category: 
 link: 

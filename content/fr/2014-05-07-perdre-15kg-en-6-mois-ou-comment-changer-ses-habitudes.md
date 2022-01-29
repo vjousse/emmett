@@ -1,7 +1,7 @@
 ---
 title: Perdre 15kg en 6 mois ou comment changer ses habitudes
 slug: perdre-15kg-en-6-mois-ou-comment-changer-ses-habitudes
-date: 2014-05-07 22:43:42+02:00
+date: "2014-05-07 22:43:42+02:00"
 tags: Développement personnel, Challenge
 category: 
 link: 

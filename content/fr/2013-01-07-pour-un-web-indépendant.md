@@ -1,7 +1,7 @@
 ---
 title: Pour un Web indépendant
 slug: pour-un-web-indépendant
-date: 2013-01-07 13:10:11+01:00
+date: "2013-01-07 13:10:11+01:00"
 tags: Web
 category: 
 link: 

@@ -1,7 +1,7 @@
 ---
 title: Gérer les possessions
 slug: gerer-les-possessions
-date: 2014-10-10 06:00:00+02:00
+date: "2014-10-10 06:00:00+02:00"
 tags: Traduction, Zen habits, L'unique compétence
 category: 
 link: 
