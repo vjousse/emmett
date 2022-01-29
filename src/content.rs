@@ -8,6 +8,7 @@ use walkdir::WalkDir;
 struct FrontMatter {
     title: String,
     slug: String,
+    date: String,
 }
 
 pub fn list_directory(directory: &str) {
