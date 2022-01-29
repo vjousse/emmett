@@ -29,8 +29,8 @@ pub fn list_directory(directory: &str) {
 }
 
 pub fn parse_content(content: String) -> String {
-    let matter = Matter::<YAML>::new();
-    // <!-- TEASER_END -->
+    let mut matter = Matter::<YAML>::new();
+    matter.excerpt_delimiter = Some("<!-- TEASER_END -->".to_owned());
     let result = matter.parse(&content[..]);
     match result.data {
         Some(data) => {
@@ -42,7 +42,7 @@ pub fn parse_content(content: String) -> String {
         }
         None => log::info!("No data found in front matter"),
     }
-    log::debug!("{}", result.content);
+    log::info!("{:?}", result.excerpt);
 
     result.content
 }
