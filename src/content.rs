@@ -1,10 +1,28 @@
 use gray_matter::engine::YAML;
 use gray_matter::Matter;
+use lazy_static::lazy_static;
+use pulldown_cmark::{html, Options, Parser};
 use serde::Deserialize;
+use std::error::Error;
 use std::fs;
+use tera::{Context, Tera};
 use walkdir::WalkDir;
 
 type FilePath = String;
+
+lazy_static! {
+    pub static ref TEMPLATES: Tera = {
+        let mut tera = match Tera::new("templates/**/*") {
+            Ok(t) => t,
+            Err(e) => {
+                println!("Parsing error(s): {}", e);
+                ::std::process::exit(1);
+            }
+        };
+        tera.autoescape_on(vec!["html", ".sql"]);
+        tera
+    };
+}
 
 #[derive(Deserialize, Debug)]
 // Used by gray_matter engine to parse the Front Matter content
@@ -19,6 +37,32 @@ pub struct PostContent {
     pub front_matter: Option<FrontMatter>,
     pub excerpt: Option<String>,
     pub content: String,
+}
+
+pub fn convert_md_to_html(md_content: &str) -> String {
+    let mut options = Options::empty();
+    options.insert(Options::ENABLE_STRIKETHROUGH);
+    let parser = Parser::new_ext(md_content, options);
+
+    // Write to String buffer.
+    let mut html_output: String = String::with_capacity(md_content.len() * 3 / 2);
+    html::push_html(&mut html_output, parser);
+
+    html_output
+}
+
+pub fn render_template(context: Context, template_path: &str) {
+    match TEMPLATES.render(template_path, &context) {
+        Ok(s) => println!("{:?}", s),
+        Err(e) => {
+            println!("Error: {}", e);
+            let mut cause = e.source();
+            while let Some(e) = cause {
+                println!("Reason: {}", e);
+                cause = e.source();
+            }
+        }
+    };
 }
 
 pub fn get_files_for_directory(directory: &str) -> Vec<FilePath> {
@@ -38,7 +82,16 @@ pub fn list_directory(directory: &str) {
         .filter_map(|file_path| parse_file(&file_path))
         .collect();
 
-    log::info!("{:?}", posts_contents);
+    for post in &posts_contents {
+        let html_content = convert_md_to_html(&post.content);
+        log::info!("{}", html_content);
+
+        let mut context = Context::new();
+        context.insert("post_content", &html_content);
+        render_template(context, "blog/post.html");
+    }
+
+    // log::info!("{:?}", posts_contents);
 }
 
 pub fn parse_file(file_path: &str) -> Option<PostContent> {
