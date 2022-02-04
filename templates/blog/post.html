@@ -1,7 +1,8 @@
 {% extends "base.html" %}
 
+{% block title %}{{ title }}{% endblock title %}
 
 {% block content %}
-  Post content
+  <h1>{{ title }}</h1>
   {{ post_content }}
 {% endblock content %}
