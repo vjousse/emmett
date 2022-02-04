@@ -4,34 +4,44 @@ use serde::Deserialize;
 use std::fs;
 use walkdir::WalkDir;
 
+type FilePath = String;
+
 #[derive(Deserialize, Debug)]
 // Used by gray_matter engine to parse the Front Matter content
 pub struct FrontMatter {
-    title: String,
-    slug: String,
-    date: String,
+    pub title: String,
+    pub slug: String,
+    pub date: String,
 }
 
 #[derive(Debug)]
 pub struct PostContent {
-    front_matter: Option<FrontMatter>,
-    excerpt: Option<String>,
-    content: String,
+    pub front_matter: Option<FrontMatter>,
+    pub excerpt: Option<String>,
+    pub content: String,
 }
 
-pub fn list_directory(directory: &str) {
-    let post_contents: Vec<PostContent> = WalkDir::new(directory)
+pub fn get_files_for_directory(directory: &str) -> Vec<FilePath> {
+    WalkDir::new(directory)
         .into_iter()
         .filter_map(Result::ok)
         .filter(|e| !e.file_type().is_dir())
         .map(|entry| String::from(entry.path().to_string_lossy()))
+        .collect()
+}
+
+pub fn list_directory(directory: &str) {
+    let files_to_parse: Vec<FilePath> = get_files_for_directory(directory);
+
+    let posts_contents: Vec<PostContent> = files_to_parse
+        .into_iter()
         .filter_map(|file_path| parse_file(&file_path))
         .collect();
 
-    log::info!("{:?}", post_contents);
+    log::info!("{:?}", posts_contents);
 }
 
-pub fn parse_file(file_path: &String) -> Option<PostContent> {
+pub fn parse_file(file_path: &str) -> Option<PostContent> {
     match fs::read_to_string(&file_path) {
         Ok(content) => {
             let post_content = parse_content(content);
