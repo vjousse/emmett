@@ -3,6 +3,10 @@
 {% block title %}{{ title }}{% endblock title %}
 
 {% block content %}
-  <h1>{{ title }}</h1>
-  {{ post_content }}
+  <article>
+    <header>
+    <h1>{{ title }}</h1>
+    </header>
+    {{ post_content }}
+  </article>
 {% endblock content %}

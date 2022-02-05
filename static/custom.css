@@ -1,0 +1,20 @@
+.title {
+  font-size: 40px;
+}
+
+.container {
+  padding-top: 2rem;
+}
+
+.nav-icon {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+article {
+  margin-top: 2rem;
+}
+
+h1 {
+  margin-bottom: 0px;
+}
