@@ -38,7 +38,7 @@ Toutes ces choses sont faciles à faire. Ce qui est difficile c'est qu'elles ne 
 Et vous, quelle chose facile allez-vous décider de faire régulièrement qui fera une différence dans votre vie ? Aujourd'hui est le jour idéal pour commencer.
 
 
-## Idées à retenir
+## Idées à retenir
 
 - Attendre l'idée de génie et/ou le bon moment ne sont que des excuses de plus
 - La différence se fait grâce à ces choses faciles que l'on choisit de faire (ou pas) tous les jours
