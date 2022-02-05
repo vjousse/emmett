@@ -77,7 +77,7 @@ pub fn get_files_for_directory(directory: &str) -> Vec<FilePath> {
         .collect()
 }
 
-pub fn list_directory(directory: &str) {
+pub fn parse_directory(directory: &str, output_dir: &str) {
     // Get the list of files
     let files_to_parse: Vec<FilePath> = get_files_for_directory(directory);
 
@@ -101,7 +101,7 @@ pub fn list_directory(directory: &str) {
             context.insert("post_content", &html_content);
 
             if let Some(html) = render_template_to_html(context, "blog/post.html") {
-                let mut f = File::create(format!("output/{}.html", &front_matter.slug))
+                let mut f = File::create(format!("{output_dir}/{}.html", &front_matter.slug))
                     .expect("Unable to create file");
                 f.write_all(html.as_bytes()).expect("Unable to write data");
             };

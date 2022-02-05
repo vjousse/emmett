@@ -1,0 +1,8 @@
+# What we should put in front of each blog URL
+blog_prefix_path: "blog"
+
+# Where to write the static html output
+output_path: "output"
+
+# Where to write the static html output
+input_path: "content"
