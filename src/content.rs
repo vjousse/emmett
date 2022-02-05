@@ -118,14 +118,7 @@ pub fn parse_directory(input_dir: &str, output_dir: &str, blog_prefix_path: &str
             context.insert("post_content", &html_content);
 
             if let Some(html) = render_template_to_html(context, "blog/post.html") {
-                write_post_html(
-                    &html,
-                    input_dir,
-                    &post.path,
-                    &front_matter.slug,
-                    output_dir,
-                    blog_prefix_path,
-                );
+                write_post_html(&html, input_dir, &post, output_dir, blog_prefix_path);
             };
         };
     }
@@ -134,11 +127,11 @@ pub fn parse_directory(input_dir: &str, output_dir: &str, blog_prefix_path: &str
 pub fn get_output_directory_for_post(
     output_directory: String,
     input_directory: String,
-    post_full_path: String,
+    post: &Post,
     blog_prefix_path: String,
 ) -> String {
     let mut out_path = PathBuf::from(&output_directory);
-    let mut path = PathBuf::from(&post_full_path);
+    let mut path = PathBuf::from(&post.path);
 
     // Remove the file name
     // content/fr/test.md => content/fr
@@ -160,21 +153,25 @@ pub fn get_output_directory_for_post(
     out_path.push(blog_prefix_path);
     out_path.push(path);
 
+    match &post.front_matter {
+        Some(front_matter) => out_path.push(&front_matter.slug),
+        None => (),
+    };
+
     out_path.to_str().unwrap_or(&output_directory).to_owned()
 }
 
 pub fn write_post_html(
     post_html: &str,
     input_directory: &str,
-    post_full_path: &str,
-    post_file_name: &str,
+    post: &Post,
     output_directory: &str,
     blog_prefix_path: &str,
 ) {
     let post_output_directory = get_output_directory_for_post(
         output_directory.to_owned(),
         input_directory.to_owned(),
-        post_full_path.to_owned(),
+        &post,
         blog_prefix_path.to_owned(),
     );
 
@@ -185,7 +182,7 @@ pub fn write_post_html(
         )[..],
     );
 
-    let mut f = File::create(format!("{post_output_directory}/{}.html", &post_file_name))
+    let mut f = File::create(format!("{}/index.html", &post_output_directory))
         .expect("Unable to create file");
     f.write_all(post_html.as_bytes())
         .expect("Unable to write data");
@@ -194,8 +191,8 @@ pub fn write_post_html(
 pub fn parse_file(file_path: &str) -> Option<Post> {
     match fs::read_to_string(&file_path) {
         Ok(content) => {
-            let post_content = parse_post(content, &file_path);
-            Some(post_content)
+            let post = parse_post(content, &file_path);
+            Some(post)
         }
         Err(e) => {
             log::error!("Error for {}: {}", &file_path, e);
