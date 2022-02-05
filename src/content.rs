@@ -7,6 +7,7 @@ use std::error::Error;
 use std::fs;
 use std::fs::File;
 use std::io::Write;
+use std::path::PathBuf;
 use tera::{Context, Tera};
 use walkdir::WalkDir;
 
@@ -35,10 +36,27 @@ pub struct FrontMatter {
 }
 
 #[derive(Debug)]
-pub struct PostContent {
+pub struct Post {
     pub front_matter: Option<FrontMatter>,
     pub excerpt: Option<String>,
     pub content: String,
+    pub path: String,
+}
+
+impl Post {
+    fn new(
+        front_matter: Option<FrontMatter>,
+        excerpt: Option<String>,
+        content: String,
+        path: String,
+    ) -> Self {
+        Post {
+            content,
+            front_matter,
+            excerpt,
+            path,
+        }
+    }
 }
 
 pub fn convert_md_to_html(md_content: &str) -> String {
@@ -77,44 +95,95 @@ pub fn get_files_for_directory(directory: &str) -> Vec<FilePath> {
         .collect()
 }
 
-pub fn parse_directory(directory: &str, output_dir: &str) {
+pub fn parse_directory(input_dir: &str, output_dir: &str) {
     // Get the list of files
-    let files_to_parse: Vec<FilePath> = get_files_for_directory(directory);
+    let files_to_parse: Vec<FilePath> = get_files_for_directory(input_dir);
 
     // Read content of every file, get the front_matter content
-    let posts_contents: Vec<PostContent> = files_to_parse
+    let posts_contents: Vec<Post> = files_to_parse
         .into_iter()
         .filter_map(|file_path| parse_file(&file_path))
         .collect();
 
     for post in &posts_contents {
         let html_content = convert_md_to_html(&post.content);
-        //log::info!("{}", html_content);
 
         let mut context = Context::new();
 
         if let Some(front_matter) = &post.front_matter {
-            log::info!("{:?}", &front_matter.title);
+            log::debug!("{:?}", &front_matter.title);
             context.insert("title", &front_matter.title);
             context.insert("date", &front_matter.date);
 
             context.insert("post_content", &html_content);
 
             if let Some(html) = render_template_to_html(context, "blog/post.html") {
-                let mut f = File::create(format!("{output_dir}/{}.html", &front_matter.slug))
-                    .expect("Unable to create file");
-                f.write_all(html.as_bytes()).expect("Unable to write data");
+                write_post_html(&html, input_dir, &post.path, &front_matter.slug, output_dir);
             };
         };
     }
-
-    //log::info!("{:?}", posts_contents);
 }
 
-pub fn parse_file(file_path: &str) -> Option<PostContent> {
+pub fn get_output_directory_for_post(
+    output_directory: String,
+    input_directory: String,
+    post_full_path: String,
+) -> String {
+    let mut out_path = PathBuf::from(&output_directory);
+    let mut path = PathBuf::from(&post_full_path);
+
+    // Remove the file name
+    // content/fr/test.md => content/fr
+    path.pop();
+
+    // Remove / prefix if any
+    if let Ok(new_path) = path.strip_prefix("/") {
+        path = new_path.to_path_buf();
+    }
+
+    // Remove the input directory prefix where the files are stored
+    // content/fr => fr
+    if let Ok(new_path) = path.strip_prefix(&input_directory) {
+        path = new_path.to_path_buf();
+    }
+
+    // Append the initial directory schema to the the ouptput directory
+    // content/fr => output/fr
+    out_path.push(path);
+
+    out_path.to_str().unwrap_or(&output_directory).to_owned()
+}
+
+pub fn write_post_html(
+    post_html: &str,
+    input_directory: &str,
+    post_full_path: &str,
+    post_file_name: &str,
+    output_directory: &str,
+) {
+    let post_output_directory = get_output_directory_for_post(
+        output_directory.to_owned(),
+        input_directory.to_owned(),
+        post_full_path.to_owned(),
+    );
+
+    fs::create_dir_all(&post_output_directory).expect(
+        &format!(
+            "Unable to create output directory {}",
+            &post_output_directory
+        )[..],
+    );
+
+    let mut f = File::create(format!("{post_output_directory}/{}.html", &post_file_name))
+        .expect("Unable to create file");
+    f.write_all(post_html.as_bytes())
+        .expect("Unable to write data");
+}
+
+pub fn parse_file(file_path: &str) -> Option<Post> {
     match fs::read_to_string(&file_path) {
         Ok(content) => {
-            let post_content = parse_content(content);
+            let post_content = parse_post(content, &file_path);
             Some(post_content)
         }
         Err(e) => {
@@ -124,7 +193,7 @@ pub fn parse_file(file_path: &str) -> Option<PostContent> {
     }
 }
 
-pub fn parse_content(content: String) -> PostContent {
+pub fn parse_post(content: String, file_path: &str) -> Post {
     let mut matter = Matter::<YAML>::new();
     matter.excerpt_delimiter = Some("<!-- TEASER_END -->".to_owned());
     let result = matter.parse(content.trim());
@@ -143,9 +212,10 @@ pub fn parse_content(content: String) -> PostContent {
         }
     };
 
-    PostContent {
-        content: result.content,
+    Post::new(
         front_matter,
-        excerpt: result.excerpt,
-    }
+        result.excerpt,
+        result.content,
+        file_path.to_owned(),
+    )
 }
