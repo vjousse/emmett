@@ -37,10 +37,10 @@ Partant de là, vous pouvez choisir [quoi faire de votre vie](/blog/que-faire-de
 
 Ensuite il vous suffira de mettre en place [ces petites choses qui font la différence](/blog/le-petit-plus-qui-fait-la-difference/). Ces choses __faciles à faire mais aussi faciles à ne pas faire__ qui, grâce à l'action magique du temps, vous permettrons de construire votre vie petit à petit. Mais pour ça, il faut commencer par se réveiller, n'est-ce pas ? Alors debout les gens !
 
-## Idées à retenir
+## Idées à retenir
 
 - Si vous ne faites rien, à défaut, le temps joue contre vous.
 - Construire la vie que l'on veut est plus facile qu'on ne le croit.
 - Bien utilisé, le temps est un précieux atout.
-- Les 3 étapes pour ne pas se laisser aller : [prendre conscience](/blog/le-courage-de-vivre-consciemment/), choisir [quoi faire de sa vie](/blog/que-faire-de-sa-vie/), mettre en place [ces petites choses qui font la différence](/blog/le-petit-plus-qui-fait-la-difference/).
+- Les 3 étapes pour ne pas se laisser aller : [prendre conscience](/blog/fr/le-courage-de-vivre-consciemment/), choisir [quoi faire de sa vie](/blog/fr/que-faire-de-sa-vie/), mettre en place [ces petites choses qui font la différence](/blog/fr/le-petit-plus-qui-fait-la-difference/).
 
