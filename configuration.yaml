@@ -6,3 +6,7 @@ output_path: "output"
 
 # Where to write the static html output
 input_path: "content"
+
+create_index_for:
+  - fr
+  - en
