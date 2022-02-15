@@ -23,3 +23,4 @@ tera = "1"
 lazy_static = "1.4.0"
 # Use git version to get the nice Builder pattern
 config = { git = "https://github.com/mehcode/config-rs", branch = "master" }
+chrono = "0.4"

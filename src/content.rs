@@ -1,3 +1,4 @@
+use chrono::{DateTime, FixedOffset};
 use gray_matter::engine::YAML;
 use gray_matter::Matter;
 use lazy_static::lazy_static;
@@ -29,17 +30,62 @@ lazy_static! {
     };
 }
 
-#[derive(Deserialize, Debug, Serialize)]
+mod my_date_format {
+    use chrono::{DateTime, FixedOffset};
+    use serde::{self, Deserialize, Deserializer, Serializer};
+
+    const FORMAT: &'static str = "%Y-%m-%d %H:%M:%S%z";
+
+    // The signature of a serialize_with function must follow the pattern:
+    //
+    //    fn serialize<S>(&T, S) -> Result<S::Ok, S::Error>
+    //    where
+    //        S: Serializer
+    //
+    // although it may also be generic over the input types T.
+    pub fn serialize<S>(date: &DateTime<FixedOffset>, serializer: S) -> Result<S::Ok, S::Error>
+    where
+        S: Serializer,
+    {
+        let s = format!("{}", date.format(FORMAT));
+        serializer.serialize_str(&s)
+    }
+
+    // The signature of a deserialize_with function must follow the pattern:
+    //
+    //    fn deserialize<'de, D>(D) -> Result<T, D::Error>
+    //    where
+    //        D: Deserializer<'de>
+    //
+    // although it may also be generic over the output types T.
+    pub fn deserialize<'de, D>(deserializer: D) -> Result<DateTime<FixedOffset>, D::Error>
+    where
+        D: Deserializer<'de>,
+    {
+        let s = String::deserialize(deserializer)?;
+        log::info!("{:?}", s);
+        let parsed_date = DateTime::parse_from_str(&s, FORMAT).map_err(serde::de::Error::custom);
+
+        if parsed_date.is_err() {
+            log::error!("{:?}", parsed_date);
+        }
+
+        parsed_date
+    }
+}
+
+#[derive(Deserialize, Debug, Serialize, Eq, Ord, PartialEq, PartialOrd)]
 // Used by gray_matter engine to parse the Front Matter content
 pub struct FrontMatter {
     pub title: String,
     pub slug: String,
-    pub date: String,
+    #[serde(with = "my_date_format")]
+    pub date: DateTime<FixedOffset>,
 }
 
-#[derive(Debug, Serialize)]
+#[derive(Debug, Serialize, Eq, Ord, PartialEq, PartialOrd)]
 pub struct Post {
-    pub front_matter: Option<FrontMatter>,
+    pub front_matter: FrontMatter,
     pub excerpt: Option<String>,
     pub content: String,
     pub path: String,
@@ -48,7 +94,7 @@ pub struct Post {
 
 impl Post {
     fn new(
-        front_matter: Option<FrontMatter>,
+        front_matter: FrontMatter,
         excerpt: Option<String>,
         content: String,
         path: String,
@@ -121,16 +167,15 @@ pub fn create_content(
 
         let mut context = Context::new();
 
-        if let Some(front_matter) = &post.front_matter {
-            log::debug!("{:?}", &front_matter.title);
-            context.insert("title", &front_matter.title);
-            context.insert("date", &front_matter.date);
+        let front_matter = &post.front_matter;
+        log::debug!("{:?}", &front_matter.title);
+        context.insert("title", &front_matter.title);
+        context.insert("date", &front_matter.date.to_rfc2822());
 
-            context.insert("post_content", &html_content);
+        context.insert("post_content", &html_content);
 
-            if let Some(html) = render_template_to_html(context, "blog/post.html") {
-                write_post_html(&html, &post, output_directory);
-            };
+        if let Some(html) = render_template_to_html(context, "blog/post.html") {
+            write_post_html(&html, &post, output_directory);
         };
     }
 
@@ -153,12 +198,12 @@ pub fn create_content(
         }
     }
 
-    log::info!("{:?}", indexes_to_create);
-
-    for (index, posts) in &indexes_to_create {
+    for (index, mut posts) in indexes_to_create {
         println!("=> {}", index);
 
         let mut context = Context::new();
+        // let _ = &posts.sort_by_key(|p| p.front_matter.date);
+        let _ = &posts.sort_by(|p1, p2| p2.front_matter.date.cmp(&p1.front_matter.date));
         context.insert("posts", &posts);
         context.insert("title", &format!("Index of {}", &index)[..]);
         if let Some(html) = render_template_to_html(context, "blog/list.html") {
@@ -193,10 +238,7 @@ pub fn write_post_html(post_html: &str, post: &Post, output_directory: &str) {
 
 pub fn parse_file(file_path: &str, input_directory: &str, blog_prefix_path: &str) -> Option<Post> {
     match fs::read_to_string(&file_path) {
-        Ok(content) => {
-            let post = parse_post(content, &file_path, input_directory, blog_prefix_path);
-            Some(post)
-        }
+        Ok(content) => parse_post(content, &file_path, input_directory, blog_prefix_path),
         Err(e) => {
             log::error!("Error for {}: {}", &file_path, e);
             None
@@ -209,7 +251,7 @@ pub fn parse_post(
     file_path: &str,
     input_directory: &str,
     blog_prefix_path: &str,
-) -> Post {
+) -> Option<Post> {
     let mut matter = Matter::<YAML>::new();
     matter.excerpt_delimiter = Some("<!-- TEASER_END -->".to_owned());
     let result = matter.parse(content.trim());
@@ -231,13 +273,17 @@ pub fn parse_post(
     let path_url =
         extract_path_url_for_post(&front_matter, &file_path, input_directory, blog_prefix_path);
 
-    Post::new(
-        front_matter,
-        result.excerpt,
-        result.content,
-        file_path.to_owned(),
-        path_url,
-    )
+    log::info!("{:?}", front_matter);
+
+    front_matter.map(|fm| {
+        Post::new(
+            fm,
+            result.excerpt,
+            result.content,
+            file_path.to_owned(),
+            path_url,
+        )
+    })
 }
 
 pub fn extract_path_url_for_post(
