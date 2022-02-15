@@ -202,12 +202,14 @@ pub fn create_content(
         println!("=> {}", index);
 
         let mut context = Context::new();
-        // let _ = &posts.sort_by_key(|p| p.front_matter.date);
         let _ = &posts.sort_by(|p1, p2| p2.front_matter.date.cmp(&p1.front_matter.date));
         context.insert("posts", &posts);
         context.insert("title", &format!("Index of {}", &index)[..]);
         if let Some(html) = render_template_to_html(context, "blog/list.html") {
-            write_html(&html, &format!("{}/{}", output_directory, index)[..]);
+            write_html(
+                &html,
+                &format!("{}/{}/{}", output_directory, blog_prefix_path, index)[..],
+            );
         };
     }
 }
