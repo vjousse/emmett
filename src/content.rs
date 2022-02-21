@@ -74,6 +74,12 @@ mod my_date_format {
     }
 }
 
+#[derive(Debug, Serialize, Deserialize, Eq, Ord, PartialEq, PartialOrd)]
+#[serde(rename_all = "lowercase")]
+pub enum PostStatus {
+    Draft,
+}
+
 #[derive(Deserialize, Debug, Serialize, Eq, Ord, PartialEq, PartialOrd)]
 // Used by gray_matter engine to parse the Front Matter content
 pub struct FrontMatter {
@@ -81,6 +87,7 @@ pub struct FrontMatter {
     pub slug: String,
     #[serde(with = "my_date_format")]
     pub date: DateTime<FixedOffset>,
+    pub status: Option<PostStatus>,
 }
 
 #[derive(Debug, Serialize, Eq, Ord, PartialEq, PartialOrd)]
