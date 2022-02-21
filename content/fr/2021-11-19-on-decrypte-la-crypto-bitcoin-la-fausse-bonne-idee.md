@@ -7,6 +7,7 @@ category:
 link: 
 description: 
 type: text
+status: draft
 ---
 
 On entend beaucoup de choses négatives sur Bitcoin (BTC ₿) et les crypto monnaies en général, surtout venant de personnes qui, comme moi, sont nées avant l'an 2000. Et pourtant, ne pas s'intéresser à ce domaine actuellement c'est au mieux de l'ignorance, au pire de la bêtise.
