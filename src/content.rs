@@ -63,7 +63,7 @@ mod my_date_format {
         D: Deserializer<'de>,
     {
         let s = String::deserialize(deserializer)?;
-        log::info!("{:?}", s);
+        log::debug!("{:?}", s);
         let parsed_date = DateTime::parse_from_str(&s, FORMAT).map_err(serde::de::Error::custom);
 
         if parsed_date.is_err() {
@@ -163,9 +163,22 @@ pub fn create_content(
     let files_to_parse: Vec<FilePath> = get_files_for_directory(input_directory);
 
     // Read content of every file, and create a Post instance
+    // Only keep posts that don't have the draft status
     let posts_contents: Vec<Post> = files_to_parse
         .into_iter()
         .filter_map(|file_path| parse_file(&file_path, input_directory, blog_prefix_path))
+        // Don't publish posts that are still drafts
+        .filter(|post| match &post.front_matter.status {
+            Some(status) => {
+                let same_status = *status != PostStatus::Draft;
+                log::info!("Status = {:?}, returning {}", status, same_status);
+                same_status
+            }
+            None => {
+                log::info!("Status = None, returning true");
+                true
+            }
+        })
         .collect();
 
     // For every Post, write the HTML to the correct directory
