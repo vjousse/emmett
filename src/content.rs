@@ -171,13 +171,9 @@ pub fn create_content(
         .filter(|post| match &post.front_matter.status {
             Some(status) => {
                 let same_status = *status != PostStatus::Draft;
-                log::info!("Status = {:?}, returning {}", status, same_status);
                 same_status
             }
-            None => {
-                log::info!("Status = None, returning true");
-                true
-            }
+            None => true,
         })
         .collect();
 
@@ -219,8 +215,6 @@ pub fn create_content(
     }
 
     for (index, mut posts) in indexes_to_create {
-        println!("=> {}", index);
-
         let mut context = Context::new();
         let _ = &posts.sort_by(|p1, p2| p2.front_matter.date.cmp(&p1.front_matter.date));
         context.insert("posts", &posts);
@@ -294,8 +288,6 @@ pub fn parse_post(
 
     let path_url =
         extract_path_url_for_post(&front_matter, &file_path, input_directory, blog_prefix_path);
-
-    log::info!("{:?}", front_matter);
 
     front_matter.map(|fm| {
         Post::new(

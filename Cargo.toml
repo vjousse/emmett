@@ -16,7 +16,11 @@ name = "emmett"
 env_logger = "0.9"
 log = "0.4"
 walkdir = "2"
-gray_matter = "0.2"
+# Waiting for my PR to be accepted
+# https://github.com/the-alchemists-of-arland/gray-matter-rs/pull/12
+# gray_matter = "0.2"
+# In the meantime, use my fork
+gray_matter = { git = "https://github.com/vjousse/gray-matter-rs", branch = "fix/allow_excerpt_on_same_line" }
 serde = { version = "1.0", features = ["derive"] }
 pulldown-cmark = { version = "0.9.1", default-features = false }
 tera = "1"

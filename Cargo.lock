@@ -280,8 +280,7 @@ dependencies = [
 [[package]]
 name = "gray_matter"
 version = "0.2.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "67ee85f908716ae775b54aa0b30f526381ab5969fc664eb3adb23cb5e2f3b047"
+source = "git+https://github.com/vjousse/gray-matter-rs?branch=fix/allow_excerpt_on_same_line#e6eb2b49db0531509963d93a126083a75201e461"
 dependencies = [
  "json",
  "regex",

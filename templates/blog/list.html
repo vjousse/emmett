@@ -3,7 +3,11 @@ block content %}
 <div>
   <ul>
     {% for post in posts %}
-    <li><a href="/{{ post.url_path }}">{{ post.front_matter.title }}</a></li>
+    <li>
+      <a href="/{{ post.url_path }}">{{ post.front_matter.title }}</a>
+
+      <p>{{ post.excerpt }}</p>
+    </li>
     {% endfor %}
   </ul>
 </div>
