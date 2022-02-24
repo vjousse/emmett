@@ -204,6 +204,7 @@ dependencies = [
  "log",
  "pulldown-cmark",
  "serde",
+ "serde_json",
  "tera",
  "walkdir",
 ]

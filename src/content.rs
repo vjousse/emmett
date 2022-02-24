@@ -11,9 +11,8 @@ use std::fs::File;
 use std::io::Write;
 use std::path::Component;
 use std::path::{Path, PathBuf};
-use tera::{Context, Tera};
+use tera::{to_value, try_get_value, Context, Result as TeraResult, Tera, Value};
 use walkdir::WalkDir;
-
 type FilePath = String;
 
 lazy_static! {
@@ -26,6 +25,7 @@ lazy_static! {
             }
         };
         tera.autoescape_on(vec![]);
+        tera.register_filter("markdown", markdown_filter);
         tera
     };
 }
@@ -72,6 +72,14 @@ mod my_date_format {
 
         parsed_date
     }
+}
+
+fn markdown_filter(value: &Value, _args: &HashMap<String, Value>) -> TeraResult<Value> {
+    let s = try_get_value!("markdown", "value", String, value);
+
+    let html = convert_md_to_html(&s[..]);
+
+    Ok(to_value(&html).unwrap())
 }
 
 #[derive(Debug, Serialize, Deserialize, Eq, Ord, PartialEq, PartialOrd)]

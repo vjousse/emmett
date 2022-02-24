@@ -6,7 +6,9 @@ block content %}
     <li>
       <a href="/{{ post.url_path }}">{{ post.front_matter.title }}</a>
 
-      <p>{{ post.excerpt }}</p>
+      {% if post.excerpt %}
+      <p>{{ post.excerpt|markdown }}</p>
+      {% endif %}
     </li>
     {% endfor %}
   </ul>
