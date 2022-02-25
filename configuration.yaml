@@ -10,3 +10,6 @@ input_path: "content"
 create_index_for:
   - fr
   - en
+
+markdown:
+  highlight_code: true

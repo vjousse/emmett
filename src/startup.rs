@@ -1,4 +1,4 @@
-use crate::configuration::get_configuration;
+use crate::config::get_configuration;
 use crate::content::create_content;
 
 pub fn run() {

@@ -1,8 +1,9 @@
+use self::cmark::{Event, Options, Parser, Tag};
 use chrono::{DateTime, FixedOffset};
 use gray_matter::engine::YAML;
 use gray_matter::Matter;
 use lazy_static::lazy_static;
-use pulldown_cmark::{html, Options, Parser};
+use pulldown_cmark as cmark;
 use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
 use std::error::Error;
@@ -13,6 +14,9 @@ use std::path::Component;
 use std::path::{Path, PathBuf};
 use tera::{to_value, try_get_value, Context, Result as TeraResult, Tera, Value};
 use walkdir::WalkDir;
+
+use crate::codeblock::{CodeBlock, FenceSettings};
+
 type FilePath = String;
 
 lazy_static! {
@@ -128,11 +132,55 @@ impl Post {
 pub fn convert_md_to_html(md_content: &str) -> String {
     let mut options = Options::empty();
     options.insert(Options::ENABLE_STRIKETHROUGH);
-    let parser = Parser::new_ext(md_content, options);
+    //let parser = Parser::new_ext(md_content, options);
+
+    let mut events = Vec::new();
+    let mut code_block: Option<CodeBlock> = None;
+
+    for (event, mut range) in Parser::new_ext(md_content, options).into_offset_iter() {
+        match event {
+            Event::Text(text) => {
+                if let Some(ref mut code_block) = code_block {
+                    let html;
+                    html = code_block.highlight(&text);
+                    events.push(Event::Html(html.into()));
+                } else {
+                    events.push(Event::Text(text));
+                    continue;
+                }
+            }
+            Event::Start(Tag::CodeBlock(ref kind)) => {
+                let fence = match kind {
+                    cmark::CodeBlockKind::Fenced(fence_info) => FenceSettings::new(fence_info),
+                    _ => FenceSettings::new(""),
+                };
+                // @TODO: uncommenrt
+                //let (block, begin) = CodeBlock::new(fence, context.config, path);
+                //code_block = Some(block);
+                //events.push(Event::Html(begin.into()));
+            }
+            Event::End(Tag::CodeBlock(_)) => {
+                // reset highlight and close the code block
+                code_block = None;
+                events.push(Event::Html("</code></pre>\n".into()));
+            }
+            _ => events.push(event),
+        }
+    }
+
+    // We remove all the empty things we might have pushed before so we don't get some random \n
+    events = events
+        .into_iter()
+        .filter(|e| match e {
+            Event::Text(text) | Event::Html(text) => !text.is_empty(),
+            _ => true,
+        })
+        .collect();
 
     // Write to String buffer.
     let mut html_output: String = String::with_capacity(md_content.len() * 3 / 2);
-    html::push_html(&mut html_output, parser);
+    //html::push_html(&mut html_output, parser);
+    cmark::html::push_html(&mut html_output, events.into_iter());
 
     html_output
 }

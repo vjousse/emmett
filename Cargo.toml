@@ -23,9 +23,11 @@ walkdir = "2"
 gray_matter = { git = "https://github.com/vjousse/gray-matter-rs", branch = "fix/allow_excerpt_on_same_line" }
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
+serde_derive = "1.0.136"
 pulldown-cmark = { version = "0.9.1", default-features = false }
 tera = "1"
 lazy_static = "1.4.0"
 # Use git version to get the nice Builder pattern
 config = { git = "https://github.com/mehcode/config-rs", branch = "master" }
 chrono = "0.4"
+syntect = "4.6"
