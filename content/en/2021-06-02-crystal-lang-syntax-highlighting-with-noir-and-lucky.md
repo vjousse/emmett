@@ -144,7 +144,7 @@ Now that we have some HTML and classes that have been added to our output, we ne
 
 NOIR provides some CSS that you can copy paste to get this result. Follow the instructions on the [NOIR's github README](https://github.com/MakeNowJust/noir) to compile the `ET NOIR` CLI tool and execute the following command to get the CSS for the `monokai` theme:
 
-```shell
+```bash
     ./bin/etnoir style monokai
 ```
 

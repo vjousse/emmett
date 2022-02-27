@@ -17,7 +17,7 @@ _Disclaimer_: I'm new to the [crystal programming language](https://crystal-lang
 
 Install `tailwindcss` using npm or yarn:
 
-```shell
+```bash
 # Using npm
 npm install tailwindcss
 

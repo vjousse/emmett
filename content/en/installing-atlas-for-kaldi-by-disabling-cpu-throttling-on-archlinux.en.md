@@ -26,7 +26,7 @@ I had to set the scaling governor of my cpus to performance. So did I.
 
 First by modifying directly the files with this command line (using bash):
 
-```shell
+```bash
     for CPUFREQ in /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor; do [ -f $CPUFREQ ] || continue; echo -n performance > $CPUFREQ; done
 ```
 
@@ -34,7 +34,7 @@ Of course, it didn't work.
 
 Then, as mentionned on the [Archlinux wiki page](https://wiki.archlinux.org/index.php/CPU_frequency_scaling) I used `cpupower`:
 
-```shell
+```bash
     cpupower frequency-set -g performance
 ```
 
