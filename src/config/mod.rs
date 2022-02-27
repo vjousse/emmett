@@ -3,7 +3,7 @@ pub mod markup;
 
 use config::Config;
 
-#[derive(serde::Deserialize)]
+#[derive(Clone, Debug, serde::Deserialize)]
 pub struct Settings {
     pub blog_prefix_path: String,
     pub output_path: String,
