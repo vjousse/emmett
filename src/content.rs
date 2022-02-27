@@ -1,8 +1,12 @@
+use self::cmark::{Event, Options, Parser, Tag};
+use crate::codeblock::{CodeBlock, FenceSettings};
+use crate::config::get_configuration;
+use crate::config::Settings;
 use chrono::{DateTime, FixedOffset};
 use gray_matter::engine::YAML;
 use gray_matter::Matter;
 use lazy_static::lazy_static;
-use pulldown_cmark::{html, Options, Parser};
+use pulldown_cmark as cmark;
 use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
 use std::error::Error;
@@ -13,6 +17,7 @@ use std::path::Component;
 use std::path::{Path, PathBuf};
 use tera::{to_value, try_get_value, Context, Result as TeraResult, Tera, Value};
 use walkdir::WalkDir;
+
 type FilePath = String;
 
 lazy_static! {
@@ -77,7 +82,10 @@ mod my_date_format {
 fn markdown_filter(value: &Value, _args: &HashMap<String, Value>) -> TeraResult<Value> {
     let s = try_get_value!("markdown", "value", String, value);
 
-    let html = convert_md_to_html(&s[..]);
+    // @TODO: don't read configuration again, use custom filter that
+    // will take the configuration as parameter
+    let configuration = get_configuration().expect("Failed to read configuration.");
+    let html = convert_md_to_html(&s[..], &configuration);
 
     Ok(to_value(&html).unwrap())
 }
@@ -125,14 +133,57 @@ impl Post {
     }
 }
 
-pub fn convert_md_to_html(md_content: &str) -> String {
+pub fn convert_md_to_html(md_content: &str, settings: &Settings, path: Option<&str>) -> String {
     let mut options = Options::empty();
     options.insert(Options::ENABLE_STRIKETHROUGH);
-    let parser = Parser::new_ext(md_content, options);
+    //let parser = Parser::new_ext(md_content, options);
+
+    let mut events = Vec::new();
+    let mut code_block: Option<CodeBlock> = None;
+
+    for (event, mut _range) in Parser::new_ext(md_content, options).into_offset_iter() {
+        match event {
+            Event::Text(text) => {
+                if let Some(ref mut code_block) = code_block {
+                    let html;
+                    html = code_block.highlight(&text);
+                    events.push(Event::Html(html.into()));
+                } else {
+                    events.push(Event::Text(text));
+                    continue;
+                }
+            }
+            Event::Start(Tag::CodeBlock(ref kind)) => {
+                let fence = match kind {
+                    cmark::CodeBlockKind::Fenced(fence_info) => FenceSettings::new(fence_info),
+                    _ => FenceSettings::new(""),
+                };
+                let (block, begin) = CodeBlock::new(fence, settings, path);
+                code_block = Some(block);
+                events.push(Event::Html(begin.into()));
+            }
+            Event::End(Tag::CodeBlock(_)) => {
+                // reset highlight and close the code block
+                code_block = None;
+                events.push(Event::Html("</code></pre>\n".into()));
+            }
+            _ => events.push(event),
+        }
+    }
+
+    // We remove all the empty things we might have pushed before so we don't get some random \n
+    events = events
+        .into_iter()
+        .filter(|e| match e {
+            Event::Text(text) | Event::Html(text) => !text.is_empty(),
+            _ => true,
+        })
+        .collect();
 
     // Write to String buffer.
     let mut html_output: String = String::with_capacity(md_content.len() * 3 / 2);
-    html::push_html(&mut html_output, parser);
+    //html::push_html(&mut html_output, parser);
+    cmark::html::push_html(&mut html_output, events.into_iter());
 
     html_output
 }
@@ -165,7 +216,8 @@ pub fn create_content(
     input_directory: &str,
     output_directory: &str,
     blog_prefix_path: &str,
-    create_index_for: Vec<String>,
+    create_index_for: &Vec<String>,
+    settings: &Settings,
 ) {
     // Get the list of files
     let files_to_parse: Vec<FilePath> = get_files_for_directory(input_directory);
@@ -187,7 +239,7 @@ pub fn create_content(
 
     // For every Post, write the HTML to the correct directory
     for post in &posts_contents {
-        let html_content = convert_md_to_html(&post.content);
+        let html_content = convert_md_to_html(&post.content, settings);
 
         let mut context = Context::new();
 

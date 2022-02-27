@@ -1,4 +1,4 @@
-use crate::configuration::get_configuration;
+use crate::config::get_configuration;
 use crate::content::create_content;
 
 pub fn run() {
@@ -8,6 +8,7 @@ pub fn run() {
         &configuration.input_path,
         &configuration.output_path,
         &configuration.blog_prefix_path,
-        configuration.create_index_for,
+        &configuration.create_index_for,
+        &configuration,
     );
 }
