@@ -19,7 +19,7 @@ use walkdir::WalkDir;
 
 type FilePath = String;
 
-mod my_date_format {
+mod custom_date_format {
     use chrono::{DateTime, FixedOffset};
     use serde::{self, Deserialize, Deserializer, Serializer};
 
@@ -74,7 +74,7 @@ pub enum PostStatus {
 pub struct FrontMatter {
     pub title: String,
     pub slug: String,
-    #[serde(with = "my_date_format")]
+    #[serde(with = "custom_date_format")]
     pub date: DateTime<FixedOffset>,
     pub status: Option<PostStatus>,
 }
@@ -389,18 +389,16 @@ mod test {
     use super::*;
 
     fn get_front_matter() -> FrontMatter {
-        FrontMatter {
-            title: "Mes dernières découvertes".to_owned(),
-            slug: "mes-dernieres-decouvertes-1".to_owned(),
-            date: "2019-09-04 17:20:00+01:00".to_owned(),
-        }
+        let raw = r#"{"title": "Mes dernières découvertes", "slug": "mes-dernieres-decouvertes-1", "date": "2019-09-04 17:20:00+01:00"}"#;
+        let front_matter: FrontMatter = serde_json::from_str(raw).expect("Couldn't derserialize");
+        front_matter
     }
 
     fn get_post() -> Post {
         let front_matter = get_front_matter();
 
         Post::new(
-            Some(front_matter),
+            front_matter,
             Some("Excerpt".to_owned()),
             "Content test".to_owned(),
             "content/fr/2019-09-04-mes-dernieres-decouvertes-1.md".to_owned(),
@@ -416,7 +414,12 @@ mod test {
         let blog_prefix_path = "blog";
         let path = "content/fr/2019-09-04-mes-dernieres-decouvertes-1.md";
         assert_eq!(
-            extract_path_url_for_post(&post.front_matter, &path, input_directory, blog_prefix_path),
+            extract_path_url_for_post(
+                &Some(post.front_matter),
+                &path,
+                input_directory,
+                blog_prefix_path
+            ),
             "blog/fr/mes-dernieres-decouvertes-1/"
         );
     }
@@ -429,7 +432,12 @@ mod test {
         let blog_prefix_path = "blog";
         let path = "content/fr/2019-09-04-mes-dernieres-decouvertes-1.md";
         assert_eq!(
-            extract_path_url_for_post(&post.front_matter, &path, input_directory, blog_prefix_path),
+            extract_path_url_for_post(
+                &Some(post.front_matter),
+                &path,
+                input_directory,
+                blog_prefix_path
+            ),
             "blog/fr/mes-dernieres-decouvertes-1/"
         );
     }
@@ -442,7 +450,12 @@ mod test {
         let input_directory = "content/";
         let path = "/content/fr/2019-09-04-mes-dernieres-decouvertes-1.md";
         assert_eq!(
-            extract_path_url_for_post(&post.front_matter, &path, input_directory, blog_prefix_path),
+            extract_path_url_for_post(
+                &Some(post.front_matter),
+                &path,
+                input_directory,
+                blog_prefix_path
+            ),
             "blog/fr/mes-dernieres-decouvertes-1/"
         );
     }

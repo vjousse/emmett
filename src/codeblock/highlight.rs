@@ -221,7 +221,7 @@ mod tests {
 
     #[test]
     fn can_highlight_with_classes() {
-        let mut settings = Settings::default();
+        let settings = Settings::default();
         let code = "import zen\nz = x + y\nprint('hello')\n";
         let syntax_and_theme = resolve_syntax_and_theme(Some("py"), &settings);
         let mut highlighter =
