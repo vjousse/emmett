@@ -215,16 +215,15 @@ impl<'config> SyntaxHighlighter<'config> {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use config::highlighting::resolve_syntax_and_theme;
-    use config::Config;
+    use crate::config::highlighting::resolve_syntax_and_theme;
+    use crate::config::Settings;
     use syntect::util::LinesWithEndings;
 
     #[test]
     fn can_highlight_with_classes() {
-        let mut config = Config::default();
-        config.markdown.highlight_code = true;
+        let mut settings = Settings::default();
         let code = "import zen\nz = x + y\nprint('hello')\n";
-        let syntax_and_theme = resolve_syntax_and_theme(Some("py"), &config);
+        let syntax_and_theme = resolve_syntax_and_theme(Some("py"), &settings);
         let mut highlighter =
             ClassHighlighter::new(syntax_and_theme.syntax, syntax_and_theme.syntax_set);
         let mut out = String::new();
@@ -236,39 +235,5 @@ mod tests {
         assert!(out.starts_with("<span class"));
         assert!(out.ends_with("</span>"));
         assert!(out.contains("z-"));
-    }
-
-    #[test]
-    fn can_highlight_inline() {
-        let mut config = Config::default();
-        config.markdown.highlight_code = true;
-        let code = "import zen\nz = x + y\nprint('hello')\n";
-        let syntax_and_theme = resolve_syntax_and_theme(Some("py"), &config);
-        let mut highlighter = InlineHighlighter::new(
-            syntax_and_theme.syntax,
-            syntax_and_theme.syntax_set,
-            syntax_and_theme.theme.unwrap(),
-        );
-        let mut out = String::new();
-        for line in LinesWithEndings::from(code) {
-            out.push_str(&highlighter.highlight_line(line));
-        }
-
-        assert!(out.starts_with(r#"<span style="color"#));
-        assert!(out.ends_with("</span>"));
-    }
-
-    #[test]
-    fn no_highlight_escapes_html() {
-        let mut config = Config::default();
-        config.markdown.highlight_code = false;
-        let code = "<script>alert('hello')</script>";
-        let syntax_and_theme = resolve_syntax_and_theme(Some("py"), &config);
-        let mut highlighter = SyntaxHighlighter::new(false, syntax_and_theme);
-        let mut out = String::new();
-        for line in LinesWithEndings::from(code) {
-            out.push_str(&highlighter.highlight_line(line));
-        }
-        assert!(!out.contains("<script>"));
     }
 }
