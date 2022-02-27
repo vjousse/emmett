@@ -14,22 +14,13 @@ use crate::config::highlighting::{CLASS_STYLE, THEME_SET};
 
 pub const DEFAULT_HIGHLIGHT_THEME: &str = "base16-ocean-dark";
 
-#[derive(Clone, Debug, PartialEq, Eq, Serialize, Deserialize)]
+#[derive(Default, Clone, Debug, PartialEq, Eq, Serialize, Deserialize)]
 #[serde(default)]
 pub struct ThemeCss {
     /// Which theme are we generating the CSS from
     pub theme: String,
     /// In which file are we going to output the CSS
     pub filename: String,
-}
-
-impl Default for ThemeCss {
-    fn default() -> ThemeCss {
-        ThemeCss {
-            theme: String::new(),
-            filename: String::new(),
-        }
-    }
 }
 
 #[derive(Clone, Debug, Serialize, Deserialize)]

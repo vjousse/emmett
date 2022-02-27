@@ -23,7 +23,7 @@ mod custom_date_format {
     use chrono::{DateTime, FixedOffset};
     use serde::{self, Deserialize, Deserializer, Serializer};
 
-    const FORMAT: &'static str = "%Y-%m-%d %H:%M:%S%z";
+    const FORMAT: &str = "%Y-%m-%d %H:%M:%S%z";
 
     // The signature of a serialize_with function must follow the pattern:
     //
@@ -206,10 +206,7 @@ pub fn create_content(site: &Site) {
         })
         // Don't publish posts that are still drafts
         .filter(|post| match &post.front_matter.status {
-            Some(status) => {
-                let same_status = *status != PostStatus::Draft;
-                same_status
-            }
+            Some(status) => *status != PostStatus::Draft,
             None => true,
         })
         .collect();
@@ -228,7 +225,7 @@ pub fn create_content(site: &Site) {
         context.insert("post_content", &html_content);
 
         if let Some(html) = render_template_to_html(context, "blog/post.html", &site.tera) {
-            write_post_html(&html, &post, &site.settings.output_path);
+            write_post_html(&html, post, &site.settings.output_path);
         };
     }
 
@@ -248,8 +245,8 @@ pub fn create_content(site: &Site) {
                     .contains(&first_component_str)
                 {
                     let key = first_component_str.clone();
-                    let posts = indexes_to_create.entry(key).or_insert(vec![]);
-                    posts.push(&post);
+                    let posts = indexes_to_create.entry(key).or_insert_with(Vec::new);
+                    posts.push(post);
                 }
             }
         }
@@ -291,14 +288,14 @@ pub fn write_html(post_html: &str, output_directory: &str) {
 }
 
 pub fn write_post_html(post_html: &str, post: &Post, output_directory: &str) {
-    let post_output_directory = get_output_directory_for_post(output_directory.to_owned(), &post);
+    let post_output_directory = get_output_directory_for_post(output_directory.to_owned(), post);
 
     write_html(post_html, &post_output_directory);
 }
 
 pub fn parse_file(file_path: &str, input_directory: &str, blog_prefix_path: &str) -> Option<Post> {
     match fs::read_to_string(&file_path) {
-        Ok(content) => parse_post(content, &file_path, input_directory, blog_prefix_path),
+        Ok(content) => parse_post(content, file_path, input_directory, blog_prefix_path),
         Err(e) => {
             log::error!("Error for {}: {}", &file_path, e);
             None
@@ -331,7 +328,7 @@ pub fn parse_post(
     };
 
     let path_url =
-        extract_path_url_for_post(&front_matter, &file_path, input_directory, blog_prefix_path);
+        extract_path_url_for_post(&front_matter, file_path, input_directory, blog_prefix_path);
 
     front_matter.map(|fm| {
         Post::new(
@@ -373,15 +370,15 @@ pub fn extract_path_url_for_post(
         None => (),
     };
 
-    let url_path_str = url_path.to_str().unwrap_or(&file_path).to_owned();
+    let url_path_str = url_path.to_str().unwrap_or(file_path).to_owned();
 
-    output_path.push(if !url_path_str.ends_with("/") {
+    output_path.push(if !url_path_str.ends_with('/') {
         format!("{}/", url_path_str)
     } else {
         url_path_str
     });
 
-    output_path.to_str().unwrap_or(&file_path).to_owned()
+    output_path.to_str().unwrap_or(file_path).to_owned()
 }
 
 #[cfg(test)]
