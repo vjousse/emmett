@@ -1,4 +1,7 @@
 use self::cmark::{Event, Options, Parser, Tag};
+use crate::codeblock::{CodeBlock, FenceSettings};
+use crate::config::get_configuration;
+use crate::config::Settings;
 use chrono::{DateTime, FixedOffset};
 use gray_matter::engine::YAML;
 use gray_matter::Matter;
@@ -14,8 +17,6 @@ use std::path::Component;
 use std::path::{Path, PathBuf};
 use tera::{to_value, try_get_value, Context, Result as TeraResult, Tera, Value};
 use walkdir::WalkDir;
-
-use crate::codeblock::{CodeBlock, FenceSettings};
 
 type FilePath = String;
 
@@ -81,7 +82,10 @@ mod my_date_format {
 fn markdown_filter(value: &Value, _args: &HashMap<String, Value>) -> TeraResult<Value> {
     let s = try_get_value!("markdown", "value", String, value);
 
-    let html = convert_md_to_html(&s[..]);
+    // @TODO: don't read configuration again, use custom filter that
+    // will take the configuration as parameter
+    let configuration = get_configuration().expect("Failed to read configuration.");
+    let html = convert_md_to_html(&s[..], &configuration);
 
     Ok(to_value(&html).unwrap())
 }
@@ -129,7 +133,7 @@ impl Post {
     }
 }
 
-pub fn convert_md_to_html(md_content: &str) -> String {
+pub fn convert_md_to_html(md_content: &str, settings: &Settings, path: Option<&str>) -> String {
     let mut options = Options::empty();
     options.insert(Options::ENABLE_STRIKETHROUGH);
     //let parser = Parser::new_ext(md_content, options);
@@ -137,7 +141,7 @@ pub fn convert_md_to_html(md_content: &str) -> String {
     let mut events = Vec::new();
     let mut code_block: Option<CodeBlock> = None;
 
-    for (event, mut range) in Parser::new_ext(md_content, options).into_offset_iter() {
+    for (event, mut _range) in Parser::new_ext(md_content, options).into_offset_iter() {
         match event {
             Event::Text(text) => {
                 if let Some(ref mut code_block) = code_block {
@@ -154,10 +158,9 @@ pub fn convert_md_to_html(md_content: &str) -> String {
                     cmark::CodeBlockKind::Fenced(fence_info) => FenceSettings::new(fence_info),
                     _ => FenceSettings::new(""),
                 };
-                // @TODO: uncommenrt
-                //let (block, begin) = CodeBlock::new(fence, context.config, path);
-                //code_block = Some(block);
-                //events.push(Event::Html(begin.into()));
+                let (block, begin) = CodeBlock::new(fence, settings, path);
+                code_block = Some(block);
+                events.push(Event::Html(begin.into()));
             }
             Event::End(Tag::CodeBlock(_)) => {
                 // reset highlight and close the code block
@@ -213,7 +216,8 @@ pub fn create_content(
     input_directory: &str,
     output_directory: &str,
     blog_prefix_path: &str,
-    create_index_for: Vec<String>,
+    create_index_for: &Vec<String>,
+    settings: &Settings,
 ) {
     // Get the list of files
     let files_to_parse: Vec<FilePath> = get_files_for_directory(input_directory);
@@ -235,7 +239,7 @@ pub fn create_content(
 
     // For every Post, write the HTML to the correct directory
     for post in &posts_contents {
-        let html_content = convert_md_to_html(&post.content);
+        let html_content = convert_md_to_html(&post.content, settings);
 
         let mut context = Context::new();
 

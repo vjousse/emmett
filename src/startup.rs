@@ -8,6 +8,7 @@ pub fn run() {
         &configuration.input_path,
         &configuration.output_path,
         &configuration.blog_prefix_path,
-        configuration.create_index_for,
+        &configuration.create_index_for,
+        &configuration,
     );
 }
