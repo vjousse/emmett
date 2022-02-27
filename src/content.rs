@@ -1,11 +1,10 @@
 use self::cmark::{Event, Options, Parser, Tag};
 use crate::codeblock::{CodeBlock, FenceSettings};
-use crate::config::get_configuration;
 use crate::config::Settings;
+use crate::site::Site;
 use chrono::{DateTime, FixedOffset};
 use gray_matter::engine::YAML;
 use gray_matter::Matter;
-use lazy_static::lazy_static;
 use pulldown_cmark as cmark;
 use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
@@ -15,25 +14,10 @@ use std::fs::File;
 use std::io::Write;
 use std::path::Component;
 use std::path::{Path, PathBuf};
-use tera::{to_value, try_get_value, Context, Result as TeraResult, Tera, Value};
+use tera::{Context, Tera};
 use walkdir::WalkDir;
 
 type FilePath = String;
-
-lazy_static! {
-    pub static ref TEMPLATES: Tera = {
-        let mut tera = match Tera::new("templates/**/*") {
-            Ok(t) => t,
-            Err(e) => {
-                println!("Parsing error(s): {}", e);
-                ::std::process::exit(1);
-            }
-        };
-        tera.autoescape_on(vec![]);
-        tera.register_filter("markdown", markdown_filter);
-        tera
-    };
-}
 
 mod my_date_format {
     use chrono::{DateTime, FixedOffset};
@@ -77,17 +61,6 @@ mod my_date_format {
 
         parsed_date
     }
-}
-
-fn markdown_filter(value: &Value, _args: &HashMap<String, Value>) -> TeraResult<Value> {
-    let s = try_get_value!("markdown", "value", String, value);
-
-    // @TODO: don't read configuration again, use custom filter that
-    // will take the configuration as parameter
-    let configuration = get_configuration().expect("Failed to read configuration.");
-    let html = convert_md_to_html(&s[..], &configuration);
-
-    Ok(to_value(&html).unwrap())
 }
 
 #[derive(Debug, Serialize, Deserialize, Eq, Ord, PartialEq, PartialOrd)]
@@ -188,8 +161,12 @@ pub fn convert_md_to_html(md_content: &str, settings: &Settings, path: Option<&s
     html_output
 }
 
-pub fn render_template_to_html(context: Context, template_path: &str) -> Option<String> {
-    match TEMPLATES.render(template_path, &context) {
+pub fn render_template_to_html(
+    context: Context,
+    template_path: &str,
+    tera: &Tera,
+) -> Option<String> {
+    match tera.render(template_path, &context) {
         Ok(s) => Some(s),
         Err(e) => {
             println!("Error: {}", e);
@@ -212,21 +189,21 @@ pub fn get_files_for_directory(directory: &str) -> Vec<FilePath> {
         .collect()
 }
 
-pub fn create_content(
-    input_directory: &str,
-    output_directory: &str,
-    blog_prefix_path: &str,
-    create_index_for: &Vec<String>,
-    settings: &Settings,
-) {
+pub fn create_content(site: &Site) {
     // Get the list of files
-    let files_to_parse: Vec<FilePath> = get_files_for_directory(input_directory);
+    let files_to_parse: Vec<FilePath> = get_files_for_directory(&site.settings.input_path);
 
     // Read content of every file, and create a Post instance
     // Only keep posts that don't have the draft status
     let posts_contents: Vec<Post> = files_to_parse
         .into_iter()
-        .filter_map(|file_path| parse_file(&file_path, input_directory, blog_prefix_path))
+        .filter_map(|file_path| {
+            parse_file(
+                &file_path,
+                &site.settings.input_path[..],
+                &site.settings.blog_prefix_path[..],
+            )
+        })
         // Don't publish posts that are still drafts
         .filter(|post| match &post.front_matter.status {
             Some(status) => {
@@ -239,7 +216,7 @@ pub fn create_content(
 
     // For every Post, write the HTML to the correct directory
     for post in &posts_contents {
-        let html_content = convert_md_to_html(&post.content, settings);
+        let html_content = convert_md_to_html(&post.content, &site.settings, Some(&post.path[..]));
 
         let mut context = Context::new();
 
@@ -250,8 +227,8 @@ pub fn create_content(
 
         context.insert("post_content", &html_content);
 
-        if let Some(html) = render_template_to_html(context, "blog/post.html") {
-            write_post_html(&html, &post, output_directory);
+        if let Some(html) = render_template_to_html(context, "blog/post.html", &site.tera) {
+            write_post_html(&html, &post, &site.settings.output_path);
         };
     }
 
@@ -260,12 +237,16 @@ pub fn create_content(
     // For every Post, let's see if it's part of a prefix we want an index for
     // If it's the case, generate an HashMap of posts for each prefix
     for post in &posts_contents {
-        if let Ok(path) = Path::new(&post.path).strip_prefix(input_directory) {
+        if let Ok(path) = Path::new(&post.path).strip_prefix(&site.settings.input_path) {
             let mut components = path.components();
 
             if let Some(Component::Normal(first_component)) = components.next() {
                 let first_component_str = first_component.to_str().unwrap_or("").to_owned();
-                if create_index_for.contains(&first_component_str) {
+                if site
+                    .settings
+                    .create_index_for
+                    .contains(&first_component_str)
+                {
                     let key = first_component_str.clone();
                     let posts = indexes_to_create.entry(key).or_insert(vec![]);
                     posts.push(&post);
@@ -279,10 +260,13 @@ pub fn create_content(
         let _ = &posts.sort_by(|p1, p2| p2.front_matter.date.cmp(&p1.front_matter.date));
         context.insert("posts", &posts);
         context.insert("title", &format!("Index of {}", &index)[..]);
-        if let Some(html) = render_template_to_html(context, "blog/list.html") {
+        if let Some(html) = render_template_to_html(context, "blog/list.html", &site.tera) {
             write_html(
                 &html,
-                &format!("{}/{}/{}", output_directory, blog_prefix_path, index)[..],
+                &format!(
+                    "{}/{}/{}",
+                    site.settings.output_path, site.settings.blog_prefix_path, index
+                )[..],
             );
         };
     }

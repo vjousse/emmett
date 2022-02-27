@@ -2,7 +2,9 @@ pub mod codeblock;
 pub mod config;
 pub mod content;
 pub mod errors;
+pub mod site;
 pub mod startup;
+pub mod templates;
 
 // So we can use bail! in all other crates
 #[macro_export]
