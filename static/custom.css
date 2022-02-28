@@ -6,15 +6,45 @@
   padding-top: 2rem;
 }
 
+@media (min-width:1200px) {
+ .container {
+  max-width:904px
+ }
+
 .nav-icon {
   width: 1.2rem;
   height: 1.2rem;
+  vertical-align:middle;
+  padding-bottom:3px;
 }
+
+nav {
+  padding-right: calc(var(--block-spacing-horizontal) * 2);
+  padding-left: calc(var(--block-spacing-horizontal) * 2);
+}
+
+nav > ul > li {
+  vertical-align: middle;
+  display: inline-block;
+}
+
 
 article {
   margin-top: 2rem;
 }
 
 h1 {
+  font-size: 2.1rem;
   margin-bottom: 0px;
+  font-weight: 750;
+}
+
+article {
+  background-color: var(--background-color);
+  box-shadow: none;
+}
+
+article > header {
+  text-align: center;
+  background-color: var(--background-color);
 }
