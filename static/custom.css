@@ -48,3 +48,11 @@ article > header {
   text-align: center;
   background-color: var(--background-color);
 }
+
+pre {
+  font-size: var(--font-size)
+}
+
+pre > code {
+  font-size: 0.875rem;
+}
