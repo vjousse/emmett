@@ -4,8 +4,9 @@ blog_prefix_path: "blog"
 # Where to write the static html output
 output_path: "output"
 
-# Where to write the static html output
-input_path: "content"
+posts_path: "content"
+
+pages_path: "pages"
 
 create_index_for:
   - fr

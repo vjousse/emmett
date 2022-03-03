@@ -92,6 +92,25 @@ impl Post {
     }
 }
 
+pub fn create_content(site: &Site) {
+    // Get the list of files
+    let files_to_parse: Vec<FilePath> = get_files_for_directory(&site.settings.posts_path);
+
+    // Convert the liste of files to Post instances
+    // @TODO: Don't load all the md/html in memory but read and write post per post
+    let posts_contents: Vec<Post> = get_posts(&files_to_parse, site);
+
+    // Write posts onto disk
+    write_posts_html(&posts_contents, site);
+
+    // Sort the posts per indexes fr, en and so on
+    let indexes_to_create: HashMap<String, Vec<&Post>> =
+        get_posts_per_indexes(&posts_contents, site);
+
+    // Write down the list of posts in the index directory fr/, en/, …
+    write_indexes_html(indexes_to_create, site);
+}
+
 pub fn convert_md_to_html(md_content: &str, settings: &Settings, path: Option<&str>) -> String {
     let mut options = Options::empty();
     options.insert(Options::ENABLE_STRIKETHROUGH);
@@ -175,18 +194,15 @@ pub fn get_files_for_directory(directory: &str) -> Vec<FilePath> {
         .collect()
 }
 
-pub fn create_content(site: &Site) {
-    // Get the list of files
-    let files_to_parse: Vec<FilePath> = get_files_for_directory(&site.settings.input_path);
-
-    // Read content of every file, and create a Post instance
-    // Only keep posts that don't have the draft status
-    let posts_contents: Vec<Post> = files_to_parse
+// Read content of every file, and create a Post instance
+// Only keep posts that don't have the draft status
+pub fn get_posts(files_to_parse: &Vec<FilePath>, site: &Site) -> Vec<Post> {
+    files_to_parse
         .into_iter()
         .filter_map(|file_path| {
             parse_file(
                 &file_path,
-                &site.settings.input_path[..],
+                &site.settings.posts_path[..],
                 &site.settings.blog_prefix_path[..],
             )
         })
@@ -195,10 +211,12 @@ pub fn create_content(site: &Site) {
             Some(status) => *status != PostStatus::Draft,
             None => true,
         })
-        .collect();
+        .collect()
+}
 
+pub fn write_posts_html(posts: &Vec<Post>, site: &Site) {
     // For every Post, write the HTML to the correct directory
-    for post in &posts_contents {
+    for post in posts {
         let html_content = convert_md_to_html(&post.content, &site.settings, Some(&post.path[..]));
 
         let mut context = Context::new();
@@ -214,13 +232,18 @@ pub fn create_content(site: &Site) {
             write_post_html(&html, post, &site.settings.output_path);
         };
     }
+}
 
+pub fn get_posts_per_indexes<'a>(
+    posts: &'a Vec<Post>,
+    site: &Site,
+) -> HashMap<String, Vec<&'a Post>> {
     let mut indexes_to_create: HashMap<String, Vec<&Post>> = HashMap::new();
 
     // For every Post, let's see if it's part of a prefix we want an index for
     // If it's the case, generate an HashMap of posts for each prefix
-    for post in &posts_contents {
-        if let Ok(path) = Path::new(&post.path).strip_prefix(&site.settings.input_path) {
+    for post in posts {
+        if let Ok(path) = Path::new(&post.path).strip_prefix(&site.settings.posts_path) {
             let mut components = path.components();
 
             if let Some(Component::Normal(first_component)) = components.next() {
@@ -238,6 +261,10 @@ pub fn create_content(site: &Site) {
         }
     }
 
+    indexes_to_create
+}
+
+pub fn write_indexes_html(indexes_to_create: HashMap<String, Vec<&Post>>, site: &Site) {
     for (index, mut posts) in indexes_to_create {
         let mut context = Context::new();
         let _ = &posts.sort_by(|p1, p2| p2.front_matter.date.cmp(&p1.front_matter.date));

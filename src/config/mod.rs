@@ -8,7 +8,8 @@ use std::default::Default;
 pub struct Settings {
     pub blog_prefix_path: String,
     pub output_path: String,
-    pub input_path: String,
+    pub posts_path: String,
+    pub pages_path: String,
     pub create_index_for: Vec<String>,
     pub markdown: markup::Markdown,
 }
