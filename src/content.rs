@@ -96,19 +96,31 @@ pub fn create_content(site: &Site) {
     // Get the list of files
     let files_to_parse: Vec<FilePath> = get_files_for_directory(&site.settings.posts_path);
 
-    // Convert the liste of files to Post instances
+    // Convert the list of files to Post instances
     // @TODO: Don't load all the md/html in memory but read and write post per post
-    let posts_contents: Vec<Post> = get_posts(&files_to_parse, site);
+    let posts: Vec<Post> = get_posts(
+        &files_to_parse,
+        &site.settings.posts_path,
+        &site.settings.blog_prefix_path,
+    );
 
     // Write posts onto disk
-    write_posts_html(&posts_contents, site);
+    write_posts_html(&posts, site);
 
     // Sort the posts per indexes fr, en and so on
-    let indexes_to_create: HashMap<String, Vec<&Post>> =
-        get_posts_per_indexes(&posts_contents, site);
+    let indexes_to_create: HashMap<String, Vec<&Post>> = get_posts_per_indexes(&posts, site);
 
     // Write down the list of posts in the index directory fr/, en/, …
     write_indexes_html(indexes_to_create, site);
+
+    // Get the list of pages
+    let pages_files: Vec<FilePath> = get_files_for_directory(&site.settings.pages_path);
+
+    // Well let's say that a page and a post are the sames for now, we may
+    // want to be more generic later on
+    let pages: Vec<Post> = get_posts(&pages_files, &site.settings.pages_path, "");
+
+    write_posts_html(&pages, site);
 }
 
 pub fn convert_md_to_html(md_content: &str, settings: &Settings, path: Option<&str>) -> String {
@@ -196,16 +208,10 @@ pub fn get_files_for_directory(directory: &str) -> Vec<FilePath> {
 
 // Read content of every file, and create a Post instance
 // Only keep posts that don't have the draft status
-pub fn get_posts(files_to_parse: &Vec<FilePath>, site: &Site) -> Vec<Post> {
+pub fn get_posts(files_to_parse: &Vec<FilePath>, posts_path: &str, prefix_path: &str) -> Vec<Post> {
     files_to_parse
         .into_iter()
-        .filter_map(|file_path| {
-            parse_file(
-                &file_path,
-                &site.settings.posts_path[..],
-                &site.settings.blog_prefix_path[..],
-            )
-        })
+        .filter_map(|file_path| parse_file(&file_path, posts_path, prefix_path))
         // Don't publish posts that are still drafts
         .filter(|post| match &post.front_matter.status {
             Some(status) => *status != PostStatus::Draft,
