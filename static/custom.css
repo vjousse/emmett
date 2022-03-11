@@ -72,8 +72,8 @@ p {
   text-align: center;
 }
 
-ul > li {
-  list-style: none;
+article ul > li {
+  margin-left: 1rem;
 }
 
 article ul {
