@@ -4,12 +4,14 @@ title: "A propos"
 date: "2022-03-03 09:00:00+01:00"
 ---
 
-Je m'appelle Vincent Jousse, vous pouvez me trouver sur 
-
-My name is <a href="http://twitter.com/vjousse"><strong>Vincent Jousse</strong></a>, you can find me on <a href="http://twitter.com/vjousse">Twitter</a>, <a href="https://mamot.fr/@vjousse" rel="me">Mastodon</a> or <a href="https://www.linkedin.com/in/vincent-jousse-798b1a11/" rel="me">Linkedin</a>.
+Je m'appelle [Vincent Jousse](https://twitter.com/vjousse), vous pouvez me trouver sur [Twitter](https://twitter.com/vjousse), [Mastodon](https://mamot.fr/@vjousse) ou sur [Linkedin](https://www.linkedin.com/in/vincent-jousse-798b1a11/).
 
 
-<ul class="list-none"><li style="list-style: none;">✓ I'm <strong>coding using Python, Rust, Crystal and Elm</strong> on <a href="https://github.com/vjousse/">github</a></li><li>✓ I wrote <strong>a PhD Thesis</strong> about <a href="/research">named speaker identification</a></li><li>✓ I was <strong>teaching computer science</strong> at the <a href="http://www.univ-lemans.fr/en/index.html">University of Le Mans</a></li><li>✓ I wrote a <a href="https://vimebook.com">book about Vim</a> called "<strong>Vim for humans</strong>" (free price)</li></ul>
+- ✓ Je code en Python, Rust, Crystal et Elm sur [github](https://github.com/vjousse/)
+- ✓ J'ai écrit une thèse sur l'[identification nommée du locuteur (_named speaker identification_)](/research)
+- ✓ J'ai été prof d'informatique à l'[Université du Mans](http://www.univ-lemans.fr/)
+- ✓ J'ai écrit un [livre sur vim appelé « Vim pour les humains »](https://vimebook.com) (prix libre)
+
 
 ## Licence
 
