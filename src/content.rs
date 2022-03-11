@@ -208,10 +208,10 @@ pub fn get_files_for_directory(directory: &str) -> Vec<FilePath> {
 
 // Read content of every file, and create a Post instance
 // Only keep posts that don't have the draft status
-pub fn get_posts(files_to_parse: &Vec<FilePath>, posts_path: &str, prefix_path: &str) -> Vec<Post> {
+pub fn get_posts(files_to_parse: &[FilePath], posts_path: &str, prefix_path: &str) -> Vec<Post> {
     files_to_parse
-        .into_iter()
-        .filter_map(|file_path| parse_file(&file_path, posts_path, prefix_path))
+        .iter()
+        .filter_map(|file_path| parse_file(file_path, posts_path, prefix_path))
         // Don't publish posts that are still drafts
         .filter(|post| match &post.front_matter.status {
             Some(status) => *status != PostStatus::Draft,
@@ -220,7 +220,7 @@ pub fn get_posts(files_to_parse: &Vec<FilePath>, posts_path: &str, prefix_path: 
         .collect()
 }
 
-pub fn write_posts_html(posts: &Vec<Post>, site: &Site) {
+pub fn write_posts_html(posts: &[Post], site: &Site) {
     // For every Post, write the HTML to the correct directory
     for post in posts {
         let html_content = convert_md_to_html(&post.content, &site.settings, Some(&post.path[..]));
@@ -240,10 +240,7 @@ pub fn write_posts_html(posts: &Vec<Post>, site: &Site) {
     }
 }
 
-pub fn get_posts_per_indexes<'a>(
-    posts: &'a Vec<Post>,
-    site: &Site,
-) -> HashMap<String, Vec<&'a Post>> {
+pub fn get_posts_per_indexes<'a>(posts: &'a [Post], site: &Site) -> HashMap<String, Vec<&'a Post>> {
     let mut indexes_to_create: HashMap<String, Vec<&Post>> = HashMap::new();
 
     // For every Post, let's see if it's part of a prefix we want an index for
