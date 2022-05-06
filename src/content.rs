@@ -2,8 +2,8 @@ use self::cmark::{Event, Options, Parser, Tag};
 use crate::codeblock::{CodeBlock, FenceSettings};
 use crate::config::Settings;
 use crate::post::{FrontMatter, Post, PostStatus};
+use crate::rss::write_atom_for_posts;
 use crate::site::Site;
-use atom_syndication::{Entry, Feed};
 use gray_matter::engine::YAML;
 use gray_matter::Matter;
 use pulldown_cmark as cmark;
@@ -48,6 +48,13 @@ pub fn create_content(site: &Site) {
     let pages: Vec<Post> = get_posts(&pages_files, &site.settings.pages_path, "");
 
     write_posts_html(&pages, site);
+
+    write_atom_for_posts(
+        &posts,
+        "https://vincent.jousse.org",
+        "Vincent Jousse",
+        Path::new("atom.xml"),
+    );
 }
 
 pub fn convert_md_to_html(md_content: &str, settings: &Settings, path: Option<&str>) -> String {
