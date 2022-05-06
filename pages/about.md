@@ -1,6 +1,6 @@
 ---
 slug: "a-propos"
-title: "A propos"
+title: "À propos"
 date: "2022-03-03 09:00:00+01:00"
 ---
 

@@ -1,12 +1,12 @@
 use self::cmark::{Event, Options, Parser, Tag};
 use crate::codeblock::{CodeBlock, FenceSettings};
 use crate::config::Settings;
+use crate::post::{FrontMatter, Post, PostStatus};
 use crate::site::Site;
-use chrono::{DateTime, FixedOffset};
+use atom_syndication::{Entry, Feed};
 use gray_matter::engine::YAML;
 use gray_matter::Matter;
 use pulldown_cmark as cmark;
-use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
 use std::error::Error;
 use std::fs;
@@ -18,79 +18,6 @@ use tera::{Context, Tera};
 use walkdir::WalkDir;
 
 type FilePath = String;
-
-mod custom_date_format {
-    use chrono::{DateTime, FixedOffset};
-    use serde::{self, Deserialize, Deserializer, Serializer};
-
-    const FORMAT: &str = "%Y-%m-%d %H:%M:%S%z";
-
-    pub fn serialize<S>(date: &DateTime<FixedOffset>, serializer: S) -> Result<S::Ok, S::Error>
-    where
-        S: Serializer,
-    {
-        let s = format!("{}", date.format(FORMAT));
-        serializer.serialize_str(&s)
-    }
-
-    pub fn deserialize<'de, D>(deserializer: D) -> Result<DateTime<FixedOffset>, D::Error>
-    where
-        D: Deserializer<'de>,
-    {
-        let s = String::deserialize(deserializer)?;
-        log::debug!("{:?}", s);
-        let parsed_date = DateTime::parse_from_str(&s, FORMAT).map_err(serde::de::Error::custom);
-
-        if parsed_date.is_err() {
-            log::error!("{:?}", parsed_date);
-        }
-
-        parsed_date
-    }
-}
-
-#[derive(Debug, Serialize, Deserialize, Eq, Ord, PartialEq, PartialOrd)]
-#[serde(rename_all = "lowercase")]
-pub enum PostStatus {
-    Draft,
-}
-
-#[derive(Deserialize, Debug, Serialize, Eq, Ord, PartialEq, PartialOrd)]
-// Used by gray_matter engine to parse the Front Matter content
-pub struct FrontMatter {
-    pub title: String,
-    pub slug: String,
-    #[serde(with = "custom_date_format")]
-    pub date: DateTime<FixedOffset>,
-    pub status: Option<PostStatus>,
-}
-
-#[derive(Debug, Serialize, Eq, Ord, PartialEq, PartialOrd)]
-pub struct Post {
-    pub front_matter: FrontMatter,
-    pub excerpt: Option<String>,
-    pub content: String,
-    pub path: String,
-    pub url_path: String,
-}
-
-impl Post {
-    fn new(
-        front_matter: FrontMatter,
-        excerpt: Option<String>,
-        content: String,
-        path: String,
-        url_path: String,
-    ) -> Self {
-        Post {
-            content,
-            front_matter,
-            excerpt,
-            path,
-            url_path,
-        }
-    }
-}
 
 pub fn create_content(site: &Site) {
     // Get the list of files
