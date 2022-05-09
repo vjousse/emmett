@@ -375,6 +375,7 @@ mod test {
             "Content test".to_owned(),
             "content/fr/2019-09-04-mes-dernieres-decouvertes-1.md".to_owned(),
             "fr/2019-09-04-mes-dernieres-decouvertes-1/".to_owned(),
+            "fr/2019-09-04-mes-dernieres-decouvertes-1/".to_owned(),
         )
     }
 
@@ -390,7 +391,8 @@ mod test {
                 &Some(post.front_matter),
                 &path,
                 input_directory,
-                blog_prefix_path
+                blog_prefix_path,
+                false
             ),
             "blog/fr/mes-dernieres-decouvertes-1/"
         );
@@ -408,7 +410,8 @@ mod test {
                 &Some(post.front_matter),
                 &path,
                 input_directory,
-                blog_prefix_path
+                blog_prefix_path,
+                false
             ),
             "blog/fr/mes-dernieres-decouvertes-1/"
         );
@@ -426,7 +429,8 @@ mod test {
                 &Some(post.front_matter),
                 &path,
                 input_directory,
-                blog_prefix_path
+                blog_prefix_path,
+                false
             ),
             "blog/fr/mes-dernieres-decouvertes-1/"
         );
