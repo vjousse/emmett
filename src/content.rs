@@ -53,7 +53,7 @@ pub fn create_content(site: &Site) {
         &posts,
         "https://vincent.jousse.org",
         "Vincent Jousse",
-        Path::new("atom.xml"),
+        Path::new(&format!("{}/atom.xml", &site.settings.output_path)[..]),
     );
 }
 
