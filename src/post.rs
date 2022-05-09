@@ -54,6 +54,7 @@ pub struct Post {
     pub content: String,
     pub path: String,
     pub url_path: String,
+    pub url_path_encoded: String,
 }
 
 impl Post {
@@ -63,6 +64,7 @@ impl Post {
         content: String,
         path: String,
         url_path: String,
+        url_path_encoded: String,
     ) -> Self {
         Post {
             content,
@@ -70,6 +72,7 @@ impl Post {
             excerpt,
             path,
             url_path,
+            url_path_encoded,
         }
     }
 }

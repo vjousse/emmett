@@ -6,7 +6,7 @@ use atom_syndication::{
 use std::fs::File;
 use std::path::Path;
 
-pub fn write_atom_for_posts(posts: &[Post], base: &str, author: &str, path: &Path) {
+pub fn write_atom_for_posts(posts: &[Post], base: &str, author: &str, title: &str, path: &Path) {
     let authors = vec![PersonBuilder::default().name(author).build()];
 
     let mut feed: Feed = FeedBuilder::default()
@@ -20,20 +20,22 @@ pub fn write_atom_for_posts(posts: &[Post], base: &str, author: &str, path: &Pat
         .authors(authors.clone())
         .rights(Some(Text::plain("CC-By Licence")))
         .base(Some(base.into()))
-        .lang(Some("fr_FR".into()))
+        .lang(Some("fr-FR".into()))
+        .id(format!("{}/", base))
+        .title(title)
         .build();
 
     // For every Post, write the HTML to the correct directory
     for post in posts {
         let entry: Entry = EntryBuilder::default()
             .title(&post.front_matter.title[..])
-            .id(&format!("{}/{}", base, post.url_path)[..])
+            .id(format!("{}/{}", base, post.url_path_encoded))
             .updated(post.front_matter.date)
             .authors(authors.clone())
             .contributors(authors.clone())
             .links(vec![LinkBuilder::default()
                 .rel("self")
-                .href(&format!("{}/{}", base, post.url_path)[..])
+                .href(&format!("{}/{}", base, post.url_path_encoded)[..])
                 .build()])
             .published(Some(post.front_matter.date))
             .summary(Some(Text::plain(
@@ -48,7 +50,7 @@ pub fn write_atom_for_posts(posts: &[Post], base: &str, author: &str, path: &Pat
             .source(Some(
                 SourceBuilder::default()
                     .title(&post.front_matter.title[..])
-                    .id(&format!("{}/{}", base, post.url_path)[..])
+                    .id(&format!("{}/{}", base, post.url_path_encoded)[..])
                     .updated(post.front_matter.date)
                     .build(),
             ))

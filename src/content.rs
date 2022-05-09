@@ -4,6 +4,7 @@ use crate::config::Settings;
 use crate::post::{FrontMatter, Post, PostStatus};
 use crate::rss::write_atom_for_posts;
 use crate::site::Site;
+use form_urlencoded::byte_serialize;
 use gray_matter::engine::YAML;
 use gray_matter::Matter;
 use pulldown_cmark as cmark;
@@ -53,6 +54,7 @@ pub fn create_content(site: &Site) {
         &posts,
         "https://vincent.jousse.org",
         "Vincent Jousse",
+        "Vince's",
         Path::new(&format!("{}/atom.xml", &site.settings.output_path)[..]),
     );
 }
@@ -277,8 +279,23 @@ pub fn parse_post(
         }
     };
 
-    let path_url =
-        extract_path_url_for_post(&front_matter, file_path, input_directory, blog_prefix_path);
+    let path_url = extract_path_url_for_post(
+        &front_matter,
+        file_path,
+        input_directory,
+        blog_prefix_path,
+        false,
+    );
+
+    let path_url_encoded = extract_path_url_for_post(
+        &front_matter,
+        file_path,
+        input_directory,
+        blog_prefix_path,
+        true,
+    );
+
+    //byte_serialize(post.url_path.as_bytes()).collect::<String>()
 
     front_matter.map(|fm| {
         Post::new(
@@ -287,6 +304,7 @@ pub fn parse_post(
             result.content,
             file_path.to_owned(),
             path_url,
+            path_url_encoded,
         )
     })
 }
@@ -296,6 +314,7 @@ pub fn extract_path_url_for_post(
     file_path: &str,
     input_directory: &str,
     blog_prefix_path: &str,
+    encoded: bool,
 ) -> String {
     let mut url_path = PathBuf::from(&file_path);
     let mut output_path = PathBuf::from(blog_prefix_path);
@@ -316,7 +335,13 @@ pub fn extract_path_url_for_post(
     }
 
     match front_matter {
-        Some(front_matter) => url_path.push(&front_matter.slug),
+        Some(front_matter) => {
+            if encoded {
+                url_path.push(byte_serialize(front_matter.slug.as_bytes()).collect::<String>())
+            } else {
+                url_path.push(&front_matter.slug)
+            }
+        }
         None => (),
     };
 
