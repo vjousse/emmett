@@ -361,7 +361,7 @@ mod test {
     use super::*;
 
     fn get_front_matter() -> FrontMatter {
-        let raw = r#"{"title": "Mes dernières découvertes", "slug": "mes-dernieres-decouvertes-1", "date": "2019-09-04 17:20:00+01:00"}"#;
+        let raw = r#"{"title": "Mes dernières découvertes", "slug": "mes-dernières-decouvertes-1", "date": "2019-09-04 17:20:00+01:00"}"#;
         let front_matter: FrontMatter = serde_json::from_str(raw).expect("Couldn't derserialize");
         front_matter
     }
@@ -394,7 +394,26 @@ mod test {
                 blog_prefix_path,
                 false
             ),
-            "blog/fr/mes-dernieres-decouvertes-1/"
+            "blog/fr/mes-dernières-decouvertes-1/"
+        );
+    }
+
+    #[test]
+    fn test_extract_path_url_encoded() {
+        let post = get_post();
+
+        let input_directory = "content";
+        let blog_prefix_path = "blog";
+        let path = "content/fr/2019-09-04-mes-dernieres-decouvertes-1.md";
+        assert_eq!(
+            extract_path_url_for_post(
+                &Some(post.front_matter),
+                &path,
+                input_directory,
+                blog_prefix_path,
+                true
+            ),
+            "blog/fr/mes-derni%C3%A8res-decouvertes-1/"
         );
     }
 
@@ -413,7 +432,7 @@ mod test {
                 blog_prefix_path,
                 false
             ),
-            "blog/fr/mes-dernieres-decouvertes-1/"
+            "blog/fr/mes-dernières-decouvertes-1/"
         );
     }
 
@@ -432,7 +451,7 @@ mod test {
                 blog_prefix_path,
                 false
             ),
-            "blog/fr/mes-dernieres-decouvertes-1/"
+            "blog/fr/mes-dernières-decouvertes-1/"
         );
     }
 }
