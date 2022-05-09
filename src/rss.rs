@@ -27,13 +27,13 @@ pub fn write_atom_for_posts(posts: &[Post], base: &str, author: &str, path: &Pat
     for post in posts {
         let entry: Entry = EntryBuilder::default()
             .title(&post.front_matter.title[..])
-            .id(&post.url_path[..])
+            .id(&format!("{}/{}", base, post.url_path)[..])
             .updated(post.front_matter.date)
             .authors(authors.clone())
             .contributors(authors.clone())
             .links(vec![LinkBuilder::default()
                 .rel("self")
-                .href(&post.url_path[..])
+                .href(&format!("{}/{}", base, post.url_path)[..])
                 .build()])
             .published(Some(post.front_matter.date))
             .summary(Some(Text::plain(
@@ -48,7 +48,7 @@ pub fn write_atom_for_posts(posts: &[Post], base: &str, author: &str, path: &Pat
             .source(Some(
                 SourceBuilder::default()
                     .title(&post.front_matter.title[..])
-                    .id(&post.url_path[..])
+                    .id(&format!("{}/{}", base, post.url_path)[..])
                     .updated(post.front_matter.date)
                     .build(),
             ))
