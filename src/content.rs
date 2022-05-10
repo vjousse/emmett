@@ -1,12 +1,14 @@
 use self::cmark::{Event, Options, Parser, Tag};
 use crate::codeblock::{CodeBlock, FenceSettings};
 use crate::config::Settings;
+use crate::post::{FrontMatter, Post, PostStatus};
+use crate::rss::write_atom_for_posts;
 use crate::site::Site;
-use chrono::{DateTime, FixedOffset};
+use anyhow::Result;
+use form_urlencoded::byte_serialize;
 use gray_matter::engine::YAML;
 use gray_matter::Matter;
 use pulldown_cmark as cmark;
-use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
 use std::error::Error;
 use std::fs;
@@ -19,80 +21,7 @@ use walkdir::WalkDir;
 
 type FilePath = String;
 
-mod custom_date_format {
-    use chrono::{DateTime, FixedOffset};
-    use serde::{self, Deserialize, Deserializer, Serializer};
-
-    const FORMAT: &str = "%Y-%m-%d %H:%M:%S%z";
-
-    pub fn serialize<S>(date: &DateTime<FixedOffset>, serializer: S) -> Result<S::Ok, S::Error>
-    where
-        S: Serializer,
-    {
-        let s = format!("{}", date.format(FORMAT));
-        serializer.serialize_str(&s)
-    }
-
-    pub fn deserialize<'de, D>(deserializer: D) -> Result<DateTime<FixedOffset>, D::Error>
-    where
-        D: Deserializer<'de>,
-    {
-        let s = String::deserialize(deserializer)?;
-        log::debug!("{:?}", s);
-        let parsed_date = DateTime::parse_from_str(&s, FORMAT).map_err(serde::de::Error::custom);
-
-        if parsed_date.is_err() {
-            log::error!("{:?}", parsed_date);
-        }
-
-        parsed_date
-    }
-}
-
-#[derive(Debug, Serialize, Deserialize, Eq, Ord, PartialEq, PartialOrd)]
-#[serde(rename_all = "lowercase")]
-pub enum PostStatus {
-    Draft,
-}
-
-#[derive(Deserialize, Debug, Serialize, Eq, Ord, PartialEq, PartialOrd)]
-// Used by gray_matter engine to parse the Front Matter content
-pub struct FrontMatter {
-    pub title: String,
-    pub slug: String,
-    #[serde(with = "custom_date_format")]
-    pub date: DateTime<FixedOffset>,
-    pub status: Option<PostStatus>,
-}
-
-#[derive(Debug, Serialize, Eq, Ord, PartialEq, PartialOrd)]
-pub struct Post {
-    pub front_matter: FrontMatter,
-    pub excerpt: Option<String>,
-    pub content: String,
-    pub path: String,
-    pub url_path: String,
-}
-
-impl Post {
-    fn new(
-        front_matter: FrontMatter,
-        excerpt: Option<String>,
-        content: String,
-        path: String,
-        url_path: String,
-    ) -> Self {
-        Post {
-            content,
-            front_matter,
-            excerpt,
-            path,
-            url_path,
-        }
-    }
-}
-
-pub fn create_content(site: &Site) {
+pub fn create_content(site: &Site) -> Result<()> {
     // Get the list of files
     let files_to_parse: Vec<FilePath> = get_files_for_directory(&site.settings.posts_path);
 
@@ -121,6 +50,16 @@ pub fn create_content(site: &Site) {
     let pages: Vec<Post> = get_posts(&pages_files, &site.settings.pages_path, "");
 
     write_posts_html(&pages, site);
+
+    write_atom_for_posts(
+        &posts,
+        "https://vincent.jousse.org",
+        "Vincent Jousse",
+        "Vince's",
+        Path::new(&format!("{}/atom.xml", &site.settings.output_path)[..]),
+    )?;
+
+    Ok(())
 }
 
 pub fn convert_md_to_html(md_content: &str, settings: &Settings, path: Option<&str>) -> String {
@@ -343,8 +282,23 @@ pub fn parse_post(
         }
     };
 
-    let path_url =
-        extract_path_url_for_post(&front_matter, file_path, input_directory, blog_prefix_path);
+    let path_url = extract_path_url_for_post(
+        &front_matter,
+        file_path,
+        input_directory,
+        blog_prefix_path,
+        false,
+    );
+
+    let path_url_encoded = extract_path_url_for_post(
+        &front_matter,
+        file_path,
+        input_directory,
+        blog_prefix_path,
+        true,
+    );
+
+    //byte_serialize(post.url_path.as_bytes()).collect::<String>()
 
     front_matter.map(|fm| {
         Post::new(
@@ -353,6 +307,7 @@ pub fn parse_post(
             result.content,
             file_path.to_owned(),
             path_url,
+            path_url_encoded,
         )
     })
 }
@@ -362,6 +317,7 @@ pub fn extract_path_url_for_post(
     file_path: &str,
     input_directory: &str,
     blog_prefix_path: &str,
+    encoded: bool,
 ) -> String {
     let mut url_path = PathBuf::from(&file_path);
     let mut output_path = PathBuf::from(blog_prefix_path);
@@ -382,7 +338,13 @@ pub fn extract_path_url_for_post(
     }
 
     match front_matter {
-        Some(front_matter) => url_path.push(&front_matter.slug),
+        Some(front_matter) => {
+            if encoded {
+                url_path.push(byte_serialize(front_matter.slug.as_bytes()).collect::<String>())
+            } else {
+                url_path.push(&front_matter.slug)
+            }
+        }
         None => (),
     };
 
@@ -402,7 +364,7 @@ mod test {
     use super::*;
 
     fn get_front_matter() -> FrontMatter {
-        let raw = r#"{"title": "Mes dernières découvertes", "slug": "mes-dernieres-decouvertes-1", "date": "2019-09-04 17:20:00+01:00"}"#;
+        let raw = r#"{"title": "Mes dernières découvertes", "slug": "mes-dernières-decouvertes-1", "date": "2019-09-04 17:20:00+01:00"}"#;
         let front_matter: FrontMatter = serde_json::from_str(raw).expect("Couldn't derserialize");
         front_matter
     }
@@ -415,6 +377,7 @@ mod test {
             Some("Excerpt".to_owned()),
             "Content test".to_owned(),
             "content/fr/2019-09-04-mes-dernieres-decouvertes-1.md".to_owned(),
+            "fr/2019-09-04-mes-dernieres-decouvertes-1/".to_owned(),
             "fr/2019-09-04-mes-dernieres-decouvertes-1/".to_owned(),
         )
     }
@@ -431,9 +394,29 @@ mod test {
                 &Some(post.front_matter),
                 &path,
                 input_directory,
-                blog_prefix_path
+                blog_prefix_path,
+                false
             ),
-            "blog/fr/mes-dernieres-decouvertes-1/"
+            "blog/fr/mes-dernières-decouvertes-1/"
+        );
+    }
+
+    #[test]
+    fn test_extract_path_url_encoded() {
+        let post = get_post();
+
+        let input_directory = "content";
+        let blog_prefix_path = "blog";
+        let path = "content/fr/2019-09-04-mes-dernieres-decouvertes-1.md";
+        assert_eq!(
+            extract_path_url_for_post(
+                &Some(post.front_matter),
+                &path,
+                input_directory,
+                blog_prefix_path,
+                true
+            ),
+            "blog/fr/mes-derni%C3%A8res-decouvertes-1/"
         );
     }
 
@@ -449,9 +432,10 @@ mod test {
                 &Some(post.front_matter),
                 &path,
                 input_directory,
-                blog_prefix_path
+                blog_prefix_path,
+                false
             ),
-            "blog/fr/mes-dernieres-decouvertes-1/"
+            "blog/fr/mes-dernières-decouvertes-1/"
         );
     }
 
@@ -467,9 +451,10 @@ mod test {
                 &Some(post.front_matter),
                 &path,
                 input_directory,
-                blog_prefix_path
+                blog_prefix_path,
+                false
             ),
-            "blog/fr/mes-dernieres-decouvertes-1/"
+            "blog/fr/mes-dernières-decouvertes-1/"
         );
     }
 }

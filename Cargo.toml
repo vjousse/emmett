@@ -27,3 +27,7 @@ lazy_static = "1.4.0"
 config = { git = "https://github.com/mehcode/config-rs", branch = "master" }
 chrono = "0.4"
 syntect = "4.6"
+atom_syndication = "0.11"
+form_urlencoded = "1.0.1"
+anyhow = "1.0.57"
+thiserror = "1.0.31"

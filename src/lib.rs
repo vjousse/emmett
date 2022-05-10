@@ -2,6 +2,8 @@ pub mod codeblock;
 pub mod config;
 pub mod content;
 pub mod errors;
+pub mod post;
+pub mod rss;
 pub mod site;
 pub mod startup;
 pub mod templates;
