@@ -1,11 +1,12 @@
 use crate::content::create_content;
-use crate::errors::Result;
+use crate::errors::Result as ResultCrate;
 use crate::site::Site;
 use crate::templates::filters;
+use anyhow::Result;
 
 pub fn run() -> Result<()> {
     log::info!("Running the application");
-    let site: Result<Site> = Site::new();
+    let site: ResultCrate<Site> = Site::new();
 
     match site {
         Ok(mut site) => {
@@ -13,7 +14,7 @@ pub fn run() -> Result<()> {
                 "markdown",
                 filters::MarkdownFilter::new(site.settings.clone())?,
             );
-            create_content(&site);
+            create_content(&site)?;
         }
         Err(e) => {
             log::debug!("{:?}", e);

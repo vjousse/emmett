@@ -4,6 +4,7 @@ use crate::config::Settings;
 use crate::post::{FrontMatter, Post, PostStatus};
 use crate::rss::write_atom_for_posts;
 use crate::site::Site;
+use anyhow::Result;
 use form_urlencoded::byte_serialize;
 use gray_matter::engine::YAML;
 use gray_matter::Matter;
@@ -20,7 +21,7 @@ use walkdir::WalkDir;
 
 type FilePath = String;
 
-pub fn create_content(site: &Site) {
+pub fn create_content(site: &Site) -> Result<()> {
     // Get the list of files
     let files_to_parse: Vec<FilePath> = get_files_for_directory(&site.settings.posts_path);
 
@@ -56,7 +57,9 @@ pub fn create_content(site: &Site) {
         "Vincent Jousse",
         "Vince's",
         Path::new(&format!("{}/atom.xml", &site.settings.output_path)[..]),
-    );
+    )?;
+
+    Ok(())
 }
 
 pub fn convert_md_to_html(md_content: &str, settings: &Settings, path: Option<&str>) -> String {

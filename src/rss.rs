@@ -6,7 +6,15 @@ use atom_syndication::{
 use std::fs::File;
 use std::path::Path;
 
-pub fn write_atom_for_posts(posts: &[Post], base: &str, author: &str, title: &str, path: &Path) {
+use anyhow::Result;
+
+pub fn write_atom_for_posts(
+    posts: &[Post],
+    base: &str,
+    author: &str,
+    title: &str,
+    path: &Path,
+) -> Result<()> {
     let authors = vec![PersonBuilder::default().name(author).build()];
 
     let mut feed: Feed = FeedBuilder::default()
@@ -59,13 +67,9 @@ pub fn write_atom_for_posts(posts: &[Post], base: &str, author: &str, title: &st
         feed.entries.push(entry);
     }
 
-    let buffer = File::create(path);
+    let buffer = File::create(path)?;
 
-    // @TODO: manage errors properly with a Result type
-    match buffer {
-        Ok(b) => {
-            feed.write_to(b).unwrap();
-        }
-        _ => println!("Can't write"),
-    }
+    feed.write_to(buffer).unwrap();
+
+    Ok(())
 }
