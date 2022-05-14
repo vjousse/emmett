@@ -167,11 +167,11 @@ pub fn write_posts_html(posts: &[Post], site: &Site) {
         let mut context = Context::new();
 
         let front_matter = &post.front_matter;
-        log::debug!("{:?}", &front_matter.title);
         context.insert("title", &front_matter.title);
         context.insert("date", &front_matter.date.to_rfc2822());
 
         context.insert("post_content", &html_content);
+        context.insert("post_url_path", &post.url_path);
 
         if let Some(html) = render_template_to_html(context, "blog/post.html", &site.tera) {
             write_post_html(&html, post, &site.settings.output_path);
@@ -246,8 +246,6 @@ pub fn write_html(post_html: &str, output_directory: &str) {
 
 pub fn write_post_html(post_html: &str, post: &Post, output_directory: &str) {
     let post_output_directory = get_output_directory_for_post(output_directory.to_owned(), post);
-
-    log::debug!("{:?}", post_output_directory);
 
     write_html(post_html, &post_output_directory);
 }
