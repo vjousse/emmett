@@ -227,7 +227,9 @@ pub fn write_indexes_html(indexes_to_create: HashMap<String, Vec<&Post>>, site: 
 pub fn get_output_directory_for_post(output_directory: String, post: &Post) -> String {
     let mut out_path = PathBuf::from(&output_directory);
 
-    out_path.push(&post.url_path);
+    if post.url_path != "/" {
+        out_path.push(&post.url_path);
+    }
 
     out_path.to_str().unwrap_or(&output_directory).to_owned()
 }
@@ -244,6 +246,8 @@ pub fn write_html(post_html: &str, output_directory: &str) {
 
 pub fn write_post_html(post_html: &str, post: &Post, output_directory: &str) {
     let post_output_directory = get_output_directory_for_post(output_directory.to_owned(), post);
+
+    log::debug!("{:?}", post_output_directory);
 
     write_html(post_html, &post_output_directory);
 }
