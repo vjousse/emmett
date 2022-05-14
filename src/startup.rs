@@ -3,6 +3,7 @@ use crate::errors::Result as ResultCrate;
 use crate::site::Site;
 use crate::templates::filters;
 use anyhow::Result;
+use fs_extra::dir::{copy, CopyOptions};
 
 pub fn run() -> Result<()> {
     log::info!("Running the application");
@@ -15,6 +16,7 @@ pub fn run() -> Result<()> {
                 filters::MarkdownFilter::new(site.settings.clone())?,
             );
             create_content(&site)?;
+            copy_static(&site.settings.static_path, &site.settings.output_path)?;
         }
         Err(e) => {
             log::debug!("{:?}", e);
@@ -22,5 +24,14 @@ pub fn run() -> Result<()> {
         }
     };
 
+    Ok(())
+}
+
+pub fn copy_static(from: &str, to: &str) -> Result<()> {
+    let mut options = CopyOptions::new(); //Initialize default values for CopyOptions
+    options.copy_inside = true;
+    options.content_only = true;
+    options.overwrite = true;
+    copy(from, to, &options)?;
     Ok(())
 }

@@ -12,6 +12,7 @@ pub struct Settings {
     pub pages_path: String,
     pub create_index_for: Vec<String>,
     pub markdown: markup::Markdown,
+    pub static_path: String,
 }
 
 pub fn get_configuration() -> Result<Settings, config::ConfigError> {

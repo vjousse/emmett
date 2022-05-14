@@ -14,3 +14,6 @@ create_index_for:
 
 markdown:
   highlight_code: true
+
+# Copy everything in this directory to the output directory
+static_path: "static"
