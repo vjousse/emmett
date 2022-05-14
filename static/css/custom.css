@@ -79,3 +79,8 @@ article ul > li {
 article ul {
   margin-top: 1.5rem;
 }
+
+article img {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
