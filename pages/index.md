@@ -19,3 +19,7 @@ Je m'appelle [Vincent Jousse](https://twitter.com/vjousse), vous pouvez me trouv
 ## Licence
 
 🧾 Tout le contenu de ce site est publié sous licence libre <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank"><strong>CC-By Licence</strong></a>
+
+## Code Source
+
+Le code du site est disponible sur [Github](https://github.com/vjousse/emmett). C'est un générateur de site statique codé par mes soins, dans le but d'apprendre Rust.

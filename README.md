@@ -8,12 +8,12 @@ Paths are configurable in `configuration.yaml`.
 
 ## Running
 
-  cargo run
+    cargo run
 
 Then serve the `output/` directory using a web serve. For example, I'm using [simple-http-server](https://github.com/TheWaWaR/simple-http-server):
 
-  simple-http-server -i output
+    simple-http-server -i output
 
 ## Deploy
 
-  rsync -avz --delete output/ vjousse@emmett.jousse.org:/home/data/vincent.jousse.org
+    rsync -avz --delete output/ vjousse@emmett.jousse.org:/home/data/vincent.jousse.org
