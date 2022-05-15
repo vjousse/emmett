@@ -13,3 +13,7 @@ Paths are configurable in `configuration.yaml`.
 Then serve the `output/` directory using a web serve. For example, I'm using [simple-http-server](https://github.com/TheWaWaR/simple-http-server):
 
   simple-http-server -i output
+
+## Deploy
+
+  rsync -avz --delete output/ vjousse@emmett.jousse.org:/home/data/vincent.jousse.org

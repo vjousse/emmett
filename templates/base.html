@@ -16,7 +16,11 @@
     <meta property="og:site_name" content="Vincent Jousse" />
     <meta property="og:image" content="https://vincent.jousse.org/logo.png">
 
-    <title>{% block title %}Accueil{% endblock title %}</title>
+    {% block title %}
+      <title>Accueil</title>
+      <meta name="twitter:title" content="Accueil">
+      <meta property="og:title" content="Accueil" />
+    {% endblock title %}
 
   <script src="https://s.pereprogramming.com/js/pl.js" defer="true" data-domain="vincent.jousse.org" data-turbolinks-track="reload"></script>
 
@@ -39,7 +43,7 @@
             <a class="contrast" href="/blog/en">English</a>
           </li>
           <li>
-            <a class="contrast" href="atom.xml">RSS</a>
+            <a class="contrast" href="/atom.xml">RSS</a>
           </li>
         </ul>
       </nav>

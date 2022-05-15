@@ -211,7 +211,7 @@ pub fn write_indexes_html(indexes_to_create: HashMap<String, Vec<&Post>>, site: 
         let mut context = Context::new();
         let _ = &posts.sort_by(|p1, p2| p2.front_matter.date.cmp(&p1.front_matter.date));
         context.insert("posts", &posts);
-        context.insert("title", &format!("Index of {}", &index)[..]);
+        context.insert("title", &format!("Articles - {}", &index)[..]);
         if let Some(html) = render_template_to_html(context, "blog/list.html", &site.tera) {
             write_html(
                 &html,
