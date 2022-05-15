@@ -16,7 +16,7 @@
     <meta property="og:site_name" content="Vincent Jousse" />
     <meta property="og:image" content="https://vincent.jousse.org/logo.png">
 
-    <title>{% block title %}Emmett{% endblock title %}</title>
+    <title>{% block title %}Accueil{% endblock title %}</title>
 
   <script src="https://s.pereprogramming.com/js/pl.js" defer="true" data-domain="vincent.jousse.org" data-turbolinks-track="reload"></script>
 
@@ -25,11 +25,12 @@
   <body>
     <main class="container">
       <nav>
-        <ul></ul>
         <ul>
           <li>
             <a class="contrast" title="Accueil" href="/">Accueil</a>
           </li>
+        </ul>
+        <ul>
 
           <li>
             <a class="contrast" href="/blog/fr">Français</a>
@@ -40,24 +41,6 @@
           <li>
             <a class="contrast" href="atom.xml">RSS</a>
           </li>
-          <!--<li>-->
-          <!--  <a class="contrast" data-tooltip="About me" href="#">-->
-          <!--    <svg-->
-          <!--      class="nav-icon"-->
-          <!--      fill="none"-->
-          <!--      stroke="currentColor"-->
-          <!--      viewBox="0 0 24 24"-->
-          <!--      xmlns="http://www.w3.org/2000/svg"-->
-          <!--    >-->
-          <!--      <path-->
-          <!--        d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"-->
-          <!--        stroke-linecap="round"-->
-          <!--        stroke-linejoin="round"-->
-          <!--        stroke-width="2"-->
-          <!--      ></path>-->
-          <!--    </svg>-->
-          <!--  </a>-->
-          <!--</li>-->
         </ul>
       </nav>
       {% block content %} {% endblock content %}
