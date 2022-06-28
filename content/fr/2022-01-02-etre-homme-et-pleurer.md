@@ -21,7 +21,7 @@ J'ai toujours fait partie de ceux qui pleurent. D'aussi loin qu'il m'est possibl
 
 Pleurer me faisait du bien, pleurer me connectait à mon corps, à mes sensations, à la partie de moi qui vibre.
 
-Et puis, la réalité s'est rappelée à moi. À un moment, il semblerait qu'il faille être adulte et grandir. Les études, l'informatique, fonder une famille, avoir des responsabilités, tout ça ce n'est pas fait pour les pleureuses. 
+Et puis, la réalité s'est rappelée à moi. À un moment, il semblerait qu'il faille être adulte et grandir. Les études, l'informatique, fonder une famille, avoir des responsabilités, tout ça ce n'est pas fait pour les _pleureuses_.
 
 - Il _faut_ ramener de l'argent à la maison pour payer le pavillon en périphérie.
 - Il _faut_ faire de belles études jusqu'à obtenir une thèse en informatique.
