@@ -168,7 +168,7 @@ pub fn write_posts_html(posts: &[Post], site: &Site) {
 
         let front_matter = &post.front_matter;
         context.insert("title", &front_matter.title);
-        context.insert("date", &front_matter.date.to_rfc2822());
+        context.insert("date", &front_matter.date.to_rfc3339());
 
         context.insert("post_content", &html_content);
         context.insert("post_url_path", &post.url_path);

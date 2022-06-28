@@ -18,6 +18,7 @@
 <article>
   <header>
     <h1>{{ title }}</h1>
+    <span>{{ date|date(format="%d-%m-%Y") }}</span>
   </header>
   {{ post_content }}
 </article>

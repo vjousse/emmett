@@ -50,6 +50,7 @@ pub struct FrontMatter {
 #[derive(Debug, Serialize, Eq, Ord, PartialEq, PartialOrd)]
 pub struct Post {
     pub front_matter: FrontMatter,
+    pub date_rfc3339: String,
     pub excerpt: Option<String>,
     pub content: String,
     pub path: String,
@@ -66,6 +67,7 @@ impl Post {
         url_path: String,
         url_path_encoded: String,
     ) -> Self {
+        let rfc_date = front_matter.date.to_rfc3339();
         Post {
             content,
             front_matter,
@@ -73,6 +75,7 @@ impl Post {
             path,
             url_path,
             url_path_encoded,
+            date_rfc3339: rfc_date,
         }
     }
 }

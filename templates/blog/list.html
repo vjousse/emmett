@@ -13,6 +13,9 @@
     <li>
       <a href="/{{ post.url_path }}"><h2>{{ post.front_matter.title }}</h2></a>
 
+      <div style="text-align: center">
+      {{ post.date_rfc3339|date(format="%d-%m-%Y") }}
+      </div>
       {% if post.excerpt %}
       <p>{{ post.excerpt|markdown }}</p>
       {% endif %}
