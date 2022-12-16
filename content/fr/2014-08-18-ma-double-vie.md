@@ -48,4 +48,4 @@ Choisir un DUT alors qu'on est accepté en école prépa peut sembler être un m
 
 Peu importe à vrai dire. Je n'ai pas choisi tout ce qui est arrivé dans ma vie, par contre __j'ai choisi la manière dont j'y réagissais__.
 
-Et vous, __comment [choisissez-vous de voir votre vie](faire-le-mauvais-choix/)__ ?
+Et vous, __comment [choisissez-vous de voir votre vie](/blog/fr/faire-le-mauvais-choix/)__ ?

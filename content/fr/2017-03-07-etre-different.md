@@ -23,13 +23,13 @@ J'ai toujours été classé (et le suis encore) dans la case des personnes __aty
 
 ## Être normal
 
-J'ai du mal à me considérer différent, car j'ai du mal à cerner ce que la normalité peut être. C'est ce que tout le monde fait ? C'est qui ce tout le monde ? Et ils font quoi au juste ? Comment pourrais-je me comparer à eux, je ne connais d'eux que __ce qu'ils veulent bien laisser paraitre__. Mais si c'est le cas (on ne voit toujours que la partie émergée de l'iceberg) ils sont donc forcément différents de la normalité qu'ils affichent. _Vincent, je sens que tu vas trop loin là :)_ (n'hésitez pas à relire [Ma double vie](/blog/ma-double-vie/) à ce sujet).
+J'ai du mal à me considérer différent, car j'ai du mal à cerner ce que la normalité peut être. C'est ce que tout le monde fait ? C'est qui ce tout le monde ? Et ils font quoi au juste ? Comment pourrais-je me comparer à eux, je ne connais d'eux que __ce qu'ils veulent bien laisser paraitre__. Mais si c'est le cas (on ne voit toujours que la partie émergée de l'iceberg) ils sont donc forcément différents de la normalité qu'ils affichent. _Vincent, je sens que tu vas trop loin là :)_ (n'hésitez pas à relire [Ma double vie](/blog/fr/ma-double-vie/) à ce sujet).
 
 Bref, c'est le bordel mon adjudent. Ces notions de différence et de normalité n'ont aucun sens pour moi. Si être différent c'est ne pas être comme les autres, alors __être différent c'est juste être soi-même__ si l'on part du fait que chaque personne en ce monde est unique.
 
 ## Chercher la différence
 
-Et si finalement, la meilleure chose à faire était de justement __cultiver ses différences__ ? D'avoir Le courage d'être soi-même et d'en assumer les conséquences (cf. [Le courage de vivre consciemment](/blog/le-courage-de-vivre-consciemment/))?
+Et si finalement, la meilleure chose à faire était de justement __cultiver ses différences__ ? D'avoir Le courage d'être soi-même et d'en assumer les conséquences (cf. [Le courage de vivre consciemment](/blog/fr/le-courage-de-vivre-consciemment/))?
 
 Au lieu de chercher à rentrer dans la normalité, je pense que nous avons plutôt intérêt à apprendre à aimer nos différences et celles des autres. Si on y réfléchit un peu, c'est la seule manière d'être soi-même. Certes, des gens vont vous regarder de travers, ils ne vont pas comprendre, mais est-ce réellement là le plus important ? Ou est-ce que le plus important n'est pas d'être en alignement avec soi-même ?
 

@@ -76,7 +76,7 @@ Create the other partition of code `8E00` using the remaining space.
 
 You should now have only 2 partitions, one for `/boot` that will not be encrypted, and another one that you will first encrypt, and then put your volumes on it (`/` and `swap`). In my case, the first partition that will be used for `/boot` is named `/dev/nvme0n1p1`, and the other one `/dev/nvme0n1p2`. You may have something like `/dev/sda1` and `/dev/sda2` if your partition naming scheme is not the same than mine.
 
-You can then follow the (LVM on LUKS section)[https://wiki.archlinux.org/index.php/Dm-crypt/Encrypting_an_entire_system#LVM_on_LUKS] section.
+You can then follow the [LVM on LUKS section](https://wiki.archlinux.org/index.php/Dm-crypt/Encrypting_an_entire_system#LVM_on_LUKS) section.
 
 I don't like having separate partitions for `/` and `/home`. Every time I've done that, I always regretted the amount of space I allocated for each. So now, I'm only creating one `/` partition with everything inside.
 
