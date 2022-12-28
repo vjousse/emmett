@@ -29,7 +29,7 @@ Se préparer un thé nature est un très bon exercice. Le thé est parfait pour 
 
 Il suffit d'apprendre à apprécier ce moment. Si vous posez votre thé dans un coin en attendant qu'il infuse et qu'il refroidisse il n'y a aucun intérêt, ça va de soi. Si vous êtes plutôt café, ça peut marcher aussi. Apprenez à apprécier la senteur de votre breuvage, la chaleur qu'il produit dans vos mains. Appréciez ce moment de calme et de bien être que vous vous offrez. Écoutez votre respiration, fermez les yeux, prenez conscience de la chance que vous avez d'être là. Souriez.
 
-Vous verrez que vous prendre 10 minutes pour vous, ça peut vous sauver votre journée. Quand on est stressé, c'est qu'on s'éloigne du moment présent et qu'on projette de possibles évènements futurs dans l'ici et maintenant. Remettre le pied dans [l'instant présent](/blog/le-pouvoir-du-moment-présent/) est alors indispensable.
+Vous verrez que vous prendre 10 minutes pour vous, ça peut vous sauver votre journée. Quand on est stressé, c'est qu'on s'éloigne du moment présent et qu'on projette de possibles évènements futurs dans l'ici et maintenant. Remettre le pied dans [l'instant présent](/blog/fr/le-pouvoir-du-moment-présent/) est alors indispensable.
 
 ## Tout est appréciable
 

@@ -9,7 +9,7 @@ description:
 type: text
 ---
 
-_Cet article fait partie de [la traduction du livre « The one skill » de zenhabits](/blog/traduction-du-livre-the-one-skill-de-zenhabits/)_
+_Cet article fait partie de [la traduction du livre « The one skill » de zenhabits](/blog/fr/traduction-du-livre-the-one-skill-de-zenhabits/)_
 
 
 Vous êtes arrivé à la fin de ce livre, mais ce n'est peut-être que le début du voyage.

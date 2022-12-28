@@ -9,7 +9,7 @@ description:
 type: text
 ---
 
-_Cet article fait partie de [la traduction du livre « The one skill » de zenhabits](/blog/traduction-du-livre-the-one-skill-de-zenhabits/)_
+_Cet article fait partie de [la traduction du livre « The one skill » de zenhabits](/blog/fr/traduction-du-livre-the-one-skill-de-zenhabits/)_
 
 Il n'y a pas que la procrastination qui est causée par la peur, presque tous nos problèmes sont causés par la peur, avec des racines très ancrées dans nos idéaux, nos attentes, nos fantaisies comme nous l'avons vu dans le chapitre précédent.
 

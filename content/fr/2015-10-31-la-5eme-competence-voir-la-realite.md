@@ -9,7 +9,7 @@ description:
 type: text
 ---
 
-_Cet article fait partie de [la traduction du livre « The one skill » de zenhabits](/blog/traduction-du-livre-the-one-skill-de-zenhabits/)_
+_Cet article fait partie de [la traduction du livre « The one skill » de zenhabits](/blog/fr/traduction-du-livre-the-one-skill-de-zenhabits/)_
 
 Partons du fait que vous arriviez à lâcher prise. Ce n'est pas toujours facile et vous allez d'ailleurs pratiquer cela dans le chapitre suivant. Mais admettons que vous réussissiez.<!-- TEASER_END -->
 

@@ -9,7 +9,7 @@ description:
 type: text
 ---
 
-_Cet article fait partie de [la traduction du livre « The one skill » de zenhabits](/blog/traduction-du-livre-the-one-skill-de-zenhabits/)_
+_Cet article fait partie de [la traduction du livre « The one skill » de zenhabits](/blog/fr/traduction-du-livre-the-one-skill-de-zenhabits/)_
 
 Une des meilleurs choses que j'ai pu faire est d'avoir fait le ménage dans ma vie en me débarrassant d'un grand nombre de trucs et de possessions inutiles : meubles, vêtements, gadgets, outils, livres, vaisselle, souvenirs et bien plus encore.
 <!-- TEASER_END -->

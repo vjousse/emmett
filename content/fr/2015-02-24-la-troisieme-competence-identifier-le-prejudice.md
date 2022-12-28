@@ -9,7 +9,7 @@ description:
 type: text
 ---
 
-_Cet article fait partie de [la traduction du livre « The one skill » de zenhabits](/blog/traduction-du-livre-the-one-skill-de-zenhabits/)_
+_Cet article fait partie de [la traduction du livre « The one skill » de zenhabits](/blog/fr/traduction-du-livre-the-one-skill-de-zenhabits/)_
 
 Vous avez remarqué le signal et vous êtes maintenant capable de voir l'idéal qui en est la cause. Mais qu'est-ce qui pose problème dans le fait d'être en colère, jaloux ou d'éprouver des sentiments de malaise ? Est-ce que ce n'est pas aussi ça, être humain ?
 <!-- TEASER_END -->

@@ -9,7 +9,7 @@ description:
 type: text
 ---
 
-_Cet article fait partie de [la traduction du livre « The one skill » de zenhabits](/blog/traduction-du-livre-the-one-skill-de-zenhabits/)_
+_Cet article fait partie de [la traduction du livre « The one skill » de zenhabits](/blog/fr/traduction-du-livre-the-one-skill-de-zenhabits/)_
 
 Prendre de nouvelles habitudes est plutôt simple : vous effectuez la nouvelle habitude que vous désirez acquérir juste après un élément déclencheur (par exemple votre café du matin) et vous répétez le processus aussi longtemps qu'il le faut pour que ça devienne automatique. Au bout d'un moment, lorsque l'élément déclencheur se présentera, le besoin d'effectuer la nouvelle habitude se manifestera automatiquement.
 <!-- TEASER_END -->

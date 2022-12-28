@@ -21,7 +21,7 @@ type: text
 
 <p><h2>Vous disparaissez</h2></p>
 
-<p><p>J'ai déjà eu l'occasion de vous parler des bienfaits de <a href="/blog/le-pouvoir-du-moment-présent/">vivre le moment présent</a>. Le simple bonheur d'être là, d'apprécier ce que l'on fait, ce que l'on vit, les gens avec qui on le partage. Vous me voyez venir.</p></p>
+<p><p>J'ai déjà eu l'occasion de vous parler des bienfaits de <a href="/blog/fr/le-pouvoir-du-moment-présent/">vivre le moment présent</a>. Le simple bonheur d'être là, d'apprécier ce que l'on fait, ce que l'on vit, les gens avec qui on le partage. Vous me voyez venir.</p></p>
 
 <p><p>Lorsque vous êtes sur votre Smartphone, <strong>vous n'êtes pas là</strong>. Vous n'êtes pas dans cette salle d'attente, vous n'êtes pas dans le bus, vous n'êtes pas à ce repas avec des amis. Vous êtes <strong>virtuellement connecté et concrètement absent</strong>. Vous finissez par ne plus apprécier d'être juste là. Dès que vous le pouvez vous vous échappez.</p></p>
 

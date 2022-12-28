@@ -9,7 +9,7 @@ description:
 type: text
 ---
 
-_Cet article fait partie de [la traduction du livre « The one skill » de zenhabits](/blog/traduction-du-livre-the-one-skill-de-zenhabits/)_
+_Cet article fait partie de [la traduction du livre « The one skill » de zenhabits](/blog/fr/traduction-du-livre-the-one-skill-de-zenhabits/)_
 
 Une des choses les plus dures est de réussir à gérer une perte majeure, comme la perte d'un emploi, d'une maison, ou d'un être aimé. Mais il y a aussi des pertes mineures qui nous font régulièrement souffrir : la perte d'un contrat, la perte de notre bonne santé quand nous attrapons un rhume, la perte de celui que nous pensions être lorsque que nous sommes face à un échec ou sommes dans l'embarras.
 <!-- TEASER_END -->

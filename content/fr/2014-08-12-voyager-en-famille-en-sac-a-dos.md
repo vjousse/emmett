@@ -40,7 +40,7 @@ Nous avons uniquement séjourné dans des Guest House (chambres d'hôtes) et des
 
 Pour ceux d'entre vous qui aimeraient faire ce style de choses mais n'osent pas : lancez-vous quand même ! Rien ne va se passer comme prévu : ça sera souvent beaucoup mieux. Faites-vous un peu violence et réservez vos billets d'avion : vous ne pourrez plus faire marche arrière.
 
-N'oubliez pas que quoiqu'il arrive vous aurez toujours du positif à en tirer, ne serait-ce que le fait d'avoir eu [le courage de franchir le pas](/blog/le-courage-de-vivre-consciemment/).
+N'oubliez pas que quoiqu'il arrive vous aurez toujours du positif à en tirer, ne serait-ce que le fait d'avoir eu [le courage de franchir le pas](/blog/fr/le-courage-de-vivre-consciemment/).
 
 Pour ceux que ça intéresse, ci-dessous notre parcours sur place. Je ferai un autre post de blog avec plus de détails sur le voyage un peu plus tard.
 

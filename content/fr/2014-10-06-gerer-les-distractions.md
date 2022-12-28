@@ -9,7 +9,7 @@ description:
 type: text
 ---
 
-_Cet article fait partie de [la traduction du livre « The one skill » de zenhabits](/blog/traduction-du-livre-the-one-skill-de-zenhabits/)_
+_Cet article fait partie de [la traduction du livre « The one skill » de zenhabits](/blog/fr/traduction-du-livre-the-one-skill-de-zenhabits/)_
 
 Les distractions sont la face cachée de la procrastination : nous ne voulons pas nous concentrer sur quelque chose parce que c'est inconfortable ou compliqué, et donc nous nous laissons aller aux distractions.
 <!-- TEASER_END -->

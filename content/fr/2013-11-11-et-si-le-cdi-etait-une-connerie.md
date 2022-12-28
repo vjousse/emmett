@@ -17,7 +17,7 @@ Qu'est-ce qu'on cherche quand on veut obtenir un CDI ? On veut quelque chose de
 
 Le souci c'est que ça se vérifie rarement. Il existe des personnes en CDI qui galèrent dans la vie et, inversement, des personnes sans CDI qui sont contentes de leur vie. Et ceci indépendamment des montants gagnés. On nous aurait menti ? Il semblerait même, de ma propre expérience, que les personnes qui ont **choisi** de ne pas subir de CDI seraient plus épanouies. Je ne dis pas que la vie est plus facile pour elles, mais au moins, leur vie a un sens et un but qu'elles se fixent elles mêmes.
 
-Le CDI serait alors la solution de facilité. La **facilité de vivre la vie que d'autres ont tracée pour nous**, avant peut-être de se rendre compte [que demain il sera trop tard](/blog/demain-il-sera-peut-être-trop-tard/).
+Le CDI serait alors la solution de facilité. La **facilité de vivre la vie que d'autres ont tracée pour nous**, avant peut-être de se rendre compte [que demain il sera trop tard](/blog/fr/demain-il-sera-peut-être-trop-tard/).
 
 ## La soumission à un contrat
 
@@ -25,7 +25,7 @@ Ce qu'il ne faut pas oublier, lorsqu'on signe un CDI en France, c'est qu'on se r
 
 Tout d'abord, après s'être mis d'accord initialement sur la valeur de votre travail avec l'entreprise, cette valeur n'est que très rarement réévaluée par la suite. C'est votre salaire. Ensuite, l'entreprise détient un pouvoir quasiment unilatéral. Elle peut changer les règles du jeu sans changer le contrat : vous demander plus de travail (vous comprenez, c'est la crise), se plaindre de votre efficacité (vous n'avez pas atteint vos objectifs !), … Le **salarié n'a quasi qu'un échappatoire** : la démission. En effet, le contrat, après avoir été fixé à l'embauche, n'est que très rarement revu.
 
-Vous allez me dire qu'on n'est pas obligé de rester si on n'est pas content. _Ahah_. C'est vrai. Le souci, c'est que tout notre conditionnement, notre **domestication** fait qu'on nous a toujours appris à « faire attention », à « être prudent », à « être responsable » à [faire passer la sécurité avant tout](/blog/le-danger-ne-vient-pas-do%C3%B9-vous-pensez/). De base, on ne partira donc pas, car **c'est trop risqué**. Le comble, c'est que ce qui augmente ce risque, c'est le CDI et l'aliénation/dépendance qui va avec.
+Vous allez me dire qu'on n'est pas obligé de rester si on n'est pas content. _Ahah_. C'est vrai. Le souci, c'est que tout notre conditionnement, notre **domestication** fait qu'on nous a toujours appris à « faire attention », à « être prudent », à « être responsable » à [faire passer la sécurité avant tout](/blog/fr/le-danger-ne-vient-pas-do%C3%B9-vous-pensez/). De base, on ne partira donc pas, car **c'est trop risqué**. Le comble, c'est que ce qui augmente ce risque, c'est le CDI et l'aliénation/dépendance qui va avec.
 
 ## N'avoir qu'un client est une très mauvaise idée
 
@@ -50,7 +50,7 @@ Et surtout, le plus grand des risques dans le CDI, c'est la **perte d'autonomie 
 
 Le problème c'est que le CDI et la pseudo-stabilité qui va avec vous a enseigné tout le contraire. Vous n'avez jamais été entraîné à gérer les situations un peu périlleuses comme celles d'avoir à retrouver un emploi. Vous avez **vendu votre autonomie et votre capacité à vous auto-gérer le jour où vous avez signé votre CDI**.
 
-C'est finalement le plus grand risque du CDI : celui d'oublier que vous êtes [responsable de votre vie](/blog/le-secret-pour-prendre-ses-responsabilités-et-ne-plus-se-comporter-en-victime/) et que chacun a quelque chose à apporter à ce monde.
+C'est finalement le plus grand risque du CDI : celui d'oublier que vous êtes [responsable de votre vie](/blog/fr/le-secret-pour-prendre-ses-responsabilités-et-ne-plus-se-comporter-en-victime/) et que chacun a quelque chose à apporter à ce monde.
 
 ## Quelles solutions possibles ?
 
@@ -82,7 +82,7 @@ J'ai mis quelques années à y parvenir mais je ne reviendrais pour rien au mond
 
 Personnellement je souhaite que tout le monde puisse **grandir intérieurement** de manière à pouvoir révéler ce que chacun à offrir à ce monde. Je serais vraiment curieux de voir ce qui émanera de chaque personne le jour où elle pourra pleinement exprimer son potentiel et n'aura pas à occuper [un emploi bidon de type CDI pour survivre](http://revenudebase.info/2013/08/le-phenomene-des-boulots-bidon/).
 
-Comme j'en avais déjà parlé ici, la bonne nouvelle c'est que [nous manquons enfin de travail](/blog/on-manque-enfin-de-travail-vive-le-revenu-de-base/). Nous avons enfin pu automatiser la majorité des tâches qui permettent la survie. Il est donc possible que les générations à venir n'aient plus à se demander comment elles pourront faire pour subvenir à leurs besoins vitaux. Il est possible que leur seule préoccupation soit celle de **se développer en tant que personne humaine**.
+Comme j'en avais déjà parlé ici, la bonne nouvelle c'est que [nous manquons enfin de travail](/blog/fr/on-manque-enfin-de-travail-vive-le-revenu-de-base/). Nous avons enfin pu automatiser la majorité des tâches qui permettent la survie. Il est donc possible que les générations à venir n'aient plus à se demander comment elles pourront faire pour subvenir à leurs besoins vitaux. Il est possible que leur seule préoccupation soit celle de **se développer en tant que personne humaine**.
 
 Peut-être qu'un jour, sur cette planète, chacun pourra contribuer de manière **utile et choisie** au monde qui l'entoure. Peut-être que plus personne n'aura à se renier pour survivre. Utopie ou monde de demain ? Allez vous renseigner vous-même : [le revenu de base](http://revenudebase.info/).
 

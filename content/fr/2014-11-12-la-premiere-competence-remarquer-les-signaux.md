@@ -9,7 +9,7 @@ description:
 type: text
 ---
 
-_Cet article fait partie de [la traduction du livre « The one skill » de zenhabits](/blog/traduction-du-livre-the-one-skill-de-zenhabits/)_
+_Cet article fait partie de [la traduction du livre « The one skill » de zenhabits](/blog/fr/traduction-du-livre-the-one-skill-de-zenhabits/)_
 
 La première compétence à acquérir est celle de pouvoir remarquer lorsque l'on s'accroche à quelque chose de nocif : une sorte de signal apparaitra, un signe que vous êtes en train de souffrir.
 

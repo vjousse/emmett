@@ -9,7 +9,7 @@ description:
 type: text
 ---
 
-_Cet article fait partie de [la traduction du livre « The one skill » de zenhabits](/blog/traduction-du-livre-the-one-skill-de-zenhabits/)_
+_Cet article fait partie de [la traduction du livre « The one skill » de zenhabits](/blog/fr/traduction-du-livre-the-one-skill-de-zenhabits/)_
 
 Nous commençons à apercevoir les bénéfices du lâcher prise et à comprendre comment il fonctionne. C'est une bonne première chose, mais comment faire pour développer cette capacité ? Ça ne se fait pas juste avec un claquement de doigts.
 <!-- TEASER_END -->
