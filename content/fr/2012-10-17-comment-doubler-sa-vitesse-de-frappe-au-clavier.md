@@ -49,7 +49,7 @@ type: text
 
 <p>Si vous voulez pousser la démarche jusqu'au bout, je vous conseillerais grandement d'investir dans un <strong>clavier orthogonal</strong>. Ces claviers ont la particularité d'avoir les touches alignées verticalement, et non décalées comme les claviers normaux. Le décalage des touches entre les rangées venant de contraintes techniques des machines à écrire, il serait grand temps de remédier à cette hérésie. C'est très confortable de taper sur de tels claviers. Personnellement je ne pourrais plus revenir en arrière pour mon clavier principal.</p>
 
-<p></p><div class="wp-caption text-center" id="attachment_121" style=""><img alt="Clavier orthogonal" class="size-full wp-image-121" height="175" src="https://data.jousse.org/blog/2006_02_06_typematrix.jpg" title="2006_02_06_typematrix" width="500"><p></p></div>
+<p></p><div class="wp-caption text-center" id="attachment_121" style=""><img alt="Clavier orthogonal" class="size-full wp-image-121" src="https://data.jousse.org/blog/2006_02_06_typematrix.jpg" title="2006_02_06_typematrix"><p></p></div>
 
 <p>Le clavier que j'ai est un <a href="http://typematrix.com/">clavier TypeMatrix</a>. Ces claviers ont un <strong>très bon rapport qualité/prix</strong> et disposent même de "skin" avec <a href="http://typematrix.com/bepo.php">le clavier en Bépo</a> directement. Je vous conseillerais d'acheter un clavier complètement vierge ou uniquement avec les touches spéciales de marquées dessus. Grâce au touch typing, avoir les lettres écrites sur les touches ne vous servira à rien de toute façon (et un clavier vierge vous forcera à ne pas le regarder ;) ).</p>
 

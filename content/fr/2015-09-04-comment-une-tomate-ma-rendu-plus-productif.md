@@ -21,7 +21,7 @@ Mais ça c'était avant. Comme j'ai tendance à ne pas me laisser abattre, j'ai 
 
 Plus qu'une méthode pour être « plus productif », c'est avant tout un moyen d'établir une __relation plus seine vis à vis du temps__. Au lieu de le voir comme quelque chose dont vous n'avez pas assez et après lequel vous êtes toujours en train de courir, il devient votre allier et par conséquence, vous aide à être plus productif.
 
-Comment ça se passe concrêtement ? J'en avais déjà parlé dans [un précédent article](/blog/travailler-par-tranches-de-25-minutes/) : la magie vient du fait de travailler par tranche de 25 minutes qui sont comptées par __un minuteur de cuisine qui fait tic/tac__, type tomate (d'où le nom de pomodoro en italien) et qui sonne ou bout des 25 minutes. Peu importe le minuteur, qu'il soit en forme de citron, de tomate, d'orange ou de je ne sais quoi, ce qui est important c'est qu'il fasse tic-tac, qu'on puisse voir combien de temps il reste et qu'il sonne ou bout de 25 minutes.
+Comment ça se passe concrêtement ? J'en avais déjà parlé dans [un précédent article](/blog/fr/travailler-par-tranches-de-25-minutes/) : la magie vient du fait de travailler par tranche de 25 minutes qui sont comptées par __un minuteur de cuisine qui fait tic/tac__, type tomate (d'où le nom de pomodoro en italien) et qui sonne ou bout des 25 minutes. Peu importe le minuteur, qu'il soit en forme de citron, de tomate, d'orange ou de je ne sais quoi, ce qui est important c'est qu'il fasse tic-tac, qu'on puisse voir combien de temps il reste et qu'il sonne ou bout de 25 minutes.
 
 Et c'est tout ? Oui, enfin presque. Vous ajoutez une liste de tâches à faire aujourd'hui, une todo liste « globale » et quelques règles :
 

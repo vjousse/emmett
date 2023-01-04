@@ -9,7 +9,7 @@ description:
 type: text
 ---
 
-_Cet article fait partie de [la traduction du livre « The one skill » de zenhabits](/blog/traduction-du-livre-the-one-skill-de-zenhabits/)_
+_Cet article fait partie de [la traduction du livre « The one skill » de zenhabits](/blog/fr/traduction-du-livre-the-one-skill-de-zenhabits/)_
 
 Lâcher prise et voir les choses comme elles sont réellement n'est pas la fin du voyage. Se pose maintenant la question de savoir comment agir une fois que vous avez réussi à lâcher prise et à focaliser votre attention sur la réalité.
 

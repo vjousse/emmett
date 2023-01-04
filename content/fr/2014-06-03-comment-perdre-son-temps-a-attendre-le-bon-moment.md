@@ -25,7 +25,7 @@ Dans le coup si l'on considère que :
 
 que nous reste-t-il à faire ?
 
-C'est tout simple, il faut avoir [le courage de vivre consciemment](/blog/le-courage-de-vivre-consciemment/). __Le courage d'admettre que nos limites sont celles que nous nous fixons__.
+C'est tout simple, il faut avoir [le courage de vivre consciemment](/blog/fr/le-courage-de-vivre-consciemment/). __Le courage d'admettre que nos limites sont celles que nous nous fixons__.
 
 Une fois que l'on a réalisé cela, on peut commencer à établir des plans, à tester des idées, à aller de l'avant. __La bonne idée ne viendra pas, alors prenez celle que vous avez, et testez-là__ !
 

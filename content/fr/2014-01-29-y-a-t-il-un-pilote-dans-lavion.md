@@ -31,11 +31,11 @@ Maintenant, c'est à vous de __faire le choix explicite de vous construire et de
 
 Il ne s'agit pas de changer du tout au tout du jour au lendemain. __Construire sa vie est bien plus facile__ que ça.
 
-Tout d'abord, il faut [être conscient](/blog/le-courage-de-vivre-consciemment/) de là où on se trouve. Il faut admettre sa situation actuelle. La pire des choses serait de nier la situation dans laquelle vous vous trouvez. Vous vous trouvez trop gros ? Vous n'aimez pas votre travail ? Vous êtes malheureux dans votre couple ? Très bien, __ce sont des choses qui arrivent__. Prenez-en conscience et admettez votre situation.
+Tout d'abord, il faut [être conscient](/blog/fr/le-courage-de-vivre-consciemment/) de là où on se trouve. Il faut admettre sa situation actuelle. La pire des choses serait de nier la situation dans laquelle vous vous trouvez. Vous vous trouvez trop gros ? Vous n'aimez pas votre travail ? Vous êtes malheureux dans votre couple ? Très bien, __ce sont des choses qui arrivent__. Prenez-en conscience et admettez votre situation.
 
-Partant de là, vous pouvez choisir [quoi faire de votre vie](/blog/que-faire-de-sa-vie/). Vous pouvez choisir quel type de personne vous voulez être et quelles actions vous devez mener pour ce faire.
+Partant de là, vous pouvez choisir [quoi faire de votre vie](/blog/fr/que-faire-de-sa-vie/). Vous pouvez choisir quel type de personne vous voulez être et quelles actions vous devez mener pour ce faire.
 
-Ensuite il vous suffira de mettre en place [ces petites choses qui font la différence](/blog/le-petit-plus-qui-fait-la-difference/). Ces choses __faciles à faire mais aussi faciles à ne pas faire__ qui, grâce à l'action magique du temps, vous permettrons de construire votre vie petit à petit. Mais pour ça, il faut commencer par se réveiller, n'est-ce pas ? Alors debout les gens !
+Ensuite il vous suffira de mettre en place [ces petites choses qui font la différence](/blog/fr/le-petit-plus-qui-fait-la-difference/). Ces choses __faciles à faire mais aussi faciles à ne pas faire__ qui, grâce à l'action magique du temps, vous permettrons de construire votre vie petit à petit. Mais pour ça, il faut commencer par se réveiller, n'est-ce pas ? Alors debout les gens !
 
 ## Idées à retenir
 

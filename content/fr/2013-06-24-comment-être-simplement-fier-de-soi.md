@@ -29,7 +29,7 @@ type: text
 
 <p>Jusqu'où continuer cette surenchère de « choses à faire » ? Jusqu'à ce qu'on se rende compte qu'il est trop tard pour autre chose ?</p>
 
-<p>Paradoxalement, lorsque j'ai décidé de <a href="/blog/je-quitte-mon-emploi/">quitter mon emploi</a>, j'ai ressenti ce sentiment de fierté.</p>
+<p>Paradoxalement, lorsque j'ai décidé de <a href="/blog/fr/je-quitte-mon-emploi/">quitter mon emploi</a>, j'ai ressenti ce sentiment de fierté.</p>
 
 <p>C'est là que j'ai commencé à réaliser qu'au lieu de chercher quoi faire, je devais prendre conscience de qui j'étais.</p>
 

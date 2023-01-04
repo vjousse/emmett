@@ -17,7 +17,7 @@ type: text
 
 <p><p>Peut-être que <strong>commencer par réfléchir à qui l'on veut être</strong> est la première chose à faire, non ? Si l'on a une idée de qui l'on veut être, il devient plus facile de savoir quoi faire.</p></p>
 
-<p><p>Essayer toutes les voix est impossible, alors autant rétrécir votre champ de recherche un peu. Prenez 20 minutes au calme, et listez, par écrit (c'est important, la pensée seule ne suffit pas) <strong>les 3-4 valeurs les plus importantes à vos yeux</strong>. Je l'avais fait dans l'article au sujet de <a href="/blog/je-quitte-mon-emploi/">l'emploi que je venais de quitter</a>.</p></p>
+<p><p>Essayer toutes les voix est impossible, alors autant rétrécir votre champ de recherche un peu. Prenez 20 minutes au calme, et listez, par écrit (c'est important, la pensée seule ne suffit pas) <strong>les 3-4 valeurs les plus importantes à vos yeux</strong>. Je l'avais fait dans l'article au sujet de <a href="/blog/fr/je-quitte-mon-emploi/">l'emploi que je venais de quitter</a>.</p></p>
 
 <p><p>Voici les trois valeurs qui m'animent :</p></p>
 

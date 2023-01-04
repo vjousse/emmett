@@ -33,6 +33,6 @@ type: text
 
 <p><ul><br /><li>Qu'est-ce qui déclenche ce sentiment de victime en moi ? <strong>De quoi ai-je peur</strong> ? De ne pas être aimé, de me retrouver seul, de ne plus avoir d'argent, de ne pas retrouver d'autre travail, … ? Tout sentiment de victime commence par une peur enfouie en vous, identifiez là.</li><br /><li>Écrivez quelque part (comme dans les exemples ci-dessus) une <strong>reformulation de votre problème</strong> d'un autre point du vue.</li><br /><li>Au lieu de combattre le problème que vous pensez avoir en vous comportant en victime, commencez plutôt par <strong>combattre votre peur</strong>.</li><br /><li>Faites cela à chaque fois que vous vous rendez compte que vous vous comportez en victime.</li><br /></ul></p>
 
-<p><p>Ça va vous demander de temps, Rome ne s'est pas construite en un jour, mais il a bien fallu que quelqu'un pose la première pierre. Et si vous ne voulez pas <a href="/blog/comment-passer-à-côté-de-sa-vie-les-8-excuses-bidon-que-vous-regretterez">« passer à côté de votre vie »</a>, autant <strong>commencer maintenant</strong>.</p></p>
+<p><p>Ça va vous demander de temps, Rome ne s'est pas construite en un jour, mais il a bien fallu que quelqu'un pose la première pierre. Et si vous ne voulez pas <a href="/blog/fr/comment-passer-à-côté-de-sa-vie-les-8-excuses-bidon-que-vous-regretterez">« passer à côté de votre vie »</a>, autant <strong>commencer maintenant</strong>.</p></p>
 
 <p><p>Et vous, par où allez vous commencer pour prendre vos responsabilités ?</p></p>

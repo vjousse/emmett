@@ -23,7 +23,7 @@ Quoiqu'il en soit, ma domestication avait été efficace : __je gagnerai de l'a
 
 ## La prise de conscience
 
-La meilleure chose qui me soit arrivée dans la vie, c'est de me __[demander pourquoi](http://deboutlesgens.com/blog/le-développement-personnel-pour-qui-pourquoi)__ il y a de ça un an et demi. À force de lire des blogs à droite et à gauche et grâce aux conseils d'[un ami](http://twitter.com/cchantep) j'ai acheté [mon premier livre sur le développement personnel](http://deboutlesgens.com/blog/travailler-moins-pour-gagner-plus-la-semaine-de-4-heures/). Je n'ai pas arrêté d'en acheter d'autres depuis.
+La meilleure chose qui me soit arrivée dans la vie, c'est de me __[demander pourquoi](/blog/fr/le-développement-personnel-pour-qui-pourquoi)__ il y a de ça un an et demi. À force de lire des blogs à droite et à gauche et grâce aux conseils d'[un ami](http://twitter.com/cchantep) j'ai acheté [mon premier livre sur le développement personnel](/blog/fr/travailler-moins-pour-gagner-plus-la-semaine-de-4-heures/). Je n'ai pas arrêté d'en acheter d'autres depuis.
 
 C'est là que je me suis rendu compte que tout ce à quoi je croyais ne me correspondait pas du tout. Qu'il était possible que tout ce qui m'arrivait soit le résultat d'un __conditionnement social fort__ et non pas de ma propre volonté.
 
@@ -37,7 +37,7 @@ Après quelques moments de réflexion je me suis alors rendu à l'évidence : l
 
 C'était vraiment pas gagné, croyez-moi. Je m'étais toujours dit de toute façon : « __je ne sais pas écrire, je suis un scientifique__ ». Mais une chose avait changé, j'avais compris que __pour juger de quelque chose, il fallait l'avoir essayé__. Et je n'avais jamais essayé d'écrire et de penser par moi-même jusqu'ici. J'avais, avec brio, répété la domestication de mon enfance : bon élève, bon point.
 
-Un jour j'ai essayé. J'ai [publié mon premier article ici](/blog/comment-r%C3%A9ussir-dans-la-vie-dompter-l%C3%A9chec/). C'était la première fois que j'écrivais autre chose de public que ma thèse. Je n'étais vraiment pas content de ce que j'avais produit. De toute façon, j'étais nul en écriture. Mais je me suis fait violence, j'ai publié quand même. Je voulais voir ce que ça donnerait. Ça a été le premier des 57 articles écrits à ce jour.
+Un jour j'ai essayé. J'ai [publié mon premier article ici](/blog/fr/comment-r%C3%A9ussir-dans-la-vie-dompter-l%C3%A9chec/). C'était la première fois que j'écrivais autre chose de public que ma thèse. Je n'étais vraiment pas content de ce que j'avais produit. De toute façon, j'étais nul en écriture. Mais je me suis fait violence, j'ai publié quand même. Je voulais voir ce que ça donnerait. Ça a été le premier des 57 articles écrits à ce jour.
 
 Je reste encore fasciné par le retour que j'ai sur certains articles. Mon conditionnement étant encore assez présent, j'ai tendance à penser que je ne suis pas fait pour ça. Et pourtant, je prends plaisir à écrire et il semblerait que vous preniez plaisir à lire. __Changer est possible, mais pour ça, il faut au moins essayer__.
 
@@ -47,7 +47,7 @@ Vous êtes-vous déjà demandé si vous pourriez faire autre chose que ce que vo
 
 Moi non plus je ne savais pas écrire, ce qui a fait la différence, c'est qu'un jour, j'ai essayé. Sans essayer, on ne peut pas s'améliorer.
 
-Il y a un début à tout, et si vous souhaitez [prendre le contrôle de votre vie](/blog/y-a-t-il-un-pilote-dans-lavion/), sortir de sa zone de confort est un bon début.
+Il y a un début à tout, et si vous souhaitez [prendre le contrôle de votre vie](/blog/fr/y-a-t-il-un-pilote-dans-lavion/), sortir de sa zone de confort est un bon début.
 
 Merci à [@mageekguy pour l'inspiration](https://twitter.com/mageekguy/statuses/429356860354072576).
 
@@ -57,4 +57,4 @@ Merci à [@mageekguy pour l'inspiration](https://twitter.com/mageekguy/statuses/
 - En revanche, croire que l'on est incapable nous rend effectivement incapable.
 - Sauf cas exceptionnel, « la société » a choisi votre vie à votre place.
 - Pour juger de quelque chose, il faut essayer. Et c'est en essayant encore et encore qu'on s'améliore.
-- Se mettre en danger, [c'est avancer](/blog/y-a-t-il-un-pilote-dans-lavion/).
+- Se mettre en danger, [c'est avancer](/blog/fr/y-a-t-il-un-pilote-dans-lavion/).

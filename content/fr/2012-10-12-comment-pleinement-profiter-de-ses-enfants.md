@@ -27,7 +27,7 @@ type: text
 
 <p><h2>Changer certes, mais quoi ?</h2></p>
 
-<p>Tout d'abord il va falloir <strong>dégager du temps</strong> pour vos enfants. C'est plus difficile qu'il n'y paraît, je vous donne quelques conseils dans <a href="/blog/jai-pas-le-temps-la-pire-excuse-qui-soit/">« J’ai pas le temps : la pire excuse qui soit »</a>. Vous pouvez déjà commencer par vous dégager 30 minutes par jour rien que pour eux.</p>
+<p>Tout d'abord il va falloir <strong>dégager du temps</strong> pour vos enfants. C'est plus difficile qu'il n'y paraît, je vous donne quelques conseils dans <a href="/blog/fr/jai-pas-le-temps-la-pire-excuse-qui-soit/">« J’ai pas le temps : la pire excuse qui soit »</a>. Vous pouvez déjà commencer par vous dégager 30 minutes par jour rien que pour eux.</p>
 
 <p>Même si c'est un bon début, il ne va <strong>pas être suffisant</strong> de passer du temps avec vos enfants. Vous avez peut-être déjà essayé sans y prendre vraiment plaisir pour autant. Si vous continuez à avoir la tête ailleurs pendant ces moments (vous pensez à des évènements qui viennent récemment de se passer ou alors à ce que vous allez faire après) vous ne pourrez réellement prendre plaisir et vous finirez par espacer ces moments. Vous <strong>retomberez alors au point de départ</strong>.</p>
 
