@@ -9,7 +9,7 @@ description:
 type: text
 ---
 
-<p></p><p>Il éteind la lumière. Le réveil est réglé à 6h30, ce qui lui laisse à peine 6 heures pour oublier sa journée avant qu'une autre ne vienne <strong>dévorer son esprit</strong>. Paul est un homme qui a <a href="/jai-pourtant-tout-ce-quil-faut-pour-etre-heureux/">tout ce qu'il faut pour être heureux</a>. En théorie.</p><p></p>
+<p></p><p>Il éteind la lumière. Le réveil est réglé à 6h30, ce qui lui laisse à peine 6 heures pour oublier sa journée avant qu'une autre ne vienne <strong>dévorer son esprit</strong>. Paul est un homme qui a <a href="/blog/fr/jai-pourtant-tout-ce-quil-faut-pour-être-heureux/">tout ce qu'il faut pour être heureux</a>. En théorie.</p><p></p>
 <!-- TEASER_END -->
 <p></p><p>Paul ne se sent pas à sa place. Il est là mais aimerait être autre part, tant et si bien qu'il n'est nulle part. Il survit plus qu'il ne vit, il transpire plus qu'il ne respire. En somme, Paul est poussé au fond par les vagues, <strong>il a appris à nager, jamais à surfer</strong>.</p><p></p>
 
@@ -21,9 +21,9 @@ type: text
 
 <p></p><p><em>Réveillez-vous</em>, ce n'est qu'un mauvais cauchemar, mais ça pourrait être le votre. N'attendez pas demain pour vivre, demain il sera trop tard. Faites le premier pas maintenant, même si ce n'est qu'un tout petit pas.</p><p></p>
 
-<p></p><ul><br><li><a href="/jai-pas-le-temps-la-pire-excuse-qui-soit/"><strong>Trouvez du temps</strong></a>,</li><br><li><a href="/le-courage-de-vivre-consciemment-steve-pavlina/">apprenez à <strong>affronter la peur</strong></a>,</li><br><li>écrivez <strong>les valeurs qui comptent</strong> pour vous,</li><br><li><strong>définissez vos priorités</strong> en fonction de ces valeurs,</li><br><li><strong>apprenez à dire non</strong>,</li><br><li><a href="/amusez-vous/"><strong>amusez-vous</strong></a>,</li><br><li><strong>vivez</strong>.</li><br></ul><p></p>
+<p></p><ul><br><li><a href="/blog/fr/jai-pas-le-temps-la-pire-excuse-qui-soit/"><strong>Trouvez du temps</strong></a>,</li><br><li><a href="/blog/fr/le-courage-de-vivre-consciemment/">apprenez à <strong>affronter la peur</strong></a>,</li><br><li>écrivez <strong>les valeurs qui comptent</strong> pour vous,</li><br><li><strong>définissez vos priorités</strong> en fonction de ces valeurs,</li><br><li><strong>apprenez à dire non</strong>,</li><br><li><a href="/amusez-vous/"><strong>amusez-vous</strong></a>,</li><br><li><strong>vivez</strong>.</li><br></ul><p></p>
 
-<p></p><p>Finissez la peinture que vous vouliez tant réaliser, prenez les cours de chant dont vous aviez envie, commencez à postuler autre part, renseignez-vous pour créer votre propre entreprise, prenez finalement le temps de lire <a href="/le-courage-de-vivre-consciemment-steve-pavlina/">le courage de vivre consciemment</a>.</p><p></p>
+<p></p><p>Finissez la peinture que vous vouliez tant réaliser, prenez les cours de chant dont vous aviez envie, commencez à postuler autre part, renseignez-vous pour créer votre propre entreprise, prenez finalement le temps de lire <a href="/blog/fr/le-courage-de-vivre-consciemment/">le courage de vivre consciemment</a>.</p><p></p>
 
 <p></p><p><strong>Apprenez à créer les vagues sur lesquelles vous surferez ensuite</strong>. À ne faire que nager, vous allez finir par vous <strong>épuiser et couler</strong>.</p><p></p>
 

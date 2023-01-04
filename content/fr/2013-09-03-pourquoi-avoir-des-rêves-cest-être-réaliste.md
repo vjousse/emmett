@@ -25,7 +25,7 @@ type: text
 
 <p><p>Avoir des rêves c'est avoir une ligne directrice, savoir vers quoi l'on va. Ce qui est important ce n'est pas vraiment de réaliser ses rêves, mais c'est de prendre plaisir à essayer. <strong>Le bonheur ce n'est pas d'atteindre son rêve, c'est de réaliser la chance que l'on a d'en avoir</strong>.</p></p>
 
-<p><p>Ne me faites pas dire ce que je n'ai pas dit : ce n'est pas facile, loin de là. <strong>Nous ne vivons pas dans un monde de Bisounours</strong> où tout va toujours pour le mieux dans le meilleur des mondes. <a href="/blog/le-courage-de-vivre-consciemment-steve-pavlina/">Vivre sa vie consciemment</a> ça s'apprend et ça s'entraîne. Mais quoiqu'il en soit, c'est la seule façon de vivre et non de survivre.</p></p>
+<p><p>Ne me faites pas dire ce que je n'ai pas dit : ce n'est pas facile, loin de là. <strong>Nous ne vivons pas dans un monde de Bisounours</strong> où tout va toujours pour le mieux dans le meilleur des mondes. <a href="/blog/fr/le-courage-de-vivre-consciemment/">Vivre sa vie consciemment</a> ça s'apprend et ça s'entraîne. Mais quoiqu'il en soit, c'est la seule façon de vivre et non de survivre.</p></p>
 
 <p><h2>Le courage de vivre</h2></p>
 
