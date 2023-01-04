@@ -31,5 +31,5 @@ Peut-être que __vous découvririez__ que :
 - __Personne n'est responsable de votre malheur__ à part vous
 - Le bien-être (il porte d'ailleurs très bien son nom) se trouve __à l'intérieur de soi__
 
-Vous pourriez alors commencer à vivre et faire une différence positive dans ce monde. Mais pour ça il ne faut __pas se tromper d'invasion__. Celle qui faut stopper, ce n'est pas celle des « étrangers », mais celle de vos peurs. Ayez le __[courage de vivre](/le-courage-de-vivre-consciemment/)__, _debout les gens_ !
+Vous pourriez alors commencer à vivre et faire une différence positive dans ce monde. Mais pour ça il ne faut __pas se tromper d'invasion__. Celle qui faut stopper, ce n'est pas celle des « étrangers », mais celle de vos peurs. Ayez le __[courage de vivre](/blog/fr/le-courage-de-vivre-consciemment/)__, _debout les gens_ !
 
