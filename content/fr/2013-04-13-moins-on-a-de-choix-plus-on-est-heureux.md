@@ -9,7 +9,7 @@ description:
 type: text
 ---
 
-<p><p>Il y a de ça un peu plus d'une semaine, j'avais décidé de <a href="/soirees-sans-ecrans-ca-commence-aujourdhui/">passer mes soirées sans aucun écran après 19h</a>. Les bénéfices attendus ont été presque tous au rendez-vous :</p></p>
+<p><p>Il y a de ça un peu plus d'une semaine, j'avais décidé de <a href="blog/fr/soirées-sans-écrans-ça-commence-aujourdhui/">passer mes soirées sans aucun écran après 19h</a>. Les bénéfices attendus ont été presque tous au rendez-vous :</p></p>
 <!-- TEASER_END -->
 <p><ul><br /><li>J'ai fini deux livres en une semaine, contre un tous les mois environ d'habitude.</li><br /><li>J'ai passé du temps de qualité avec ma famille.</li><br /></ul></p>
 

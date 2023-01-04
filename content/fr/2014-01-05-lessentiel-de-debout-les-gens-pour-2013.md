@@ -21,7 +21,7 @@ Je profite de cette nouvelle année pour faire une sélection des articles que v
  - [Pourquoi et comment ne pas devenir cadre](/blog/fr/pourquoi-et-comment-ne-pas-devenir-cadre/)
  - [Comment passer à côté de sa vie : les 8 excuses que vous regretterez](/blog/fr/comment-passer-à-côté-de-sa-vie-les-8-excuses-bidon-que-vous-regretterez/)
  - [Que faire de sa vie ?](/blog/fr/que-faire-de-sa-vie/)
- - [Se passer de smartphone et retrouver une vie](/blog/fr/se-passer-de-Smartphone-et-retrouver-une-vie/)
+ - [Se passer de smartphone et retrouver une vie](/blog/fr/se-passer-de-smartphone-et-retrouver-une-vie/)
  - [Un an après : les 8 leçons que j'ai retenues](/blog/fr/un-an-après-les-8-lecons-que-jai-retenues/)
  - [Et si le CDI était une connerie ?](/blog/fr/et-si-le-cdi-etait-une-connerie/)
  - [Le petit plus qui fait la différence](/blog/fr/le-petit-plus-qui-fait-la-difference/)

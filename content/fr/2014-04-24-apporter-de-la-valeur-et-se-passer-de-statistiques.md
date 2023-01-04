@@ -26,7 +26,7 @@ Je me suis donc naturellement posé une deuxième question : est-ce que ce que 
 
 Est-ce qu'apporter de la valeur à mes lecteurs est mesurable par les partages sur les réseaux sociaux et le nombre de pages vues ? Est-ce que, ce que mesure ces observables, ce n'est pas plutôt __la viralité de diffusion de l'information, indépendamment de la valeur qu'elle apporte au lecteur__ ?
 
-Il n'est plus à démontrer qu'un article avec un titre du style « Julie Gayet nue sur un scooter » attirera bien plus de lecteurs que mon article sur « [Le courage de vivre consciemment](/blog/le-courage-de-vivre-consciemment/) », et pourtant, j'ai la faiblesse de croire que la valeur ajoutée apportée par ce dernier est supérieure à celle apportée par l'article sur Julie Gayet.
+Il n'est plus à démontrer qu'un article avec un titre du style « Julie Gayet nue sur un scooter » attirera bien plus de lecteurs que mon article sur « [Le courage de vivre consciemment](/blog/fr/le-courage-de-vivre-consciemment/) », et pourtant, j'ai la faiblesse de croire que la valeur ajoutée apportée par ce dernier est supérieure à celle apportée par l'article sur Julie Gayet.
 
 Ce que tout le monde cherche à maximiser et à prendre comme critère de succès c'est le nombre de pages vues (et donc indirectement le nombre de partages sur les réseaux sociaux). Mais à part mesurer combien le titre de votre article est efficace, ça ne mesure rien d'autre. Ah si, peut-être la valeur de revente de vos visiteurs auprès de publicitaires, mais ça, c'est un autre sujet.
 
