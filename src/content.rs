@@ -57,6 +57,7 @@ pub fn create_content(site: &Site) -> Result<()> {
         "Vincent Jousse",
         "Vince's",
         Path::new(&format!("{}/atom.xml", &site.settings.output_path)[..]),
+        &site.settings,
     )?;
 
     Ok(())

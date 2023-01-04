@@ -1,4 +1,6 @@
+use crate::config::Settings;
 use crate::post::Post;
+use crate::content::convert_md_to_html;
 use atom_syndication::{
     ContentBuilder, Entry, EntryBuilder, Feed, FeedBuilder, LinkBuilder, PersonBuilder,
     SourceBuilder, Text,
@@ -14,6 +16,7 @@ pub fn write_atom_for_posts(
     author: &str,
     title: &str,
     path: &Path,
+    settings: &Settings,
 ) -> Result<()> {
     let authors = vec![PersonBuilder::default().name(author).build()];
 
@@ -35,6 +38,8 @@ pub fn write_atom_for_posts(
 
     // For every Post, write the HTML to the correct directory
     for post in posts {
+
+        let html_content = convert_md_to_html(&post.content, &settings, Some(&post.path[..]));
         let entry: Entry = EntryBuilder::default()
             .title(&post.front_matter.title[..])
             .id(format!("{}/{}", base, post.url_path_encoded))
@@ -52,7 +57,8 @@ pub fn write_atom_for_posts(
             .rights(Some(Text::plain("CC-By Licence")))
             .content(Some(
                 ContentBuilder::default()
-                    .value(Some(post.content.clone()))
+                    .value(Some(html_content.clone()))
+                    .content_type(Some(String::from("html")))
                     .build(),
             ))
             .source(Some(
