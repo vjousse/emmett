@@ -72,11 +72,13 @@ p {
   text-align: center;
 }
 
-article ul > li {
+article ul > li,
+article ol > li {
   margin-left: 1rem;
 }
 
-article ul {
+article ul,
+article ol {
   margin-top: 1.5rem;
 }
 
