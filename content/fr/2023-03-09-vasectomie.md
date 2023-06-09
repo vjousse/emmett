@@ -114,8 +114,6 @@ Il faut donc réaliser un [spermogramme](https://fr.wikipedia.org/wiki/Spermogra
 
 Et je crois que c'est la partie de la vasectomie que j'ai trouvé la plus désagréable au final ^^ À 7h45 du matin, dans une salle austère d'hôpital, avec comme consigne d'éjaculer dans un bocal. Le tout avec des films porno qui tournent en boucle au mur, du « papier » en rouleau étalé sur un banc et les infirmières qui se racontent leur soirée dans le couloir. Je vous passe les détails, les images se passent de commentaires !
 
-[IMAGES]
-
 <p style="text-align:center;">
 <a href="/images/vasectomie_spermogramme_1.jpg"><img src="/images/vasectomie_spermogramme_1_small.jpg" alt="Salle spermogramme" /></a>
 </p>
