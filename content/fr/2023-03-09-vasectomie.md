@@ -1,13 +1,12 @@
 ---
 title: "Contraception masculine & vasectomie : retour d'expérience"
 slug: vasectomie-avis-retour-experience
-date: "2023-03-09 09:00:00+01:00"
+date: "2023-06-09 09:00:00+01:00"
 tags: Vasectomie, homme
 category:
 link:
 description:
 type: text
-#status: draft
 ---
 
 Être un homme et prendre en **charge la contraception**. Je dois avouer que c'est une considération assez nouvelle pour moi (j'ai 41 ans). Alors oui, il y avait le préservatif, mais je ne l'avais jamais vraiment considéré comme une « méthode de contraception » à part entière, plutôt comme un passage obligé avant de faire les tests MST qui permettraient de l'enlever. Mais je n'avais jamais vraiment pris le temps de conscientiser l'évidence : ce n'est pas uniquement l'absence de risque MST qui nous permettait de se passer du préservatif.
@@ -34,7 +33,7 @@ C'est là où je me suis rendu compte qu'il existait déjà plusieurs manières,
 
 - **La contraception thermique**. Elle regroupe notamment l'**anneau contraceptif** et le **slip chauffant**. Plus d'informations sur [la page Wikipedia](https://fr.wikipedia.org/wiki/Contraception_masculine_thermique) de cette technique. Bien que très efficace, l'anneau contraceptif (aussi connu sous le nom d'**Andro-Switch**) a été interdit en France (car il doit passer des tests très coûteux avant de pouvoir être mis sur le marché). Je vous recommande d'aller vous documenter sur [Maxime Labrit](https://thoreme.com/) à ce sujet, de visionner cette [magnifique vidéo qui explique le souci](https://entrelac.coop/video/) (et de contribuer à la coopérative) et de visiter [les magnifiques créations artistiques de LSF](https://www.coucouroucoucou.com) en attendant que l'Andro-Switch soit officiellement autorisé en France 😇
 
-- **Les injections hormonales**. Cette méthode consiste en des injections intramusculaires (terme alembiqué pour « piqûre », j'en conviens) hebdomadaires de testostérone. Plus d'informations dans cet [article sur radiofrance](https://www.radiofrance.fr/franceculture/de-l-injection-hormonale-a-la-vasectomie-ou-en-est-on-de-la-contraception-masculine-4793626), notamment pourquoi est-ce que ce n'est toujours pas plus répandu…
+- **Les injections hormonales**. Cette méthode consiste en des injections intramusculaires (terme alambiqué pour « piqûre », j'en conviens) hebdomadaires de testostérone. Plus d'informations dans cet [article sur radiofrance](https://www.radiofrance.fr/franceculture/de-l-injection-hormonale-a-la-vasectomie-ou-en-est-on-de-la-contraception-masculine-4793626), notamment pourquoi est-ce que ce n'est toujours pas plus répandu…
 
 - **Le préservatif**. Évidemment, me direz-vous, mais il est des fois bon de rappeler les évidences. Oui, votre partenaire peut ne pas vouloir se mettre des hormones dans le corps. Et donc oui elle peut mettre comme limite personnelle l'utilisation du préservatif. Et non, elle n'a pas « qu'à prendre la pilule », ou à « se faire poser un stérilet ». Enfin, pas plus que vous même n'avez qu'à « mettre un préservatif », « utiliser la contraception thermique » ou « réaliser une vasectomie ». Chacun a le droit de décider ce qu'il veut faire de son corps.
 
@@ -44,7 +43,7 @@ Maintenant que les bases sont posées, revenons-en à nos moutons : la vasectom
 
 Un petit peu de contexte, lorsque j'ai pris la décision de réaliser une vasectomie, j'avais 41 ans et je n'étais pas en couple. Je suis l'heureux papa de 3 enfants (17 ans, 14 ans et 11 ans au moment de ma décision) et je ne souhaite pas en avoir d'autres.
 
-Une question qu'on m'a souvent posée : « mais comment peux-tu être sûr ? Tu rencontreras peut-être quelqu'un qui en voudra et tu regretteras ». Comme le dit le vieil adage : _choisir c'est renoncer_. Donc oui, peut-être que ça sera le cas, mais si ça l'est, et qu'avoir des enfants pour cette personne est primordial, c'est que nous ne sommes juste pas fait pour être ensemble, c'est aussi simple que ça à mes yeux.
+Une question qu'on m'a souvent posée : « mais comment peux-tu être sûr ? Tu rencontreras peut-être quelqu'un qui en voudra et tu regretteras ». Comme le dit le vieil adage : _choisir c'est renoncer_. Donc oui, peut-être que ça sera le cas, mais si un jour j'y suis confronté, il faudra juste trouver une autre solution que celle de compter sur ma fertilité.
 
 À savoir qu'il est possible de faire une conservation de sperme dans un [CECOS](https://www.cecos.org/) pour les personnes qui ne sont pas aussi certaines que je l'étais. C'est gratuit et pris en charge, tout comme la vasectomie.
 
@@ -61,7 +60,7 @@ N'étant pas un expert du domaine, je ne vais pas rentrer dans les détails tech
 - Une page de nos amis québécois qui explique la vasectomie sans bistouri (c'est le type d'opération que j'ai reçue) [https://vasectomie.net/la-vasectomie/quest-ce-que-la-vasectomie/](https://vasectomie.net/la-vasectomie/quest-ce-que-la-vasectomie/)
 - Un PDF du gouvernement expliquant la stérilisation à visée contraceptive [https://sante.gouv.fr/IMG/pdf/livret_d_information-sterilisation_a_visee_contraceptive_2022.pdf](https://sante.gouv.fr/IMG/pdf/livret_d_information-sterilisation_a_visee_contraceptive_2022.pdf)
 
-Tout d'abord il faut savoir qu'entre le moment où vous voyez votre urologue et le moment où vous pouvez finalement officiellement vous considérer stérile, il va se passer un **délais de 7 mois minimum**.
+Tout d'abord il faut savoir qu'entre le moment où vous voyez votre urologue et le moment où vous pouvez finalement officiellement vous considérer stérile, il va se passer un **délai de 7 mois minimum**.
 
 Il y a tout d'abord un délais de réflexion incompressible de 4 mois entre l'opération et le RDV avec l'urologue (la date de l'opération a été fixée lors de ce RDV). Il faut ensuite compter 3 mois après l'opération pour passer un spermogramme qui viendra attester de l'efficacité de l'opération.
 
@@ -93,9 +92,9 @@ Là où c'était un peu plus délicat, c'est pour le vélo. C'est tout à fait f
 
 #### Aucun impact sur l'érection ou l'éjaculat
 
-Voilà le type de question que l'on m'a posé « Mais tu n'éjacules plus alors ? », « Tu peux toujours avoir des érections ? ». En fait c'est assez simple, ça ne change… rien du tout, du tout.
+Voilà le type de question que l'on m'a posées « Mais tu n'éjacules plus alors ? », « Tu peux toujours avoir des érections ? ». En fait c'est assez simple, ça ne change… rien du tout, du tout.
 
-Toujours la même « quantité » d'éjaculat, toujours les mêmes érections. C'est vraiment juste tout à fait pareil, sauf qu'il n'y a plus de spermatozoïdes dans le dit éjaculat (et ce n'est pas perceptible). Donc là dessus, aucun doute à avoir, vous ne perdrez pas de votre « virilité » messieurs !
+Toujours la même « quantité » d'éjaculat, toujours les mêmes érections. C'est vraiment juste tout à fait pareil, sauf qu'il n'y a plus de spermatozoïde dans le dit éjaculat (et ce n'est pas perceptible). Donc là dessus, aucun doute à avoir, vous ne perdrez pas de votre « virilité » messieurs !
 
 #### Aucun point de suture
 

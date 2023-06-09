@@ -9,7 +9,7 @@ description:
 type: text
 ---
 
-Parler. Se réunir. Vibrer. Partager. Entre hommes. Accéder à sa __sensibilité__, __se livrer__, __apprendre à écouter__, c'est tout ça et encore bien plus un cercle d'hommes.
+Parler. Se réunir. Vibrer. Partager. Entre hommes. Accéder à sa __sensibilité__, __se livrer__, __apprendre à écouter__, c'est tout ça et encore bien plus, un cercle parole d'hommes.
 
 C'est livrer entre hommes ce qu'on ne livre pas entre copains. C'est faire de nos sensibilités quelque chose de normal, d'acceptable et de souhaitable. Ça a été pour moi une vraie découverte.
 
