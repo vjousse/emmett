@@ -58,7 +58,7 @@ N'étant pas un expert du domaine, je ne vais pas rentrer dans les détails tech
 - La page de l'ARDECOM (Association pour la Recherche et de DÉveloppement de la COntraception Masculine) : [https://www.contraceptionmasculine.fr/vasectomie/](https://www.contraceptionmasculine.fr/vasectomie/)
 - La page Wikipedia [https://fr.wikipedia.org/wiki/Vasectomie](https://fr.wikipedia.org/wiki/Vasectomie)
 - Une page de nos amis québécois qui explique la vasectomie sans bistouri (c'est le type d'opération que j'ai reçue) [https://vasectomie.net/la-vasectomie/quest-ce-que-la-vasectomie/](https://vasectomie.net/la-vasectomie/quest-ce-que-la-vasectomie/)
-- Un PDF du gouvernement expliquant la stérilisation à visée contraceptive [https://sante.gouv.fr/IMG/pdf/livret_d_information-sterilisation_a_visee_contraceptive_2022.pdf](https://sante.gouv.fr/IMG/pdf/livret_d_information-sterilisation_a_visee_contraceptive_2022.pdf)
+- Les pages du tout nouveau site du gouvernement « Question Sexualité_ » : [Contraception masculine comment ça marche](https://questionsexualite.fr/choisir-sa-contraception/ma-contraception-et-moi/contraception-masculine-comment-ca-marche) et [La stérilisation à visée contraceptive : comment ça marche ?](https://questionsexualite.fr/choisir-sa-contraception/tous-les-modes-de-contraception/la-sterilisation-a-visee-contraceptive-comment-ca-marche)
 
 Tout d'abord il faut savoir qu'entre le moment où vous voyez votre urologue et le moment où vous pouvez finalement officiellement vous considérer stérile, il va se passer un **délai de 7 mois minimum**.
 
