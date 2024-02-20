@@ -14,6 +14,10 @@ Then serve the `output/` directory using a web serve. For example, I'm using [si
 
     simple-http-server -i output
 
+## Watch for changes
+
+    watchexec -e md cargo run
+
 ## Deploy
 
     rsync -avz --delete output/ vjousse@emmett.jousse.org:/home/data/vincent.jousse.org
