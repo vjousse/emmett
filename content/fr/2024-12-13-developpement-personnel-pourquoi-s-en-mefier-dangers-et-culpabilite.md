@@ -43,7 +43,7 @@ Tout l'univers du développement personnel est basé sur des injonctions du type
 
 Le problème, c'est que si ça ne fonctionne pas et qu'on vous a dit que ça devrait fonctionner (car regardez les X exemples que je vous donne, ça a fonctionné pour moi et pour eux, croyez-moi sur parole) c'est forcément que le problème vient de vous. Vous ne faites pas assez bien, vous ne suivez pas assez bien les conseils. Vous devez essayer, encore plus, encore plus fort. Jamais la méthode n'est remise en question, c'est toujours à vous d'être plus dans le moment présent, d'être plus dans la communication non violente, de faire différemment.
 
-C'est à vous d'acheter la prochaine formation, à vous de vous procurer le prochain livre… car oui, évidemment, c'est un business extrêmement juteux.
+C'est à vous d'acheter la prochaine formation, à vous de vous procurer le prochain livre… car oui, évidemment, c'est un business extrêmement juteux qui exploite la vulnérabilité des personnes. Car a priori, si vous allez bien, il n'y a pas de réelle raison de vouloir « aller mieux » ou de vouloir vous « développer » encore plus.
 
 C'est d'ailleurs assez déconcertant de retomber sur un [ancien de mes articles](/blog/fr/le-d%C3%A9veloppement-personnel-pour-qui-pourquoi/) où j'explique pourquoi je me mets au développement personnel et où j'avais déjà intégré que le problème « venait de moi ».
 
