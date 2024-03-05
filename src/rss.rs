@@ -1,6 +1,6 @@
 use crate::config::Settings;
-use crate::post::Post;
 use crate::content::convert_md_to_html;
+use crate::post::Post;
 use atom_syndication::{
     ContentBuilder, Entry, EntryBuilder, Feed, FeedBuilder, LinkBuilder, PersonBuilder,
     SourceBuilder, Text,
@@ -10,6 +10,8 @@ use std::path::Path;
 
 use anyhow::Result;
 
+use chrono::{FixedOffset, Utc};
+
 pub fn write_atom_for_posts(
     posts: &[Post],
     base: &str,
@@ -18,14 +20,26 @@ pub fn write_atom_for_posts(
     path: &Path,
     settings: &Settings,
 ) -> Result<()> {
-    let authors = vec![PersonBuilder::default().name(author).build()];
+    let authors = vec![PersonBuilder::default().name(author.to_string()).build()];
+
+    // Sort posts from older to newer (ASC front_matter date)
+    let mut sorted_posts = posts.to_vec();
+    sorted_posts.sort_by(|p1, p2| p1.front_matter.date.cmp(&p2.front_matter.date));
+
+    let last_updated_at = match sorted_posts.last() {
+        Some(post) => post.front_matter.date,
+        None => Utc::now().with_timezone(&FixedOffset::west_opt(0).unwrap()),
+    };
 
     let mut feed: Feed = FeedBuilder::default()
         .links(vec![
-            LinkBuilder::default().rel("self").href(base).build(),
             LinkBuilder::default()
-                .rel("license")
-                .href("https://creativecommons.org/licenses/by/4.0/")
+                .rel("self".to_string())
+                .href(base.to_string())
+                .build(),
+            LinkBuilder::default()
+                .rel("license".to_string())
+                .href("https://creativecommons.org/licenses/by/4.0/".to_string())
                 .build(),
         ])
         .authors(authors.clone())
@@ -34,11 +48,11 @@ pub fn write_atom_for_posts(
         .lang(Some("fr-FR".into()))
         .id(format!("{}/", base))
         .title(title)
+        .updated(last_updated_at)
         .build();
 
     // For every Post, write the HTML to the correct directory
-    for post in posts {
-
+    for post in sorted_posts {
         let html_content = convert_md_to_html(&post.content, &settings, Some(&post.path[..]));
         let entry: Entry = EntryBuilder::default()
             .title(&post.front_matter.title[..])
@@ -47,8 +61,8 @@ pub fn write_atom_for_posts(
             .authors(authors.clone())
             .contributors(authors.clone())
             .links(vec![LinkBuilder::default()
-                .rel("self")
-                .href(&format!("{}/{}", base, post.url_path_encoded)[..])
+                .rel("self".to_string())
+                .href(format!("{}/{}", base, post.url_path_encoded))
                 .build()])
             .published(Some(post.front_matter.date))
             .summary(Some(Text::plain(
@@ -64,7 +78,7 @@ pub fn write_atom_for_posts(
             .source(Some(
                 SourceBuilder::default()
                     .title(&post.front_matter.title[..])
-                    .id(&format!("{}/{}", base, post.url_path_encoded)[..])
+                    .id(format!("{}/{}", base, post.url_path_encoded))
                     .updated(post.front_matter.date)
                     .build(),
             ))

@@ -31,13 +31,13 @@ mod custom_date_format {
     }
 }
 
-#[derive(Debug, Serialize, Deserialize, Eq, Ord, PartialEq, PartialOrd)]
+#[derive(Clone, Debug, Serialize, Deserialize, Eq, Ord, PartialEq, PartialOrd)]
 #[serde(rename_all = "lowercase")]
 pub enum PostStatus {
     Draft,
 }
 
-#[derive(Deserialize, Debug, Serialize, Eq, Ord, PartialEq, PartialOrd)]
+#[derive(Clone, Deserialize, Debug, Serialize, Eq, Ord, PartialEq, PartialOrd)]
 // Used by gray_matter engine to parse the Front Matter content
 pub struct FrontMatter {
     pub title: String,
@@ -47,7 +47,7 @@ pub struct FrontMatter {
     pub status: Option<PostStatus>,
 }
 
-#[derive(Debug, Serialize, Eq, Ord, PartialEq, PartialOrd)]
+#[derive(Clone, Debug, Serialize, Eq, Ord, PartialEq, PartialOrd)]
 pub struct Post {
     pub front_matter: FrontMatter,
     pub date_rfc3339: String,
