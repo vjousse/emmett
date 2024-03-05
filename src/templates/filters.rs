@@ -23,6 +23,6 @@ impl TeraFilter for MarkdownFilter {
 
         let html = convert_md_to_html(&s[..], &self.settings, None);
 
-        Ok(to_value(&html).unwrap())
+        Ok(to_value(html).unwrap())
     }
 }

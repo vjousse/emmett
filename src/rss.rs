@@ -53,7 +53,7 @@ pub fn write_atom_for_posts(
 
     // For every Post, write the HTML to the correct directory
     for post in sorted_posts {
-        let html_content = convert_md_to_html(&post.content, &settings, Some(&post.path[..]));
+        let html_content = convert_md_to_html(&post.content, settings, Some(&post.path[..]));
         let entry: Entry = EntryBuilder::default()
             .title(&post.front_matter.title[..])
             .id(format!("{}/{}", base, post.url_path_encoded))

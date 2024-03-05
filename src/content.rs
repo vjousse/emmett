@@ -75,8 +75,7 @@ pub fn convert_md_to_html(md_content: &str, settings: &Settings, path: Option<&s
         match event {
             Event::Text(text) => {
                 if let Some(ref mut code_block) = code_block {
-                    let html;
-                    html = code_block.highlight(&text);
+                    let html = code_block.highlight(&text);
                     events.push(Event::Html(html.into()));
                 } else {
                     events.push(Event::Text(text));
@@ -102,13 +101,10 @@ pub fn convert_md_to_html(md_content: &str, settings: &Settings, path: Option<&s
     }
 
     // We remove all the empty things we might have pushed before so we don't get some random \n
-    events = events
-        .into_iter()
-        .filter(|e| match e {
-            Event::Text(text) | Event::Html(text) => !text.is_empty(),
-            _ => true,
-        })
-        .collect();
+    events.retain(|e| match e {
+        Event::Text(text) | Event::Html(text) => !text.is_empty(),
+        _ => true,
+    });
 
     // Write to String buffer.
     let mut html_output: String = String::with_capacity(md_content.len() * 3 / 2);
@@ -197,7 +193,7 @@ pub fn get_posts_per_indexes<'a>(posts: &'a [Post], site: &Site) -> HashMap<Stri
                     .contains(&first_component_str)
                 {
                     let key = first_component_str.clone();
-                    let posts = indexes_to_create.entry(key).or_insert_with(Vec::new);
+                    let posts = indexes_to_create.entry(key).or_default();
                     posts.push(post);
                 }
             }
@@ -236,7 +232,7 @@ pub fn get_output_directory_for_post(output_directory: String, post: &Post) -> S
 }
 
 pub fn write_html(post_html: &str, output_directory: &str) {
-    fs::create_dir_all(&output_directory)
+    fs::create_dir_all(output_directory)
         .expect(&format!("Unable to create output directory {}", &output_directory)[..]);
 
     let mut f =
@@ -252,7 +248,7 @@ pub fn write_post_html(post_html: &str, post: &Post, output_directory: &str) {
 }
 
 pub fn parse_file(file_path: &str, input_directory: &str, blog_prefix_path: &str) -> Option<Post> {
-    match fs::read_to_string(&file_path) {
+    match fs::read_to_string(file_path) {
         Ok(content) => parse_post(content, file_path, input_directory, blog_prefix_path),
         Err(e) => {
             log::error!("Error for {}: {}", &file_path, e);
