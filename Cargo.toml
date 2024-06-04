@@ -13,22 +13,22 @@ path = "src/main.rs"
 name = "emmett"
 
 [dependencies]
-env_logger = "0.9"
+env_logger = "0.11"
 log = "0.4"
 walkdir = "2"
 gray_matter = "0.2"
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
-serde_derive = "1.0.136"
-pulldown-cmark = { version = "0.9.1", default-features = false }
+serde_derive = "1.0.203"
+pulldown-cmark = "0.11"
 tera = "1"
 lazy_static = "1.4.0"
 # Use git version to get the nice Builder pattern
 config = { git = "https://github.com/mehcode/config-rs", branch = "master" }
 chrono = "0.4"
-syntect = "4.6"
-atom_syndication = "0.11"
-form_urlencoded = "1.0.1"
-anyhow = "1.0.57"
-thiserror = "1.0.31"
+syntect = "5"
+atom_syndication = "0.12"
+form_urlencoded = "1.2.1"
+anyhow = "1.0.86"
+thiserror = "1.0.61"
 fs_extra = "1.3.0"
