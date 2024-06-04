@@ -1,4 +1,4 @@
-use self::cmark::{Event, Options, Parser, Tag, TagEnd};
+use self::cmark::{Event, Options, Parser, Tag};
 use crate::codeblock::{CodeBlock, FenceSettings};
 use crate::config::Settings;
 use crate::post::{FrontMatter, Post, PostStatus};
@@ -91,7 +91,7 @@ pub fn convert_md_to_html(md_content: &str, settings: &Settings, path: Option<&s
                 code_block = Some(block);
                 events.push(Event::Html(begin.into()));
             }
-            Event::End(TagEnd::CodeBlock) => {
+            Event::End(Tag::CodeBlock(_)) => {
                 // reset highlight and close the code block
                 code_block = None;
                 events.push(Event::Html("</code></pre>\n".into()));
