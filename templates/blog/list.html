@@ -13,7 +13,7 @@
     <li>
       <a href="/{{ post.url_path }}">{{ post.front_matter.title }}</a>
 
-      <div>
+      <div class="post-info">
         <time datetime="{{ post.date_rfc3339|date(format="%Y-%m-%d") }}">Published on: <span class="accent-data">{{ post.date_rfc3339|date(format="%d-%m-%Y") }}</span></time>
         <address rel="author">By <span class="accent-data">Vincent Jousse</span></address>
       </div>

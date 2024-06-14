@@ -1,14 +1,10 @@
 :root {
-  --standard-border-radius: 5px;
-  --bg: #eeeeee;
-  --bg-light: #cbcdcd;
+  --standard-border-radius: 0.5rem;
+  --bg: #ffffff;
   --text: #444;
-  --text-light: #646868;
-  --accent: #d26878;
-  --accent-light: #e08f67;
+  --accent: #a10032;
   --accent-text: var(--bg);
-  --border: #646868;
-  --link: #5690af;
+  --link: #2a6c8a;
   --mono-font: Consolas, Menlo, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
   --sans-font: -apple-system, BlinkMacSystemFont, "Avenir Next", Avenir,
     "Nimbus Sans L", Roboto, "Noto Sans", "Segoe UI", Arial, Helvetica,
@@ -20,13 +16,13 @@ html {
 }
 
 body {
-  margin: 40px auto;
-  max-width: 720px;
-  line-height: 1.6;
-  font-size: 18px;
-  padding: 0 10px;
+  margin: 4rem auto;
+  max-width: 50rem;
+  line-height: 1.6rem;
+  font-size: 1.1rem;
   color: var(--text);
   background-color: var(--bg);
+  padding: 0 1rem;
 }
 
 /** Default styles **/
@@ -38,8 +34,8 @@ ul {
 img,
 video {
   height: auto;
-  border-radius: 10px;
-  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1);
+  border-radius: var(--standard-border-radius);
+  box-shadow: 0.3rem 0.3rem 0.3rem rgba(0, 0, 0, 0.2);
 }
 
 hr {
@@ -63,7 +59,7 @@ h6 {
 
 h2,
 h3 {
-  padding-top: 20px;
+  padding-top: 1.2rem;
 }
 
 h1::before {
@@ -116,7 +112,7 @@ nav > ul > li {
 
 nav {
   text-align: right;
-  padding-bottom: 50px;
+  padding-bottom: 5rem;
 }
 
 /** Content list **/
@@ -130,19 +126,23 @@ nav {
 }
 
 .list ul li {
-  padding-bottom: 40px;
-  padding-left: 10px;
+  padding-bottom: 3rem;
+  padding-left: 0.3rem;
 }
 
 .list ul li > a {
-  font-size: 20px;
+  font-size: 1.2rem;
   font-weight: 700;
+}
+
+.list ul li .post-info {
+  padding-top: 1rem;
 }
 
 .list ul li::marker {
   content: "» ";
   font-weight: 700;
-  font-size: 20px;
+  font-size: 1.4rem;
   color: var(--accent);
 }
 
@@ -167,7 +167,7 @@ article ul li::marker {
 }
 
 article ul li {
-  padding-left: 10px;
+  padding-left: 0.4rem;
 }
 
 article img {
@@ -180,7 +180,7 @@ div code,
 li code,
 p code {
   padding: 0 0.125rem;
-  border-radius: 3px;
+  border-radius: var(--standard-border-radius);
   color: var(--bg);
   background-color: var(--text);
 }
@@ -196,18 +196,18 @@ pre {
   padding: 0.625rem;
   font-style: monospace;
   white-space: pre-wrap;
-  font-size: 16px;
+  font-size: 1rem;
 
-  border-radius: 10px;
-  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
+  border-radius: var(--standard-border-radius);
+  box-shadow: 0.3rem 0.3rem 0.3rem rgba(0, 0, 0, 0.2);
 }
 
 /** Footer **/
 
 footer {
-  padding-top: 20px;
+  padding-top: 2rem;
 }
 
 footer > hr {
-  margin-bottom: 25px;
+  margin-bottom: 1.7rem;
 }
