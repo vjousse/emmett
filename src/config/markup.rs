@@ -12,7 +12,7 @@ use crate::errors::Result;
 
 use crate::config::highlighting::{CLASS_STYLE, THEME_SET};
 
-pub const DEFAULT_HIGHLIGHT_THEME: &str = "base16-ocean-dark";
+pub const DEFAULT_HIGHLIGHT_THEME: &str = "one-dark";
 
 #[derive(Default, Clone, Debug, PartialEq, Eq, Serialize, Deserialize)]
 #[serde(default)]

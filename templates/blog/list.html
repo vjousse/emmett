@@ -11,15 +11,16 @@
   <ul>
     {% for post in posts %}
     <li>
-      <a href="/{{ post.url_path }}"><h2>{{ post.front_matter.title }}</h2></a>
+      <a href="/{{ post.url_path }}">{{ post.front_matter.title }}</a>
 
-      <div style="text-align: center">
-      {{ post.date_rfc3339|date(format="%d-%m-%Y") }}
+      <div>
+        <time datetime="{{ post.date_rfc3339|date(format="%Y-%m-%d") }}">Published on: <span class="accent-data">{{ post.date_rfc3339|date(format="%d-%m-%Y") }}</span></time>
+        <address rel="author">By <span class="accent-data">Vincent Jousse</span></address>
       </div>
       {% if post.excerpt %}
       <p>{{ post.excerpt|markdown }}</p>
       {% endif %}
-      <div style="text-align: center">
+      <div class="next">
         <a href="/{{ post.url_path }}" class="outline">Lire la suite</a>
       </div>
     </li>

@@ -4,8 +4,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="/css/pico.min.css" />
-    <link rel="stylesheet" href="/css/custom.css" />
+    <link rel="stylesheet" href="/css/emmett.css" />
 
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@vjousse" />
@@ -47,22 +46,55 @@
       <nav>
         <ul>
           <li>
-            <a class="contrast" title="Accueil" href="/">Accueil</a>
+            <a title="Retour à l'accueil" href="/" class="svg-icon">🏠</a>
           </li>
-        </ul>
-        <ul>
+          <li>/</li>
           <li>
-            <a class="contrast" href="/blog/fr">Français</a>
+            <a title="Contenu en français" href="/blog/fr">Français</a>
           </li>
+          <li>/</li>
           <li>
-            <a class="contrast" href="/blog/en">English</a>
+            <a title="English content" href="/blog/en">English</a>
           </li>
+          <li>/</li>
           <li>
-            <a class="contrast" href="/atom.xml">RSS</a>
+            <a title="RSS feed, atom format" href="/atom.xml">RSS</a>
           </li>
         </ul>
       </nav>
       {% block content %} {% endblock content %}
     </main>
+    <footer>
+      <hr />
+      <div>
+        🧾 Content licensed under the
+        <a
+          rel="noopener noreferrer"
+          href="https://creativecommons.org/licenses/by/4.0/"
+          target="_blank"
+          >CC-By Licence</a
+        >.<br />
+        🔧 Built with
+        <a
+          rel="noopener noreferrer"
+          href="https://www.rust-lang.org/"
+          target="_blank"
+          >Rust</a
+        >, source code available on
+        <a
+          rel="noopener noreferrer"
+          href="https://github.com/vjousse/emmett"
+          target="_blank"
+          >Github</a
+        >.<br />
+        📙 Be sure to check
+        <a
+          rel="noopener noreferrer"
+          href="https://www.vimebook.com/"
+          target="_blank"
+          >my book about Vim</a
+        >.
+      </div>
+    </footer>
   </body>
 </html>

@@ -1,0 +1,213 @@
+:root {
+  --standard-border-radius: 5px;
+  --bg: #eeeeee;
+  --bg-light: #cbcdcd;
+  --text: #444;
+  --text-light: #646868;
+  --accent: #d26878;
+  --accent-light: #e08f67;
+  --accent-text: var(--bg);
+  --border: #646868;
+  --link: #5690af;
+  --mono-font: Consolas, Menlo, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+  --sans-font: -apple-system, BlinkMacSystemFont, "Avenir Next", Avenir,
+    "Nimbus Sans L", Roboto, "Noto Sans", "Segoe UI", Arial, Helvetica,
+    "Helvetica Neue", sans-serif;
+}
+
+html {
+  font-family: var(--mono-font);
+}
+
+body {
+  margin: 40px auto;
+  max-width: 720px;
+  line-height: 1.6;
+  font-size: 18px;
+  padding: 0 10px;
+  color: var(--text);
+  background-color: var(--bg);
+}
+
+/** Default styles **/
+
+ul {
+  list-style-type: none;
+}
+
+img,
+video {
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1);
+}
+
+hr {
+  border: 1px dashed var(--accent);
+  margin: 0.5rem 0;
+}
+
+.accent-data {
+  color: var(--accent);
+}
+
+/** Headers **/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.2;
+}
+
+h2,
+h3 {
+  padding-top: 20px;
+}
+
+h1::before {
+  color: var(--accent);
+  content: "# ";
+}
+
+h2::before {
+  color: var(--accent);
+  content: "## ";
+}
+
+h3::before {
+  color: var(--accent);
+  content: "### ";
+}
+
+h4::before {
+  color: var(--accent);
+  content: "#### ";
+}
+
+h5::before {
+  color: var(--accent);
+  content: "##### ";
+}
+
+h6::before {
+  color: var(--accent);
+  content: "###### ";
+}
+
+/** Links **/
+a,
+a:visited {
+  text-decoration: none;
+  border-radius: 0.125rem;
+  color: var(--link);
+}
+a:hover {
+  background-color: var(--link);
+  color: var(--bg);
+}
+
+/** Nav **/
+
+nav > ul > li {
+  display: inline-block;
+}
+
+nav {
+  text-align: right;
+  padding-bottom: 50px;
+}
+
+/** Content list **/
+
+.list .date {
+  font-style: italic;
+}
+
+.list ul {
+  padding-left: 0;
+}
+
+.list ul li {
+  padding-bottom: 40px;
+  padding-left: 10px;
+}
+
+.list ul li > a {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.list ul li::marker {
+  content: "» ";
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--accent);
+}
+
+.list ul li:hover::marker {
+  content: "# ";
+  font-weight: 700;
+  color: var(--link);
+}
+
+.list .next {
+  text-align: right;
+}
+.list .next > a::after {
+  content: " >>>";
+}
+
+/** Article **/
+
+article ul li::marker {
+  content: "» ";
+  color: var(--accent);
+}
+
+article ul li {
+  padding-left: 10px;
+}
+
+article img {
+  width: 100%;
+}
+
+/** Code **/
+
+div code,
+li code,
+p code {
+  padding: 0 0.125rem;
+  border-radius: 3px;
+  color: var(--bg);
+  background-color: var(--text);
+}
+code,
+kbd,
+pre,
+pre span,
+samp {
+  font-family: var(--mono-font);
+}
+
+pre {
+  padding: 0.625rem;
+  font-style: monospace;
+  white-space: pre-wrap;
+  font-size: 16px;
+
+  border-radius: 10px;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
+}
+
+/** Footer **/
+
+footer {
+  padding-top: 20px;
+}
+
+footer > hr {
+  margin-bottom: 25px;
+}

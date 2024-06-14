@@ -4,9 +4,7 @@ title: "Accueil"
 date: "2022-05-03 09:00:00+01:00"
 ---
 
-
 Je m'appelle [Vincent Jousse](https://twitter.com/vjousse), vous pouvez me trouver sur [Twitter](https://twitter.com/vjousse), [Mastodon](https://mamot.fr/@vjousse) ou sur [Linkedin](https://www.linkedin.com/in/vincent-jousse-798b1a11/).
-
 
 - 📔 Je partage mes réflexions existentielles en [français sur ce blog](/blog/fr)
 - 👨‍💻 Je publie mes écrits techniques en français sur [pere programming](https://pereprogramming.com/) et [anglais sur ce blog](/blog/en)
@@ -15,7 +13,6 @@ Je m'appelle [Vincent Jousse](https://twitter.com/vjousse), vous pouvez me trouv
 - 🎓 J'ai été prof d'informatique à l'[Université du Mans](http://www.univ-lemans.fr/)
 - ⌨️ J'ai écrit un [livre sur vim appelé « Vim pour les humains »](https://vimebook.com) (prix libre)
 
-
 ## Licence
 
 🧾 Tout le contenu de ce site est publié sous licence libre <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank"><strong>CC-By Licence</strong></a>
@@ -23,3 +20,7 @@ Je m'appelle [Vincent Jousse](https://twitter.com/vjousse), vous pouvez me trouv
 ## Code Source
 
 Le code du site est disponible sur [Github](https://github.com/vjousse/emmett). C'est un générateur de site statique codé par mes soins, dans le but d'apprendre Rust.
+
+## Thème
+
+Le thème est fortement inspiré du thème [anemone](https://github.com/Speyll/anemone) pour [Zola](https://www.getzola.org/). Il ne tient qu'en [quelques lignes de CSS](/css/emmett.css).

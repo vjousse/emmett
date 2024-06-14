@@ -17,8 +17,9 @@
 {% block content %}
 <article>
   <header>
+      <time datetime="{{ date|date(format="%Y-%m-%d") }}">Published on: <span class="accent-data">{{ date|date(format="%d-%m-%Y") }}</span></time>
+    <address rel="author">By <span class="accent-data">Vincent Jousse</span></address>
     <h1>{{ title }}</h1>
-    <span>{{ date|date(format="%d-%m-%Y") }}</span>
   </header>
   {{ post_content }}
 </article>
