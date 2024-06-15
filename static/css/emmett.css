@@ -106,6 +106,9 @@ a:hover {
 
 /** Nav **/
 
+nav > ul {
+  padding-left: 0;
+}
 nav > ul > li {
   display: inline-block;
 }
@@ -162,8 +165,11 @@ nav {
 /** Article **/
 
 article ul li::marker {
-  content: "» ";
   color: var(--accent);
+}
+
+article ul li {
+  list-style-type: "» ";
 }
 
 article ul li {
