@@ -125,7 +125,7 @@ nav {
 }
 
 .list ul {
-  padding-left: 0;
+  padding-left: 1rem;
 }
 
 .list ul li {
@@ -142,8 +142,11 @@ nav {
   padding-top: 1rem;
 }
 
+.list ul li {
+  list-style-type: "» ";
+}
+
 .list ul li::marker {
-  content: "» ";
   font-weight: 700;
   font-size: 1.4rem;
   color: var(--accent);
