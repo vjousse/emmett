@@ -23,6 +23,7 @@ body {
   color: var(--text);
   background-color: var(--bg);
   padding: 0 1rem;
+  overflow-wrap: anywhere;
 }
 
 /** Default styles **/
