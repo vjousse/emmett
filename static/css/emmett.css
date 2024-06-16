@@ -5,6 +5,7 @@
   --accent: #a10032;
   --accent-text: var(--bg);
   --link: #14536b;
+  --text-light: #646868;
   --mono-font: Consolas, Menlo, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
   --sans-font: -apple-system, BlinkMacSystemFont, "Avenir Next", Avenir,
     "Nimbus Sans L", Roboto, "Noto Sans", "Segoe UI", Arial, Helvetica,
@@ -42,6 +43,19 @@ video {
 hr {
   border: 1px dashed var(--accent);
   margin: 0.5rem 0;
+}
+
+blockquote {
+  margin: 0 0 0 1.25rem;
+  padding: 0.5rem 0 0 0.5rem;
+  border-inline-start: 0.375rem solid var(--accent);
+  font-style: italic;
+}
+blockquote,
+cite,
+dt,
+figcaption {
+  color: var(--text-light);
 }
 
 .accent-data {
@@ -100,16 +114,38 @@ a:visited {
   border-radius: 0.125rem;
   color: var(--link);
 }
-a:hover {
+a:hover,
+a.active {
   background-color: var(--link);
   color: var(--bg);
 }
 
-/** Nav **/
+a:has(> img):hover {
+  background-color: var(--bg);
+}
 
+/** Nav and tags **/
+
+#tags {
+  display: inline-block;
+  margin: 0;
+}
+
+#tags li {
+  padding: 0;
+  font-style: italic;
+}
+
+#tags li::before {
+  content: "#";
+  color: var(--accent);
+}
+
+#tags,
 nav > ul {
   padding-left: 0;
 }
+#tags li,
 nav > ul > li {
   display: inline-block;
 }
@@ -164,6 +200,20 @@ nav {
 }
 .list .next > a::after {
   content: " >>>";
+}
+
+div.post-excerpt ul li {
+  padding-bottom: 0;
+}
+
+div.post-excerpt ul li::marker {
+  font-weight: normal;
+}
+
+div.post-excerpt ul li:hover::marker {
+  content: inherit;
+  font-weight: normal;
+  color: var(--accent);
 }
 
 /** Article **/

@@ -17,8 +17,14 @@
 {% block content %}
 <article>
   <header>
-      <time datetime="{{ date|date(format="%Y-%m-%d") }}">Published on: <span class="accent-data">{{ date|date(format="%d-%m-%Y") }}</span></time>
+    <time datetime="{{ date|date(format="%Y-%m-%d") }}">Published on: <span class="accent-data">{{ date|date(format="%d-%m-%Y") }}</span></time>
     <address rel="author">By <span class="accent-data">Vincent Jousse</span></address>
+    {% if tags %}
+    Tags: <ul id="tags">{% for tag in tags %}
+      <li>{{ tag}}</li>
+    {% endfor %}
+    </ul>
+    {%endif%}
     <h1>{{ title }}</h1>
   </header>
   {{ post_content }}

@@ -14,7 +14,6 @@ use std::error::Error;
 use std::fs;
 use std::fs::File;
 use std::io::Write;
-use std::path::Component;
 use std::path::{Path, PathBuf};
 use tera::{Context, Tera};
 use walkdir::WalkDir;
@@ -122,10 +121,10 @@ pub fn render_template_to_html(
     match tera.render(template_path, &context) {
         Ok(s) => Some(s),
         Err(e) => {
-            println!("Error: {}", e);
+            log::error!("Error: {}", e);
             let mut cause = e.source();
             while let Some(e) = cause {
-                println!("Reason: {}", e);
+                log::error!("Reason: {}", e);
                 cause = e.source();
             }
             None
@@ -169,6 +168,10 @@ pub fn write_posts_html(posts: &[Post], site: &Site) {
 
         context.insert("post_content", &html_content);
         context.insert("post_url_path", &post.url_path);
+        context.insert("tags", &front_matter.tags);
+        context.insert("category", &front_matter.category);
+
+        context.insert("categories", &post.ancestor_directories_names);
 
         if let Some(html) = render_template_to_html(context, "blog/post.html", &site.tera) {
             write_post_html(&html, post, &site.settings.output_path);
@@ -182,21 +185,20 @@ pub fn get_posts_per_indexes<'a>(posts: &'a [Post], site: &Site) -> HashMap<Stri
     // For every Post, let's see if it's part of a prefix we want an index for
     // If it's the case, generate an HashMap of posts for each prefix
     for post in posts {
-        if let Ok(path) = Path::new(&post.path).strip_prefix(&site.settings.posts_path) {
-            let mut components = path.components();
-
-            if let Some(Component::Normal(first_component)) = components.next() {
-                let first_component_str = first_component.to_str().unwrap_or("").to_owned();
-                if site
-                    .settings
-                    .create_index_for
-                    .contains(&first_component_str)
-                {
-                    let key = first_component_str.clone();
-                    let posts = indexes_to_create.entry(key).or_default();
-                    posts.push(post);
+        for directory in &post.ancestor_directories_paths {
+            if let Some(dir_index) = directory.strip_prefix(&site.settings.posts_path) {
+                if dir_index != "" {
+                    if site
+                        .settings
+                        .create_index_for
+                        .contains(&dir_index.to_string())
+                    {
+                        let key = dir_index.to_string();
+                        let posts = indexes_to_create.entry(key).or_default();
+                        posts.push(post);
+                    }
                 }
-            }
+            };
         }
     }
 
@@ -207,6 +209,13 @@ pub fn write_indexes_html(indexes_to_create: HashMap<String, Vec<&Post>>, site: 
     for (index, mut posts) in indexes_to_create {
         let mut context = Context::new();
         let _ = &posts.sort_by(|p1, p2| p2.front_matter.date.cmp(&p1.front_matter.date));
+
+        let index_parts: Vec<String> = index
+            .split('/')
+            .filter(|s| !s.is_empty())
+            .map(|s| s.to_string())
+            .collect();
+        context.insert("categories", &index_parts);
         context.insert("posts", &posts);
         context.insert("title", &format!("Articles - {}", &index)[..]);
         if let Some(html) = render_template_to_html(context, "blog/list.html", &site.tera) {
@@ -248,13 +257,44 @@ pub fn write_post_html(post_html: &str, post: &Post, output_directory: &str) {
 }
 
 pub fn parse_file(file_path: &str, input_directory: &str, blog_prefix_path: &str) -> Option<Post> {
+    log::debug!("## Parsing file: {:?}", file_path);
     match fs::read_to_string(file_path) {
-        Ok(content) => parse_post(content, file_path, input_directory, blog_prefix_path),
+        Ok(content) => {
+            let parsed_post = parse_post(content, file_path, input_directory, blog_prefix_path);
+            if parsed_post.is_none() {
+                log::error!("Unable to parse content of {:?}", file_path);
+            }
+            parsed_post
+        }
         Err(e) => {
             log::error!("Error for {}: {}", &file_path, e);
             None
         }
     }
+}
+
+fn get_ancestor_directories_paths(path: &Path) -> Vec<String> {
+    path.ancestors()
+        .skip(1) // Skip the original path
+        .map(|ancestor| ancestor.to_string_lossy().into_owned())
+        .filter(|s| !s.is_empty()) // Filter out empty
+        // strings (for the root path)
+        .collect::<Vec<_>>()
+        .into_iter()
+        //reverse the order
+        .rev()
+        .collect()
+}
+
+fn get_ancestor_directories_names(path: &Path) -> Vec<String> {
+    path.ancestors()
+        .skip(1) // Skip the original path
+        .filter_map(|ancestor| ancestor.file_name())
+        .map(|name| name.to_string_lossy().into_owned())
+        .collect::<Vec<_>>()
+        .into_iter()
+        .rev()
+        .collect()
 }
 
 pub fn parse_post(
@@ -266,17 +306,27 @@ pub fn parse_post(
     let mut matter = Matter::<YAML>::new();
     matter.excerpt_delimiter = Some("<!-- TEASER_END -->".to_owned());
     let result = matter.parse(content.trim());
+    log::debug!("Result data {:?}", result.data);
     let front_matter: Option<FrontMatter> = match result.data {
         Some(data) => match data.deserialize::<FrontMatter>() {
-            Ok(front_matter) => Some(front_matter),
+            Ok(front_matter) => {
+                let new_front_matter = front_matter;
+                Some(new_front_matter)
+            }
             Err(e) => {
-                log::error!("Unable to read front matter. Is it a valid YAML format? Check for example that your title doesn't contain the ':' character.");
+                log::error!(
+                    "Unable to read front matter for file {}. Is it a valid YAML format? Check for example that your title doesn't contain the ':' character.",
+                    file_path);
                 log::error!("{}", e);
                 None
             }
         },
         None => {
-            log::info!("No data found in front matter {:?}", content);
+            log::error!(
+                "No data found in front matter {:?} for file {}",
+                content,
+                file_path
+            );
             None
         }
     };
@@ -297,7 +347,8 @@ pub fn parse_post(
         true,
     );
 
-    //byte_serialize(post.url_path.as_bytes()).collect::<String>()
+    let mut ancestors_directories_names = get_ancestor_directories_names(Path::new(file_path));
+    ancestors_directories_names.retain(|p| p != input_directory);
 
     front_matter.map(|fm| {
         Post::new(
@@ -307,6 +358,8 @@ pub fn parse_post(
             file_path.to_owned(),
             path_url,
             path_url_encoded,
+            get_ancestor_directories_paths(Path::new(file_path)),
+            ancestors_directories_names,
         )
     })
 }
@@ -378,6 +431,8 @@ mod test {
             "content/fr/2019-09-04-mes-dernieres-decouvertes-1.md".to_owned(),
             "fr/2019-09-04-mes-dernieres-decouvertes-1/".to_owned(),
             "fr/2019-09-04-mes-dernieres-decouvertes-1/".to_owned(),
+            vec!["fr/".to_owned(), "fr/content".to_owned()],
+            vec!["content".to_owned(), "fr".to_owned()],
         )
     }
 

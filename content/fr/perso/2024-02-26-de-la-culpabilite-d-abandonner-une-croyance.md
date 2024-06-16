@@ -7,6 +7,7 @@ category:
 link:
 description:
 type: text
+status: draft
 ---
 
 Suite à mon [précédent post sur le développement personnel](/blog/fr/developpement-personnel-pourquoi-j-ai-arrete-pourquoi-faut-il-s-en-mefier/) j'ai reçu quelques réactions qui, je dois l'avouer, m'ont un peu chafouiné. En substance, elles disaient ceci : s'il a été assez bête pour croire à l'utilité du développement personnel, c'est qu'il est bête tout court. Je n'ai pas pu m'empêcher de ressentir une certaine honte, de me dire que quelque part c'était vrai. De me dire que j'aurais mieux fait de ne pas écrire ce post et de ne pas m'afficher « vulnérable » à la vue et au su de tout le monde. Et puis je me suis rappelé que ce sentiment de honte faisait partie du processus classique d'abandon d'une croyance. Venez avec moi, je vous explique.

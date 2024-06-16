@@ -9,8 +9,10 @@ posts_path: "content"
 pages_path: "pages"
 
 create_index_for:
-  - fr
-  - en
+  - /fr
+  - /fr/perso
+  - /fr/tech
+  - /en
 
 markdown:
   highlight_code: true
