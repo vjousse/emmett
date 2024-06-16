@@ -18,7 +18,7 @@
         <address rel="author">By <span class="accent-data">Vincent Jousse</span></address>
       </div>
       {% if post.excerpt %}
-      <p>{{ post.excerpt|markdown }}</p>
+      <div class="post-excerpt">{{ post.excerpt|markdown }}</div>
       {% endif %}
       <div class="next">
         <a href="/{{ post.url_path }}" class="outline">Lire la suite</a>

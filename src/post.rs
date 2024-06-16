@@ -31,6 +31,39 @@ mod custom_date_format {
     }
 }
 
+mod parse_tags {
+    use serde::{self, Deserialize, Deserializer, Serializer};
+
+    pub fn serialize<S>(tags: &Option<Vec<String>>, serializer: S) -> Result<S::Ok, S::Error>
+    where
+        S: Serializer,
+    {
+        match tags {
+            Some(t) => serializer.serialize_str(&t.join(",")),
+            None => serializer.serialize_str(""),
+        }
+    }
+
+    pub fn deserialize<'de, D>(deserializer: D) -> Result<Option<Vec<String>>, D::Error>
+    where
+        D: Deserializer<'de>,
+    {
+        let s = String::deserialize(deserializer);
+
+        let v = match s {
+            Ok(content) => Some(
+                content
+                    .split(',')
+                    .map(|t| t.trim().to_lowercase().to_string())
+                    .collect(),
+            ),
+            Err(_) => None,
+        };
+
+        Ok(v)
+    }
+}
+
 #[derive(Clone, Debug, Serialize, Deserialize, Eq, Ord, PartialEq, PartialOrd)]
 #[serde(rename_all = "lowercase")]
 pub enum PostStatus {
@@ -45,6 +78,12 @@ pub struct FrontMatter {
     #[serde(with = "custom_date_format")]
     pub date: DateTime<FixedOffset>,
     pub status: Option<PostStatus>,
+    pub category: Option<String>,
+    // Be sure that we keep an Option if the field is missing
+    // See https://stackoverflow.com/questions/44301748/how-can-i-deserialize-an-optional-field-with-custom-functions-using-serde
+    #[serde(default)]
+    #[serde(with = "parse_tags")]
+    pub tags: Option<Vec<String>>,
 }
 
 #[derive(Clone, Debug, Serialize, Eq, Ord, PartialEq, PartialOrd)]
@@ -56,6 +95,8 @@ pub struct Post {
     pub path: String,
     pub url_path: String,
     pub url_path_encoded: String,
+    pub ancestor_directories_paths: Vec<String>,
+    pub ancestor_directories_names: Vec<String>,
 }
 
 impl Post {
@@ -66,6 +107,8 @@ impl Post {
         path: String,
         url_path: String,
         url_path_encoded: String,
+        ancestor_directories_paths: Vec<String>,
+        ancestor_directories_names: Vec<String>,
     ) -> Self {
         let rfc_date = front_matter.date.to_rfc3339();
         Post {
@@ -76,6 +119,8 @@ impl Post {
             url_path,
             url_path_encoded,
             date_rfc3339: rfc_date,
+            ancestor_directories_paths,
+            ancestor_directories_names,
         }
     }
 }

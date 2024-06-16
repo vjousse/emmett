@@ -16,10 +16,8 @@ impl MarkdownFilter {
 }
 
 impl TeraFilter for MarkdownFilter {
-    fn filter(&self, value: &Value, args: &HashMap<String, Value>) -> TeraResult<Value> {
+    fn filter(&self, value: &Value, _args: &HashMap<String, Value>) -> TeraResult<Value> {
         let s = try_get_value!("markdown", "value", String, value);
-
-        log::debug!("Args: {:?}", args);
 
         let html = convert_md_to_html(&s[..], &self.settings, None);
 

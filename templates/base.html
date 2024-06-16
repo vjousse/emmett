@@ -50,17 +50,39 @@
           </li>
           <li>/</li>
           <li>
-            <a title="Contenu en français" href="/blog/fr">Français</a>
+            <a title="Contenu en français" href="/blog/fr"{% if "fr" in categories %}class="active"{% endif %}
+              >Français</a
+            >
           </li>
           <li>/</li>
           <li>
-            <a title="English content" href="/blog/en">English</a>
+            <a title="English content" href="/blog/en"{% if "en" in categories %}class="active"{% endif %}>English</a>
           </li>
           <li>/</li>
           <li>
             <a title="RSS feed, atom format" href="/atom.xml">RSS</a>
           </li>
         </ul>
+        {% if "fr" in categories %}
+        <ul>
+          <li>
+            <a title="Tout le contenu en français" href="/blog/fr/"{% if "fr" in categories and categories|length == 1 %}class="active"{% endif %}
+              >Tout</a
+            >
+          </li>
+          <li>
+            <a title="Contenu tech en français" href="/blog/fr/tech"{% if "fr" in categories and "tech" in categories %}class="active"{% endif %}
+              >Tech</a
+            >
+          </li>
+
+          <li>
+            <a title="Réflexions personnelles en français" href="/blog/fr/perso"{% if "fr" in categories and "perso" in categories %}class="active"{% endif %}
+              >Réflexions</a
+            >
+          </li>
+        </ul>
+        {% endif %}
       </nav>
       {% block content %} {% endblock content %}
     </main>
