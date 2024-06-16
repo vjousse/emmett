@@ -45,3 +45,7 @@ Then serve the `output/` directory using a web serve. For example, I'm using [si
     # Avoid rewriting URLs that already contain /perso/ immediately after /fr/
     # Old blog urls
     rewrite ^/blog/fr/(?!perso/)([^/]+)/?$ /blog/fr/perso/$1 permanent;
+
+## Goaccess configuration
+
+    goaccess /var/log/nginx/vincent.jousse.org.access.log -o /home/data/report.html --log-format=COMBINED --ignore-crawlers --ignore-referrer=*.jousse.org --real-os --restore --persist --real-time-html --daemonize
