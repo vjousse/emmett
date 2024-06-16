@@ -13,6 +13,9 @@ pub struct Settings {
     pub create_index_for: Vec<String>,
     pub markdown: markup::Markdown,
     pub static_path: String,
+    pub base_url: String,
+    pub author: String,
+    pub website_title: String,
 }
 
 pub fn get_configuration() -> Result<Settings, config::ConfigError> {

@@ -4,6 +4,7 @@ use crate::config::Settings;
 use crate::post::{FrontMatter, Post, PostStatus};
 use crate::rss::write_atom_for_posts;
 use crate::site::Site;
+use crate::sitemap::write_sitemap_for_posts;
 use anyhow::Result;
 use form_urlencoded::byte_serialize;
 use gray_matter::engine::YAML;
@@ -50,11 +51,21 @@ pub fn create_content(site: &Site) -> Result<()> {
 
     write_posts_html(&pages, site);
 
+    let mut posts_and_pages: Vec<Post> = Vec::new();
+    posts_and_pages.extend(posts.clone());
+    posts_and_pages.extend(pages.clone());
+
+    write_sitemap_for_posts(
+        &posts_and_pages,
+        &site.settings.base_url.as_str(),
+        Path::new(&format!("{}/sitemap.xml", &site.settings.output_path)[..]),
+    )?;
+
     write_atom_for_posts(
         &posts,
-        "https://vincent.jousse.org",
-        "Vincent Jousse",
-        "Vince's",
+        &site.settings.base_url.as_str(),
+        &site.settings.author.as_str(),
+        &site.settings.website_title.as_str(),
         Path::new(&format!("{}/atom.xml", &site.settings.output_path)[..]),
         &site.settings,
     )?;
