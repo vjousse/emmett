@@ -229,7 +229,7 @@ Pour finir cette partie sur la restructuration du code, nous allons voir comment
 
 Commencez par installer le package requis :
 
-```shell
+```bash
 (venv) $ pip install pydantic-settings
 ```
 
