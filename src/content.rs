@@ -10,6 +10,7 @@ use form_urlencoded::byte_serialize;
 use gray_matter::engine::YAML;
 use gray_matter::Matter;
 use pulldown_cmark as cmark;
+use slug::slugify;
 use std::collections::HashMap;
 use std::error::Error;
 use std::fs;
@@ -37,10 +38,14 @@ pub fn create_content(site: &Site) -> Result<()> {
     write_posts_html(&posts, site);
 
     // Sort the posts per indexes fr, en and so on
-    let indexes_to_create: HashMap<String, Vec<&Post>> = get_posts_per_indexes(&posts, site);
+    let posts_per_indexes: HashMap<String, Vec<&Post>> = get_posts_per_indexes(&posts, site);
 
     // Write down the list of posts in the index directory fr/, en/, …
-    write_indexes_html(indexes_to_create, site);
+    write_indexes_html(posts_per_indexes, site, false);
+
+    let posts_per_tags = get_posts_per_tags(&posts);
+
+    write_indexes_html(posts_per_tags, site, true);
 
     // Get the list of pages
     let pages_files: Vec<FilePath> = get_files_for_directory(&site.settings.pages_path);
@@ -173,13 +178,23 @@ pub fn write_posts_html(posts: &[Post], site: &Site) {
 
         let mut context = Context::new();
 
+        let mut tag_urls: Vec<(String, String)> = get_tag_urls_for_post(
+            &post,
+            Some(&format!("{}/", &site.settings.blog_prefix_path)),
+        )
+        .into_iter()
+        .collect();
+
+        // Always sort by the key
+        tag_urls.sort_by(|a, b| a.0.cmp(&b.0));
+
         let front_matter = &post.front_matter;
         context.insert("title", &front_matter.title);
         context.insert("date", &front_matter.date.to_rfc3339());
 
         context.insert("post_content", &html_content);
         context.insert("post_url_path", &post.url_path);
-        context.insert("tags", &front_matter.tags);
+        context.insert("tags_urls", &tag_urls);
         context.insert("category", &front_matter.category);
 
         context.insert("categories", &post.ancestor_directories_names);
@@ -188,6 +203,45 @@ pub fn write_posts_html(posts: &[Post], site: &Site) {
             write_post_html(&html, post, &site.settings.output_path);
         };
     }
+}
+
+fn get_tag_urls_for_post(post: &Post, prepend: Option<&String>) -> HashMap<String, String> {
+    let mut url_per_tags: HashMap<String, String> = HashMap::new();
+
+    let tags = &post.front_matter.tags.clone().unwrap_or_default();
+
+    for tag in tags {
+        let key = format!(
+            "{}{}/tags/{}/{}",
+            prepend.unwrap_or(&"".to_string()),
+            post.ancestor_directories_names[0],
+            post.ancestor_directories_names[1..].join("/"),
+            slugify(tag.to_string())
+        );
+
+        url_per_tags.insert(tag.to_string(), key);
+    }
+
+    url_per_tags
+}
+
+pub fn get_posts_per_tags<'a>(posts: &'a [Post]) -> HashMap<String, Vec<&'a Post>> {
+    let mut posts_per_tags: HashMap<String, Vec<&Post>> = HashMap::new();
+
+    // For every Post, let's see if it's part of a prefix we want an index for
+    // If it's the case, generate an HashMap of posts for each prefix
+    for post in posts {
+        let tags = &post.front_matter.tags.clone().unwrap_or_default();
+
+        let urls = get_tag_urls_for_post(post, None);
+        for tag in tags {
+            let key = urls.get(tag).unwrap();
+            let posts_for_tag = posts_per_tags.entry(key.to_string()).or_default();
+            posts_for_tag.push(post);
+        }
+    }
+
+    posts_per_tags
 }
 
 pub fn get_posts_per_indexes<'a>(posts: &'a [Post], site: &Site) -> HashMap<String, Vec<&'a Post>> {
@@ -216,7 +270,11 @@ pub fn get_posts_per_indexes<'a>(posts: &'a [Post], site: &Site) -> HashMap<Stri
     indexes_to_create
 }
 
-pub fn write_indexes_html(indexes_to_create: HashMap<String, Vec<&Post>>, site: &Site) {
+pub fn write_indexes_html(
+    indexes_to_create: HashMap<String, Vec<&Post>>,
+    site: &Site,
+    display_tag_header: bool,
+) {
     for (index, mut posts) in indexes_to_create {
         let mut context = Context::new();
         let _ = &posts.sort_by(|p1, p2| p2.front_matter.date.cmp(&p1.front_matter.date));
@@ -226,9 +284,21 @@ pub fn write_indexes_html(indexes_to_create: HashMap<String, Vec<&Post>>, site: 
             .filter(|s| !s.is_empty())
             .map(|s| s.to_string())
             .collect();
+
         context.insert("categories", &index_parts);
         context.insert("posts", &posts);
         context.insert("title", &format!("Articles - {}", &index)[..]);
+
+        if display_tag_header {
+            let tag_name = if let Some(last_slash_index) = index.rfind('/') {
+                // Extract the substring from the position after the last '/' to the end
+                &index[last_slash_index + 1..]
+            } else {
+                &index
+            };
+            context.insert("tag_name", &tag_name);
+        }
+
         if let Some(html) = render_template_to_html(context, "blog/list.html", &site.tera) {
             write_html(
                 &html,
