@@ -7,6 +7,9 @@
 {% endblock title %}
 
 {% block content %}
+{% if tag_name %}
+<h1 style="padding-bottom: 2rem;">{{tag_name}}</h1>
+{% endif %}
 <div class="list">
   <ul>
     {% for post in posts %}
