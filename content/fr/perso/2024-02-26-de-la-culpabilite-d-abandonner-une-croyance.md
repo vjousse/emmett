@@ -7,7 +7,6 @@ category:
 link:
 description:
 type: text
-status: draft
 ---
 
 Suite à mon [précédent post sur le développement personnel](/blog/fr/developpement-personnel-pourquoi-j-ai-arrete-pourquoi-faut-il-s-en-mefier/) j'ai reçu quelques réactions qui, je dois l'avouer, m'ont un peu chafouiné. En substance, elles disaient ceci : s'il a été assez bête pour croire à l'utilité du développement personnel, c'est qu'il est bête tout court. Je n'ai pas pu m'empêcher de ressentir une certaine honte, de me dire que quelque part c'était vrai. De me dire que j'aurais mieux fait de ne pas écrire ce post et de ne pas m'afficher « vulnérable » à la vue et au su de tout le monde. Et puis je me suis rappelé que ce sentiment de honte faisait partie du processus classique d'abandon d'une croyance. Venez avec moi, je vous explique.
@@ -22,11 +21,11 @@ La honte de devoir admettre que la Terre est ronde alors que non. La honte de de
 
 ## La perte sociale
 
-Abandonner une croyance, c'est aussi et souvent abandonner de nombreux liens sociaux. Les personnes embrigadées dans une croyance quelconque, qu'elle soit religieuse, spirituelle, naturelle, pseud-scientifique, new age, ou je ne sais quoi encore ont souvent tissé des liens sociaux très forts autour de cette croyance. Nombre de personnes ont un métier qui tourne autour de disciplines pour lesquelles la [démarche scientifique](https://www.youtube.com/watch?v=1c1jZQ9Bkq0) a prouvé qu'elles n'étaient pas efficaces.
+Abandonner une croyance, c'est aussi et souvent abandonner de nombreux liens sociaux. Les personnes embrigadées dans une croyance quelconque, qu'elle soit religieuse, spirituelle, naturelle, pseudo-scientifique, new-age, ou je ne sais quoi encore ont souvent tissé des liens sociaux très forts autour de cette croyance. Nombre de personnes ont un métier qui tourne autour de disciplines pour lesquelles la [démarche scientifique](https://www.youtube.com/watch?v=1c1jZQ9Bkq0) a prouvé qu'elles n'étaient pas plus efficaces qu'un placebo.
 
 Elles ont aussi souvent des amis qui croient aux mêmes choses ou qui les pratiquent. Elles peuvent participer à des conférences dans le domaine, elles peuvent avoir une bibliothèque remplie entièrement de ces sujets. Il y a de grandes chances que ce soient des sujets partagés par une partie de la famille. En effet, on a généralement tendance à s'entourer de personnes qui croient plus ou moins les mêmes choses que nous.
 
-Abandonner ces croyances serait, d'un point de vue social, délétère pour ces personnes. Ça peut vouloir dire perte de travail pour des astrologues, des magnétiseurs, des barreurs de feu, des homéopathes, des mediums et plein d'autres professions relevant de l'ésotérisme ou des pseudo-médecines. Mais ça peut aussi vouloir dire perte d'amis, perte de liens familiaux, et pertes de liens divers et variés liés au domaine de la croyance. Ça serait très lourd de conséquence humainement.
+Abandonner ces croyances serait, d'un point de vue social, délétère pour ces personnes. Ça peut vouloir dire perte de travail pour des astrologues, des magnétiseurs, des barreurs de feu, des homéopathes, des mediums et plein d'autres professions dont l'inefficacité au delà du placebo a été scientifiquement prouvée. Mais ça peut aussi vouloir dire perte d'amis, perte de liens familiaux, et pertes de liens divers et variés liés au domaine de la croyance. Ça serait très lourd de conséquence humainement.
 
 ## La honte d'avoir fait croire
 
@@ -38,7 +37,7 @@ Lorsque l'on est dans une croyance, nous venons de voir qu'en sortir voudrait à
 
 - Se considérer « bête »
 - Perdre une partie de notre tissu social
-- Admettre d'avoir embrigadé d'autres personnes
+- Admettre d'avoir participé à l'embrigadement d'autres personnes
 
 Donc lorsque vous dites à quelqu'un « mais si regarde ces preuves, c'est faux ce que tu crois ». Ce que vous dites vraiment est en fait « regarde ces preuves, c'est faux ce que tu crois, donc t'es bête, tu vas perdre tes liens sociaux et tu as induit des personnes en erreur »
 
@@ -50,9 +49,9 @@ Les croyances et l'intelligence n'ont pas grand chose à voir entre elles. Cela 
 
 Notre cerveau est bourré de [biais cognitifs](https://www.youtube.com/watch?v=JGsUQdGX_qM) auxquels nous sommes tous sujets. Rentrer dans une croyance se fait généralement par un besoin de réponse à une douleur, une problématique, une souffrance psychologique (dont on n'est pas toujours conscient). C'est un processus très insidieux qui se développe petit à petit sans que l'on ne s'en rende compte. Une petite croyance amène à une autre croyance qui amène à une autre croyance. On peut alors se retrouver à croire des choses qui paraissent complètement absurdes de l'extérieur et qui pourtant nous paraissent évidentes.
 
-Alors si vous êtes confronté à quelqu'un qui croit à quelque chose qui vous semble stupide, ça ne sert à rien de le confronter directement aux faits, sa dissonance cognitive sera trop forte et il s'en protègera en réfutant ce que vous lui présentez. Ça ne sert à rien non plus de le prendre pour quelqu'un de bête, ça n'a rien à voir et ça le l'aidera pas.
+Alors si vous êtes confronté à quelqu'un qui croit à quelque chose qui vous semble stupide, ça ne sert à rien de le confronter directement aux faits, sa dissonance cognitive sera trop forte et il s'en protègera en réfutant ce que vous lui présentez. Ça ne sert à rien non plus de le prendre pour quelqu'un de bête, ça n'a rien à voir et ça ne l'aidera pas.
 
-Essayez juste d'être présent, de ne pas le juger, de le questionner sur pourquoi il croit ce qu'il croit, d'instiller le doute, de le faire parler, de l'interroger sur ses croyances en les respectant mais tout en affirmant que vous ne les partagez pas. Cela lui permettra, un jour, s'il en ressent le besoin de se tourner vers vous pour en discuter et peut-être pour changer d'avis. Il saura qu'il a déjà un possible soutien s'il devait abandonner sa croyance.
+Essayez juste d'être présent, de ne pas le juger, de le questionner sur pourquoi il croit ce qu'il croit, d'instiller le doute, de le faire parler, de l'interroger sur ses croyances en les respectant mais tout en affirmant que vous ne les partagez pas. Cela lui permettra, un jour, s'il en ressent le besoin de se tourner vers vous pour en discuter et peut-être pour changer d'avis. Il saura qu'il a déjà un possible soutien s'il devait abandonner sa croyance. Le plus important : essayer de garder le lien.
 
 ## Ressources pour aller plus loin
 
