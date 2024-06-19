@@ -34,7 +34,7 @@ pub fn write_atom_for_posts(
     let mut feed: Feed = FeedBuilder::default()
         .links(vec![
             LinkBuilder::default()
-                .rel("self".to_string())
+                .rel("alternate".to_string())
                 .href(base.to_string())
                 .build(),
             LinkBuilder::default()
@@ -61,7 +61,7 @@ pub fn write_atom_for_posts(
             .authors(authors.clone())
             .contributors(authors.clone())
             .links(vec![LinkBuilder::default()
-                .rel("self".to_string())
+                .rel("alternate".to_string())
                 .href(format!("{}/{}", base, post.url_path_encoded))
                 .build()])
             .published(Some(post.front_matter.date))
