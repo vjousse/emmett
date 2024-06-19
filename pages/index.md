@@ -7,7 +7,7 @@ date: "2022-05-03 09:00:00+01:00"
 Je m'appelle **Vincent Jousse**, vous pouvez me trouver sur [Mastodon](https://mamot.fr/@vjousse), [Github](https://github.com/vjousse) ou sur [Linkedin](https://www.linkedin.com/in/vincent-jousse-798b1a11/).
 
 - 📔 Je partage mes réflexions existentielles en [français sur ce blog](/blog/fr)
-- 👨‍💻 Je publie mes écrits techniques en français sur [pere programming](https://pereprogramming.com/) et [anglais sur ce blog](/blog/en)
+- 👨‍💻 Je publie mes écrits [techniques en français par ici](/blog/fr/tech/) et [en anglais par là](/blog/en)
 - 🖥️ Je code en Python, Rust, Crystal et Elm sur [github](https://github.com/vjousse/)
 - 🎓 J'ai été prof d'informatique à l'[Université du Mans](http://www.univ-lemans.fr/)
 - <img src="images/betagouv.png" alt="Betagouv" style="width:1.2rem; height:1.2rem;border-radius:0;box-shadow:none;vertical-align:middle;"/> Je travaille actuellement pour [Betagouv](https://beta.gouv.fr/) sur [Ecobalyse](https://ecobalyse.beta.gouv.fr/), un calculateur de coût environnemental des produits
