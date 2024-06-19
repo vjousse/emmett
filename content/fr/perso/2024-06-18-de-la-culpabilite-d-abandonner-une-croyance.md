@@ -1,7 +1,7 @@
 ---
 title: "Pourquoi abandonner une croyance est-il si difficile et comment aider ?"
 slug: pourquoi-abandonner-une-croyance-est-si-difficile
-date: "2024-03-11 07:00:00+01:00"
+date: "2024-06-18 07:00:00+01:00"
 tags: développement personnel, croyance
 category:
 link:
