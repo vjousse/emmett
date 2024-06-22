@@ -58,10 +58,13 @@
           <li>
             <a title="English content" href="/blog/en"{% if "en" in categories %}class="active"{% endif %}>English</a>
           </li>
+
+          {% if "en" not in categories %}
           <li>/</li>
           <li>
             <a title="RSS feed, atom format" href="/atom.xml">RSS</a>
           </li>
+          {% endif %}
         </ul>
         {% if "fr" in categories %}
         <ul>
