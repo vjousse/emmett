@@ -118,6 +118,7 @@ a:hover,
 a.active {
   background-color: var(--link);
   color: var(--bg);
+  text-decoration: none;
 }
 
 a:has(> img):hover {
