@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block ogurl %}{{ post_url_path }}{% endblock ogurl %}
+{% block ogurl %}{{ url_path }}{% endblock ogurl %}
 
 {% block title %}
   <title>{{ title }}</title>
@@ -17,17 +17,19 @@
 {% block content %}
 <article>
   <header>
-    <time datetime="{{ date|date(format="%Y-%m-%d") }}">Published on: <span class="accent-data">{{ date|date(format="%d-%m-%Y") }}</span></time>
-    <address rel="author">By <span class="accent-data">Vincent Jousse</span></address>
+    <time datetime="{{ date|date(format="%Y-%m-%d") }}">{% if "en" in categories %}Published on{% else %}Publié le{% endif %} <span class="accent-data">{{ date|date(format="%d-%m-%Y") }}</span></time>
+    <address rel="author">{% if "en" in categories %}by{% else %}par{% endif %} <span class="accent-data">Vincent Jousse</span></address>
     {% if tags_urls %}
 
-    Tags: <ul id="tags">
+    <div>
+      Tags <ul id="tags">
 
-    {% for tag_url in tags_urls | reverse %}
-       <li><a href="/{{ tag_url.1 }}">{{tag_url.0}}</a></li>
-    {% endfor %}
+      {% for tag_url in tags_urls | reverse %}
+         <li><a href="/{{ tag_url.1 }}">{{tag_url.0}}</a></li>
+      {% endfor %}
 
-    </ul>
+      </ul>
+    </div>
     {%endif%}
     <h1>{{ title }}</h1>
   </header>

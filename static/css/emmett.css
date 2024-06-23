@@ -203,6 +203,11 @@ nav {
   content: " >>>";
 }
 
+time,
+address {
+  display: inline-block;
+}
+
 div.post-excerpt ul li {
   padding-bottom: 0;
 }

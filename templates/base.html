@@ -46,7 +46,7 @@
       <nav>
         <ul>
           <li>
-            <a title="Retour à l'accueil" href="/" class="svg-icon">🏠</a>
+            <a title="Retour à l'accueil" href="/" class="svg-icon{% if url_path == '/' %} active{% endif %}">{% if "en" in categories %}Home{% else %}Accueil{% endif%}</a>
           </li>
           <li>/</li>
           <li>
@@ -92,6 +92,8 @@
     <footer>
       <hr />
       <div>
+
+        {% if "en" in categories %}
         🧾 Content licensed under the
         <a
           rel="noopener noreferrer"
@@ -119,6 +121,36 @@
           target="_blank"
           >my book about Vim</a
         >.
+        {% else %}
+        🧾 Contenu fourni sous license
+        <a
+          rel="noopener noreferrer"
+          href="https://creativecommons.org/licenses/by/4.0/"
+          target="_blank"
+          >CC-By Licence</a
+        >.<br />
+        🔧 Construit avec
+        <a
+          rel="noopener noreferrer"
+          href="https://www.rust-lang.org/"
+          target="_blank"
+          >Rust</a
+        >, code source disponible sur
+        <a
+          rel="noopener noreferrer"
+          href="https://github.com/vjousse/emmett"
+          target="_blank"
+          >Github</a
+        >.<br />
+        📙 Mettez-vous à Vim avec
+        <a
+          rel="noopener noreferrer"
+          href="https://vimebook.com/"
+          target="_blank"
+          >mon livre à prix libre</a
+        >.
+
+        {% endif %}
       </div>
     </footer>
   </body>

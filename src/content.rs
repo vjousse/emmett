@@ -193,7 +193,7 @@ pub fn write_posts_html(posts: &[Post], site: &Site) {
         context.insert("date", &front_matter.date.to_rfc3339());
 
         context.insert("post_content", &html_content);
-        context.insert("post_url_path", &post.url_path);
+        context.insert("url_path", &post.url_path);
         context.insert("tags_urls", &tag_urls);
         context.insert("category", &front_matter.category);
 
@@ -298,6 +298,8 @@ pub fn write_indexes_html(
             };
             context.insert("tag_name", &tag_name);
         }
+
+        context.insert("url_path", &index);
 
         if let Some(html) = render_template_to_html(context, "blog/list.html", &site.tera) {
             write_html(

@@ -17,14 +17,14 @@
       <a href="/{{ post.url_path }}">{{ post.front_matter.title }}</a>
 
       <div class="post-info">
-        <time datetime="{{ post.date_rfc3339|date(format="%Y-%m-%d") }}">Published on: <span class="accent-data">{{ post.date_rfc3339|date(format="%d-%m-%Y") }}</span></time>
-        <address rel="author">By <span class="accent-data">Vincent Jousse</span></address>
+        <time datetime="{{ post.date_rfc3339|date(format="%Y-%m-%d") }}">{% if "en" in categories %}Published on{% else %}Publié le{% endif %} <span class="accent-data">{{ post.date_rfc3339|date(format="%d-%m-%Y") }}</span></time>
+        <address rel="author">{% if "en" in categories %}by{% else %}par{% endif %} <span class="accent-data">Vincent Jousse</span></address>
       </div>
       {% if post.excerpt %}
       <div class="post-excerpt">{{ post.excerpt|markdown }}</div>
       {% endif %}
-      <div class="next">
-        <a href="/{{ post.url_path }}" class="outline">Lire la suite</a>
+      <div class="next"> 
+        <a href="/{{ post.url_path }}" class="outline">{% if "en" in categories %}Next{% else %}Lire la suite{% endif %}</a>
       </div>
     </li>
     {% endfor %}
