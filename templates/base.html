@@ -90,7 +90,7 @@
       {% block content %} {% endblock content %}
     </main>
     <footer>
-      {% if "fr" in categories or url_path == "/" %}
+      {% if ("fr" in categories or url_path == "/") and "tech" not in categories %}
       <hr />
 
         <h4>Recevoir les nouveaux articles par mail</h4>
