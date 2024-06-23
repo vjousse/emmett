@@ -90,6 +90,30 @@
       {% block content %} {% endblock content %}
     </main>
     <footer>
+      {% if "fr" in categories or url_path == "/" %}
+      <hr />
+
+        <h4>Recevoir les nouveaux articles par mail</h4>
+
+
+        <form method="post" action="https://newsletter.jousse.org/subscription/form" class="listmonk-form">
+
+
+          <div id="newsletter">
+            <p><input type="email" name="email" required placeholder="E-mail" /></p>
+            <p><input type="submit" value="S'inscrire" /></p>
+            <p><em>(votre adresse ne sera jamais partagée à des tiers)</em></p>
+
+          </div>
+          <p style="display: none;">
+            <input id="786f8" type="checkbox" name="l" checked value="786f8dc1-f889-4c7f-a550-a70a2502c8af" />
+            <label for="786f8">Vince et ses cogitations</label><br /><span>La newsletter de mon blog https://vincent.jousse.org</span>
+          </p>
+
+          <input type="hidden" name="nonce" />
+        </form>
+      {% endif %}
+
       <hr />
       <div>
 

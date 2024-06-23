@@ -277,3 +277,28 @@ footer {
 footer > hr {
   margin-bottom: 1.7rem;
 }
+
+footer h4 {
+  padding-top: 0;
+  padding-bottom: 1.5rem;
+  margin-bottom: 0;
+}
+
+footer h4::before {
+  content: "";
+}
+
+footer p {
+  margin: 0;
+}
+
+#newsletter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding-bottom: 1.5rem;
+}
+
+#newsletter em {
+  font-size: 0.9rem;
+}
