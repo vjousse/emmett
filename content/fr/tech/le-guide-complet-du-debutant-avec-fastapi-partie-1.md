@@ -7,6 +7,8 @@ tags: python, framework, fastapi, web, fastapi-tutorial
 
 _**Mise à jour le 26/01/2024**_
 
+L'intégralité du guide est [disponible ici](/blog/fr/tags/tech/fastapi-tutorial).
+
 ## Pourquoi FastAPI ?
 
 Commençons par le commencement.

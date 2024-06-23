@@ -11,6 +11,8 @@ J'ai toujours aimé apprendre par l'exemple et ce guide ne dérogera pas à la r
 
 _**Mise à jour le 11/02/2024** : Tortoise n'étant pas activement maintenu, j'ai décidé de passer le tutorial de Tortoise ORM à SQL Alchemy_
 
+L'intégralité du guide est [disponible ici](/blog/fr/tags/tech/fastapi-tutorial).
+
 ## Projet : une newsletter à la Substack
 
 Les principales fonctionnalités que nous développerons :

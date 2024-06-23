@@ -11,6 +11,8 @@ Jusqu'ici nous avons placé tout notre code dans le même fichier `main.py`. Mê
 
 _**Mise à jour le 11/02/2024** : Tortoise n'étant pas activement maintenu, j'ai décidé de passer le tutorial de Tortoise ORM à SQL Alchemy_
 
+L'intégralité du guide est [disponible ici](/blog/fr/tags/tech/fastapi-tutorial).
+
 ## Restructuration du code
 
 ### Connexion à la base de données
