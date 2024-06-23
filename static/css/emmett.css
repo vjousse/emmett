@@ -240,10 +240,10 @@ article img {
 div code,
 li code,
 p code {
-  padding: 0 0.125rem;
-  border-radius: var(--standard-border-radius);
-  color: var(--bg);
-  background-color: var(--text);
+  padding: 0 0.225rem;
+  border-radius: 0.2rem;
+  color: #333333;
+  background-color: #e0e0e0;
 }
 code,
 kbd,
