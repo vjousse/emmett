@@ -48,19 +48,16 @@
           <li>
             <a title="Retour à l'accueil" href="/" class="svg-icon{% if url_path == '/' %} active{% endif %}">{% if "en" in categories %}Home{% else %}Accueil{% endif%}</a>
           </li>
-          <li>/</li>
           <li>
             <a title="Contenu en français" href="/blog/fr"{% if "fr" in categories %}class="active"{% endif %}
               >Français</a
             >
           </li>
-          <li>/</li>
           <li>
             <a title="English content" href="/blog/en"{% if "en" in categories %}class="active"{% endif %}>English</a>
           </li>
 
           {% if "en" not in categories %}
-          <li>/</li>
           <li>
             <a title="RSS feed, atom format" href="/atom.xml">RSS</a>
           </li>

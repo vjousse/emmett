@@ -156,6 +156,10 @@ nav {
   padding-bottom: 5rem;
 }
 
+nav > ul li:not(:first-child):before {
+  content: "/ ";
+}
+
 /** Content list **/
 
 .list .date {
