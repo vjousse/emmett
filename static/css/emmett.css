@@ -248,7 +248,13 @@ article img {
 
 div code,
 li code,
-p code {
+p code,
+h1 code,
+h2 code,
+h3 code,
+h4 code,
+h5 code,
+h6 code {
   padding: 0 0.225rem;
   border-radius: 0.2rem;
   color: #333333;
