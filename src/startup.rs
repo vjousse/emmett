@@ -5,7 +5,7 @@ use crate::templates::filters;
 use anyhow::Result;
 use fs_extra::dir::{copy, CopyOptions};
 
-pub fn run() -> Result<()> {
+pub fn run(publish_drafts: bool) -> Result<()> {
     log::info!("Running the application");
     let site: ResultCrate<Site> = Site::new();
 
@@ -15,7 +15,7 @@ pub fn run() -> Result<()> {
                 "markdown",
                 filters::MarkdownFilter::new(site.settings.clone())?,
             );
-            create_content(&site)?;
+            create_content(&site, publish_drafts)?;
             copy_static(&site.settings.static_path, &site.settings.output_path)?;
         }
         Err(e) => {

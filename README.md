@@ -14,9 +14,17 @@ Then serve the `output/` directory using a web serve. For example, I'm using [si
 
     simple-http-server -i output
 
+If you want to publish drafts too (can be handy when working locally) you have to pass the `-p` flag:
+
+    cargo run -- -p
+
 ## Watch for changes
 
     watchexec -e md cargo run
+
+or to see drafts:
+
+    watchexec -e md cargo run -- -p
 
 ## Deploy
 

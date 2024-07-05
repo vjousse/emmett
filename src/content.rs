@@ -22,7 +22,7 @@ use walkdir::WalkDir;
 
 type FilePath = String;
 
-pub fn create_content(site: &Site) -> Result<()> {
+pub fn create_content(site: &Site, publish_drafts: bool) -> Result<()> {
     // Get the list of files
     let files_to_parse: Vec<FilePath> = get_files_for_directory(&site.settings.posts_path);
 
@@ -32,6 +32,7 @@ pub fn create_content(site: &Site) -> Result<()> {
         &files_to_parse,
         &site.settings.posts_path,
         &site.settings.blog_prefix_path,
+        publish_drafts,
     );
 
     // Write posts onto disk
@@ -52,7 +53,7 @@ pub fn create_content(site: &Site) -> Result<()> {
 
     // Well let's say that a page and a post are the sames for now, we may
     // want to be more generic later on
-    let pages: Vec<Post> = get_posts(&pages_files, &site.settings.pages_path, "");
+    let pages: Vec<Post> = get_posts(&pages_files, &site.settings.pages_path, "", publish_drafts);
 
     write_posts_html(&pages, site);
 
@@ -159,13 +160,24 @@ pub fn get_files_for_directory(directory: &str) -> Vec<FilePath> {
 
 // Read content of every file, and create a Post instance
 // Only keep posts that don't have the draft status
-pub fn get_posts(files_to_parse: &[FilePath], posts_path: &str, prefix_path: &str) -> Vec<Post> {
+pub fn get_posts(
+    files_to_parse: &[FilePath],
+    posts_path: &str,
+    prefix_path: &str,
+    publish_drafts: bool,
+) -> Vec<Post> {
     files_to_parse
         .iter()
         .filter_map(|file_path| parse_file(file_path, posts_path, prefix_path))
-        // Don't publish posts that are still drafts
+        // Don't publish posts that are still drafts if publish_drafts is false
         .filter(|post| match &post.front_matter.status {
-            Some(status) => *status != PostStatus::Draft,
+            Some(status) => {
+                if publish_drafts {
+                    true
+                } else {
+                    *status != PostStatus::Draft
+                }
+            }
             None => true,
         })
         .collect()
