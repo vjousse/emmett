@@ -17,8 +17,11 @@
 {% block content %}
 <article>
   <header>
-    <time datetime="{{ date|date(format="%Y-%m-%d") }}">{% if "en" in categories %}Published on{% else %}Publié le{% endif %} <span class="accent-data">{{ date|date(format="%d-%m-%Y") }}</span></time>
+    <time datetime="{{ created_at|date(format="%Y-%m-%d") }}">{% if "en" in categories %}Published on{% else %}Publié le{% endif %} <span class="accent-data">{{ created_at|date(format="%d-%m-%Y") }}</span></time>
     <address rel="author">{% if "en" in categories %}by{% else %}par{% endif %} <span class="accent-data">Vincent Jousse</span></address>
+    {% if updated_at %}
+    <time datetime="{{ updated_at|date(format="%Y-%m-%d") }}" style="display: block;"><em>{% if "en" in categories %}Last updated on{% else %}Dernière mise à jour le{% endif %} <span class="accent-data">{{ updated_at|date(format="%d-%m-%Y") }}</span></em></time>
+    {% endif %}
     {% if tags_urls %}
 
     <div>
