@@ -533,11 +533,12 @@ dependencies = [
  "gray_matter",
  "lazy_static",
  "log",
- "pulldown-cmark",
+ "pulldown-cmark 0.11.0",
  "serde",
  "serde_derive",
  "serde_json",
  "slug",
+ "strip_markdown",
  "syntect",
  "tera",
  "thiserror",
@@ -1073,6 +1074,18 @@ dependencies = [
 
 [[package]]
 name = "pulldown-cmark"
+version = "0.7.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "ca36dea94d187597e104a5c8e4b07576a8a45aa5db48a65e12940d3eb7461f55"
+dependencies = [
+ "bitflags 1.3.2",
+ "getopts",
+ "memchr",
+ "unicase",
+]
+
+[[package]]
+name = "pulldown-cmark"
 version = "0.11.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "8746739f11d39ce5ad5c2520a9b75285310dbfe78c541ccf832d38615765aec0"
@@ -1279,6 +1292,16 @@ checksum = "3bd94acec9c8da640005f8e135a39fc0372e74535e6b368b7a04b875f784c8c4"
 dependencies = [
  "deunicode",
  "wasm-bindgen",
+]
+
+[[package]]
+name = "strip_markdown"
+version = "0.2.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "32c754386109f9adc8ca62513c51cf81cc2d8502588064103aa8e9f69b4276da"
+dependencies = [
+ "log",
+ "pulldown-cmark 0.7.2",
 ]
 
 [[package]]

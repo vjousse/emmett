@@ -33,6 +33,10 @@ ul {
   list-style-type: none;
 }
 
+ol li {
+  padding-bottom: 1rem;
+}
+
 img,
 video {
   height: auto;

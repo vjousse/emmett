@@ -17,6 +17,7 @@ use std::fs;
 use std::fs::File;
 use std::io::Write;
 use std::path::{Path, PathBuf};
+use strip_markdown::strip_markdown;
 use tera::{Context, Tera};
 use walkdir::WalkDir;
 
@@ -214,6 +215,15 @@ pub fn write_posts_html(posts: &[Post], site: &Site) {
         context.insert("category", &front_matter.category);
 
         context.insert("categories", &post.ancestor_directories_names);
+
+        context.insert(
+            "description",
+            &post
+                .excerpt
+                .clone()
+                .map(|e| strip_markdown(e.as_str()))
+                .unwrap_or(post.front_matter.title.clone()),
+        );
 
         if let Some(html) = render_template_to_html(context, "blog/post.html", &site.tera) {
             write_post_html(&html, post, &site.settings.output_path);

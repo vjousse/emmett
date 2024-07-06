@@ -10,6 +10,9 @@
     <meta name="twitter:site" content="@vjousse" />
     <meta name="twitter:creator" content="@vjousse" />
     <meta property="og:type" content="article" />
+    {% if description %}
+    <meta name="description" content="{{ description }}">
+    {% endif %}
     <meta
       property="og:url"
       content="https://vincent.jousse.org/{% block ogurl %}{% endblock ogurl %}"
