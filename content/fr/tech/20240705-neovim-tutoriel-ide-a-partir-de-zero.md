@@ -83,26 +83,19 @@ Puis, créons le répertoire où nous allons configurer nos plugins.
 mkdir -p lua/plugins
 ```
 
-Finissons par créer `lazy_setup.lua` qui est le fichier qui nous servira à mettre en place et à configurer le gestionnaire de plugins Lazy.nvim
-
-```bash
-touch lua/lazy_setup.lua
-```
-
 Voilà à quoi devrait ressembler votre arborescence pour l'instant :
 
 ```
-.
+~/.config/nvim
 ├── init.lua
 └── lua
     ├── core
-    ├── lazy_setup.lua
     └── plugins
 ```
 
 > ℹ️ À noter que cette arborescence est totalement arbitraire et est issue de mes préférences personnelles. Libre à vous de ranger les choses différemment une fois que vous aurez compris comment tout cela fonctionne.
 
-## Options par défault
+## Options par défaut
 
 Éditons maintenant les options par défaut de notre _Neovim_. Placez vous dans `~/.config/nvim` et éditez/créez le fichier `lua/core/options.lua` :
 
@@ -111,6 +104,8 @@ nvim lua/core/options.lua
 ```
 
 Placez-y le contenu suivant :
+
+**`lua/core/options.lua`**
 
 ```lua
 local opt = vim.opt -- raccourci pour un peu plus de concision
@@ -189,7 +184,7 @@ nvim lua/core/init.lua
 Puis placez-y le code suivant :
 
 ```lua
-
+require("core.options")
 ```
 
 Cela va notifier à _Lua_ que lorsque nous allons inclure notre module `core` il faudra qu'il inclue par défaut le fichier `core/options.lua`. Notez que le chemin est relatif au répertoire de base `~/.config/nvim/lua`.
@@ -209,3 +204,134 @@ require("core")
 Sauvegardez, quittez, puis relancez _Neovim_. La configuration devrait avoir été prise en compte (le numéro des lignes devrait être relatif à la position de votre curseur par exemple).
 
 **Résumons** : _Neovim_ charge par défaut `~/.config/nvim/init.lua` qui lui-même charge `~/.config/nvim/lua/core/init.lua` (grâce au `require("core")`) qui va ensuite charger `~/.config/nvim/lua/core/options.lua` (grâce au `require("core.options")`).
+
+## Raccourcis clavier
+
+Maintenant que nous avons mis en place un fichier pour configurer les options par défaut, nous allons faire de même pour configurer nos raccourcis.
+
+Créez le fichier correspondant :
+
+```bash
+nvim lua/core/keymaps.lua
+```
+
+Puis placez-y vos raccourcis. Voici un exemple de quelques raccourcis que j'utilise :
+
+**`lua/core/keymaps.lua`**
+
+```lua
+-- On définit notre touche leader sur espace
+vim.g.mapleader = " "
+
+-- Raccourci pour la fonction set
+local keymap = vim.keymap.set
+
+-- on utilise ;; pour sortir du monde insertion
+keymap("i", ";;", "<ESC>", { desc = "Sortir du mode insertion avec ;;" })
+
+-- on efface le surlignage de la recherche
+keymap("n", "<leader>nh", ":nohl<CR>", { desc = "Effacer le surlignage de la recherche" })
+
+-- I déplace le texte sélectionné vers le haut en mode visuel (activé avec v)
+keymap("v", "<S-i>", ":m .-2<CR>==", { desc = "Déplace le texte sélectionné vers le haut en mode visuel" })
+-- K déplace le texte sélectionné vers le bas en mode visuel (activé avec v)
+keymap("v", "<S-k>", ":m .+1<CR>==", { desc = "Déplace le texte sélectionné vers le bas en mode visuel" })
+
+-- I déplace le texte sélectionné vers le haut en mode visuel bloc (activé avec V)
+keymap("x", "<S-i>", ":move '<-2<CR>gv-gv", { desc = "Déplace le texte sélectionné vers le haut en mode visuel bloc" })
+-- K déplace le texte sélectionné vers le bas en mode visuel (activé avec V)
+keymap("x", "<S-k>", ":move '>+1<CR>gv-gv", { desc = "Déplace le texte sélectionné vers le bas en mode visuel bloc" })
+
+```
+
+Libre à vous de mettre les raccourcis que vous souhaitez. Vous aurez compris que la fonction se comporte comme les fonctions `nmap`, `imap`, … classiques de _Vim_ sauf que vous spécifiez le mode (normal, insertion,…) comme premier paramètre. Notez aussi le 4ème paramètre de la fonction `keymap.set`. Il prend un dictionnaire Lua avec plusieurs valeurs possibles ([tous ceux la fonction map](<https://neovim.io/doc/user/api.html#nvim_set_keymap()>)) et notamment la valeurs `desc` qui va vous permettre de spécifier un mémo pour vous rappeler de ce que fait ce raccourci. Je vous **conseille fortement de vous astreindre à le remplir** car ça pourra être très utile plus tard dans le cas d'utilisation de plugins comme [which-key](https://github.com/folke/which-key.nvim).
+
+Il nous reste maintenant à charger automatiquement ces raccourcis lorsque que l'on fait un `require("core")`. Pour ce faire, éditez `lua/core/init.lua` :
+
+```bash
+nvim lua/core/init.lua
+```
+
+Et faites en sorte qu'il contienne le code suivant :
+
+```lua
+require("core.options")
+require("core.keymaps")
+```
+
+Sauvegardez, quittez et relancez : vous devriez avoir vos raccourcis claviers pris en compte.
+
+Pour information, à ce stade, votre répertoire `~/.config/nvim/` devrait avoir le contenu suivant :
+
+```
+~/.config/nvim
+├── init.lua
+└── lua
+    ├── core
+    │   ├── init.lua
+    │   ├── keymaps.lua
+    │   └── options.lua
+    └── plugins
+```
+
+## Gestionnaire de plugins : `lazy.nvim`
+
+Nous allons utiliser [lazy.nvim](https://lazy.folke.io/) pour gérer l'installation et la configuration de nos différents plugins. C'est le gestionnaire de plugins le plus utilisé actuellement dans la communauté et il remplace avantageusement [packer.nvim](https://github.com/wbthomason/packer.nvim).
+
+> ⚠️ **Attention** nous parlons bien ici du gestionnaire de plugins `lazy.nvim` et non de la _distribution Neovim_ [LazyVim](https://www.lazyvim.org/) basée sur ce gestionnaire de plugins. La distribution _LazyVim_ a pour but de vous fournir un _Neovim_ entièrement configuré et prêt à l'emploi, ce qui est le complet opposé du but de cet article.
+
+Commençons par créer le répertoire et le fichier qui va accueillir la configuration de `lazy.nvim`.
+
+```bash
+mkdir lua/config/
+touch lua/config/lazy.lua
+```
+
+Éditez `lua/config/lazy.lua` et placez-y le code suivant (issu de la documentation de `lazy.nvim`) :
+
+**`lua/config/lazy.lua`**
+
+```lua
+-- Mise en place et installation de lazy.nvim
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not (vim.uv or vim.loop).fs_stat(lazypath) then
+  local lazyrepo = "https://github.com/folke/lazy.nvim.git"
+  local out = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
+  if vim.v.shell_error ~= 0 then
+    vim.api.nvim_echo({
+      { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
+      { out, "WarningMsg" },
+      { "\nPress any key to exit..." },
+    }, true, {})
+    vim.fn.getchar()
+    os.exit(1)
+  end
+end
+vim.opt.rtp:prepend(lazypath)
+
+-- Configuration de lazy.nvim
+require("lazy").setup({
+  spec = {
+    -- importation de notre module plugins
+    { import = "plugins" },
+  },
+  -- vérifie automatiquement les mises à jour des plugins
+  checker = { enabled = true },
+})
+```
+
+Créez et éditez ensuite le fichier `lua/plugins/init.lua` en y plaçant le contenu suivant :
+
+**`lua/plugins/init.lua`**
+
+```lua
+return {
+  "nvim-lua/plenary.nvim", -- ensemble de fonctions lua utilisées par de nombreux plugins
+}
+```
+
+Ce fichier, lancé au chargement de notre module `lua/plugins` peut contenir tout la liste des plugins que vous souhaitez voir installés par défaut avec si besoin, la configuration associée. Même si n'utiliser que ce fichier est possible, nous allons procéder différemment. Comme recommandé dans la [documentation de `lazy.nvim`](https://lazy.folke.io/usage/structuring) nous allons plutôt utiliser un fichier par plugin au lieu de tout mettre dans `lua/plugins/init.lua`. Quoiqu'il en soit, les contenus de `lua/plugins/init.lua` et des fichiers de plugins `lua/plugins/*.lua` seront fusionnés au chargement de `lazy.nvim`, donc les deux sont possibles et compatibles l'un avec l'autre.
+
+À noter que `lazy.nvim` va chercher les plugins par défaut sur _Github_ mais il est possible de directement lui spécifier n'importe quel dépôt git ou n'importe quel répertoire local.
+
+## Thème de couleurs : `tokyonight.nvim`
