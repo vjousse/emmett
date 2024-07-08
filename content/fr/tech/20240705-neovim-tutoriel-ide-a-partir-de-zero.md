@@ -295,28 +295,28 @@ touch lua/config/lazy.lua
 -- Mise en place et installation de lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
-  local lazyrepo = "https://github.com/folke/lazy.nvim.git"
-  local out = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
-  if vim.v.shell_error ~= 0 then
-    vim.api.nvim_echo({
-      { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
-      { out, "WarningMsg" },
-      { "\nPress any key to exit..." },
-    }, true, {})
-    vim.fn.getchar()
-    os.exit(1)
-  end
+	local lazyrepo = "https://github.com/folke/lazy.nvim.git"
+	local out = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
+	if vim.v.shell_error ~= 0 then
+		vim.api.nvim_echo({
+			{ "Failed to clone lazy.nvim:\n", "ErrorMsg" },
+			{ out, "WarningMsg" },
+			{ "\nPress any key to exit..." },
+		}, true, {})
+		vim.fn.getchar()
+		os.exit(1)
+	end
 end
 vim.opt.rtp:prepend(lazypath)
 
--- Configuration de lazy.nvim
-require("lazy").setup({
-  spec = {
-    -- importation de notre module plugins
-    { import = "plugins" },
-  },
-  -- vérifie automatiquement les mises à jour des plugins
-  checker = { enabled = true },
+-- Configuration de lazy.nvim et importation du répertoire `plugins`
+require("lazy").setup({ { import = "plugins" } }, {
+	-- vérifie automatiquement les mises à jour des plugins
+	checker = { enabled = true },
+	-- désactive la pénible notification au démarrage
+	change_detection = {
+		notify = false,
+	},
 })
 ```
 
@@ -334,4 +334,83 @@ Ce fichier, lancé au chargement de notre module `lua/plugins` peut contenir tou
 
 À noter que `lazy.nvim` va chercher les plugins par défaut sur _Github_ mais il est possible de directement lui spécifier n'importe quel dépôt git ou n'importe quel répertoire local.
 
-## Thème de couleurs : `tokyonight.nvim`
+## Un joli _Neovim_, le thème `tokyonight.nvim`
+
+Nous allons utiliser par défaut le thème [`tokyonight.nvim`](https://github.com/folke/tokyonight.nvim). Libre à vous d'en utiliser un autre si vous voulez (vous en trouverez des exemples [sur le site dotfyle par exemple](https://dotfyle.com/neovim/colorscheme/trending)) mais celui-ci a l'avantage d'être disponible en plusieurs versions sombres ou claires (_Moon, Storm, Night, Day_) et est aussi supporté dans nombres d'autres applications comme WezTerm (pratique pour avoir un terminal avec le même thème que votre _Neovim_).
+
+![Capture d'écran montrant les différentes variantes du thème tokyonight](/images/configurer-neovim-comme-ide-a-partir-de-zero-tutoriel-guide/tokyonight.png "Capture d'écran montrant les différentes variantes du thème tokyonight")
+
+Créez le fichier `lua/plugins/tokyonight.lua` :
+
+```bash
+nvim lua/plugins/tokyonight.lua
+```
+
+Et placez-y le contenu suivant :
+
+**`lua/plugins/tokyonight.lua`**
+
+```lua
+return {
+	"folke/tokyonight.nvim",
+	lazy = false,
+	priority = 1000,
+	opts = {},
+	config = function()
+		-- chargement du thème
+		vim.cmd([[colorscheme tokyonight]])
+	end,
+}
+```
+
+Quittez et relancez _Neovim_ : le thème devrait maintenant être activé par défaut !
+
+Vous pouvez aussi activer `tokyonight` lors du chargement de la fenêtre d'installation des nouveaux plugins par _lazy.nvim_ au chargement de _Neovim_ (par défaut il utilise un autre thème). Pour ce faire modifiez `lua/config/lazy.lua` et ajoutez la ligne `install = { colorscheme = { "tokyonight" } }` :
+
+```lua
+-- … débute du fichier
+
+-- Configuration de lazy.nvim et importation du répertoire `plugins`
+require("lazy").setup({ { import = "plugins" } }, {
+	-- vérifie automatiquement les mises à jour des plugins
+	checker = { enabled = true },
+	-- thème utilisé lors de l'installation de plugins
+	install = { colorscheme = { "tokyonight" } },
+	-- désactive la pénible notification au démarrage
+	change_detection = {
+		notify = false,
+	},
+})
+```
+
+## L'explorateur de fichiers : `nvim-tree.lua`
+
+Éditez `lua/plugins/nvim-tree.lua` et placez-y le code suivant :
+
+**`lua/plugins/nvim-tree.lua`**
+
+```lua
+return {
+	"nvim-tree/nvim-tree.lua",
+	version = "*",
+	lazy = false,
+	dependencies = {
+		"nvim-tree/nvim-web-devicons",
+	},
+	config = function()
+		require("nvim-tree").setup({})
+
+		-- On utilise <leader>e pour ouvrir/fermer l'explorateur
+		vim.keymap.set(
+			"n",
+			"<leader>e",
+			"<cmd>NvimTreeFindFileToggle<CR>",
+			{ desc = "Ouverture/fermeture de l'explorateur de fichiers" }
+		)
+	end,
+}
+```
+
+Par défaut j'utilise `<leader>e` pour ouvrir fermer mon explorateur, mais libre à vous de changer ce raccourci (pour rappel mon `<leader>` est la touche espace).
+
+Vous trouverez tous les mappings par défaut et comment les modifier dans la [documentation du plugin](https://github.com/nvim-tree/nvim-tree.lua#custom-mappings).
