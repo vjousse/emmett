@@ -274,7 +274,7 @@ Pour information, à ce stade, votre répertoire `~/.config/nvim/` devrait avoir
     └── plugins
 ```
 
-## Gestionnaire de plugins : `lazy.nvim`
+## Gestionnaire de plugins : [`lazy.nvim`](https://lazy.folke.io/)
 
 Nous allons utiliser [lazy.nvim](https://lazy.folke.io/) pour gérer l'installation et la configuration de nos différents plugins. C'est le gestionnaire de plugins le plus utilisé actuellement dans la communauté et il remplace avantageusement [packer.nvim](https://github.com/wbthomason/packer.nvim).
 
@@ -311,8 +311,6 @@ vim.opt.rtp:prepend(lazypath)
 
 -- Configuration de lazy.nvim et importation du répertoire `plugins`
 require("lazy").setup({ { import = "plugins" } }, {
-  -- vérifie automatiquement les mises à jour des plugins
-  checker = { enabled = true },
   -- désactive la pénible notification au démarrage
   change_detection = {
     notify = false,
@@ -340,7 +338,7 @@ Quelques subtilités à connaître :
 - Vous pouvez quitter la dite fenêtre en appuyant sur `q`
 - Appuyez sur `U` pour mettre automatiquement à jour tous les plugins dans la fenêtre de _Lazy_
 
-## Un joli _Neovim_, le thème `tokyonight.nvim`
+## Un joli _Neovim_, le thème [`tokyonight.nvim`](https://github.com/folke/tokyonight.nvim)
 
 Nous allons utiliser par défaut le thème [`tokyonight.nvim`](https://github.com/folke/tokyonight.nvim). Libre à vous d'en utiliser un autre si vous voulez (vous en trouverez des exemples [sur le site dotfyle par exemple](https://dotfyle.com/neovim/colorscheme/trending)) mais celui-ci a l'avantage d'être disponible en plusieurs versions sombres ou claires (_Moon, Storm, Night, Day_) et est aussi supporté dans nombres d'autres applications comme WezTerm (pratique pour avoir un terminal avec le même thème que votre _Neovim_).
 
@@ -378,8 +376,6 @@ Vous pouvez aussi activer `tokyonight` lors du chargement de la fenêtre d'insta
 
 -- Configuration de lazy.nvim et importation du répertoire `plugins`
 require("lazy").setup({ { import = "plugins" } }, {
-  -- vérifie automatiquement les mises à jour des plugins
-  checker = { enabled = true },
   -- thème utilisé lors de l'installation de plugins
   install = { colorscheme = { "tokyonight" } },
   -- désactive la pénible notification au démarrage
@@ -389,7 +385,7 @@ require("lazy").setup({ { import = "plugins" } }, {
 })
 ```
 
-## L'explorateur de fichiers : `nvim-tree.lua`
+## L'explorateur de fichiers : [`nvim-tree.lua`](https://github.com/nvim-tree/nvim-tree.lua)
 
 Éditez `lua/plugins/nvim-tree.lua` et placez-y le code suivant :
 
@@ -433,7 +429,7 @@ keymap("n", "<C-l>", "<C-w>l", { desc = "Déplace le curseur dans la fenêtre dr
 
 Ça va vous permettre de passer facilement de la fenêtre `nvim-tree` à votre fenêtre d'édition avec `Ctrl-h` et `Ctrl-l` au lieu de `Ctrl-w h` et `Ctrl-w l` par défaut. Sauvegardez, quittez et relancez _Neovim_.
 
-## Mise en place de `telescope.nvim` : le plugin de fuzzy finding dont vous avez toujours rêvé
+## Mise en place de [`telescope.nvim`](https://github.com/nvim-telescope/telescope.nvim) : le plugin de fuzzy finding dont vous avez toujours rêvé
 
 `telescope.nvim` vu nous permettre de chercher un peu tout et n'importe quoi partout en utilisant une technique de recherche floue/approximative. En gros, tapez un bout de ce que vous voulez chercher (que ça soit un mot, des mots, de bouts de mots, peu importe) et telescope fera le reste à l'aide de [fzf](https://github.com/junegunn/fzf).
 
@@ -519,7 +515,7 @@ J'ai configuré quelques raccourcis par défaut adaptés à mon utilisation :
 
 Libre à vous d'en paramètrer d'autres ou d'utiliser la [list des raccourcis déjà disponibles](https://github.com/nvim-telescope/telescope.nvim#default-mappings) par défaut.
 
-## Affichage des buffers et barre d'onglets : `bufferline.nvim`
+## Affichage des buffers et barre d'onglets : [`bufferline.nvim`](https://github.com/akinsho/bufferline.nvim)
 
 Pour pouvoir facilement avoir un aperçu de nos buffers en cours, nous allons utiliser [bufferline.nvim](https://github.com/akinsho/bufferline.nvim).
 
@@ -552,3 +548,166 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts)
 ```
 
 Ça me permet, en mode normal, de passer d'un buffer à l'autre via `L` et `H`. Vous pouvez aussi utiliser telescope et `<leader>fb` pour naviguer dans vos buffers ouverts.
+
+## Barre de statut dopée au stéroïdes : [`lualine`](https://github.com/nvim-lualine/lualine.nvim)
+
+Pour configurer [lualine](https://github.com/nvim-lualine/lualine.nvim), comme d'habitude, éditez `lua/plugins/lualine.lua` et placez-y le code suivant :
+
+**`lua/plugins/lualine.lua`**
+
+```lua
+return {
+  "nvim-lualine/lualine.nvim",
+  dependencies = { "nvim-tree/nvim-web-devicons" },
+  config = function()
+    local lualine = require("lualine")
+    local lazy_status = require("lazy.status") -- affiche le nombre de mise à jour plugins lazy dans la barre
+
+    -- configuration de lualine
+    lualine.setup({
+      options = {
+        icons_enabled = true,
+        theme = "auto",
+        component_separators = { left = "", right = "" },
+        section_separators = { left = "", right = "" },
+        disabled_filetypes = {
+          statusline = {},
+          winbar = {},
+        },
+        ignore_focus = {},
+        always_divide_middle = true,
+        globalstatus = false,
+        refresh = {
+          statusline = 1000,
+          tabline = 1000,
+          winbar = 1000,
+        },
+      },
+      sections = {
+        lualine_a = { "mode" },
+        lualine_b = { "branch", "diff", "diagnostics" },
+        lualine_c = { { "filename", path = 1 } },
+        lualine_x = {
+          {
+            lazy_status.updates,
+            cond = lazy_status.has_updates,
+            color = { fg = "#ff9e64" },
+          },
+          { "encoding" },
+          { "fileformat" },
+          { "filetype" },
+        },
+        lualine_y = { "progress" },
+        lualine_z = { "location" },
+      },
+      inactive_sections = {
+        lualine_a = {},
+        lualine_b = {},
+        lualine_c = { "filename" },
+        lualine_x = { "location" },
+        lualine_y = {},
+        lualine_z = {},
+      },
+      tabline = {},
+      winbar = {},
+      inactive_winbar = {},
+      extensions = {},
+    })
+  end,
+}
+```
+
+C'est ma config personnelle donc libre à vous de modifier comme vous le souhaitez. Je vous laisse consulter la [page du plugin](https://github.com/nvim-lualine/lualine.nvim) pour découvrir toutes les options possibles !
+
+Au passage, modifiez la configuration de `lazy.nvim` dans `lua/config/lazy.lua` pour ajouter la vérification automatique des mises à jour :
+
+```lua
+-- Configuration de lazy.nvim et importation du répertoire `plugins`
+require("lazy").setup({ { import = "plugins" } }, {
+  -- vérifie automatiquement les mises à jour des plugins mais sans notifier
+  -- lualine va se charger de nous afficher un icône
+  checker = {
+    enabled = true,
+    notify = false,
+  },
+  -- thème utilisé lors de l'installation de plugins
+  install = { colorscheme = { "tokyonight" } },
+  -- désactive la pénible notification au démarrage
+  change_detection = {
+    notify = false,
+  },
+})
+```
+
+## Amélioration des fenêtres de sélection et d'inputs : [`dressing.nvim`](https://github.com/stevearc/dressing.nvim)
+
+Si vous ne savez pas pourquoi c'est une bonne idée, faites moi-confiance, ça en est une. Sinon, vous pouvez aussi allez voir la page de [`dressing.nvim`](https://github.com/stevearc/dressing.nvim) et comprendre le pourquoi du comment.
+
+Éditez `lua/plugins/dressing.vim` et placez-y le code suivant :
+
+**`lua/plugins/dressing.lua`**
+
+```lua
+return {
+  "stevearc/dressing.nvim",
+  event = "VeryLazy",
+}
+```
+
+## Installation de [`nvim-treesitter`](https://github.com/nvim-treesitter/nvim-treesitter)
+
+[tree-sitter](https://tree-sitter.github.io/tree-sitter/) est un outil incroyable (non spécifique à _Neovim_) qui va permettre de parser et de « comprendre » la syntaxe d'un grand nombre de langages de programmation. Son intégration dans _Neovim_ à l'aide de [`nvim-treesitter`](https://github.com/nvim-treesitter/nvim-treesitter) va permettre une meilleure coloration syntaxique, de l'indentation plus intelligente, des tags automatiques, des sélections intelligentes en fonction du langage de programmation et du contexte, j'en passe et des meilleures. Bref, c'est un plugin indispensable.
+
+Éditez `lua/plugins/treesitter.lua` :
+
+```lua
+return {
+  "nvim-treesitter/nvim-treesitter",
+  build = ":TSUpdate",
+  config = function()
+    local treesitter = require("nvim-treesitter.configs")
+
+    -- configuration de treesitter
+    treesitter.setup({
+      -- activation de la coloration syntaxique
+      highlight = {
+        enable = true,
+      },
+      -- activation de l'indentation améliorée
+      indent = { enable = true },
+
+      -- langages installés et configurés
+      ensure_installed = {
+        "bash",
+        "dockerfile",
+        "gitignore",
+        "html",
+        "javascript",
+        "json",
+        "lua",
+        "markdown",
+        "markdown_inline",
+        "python",
+        "rst",
+        "rust",
+        "typescript",
+        "vim",
+        "yaml",
+      },
+      -- lorse de l'appui sur <Ctrl-space> sélectionne le bloc
+      -- courant spécifique au langage de programmation
+      incremental_selection = {
+        enable = true,
+        keymaps = {
+          init_selection = "<C-space>",
+          node_incremental = "<C-space>",
+          scope_incremental = false,
+          node_decremental = "<bs>",
+        },
+      },
+    })
+  end,
+}
+```
+
+Encore une fois, c'est ma configuration personnelle, libre à vous de la modifier comme vous le souhaitez. La [liste des langages supportés](https://github.com/nvim-treesitter/nvim-treesitter#supported-languages) est disponible sur le dépôt Github.
