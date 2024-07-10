@@ -76,6 +76,9 @@ h6 {
   line-height: 1.2;
 }
 
+h2 {
+  border-bottom: 1px solid var(--accent);
+}
 h2,
 h3 {
   padding-top: 1.2rem;
