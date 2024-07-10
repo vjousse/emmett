@@ -1,6 +1,6 @@
 ---
 title: "Configurer Neovim comme IDE/éditeur de code à partir de zéro"
-date: "2024-05-07 09:33:20+01:00"
+date: "2024-07-05 09:33:20+01:00"
 slug: configurer-neovim-comme-ide-a-partir-de-zero-tutoriel-guide
 tags: neovim, tutorial, lua, vim
 status: draft
@@ -295,28 +295,28 @@ touch lua/config/lazy.lua
 -- Mise en place et installation de lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
-	local lazyrepo = "https://github.com/folke/lazy.nvim.git"
-	local out = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
-	if vim.v.shell_error ~= 0 then
-		vim.api.nvim_echo({
-			{ "Failed to clone lazy.nvim:\n", "ErrorMsg" },
-			{ out, "WarningMsg" },
-			{ "\nPress any key to exit..." },
-		}, true, {})
-		vim.fn.getchar()
-		os.exit(1)
-	end
+  local lazyrepo = "https://github.com/folke/lazy.nvim.git"
+  local out = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
+  if vim.v.shell_error ~= 0 then
+    vim.api.nvim_echo({
+      { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
+      { out, "WarningMsg" },
+      { "\nPress any key to exit..." },
+    }, true, {})
+    vim.fn.getchar()
+    os.exit(1)
+  end
 end
 vim.opt.rtp:prepend(lazypath)
 
 -- Configuration de lazy.nvim et importation du répertoire `plugins`
 require("lazy").setup({ { import = "plugins" } }, {
-	-- vérifie automatiquement les mises à jour des plugins
-	checker = { enabled = true },
-	-- désactive la pénible notification au démarrage
-	change_detection = {
-		notify = false,
-	},
+  -- vérifie automatiquement les mises à jour des plugins
+  checker = { enabled = true },
+  -- désactive la pénible notification au démarrage
+  change_detection = {
+    notify = false,
+  },
 })
 ```
 
@@ -333,6 +333,12 @@ return {
 Ce fichier, lancé au chargement de notre module `lua/plugins` peut contenir tout la liste des plugins que vous souhaitez voir installés par défaut avec si besoin, la configuration associée. Même si n'utiliser que ce fichier est possible, nous allons procéder différemment. Comme recommandé dans la [documentation de `lazy.nvim`](https://lazy.folke.io/usage/structuring) nous allons plutôt utiliser un fichier par plugin au lieu de tout mettre dans `lua/plugins/init.lua`. Quoiqu'il en soit, les contenus de `lua/plugins/init.lua` et des fichiers de plugins `lua/plugins/*.lua` seront fusionnés au chargement de `lazy.nvim`, donc les deux sont possibles et compatibles l'un avec l'autre.
 
 À noter que `lazy.nvim` va chercher les plugins par défaut sur _Github_ mais il est possible de directement lui spécifier n'importe quel dépôt git ou n'importe quel répertoire local.
+
+Quelques subtilités à connaître :
+
+- Vous pouvez lancer la fenêtre de gestion des plugins via `:Lazy`
+- Vous pouvez quitter la dite fenêtre en appuyant sur `q`
+- Appuyez sur `U` pour mettre automatiquement à jour tous les plugins dans la fenêtre de _Lazy_
 
 ## Un joli _Neovim_, le thème `tokyonight.nvim`
 
@@ -352,14 +358,14 @@ Et placez-y le contenu suivant :
 
 ```lua
 return {
-	"folke/tokyonight.nvim",
-	lazy = false,
-	priority = 1000,
-	opts = {},
-	config = function()
-		-- chargement du thème
-		vim.cmd([[colorscheme tokyonight]])
-	end,
+  "folke/tokyonight.nvim",
+  lazy = false,
+  priority = 1000,
+  opts = {},
+  config = function()
+    -- chargement du thème
+    vim.cmd([[colorscheme tokyonight]])
+  end,
 }
 ```
 
@@ -368,18 +374,18 @@ Quittez et relancez _Neovim_ : le thème devrait maintenant être activé par d�
 Vous pouvez aussi activer `tokyonight` lors du chargement de la fenêtre d'installation des nouveaux plugins par _lazy.nvim_ au chargement de _Neovim_ (par défaut il utilise un autre thème). Pour ce faire modifiez `lua/config/lazy.lua` et ajoutez la ligne `install = { colorscheme = { "tokyonight" } }` :
 
 ```lua
--- … débute du fichier
+-- … début du fichier
 
 -- Configuration de lazy.nvim et importation du répertoire `plugins`
 require("lazy").setup({ { import = "plugins" } }, {
-	-- vérifie automatiquement les mises à jour des plugins
-	checker = { enabled = true },
-	-- thème utilisé lors de l'installation de plugins
-	install = { colorscheme = { "tokyonight" } },
-	-- désactive la pénible notification au démarrage
-	change_detection = {
-		notify = false,
-	},
+  -- vérifie automatiquement les mises à jour des plugins
+  checker = { enabled = true },
+  -- thème utilisé lors de l'installation de plugins
+  install = { colorscheme = { "tokyonight" } },
+  -- désactive la pénible notification au démarrage
+  change_detection = {
+    notify = false,
+  },
 })
 ```
 
@@ -391,26 +397,158 @@ require("lazy").setup({ { import = "plugins" } }, {
 
 ```lua
 return {
-	"nvim-tree/nvim-tree.lua",
-	version = "*",
-	lazy = false,
-	dependencies = {
-		"nvim-tree/nvim-web-devicons",
-	},
-	config = function()
-		require("nvim-tree").setup({})
+  "nvim-tree/nvim-tree.lua",
+  version = "*",
+  lazy = false,
+  dependencies = {
+    "nvim-tree/nvim-web-devicons",
+  },
+  config = function()
+    require("nvim-tree").setup({})
 
-		-- On utilise <leader>e pour ouvrir/fermer l'explorateur
-		vim.keymap.set(
-			"n",
-			"<leader>e",
-			"<cmd>NvimTreeFindFileToggle<CR>",
-			{ desc = "Ouverture/fermeture de l'explorateur de fichiers" }
-		)
-	end,
+    -- On utilise <leader>e pour ouvrir/fermer l'explorateur
+    vim.keymap.set(
+      "n",
+      "<leader>e",
+      "<cmd>NvimTreeFindFileToggle<CR>",
+      { desc = "Ouverture/fermeture de l'explorateur de fichiers" }
+    )
+  end,
 }
 ```
 
 Par défaut j'utilise `<leader>e` pour ouvrir fermer mon explorateur, mais libre à vous de changer ce raccourci (pour rappel mon `<leader>` est la touche espace).
 
 Vous trouverez tous les mappings par défaut et comment les modifier dans la [documentation du plugin](https://github.com/nvim-tree/nvim-tree.lua#custom-mappings).
+
+Je vous recommande chaudement de rajouter par la même occasion ces mappings dans `lua/core/keymaps.lua` :
+
+```lua
+-- Changement de fenêtre avec Ctrl + déplacement uniquement au lieu de Ctrl-w + déplacement
+keymap("n", "<C-h>", "<C-w>h", { desc = "Déplace le curseur dans la fenêtre de gauche" })
+keymap("n", "<C-j>", "<C-w>j", { desc = "Déplace le curseur dans la fenêtre du bas" })
+keymap("n", "<C-k>", "<C-w>k", { desc = "Déplace le curseur dans la fenêtre du haut" })
+keymap("n", "<C-l>", "<C-w>l", { desc = "Déplace le curseur dans la fenêtre droite" })
+```
+
+Ça va vous permettre de passer facilement de la fenêtre `nvim-tree` à votre fenêtre d'édition avec `Ctrl-h` et `Ctrl-l` au lieu de `Ctrl-w h` et `Ctrl-w l` par défaut. Sauvegardez, quittez et relancez _Neovim_.
+
+## Mise en place de `telescope.nvim` : le plugin de fuzzy finding dont vous avez toujours rêvé
+
+`telescope.nvim` vu nous permettre de chercher un peu tout et n'importe quoi partout en utilisant une technique de recherche floue/approximative. En gros, tapez un bout de ce que vous voulez chercher (que ça soit un mot, des mots, de bouts de mots, peu importe) et telescope fera le reste à l'aide de [fzf](https://github.com/junegunn/fzf).
+
+Nous allons placer la configuration de `telescope.nvim` dans `lua/plugins/telescope.lua`.
+
+Vous pouvez l'éditer via `nvim lua/plugins/telescope.lua` comme d'habitude ou alors vous pouvez utiliser le plugin `nvim-tree` fraichement installé. Pour ce faire activez le avec `<leader>e`, entrez dans le répertoire `lua/plugins` (via la touche `entrée`) puis appuyez sur `a` pour créer un fichier. Nommez-le `telescope.lua` et appuyez sur `entrée` pour le créer. Appuyez de nouveau sur `entrée` pour l'ouvrir en édition.
+
+**`lua/plugins/telescope.lua`**
+
+```lua
+return {
+  "nvim-telescope/telescope.nvim",
+  branch = "0.1.x",
+  dependencies = {
+    "nvim-lua/plenary.nvim",
+    -- fzf implémentation en C pour plus de rapidité
+    { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+    "nvim-tree/nvim-web-devicons",
+  },
+  config = function()
+    local telescope = require("telescope")
+    local actions = require("telescope.actions")
+
+    telescope.setup({
+      defaults = {
+
+        -- Parce que c'est joli
+        prompt_prefix = " ",
+        selection_caret = " ",
+        path_display = { "smart" },
+        file_ignore_patterns = { ".git/", "node_modules" },
+
+        mappings = {
+          i = {
+            ["<C-j>"] = actions.move_selection_next,
+            ["<C-k>"] = actions.move_selection_previous,
+          },
+        },
+      },
+    })
+
+    telescope.load_extension("fzf")
+
+    -- set keymaps
+    local keymap = vim.keymap -- for conciseness
+
+    keymap.set(
+      "n",
+      "<leader>ff",
+      "<cmd>Telescope find_files<cr>",
+      { desc = "Recherche de chaînes de caractères dans les noms de fichiers" }
+    )
+    keymap.set(
+      "n",
+      "<leader>fg",
+      "<cmd>Telescope live_grep<cr>",
+      { desc = "Recherche de chaînes de caractères dans le contenu des fichiers" }
+    )
+    keymap.set(
+      "n",
+      "<leader>fb",
+      "<cmd>Telescope buffers<cr>",
+      { desc = "Recherche de chaînes de caractères dans les noms de buffers" }
+    )
+    keymap.set(
+      "n",
+      "<leader>fx",
+      "<cmd>Telescope grep_string<cr>",
+      { desc = "Recherche de la chaîne de caractères sous le curseur" }
+    )
+  end,
+}
+```
+
+J'ai configuré quelques raccourcis par défaut adaptés à mon utilisation :
+
+- `Ctrl-k` pour remonter dans la liste de sélection
+- `Ctrl-j` pour descencdre dans la liste de sélection
+- `<leader>ff` pour chercher dans les noms de fichiers
+- `<leader>fg` pour chercher dans les contenus des fichiers
+- `<leader>fb` pour chercher dans les noms de buffers
+- `<leader>fx` pour chercher le mot sous le curseurs dans le contenu des fichiers
+
+Libre à vous d'en paramètrer d'autres ou d'utiliser la [list des raccourcis déjà disponibles](https://github.com/nvim-telescope/telescope.nvim#default-mappings) par défaut.
+
+## Affichage des buffers et barre d'onglets : `bufferline.nvim`
+
+Pour pouvoir facilement avoir un aperçu de nos buffers en cours, nous allons utiliser [bufferline.nvim](https://github.com/akinsho/bufferline.nvim).
+
+Éditez `lua/plugins/bufferline.lua` et placez-y le code suivant :
+
+**`lua/plugins/bufferline.lua`**
+
+```lua
+return {
+  "akinsho/bufferline.nvim",
+  dependencies = { "nvim-tree/nvim-web-devicons" },
+  version = "*",
+  opts = {
+    options = {
+      separator_style = "slant",
+      offsets = { { filetype = "NvimTree", text = "", padding = 1 } },
+    },
+  },
+}
+```
+
+Sauvegardez, quitter, relancez et vous devriez maintenant avoir une belle barre d'onglets en haut de votre _Neovim_.
+
+Personnellement, j'ai aussi ces raccourcis dans mon `lua/core/keymaps.lua` :
+
+```lua
+-- Navigation entre les buffers
+keymap("n", "<S-l>", ":bnext<CR>", opts)
+keymap("n", "<S-h>", ":bprevious<CR>", opts)
+```
+
+Ça me permet, en mode normal, de passer d'un buffer à l'autre via `L` et `H`. Vous pouvez aussi utiliser telescope et `<leader>fb` pour naviguer dans vos buffers ouverts.
