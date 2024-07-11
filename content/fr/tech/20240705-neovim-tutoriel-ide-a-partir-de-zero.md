@@ -782,10 +782,13 @@ return {
       }),
 
       formatting = {
+        -- Comportement par défaut
         expandable_indicator = true,
+        -- Champs affichés par défaut
         fields = { "abbr", "kind", "menu" },
         format = lspkind.cmp_format({
           mode = "symbol_text",
+          -- On suffixe chaque entrée par son type
           menu = {
             buffer = "[Buffer]",
             luasnip = "[LuaSnip]",
@@ -796,9 +799,32 @@ return {
         }),
       },
     })
+
+    -- `/` complétion
+    cmp.setup.cmdline("/", {
+      mapping = cmp.mapping.preset.cmdline(),
+      sources = {
+        { name = "buffer" },
+      },
+    })
+
+    -- `:` complétion
+    cmp.setup.cmdline(":", {
+      mapping = cmp.mapping.preset.cmdline(),
+      sources = cmp.config.sources({
+        { name = "path" },
+      }, {
+        {
+          name = "cmdline",
+          option = {
+            ignore_cmds = { "Man", "!" },
+          },
+        },
+      }),
+    })
+
   end,
 }
-
 ```
 
-Liste des différentes sources possibles : https://github.com/hrsh7th/nvim-cmp/wiki/List-of-sources
+[Liste des différentes sources possibles](https://github.com/hrsh7th/nvim-cmp/wiki/List-of-sources)
