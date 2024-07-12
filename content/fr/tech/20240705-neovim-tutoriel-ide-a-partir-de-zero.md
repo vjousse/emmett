@@ -32,7 +32,7 @@ Voilà ce à quoi vous devriez à peu près arriver :
 
 _Neovim_ sans [Lua](https://www.lua.org/) c'est comme Milan sans Rémo, ça n'a aucun sens (seuls les vieux auront [la référence](https://www.bide-et-musique.com/song/149.html), les autres vous pouvez continuer de lire en ignorant cette disgression 🤓).
 
-Nous allons donc configurer notre _Neovim_ entièrement et uniquement en [Lua](https://www.lua.org/), fini le _Vimscript_. Mais rassurez-vous, vous n'aurez besoin d'aucune connaissance particulière en _Lua_. Moi-même, je ne connais que très peu _Lua_ et je ne le pratique que dans le cadre de ma configuration _Vim_.
+Nous allons donc configurer notre _Neovim_ entièrement et uniquement en [Lua](https://www.lua.org/), fini le _Vimscript_. Mais rassurez-vous, vous n'aurez besoin d'aucune connaissance particulière en _Lua_. Moi-même, je ne connais que très peu _Lua_ et je ne le pratique que dans le cadre de ma configuration _Vim_. Si vous voulez néanmoins avoir quelques bases vous pouvez jetez un œil à [Learn X in Y minutes where X=Lua](https://learnxinyminutes.com/docs/lua/).
 
 Le contenu de cet article devrait fonctionner aussi bien sous Mac OS X que sous Linux. Pour les utilisateurs Windows, j'imagine que ça peut aussi être le cas en utilisant WSL.
 
@@ -549,7 +549,7 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
 Ça me permet, en mode normal, de passer d'un buffer à l'autre via `L` et `H`. Vous pouvez aussi utiliser telescope et `<leader>fb` pour naviguer dans vos buffers ouverts.
 
-## Barre de statut dopée au stéroïdes : [`lualine`](https://github.com/nvim-lualine/lualine.nvim)
+## Barre de statut dopée aux stéroïdes : [`lualine`](https://github.com/nvim-lualine/lualine.nvim)
 
 Pour configurer [lualine](https://github.com/nvim-lualine/lualine.nvim), comme d'habitude, éditez `lua/plugins/lualine.lua` et placez-y le code suivant :
 
@@ -714,7 +714,7 @@ return {
 
 Encore une fois, c'est ma configuration personnelle, libre à vous de la modifier comme vous le souhaitez. La [liste des langages supportés](https://github.com/nvim-treesitter/nvim-treesitter#supported-languages) est disponible sur le dépôt Github.
 
-## Mise en place de de l'autocompletion avec [`nvim-cmp`](https://github.com/hrsh7th/nvim-cmp)
+## Mise en place de l'autocompletion avec [`nvim-cmp`](https://github.com/hrsh7th/nvim-cmp)
 
 [`nvim-cmp`](https://github.com/hrsh7th/nvim-cmp) va nous permettre d'avoir un système de complétion pour un peu tout et n'importe quoi : les fonctions du langage, des snippets, des emojis, … Ce plugin fourni juste l'interface de complétion, il devra par la suite être configuré avec les sources de ces complétions (le serveur du langage de programmation, les snippets, etc).
 
@@ -749,7 +749,7 @@ return {
 
     local lspkind = require("lspkind")
 
-    -- chargemest des snippets des plugins (e.g. friendly-snippets)
+    -- chargement des snippets (e.g. friendly-snippets)
     require("luasnip.loaders.from_vscode").lazy_load()
 
     cmp.setup({
@@ -771,9 +771,8 @@ return {
         ["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accepte la sélection courante. Mettre à `false` pour ne confirmer que les items explicitement sélectionnés
       },
 
-      -- sources for autocompletion
+      -- sources pour l'autocompletion
       sources = cmp.config.sources({
-        { name = "nvim_lsp" },
         { name = "nvim_lua" },
         { name = "luasnip" }, -- snippets
         { name = "buffer" }, -- texte du buffer courant
@@ -827,4 +826,133 @@ return {
 }
 ```
 
-[Liste des différentes sources possibles](https://github.com/hrsh7th/nvim-cmp/wiki/List-of-sources)
+Ce code configure `nvim-cmp` pour fournir comme propositions d'autocomplétion le texte du buffer courant (via [`cmp-buffer`](https://github.com/hrsh7th/cmp-buffer)), les chemins de fichiers de votre disque local (via [`cmp-path`](https://github.com/hrsh7th/cmp-path)), des snippets (via [`LuaSnip`](https://github.com/L3MON4D3/LuaSnip) et [`friendly-snippets`](https://github.com/rafamadriz/friendly-snippets)), les commandes vim (via [`cmp-cmdline`](https://github.com/hrsh7th/cmp-cmdline)) et des emojis (via [`cmp-emoji`](https://github.com/hrsh7th/cmp-emoji)). Si vous souhaitez ajouter d'autres sources de complétion, vous trouverez une [liste des différentes sources possibles sur le wiki](https://github.com/hrsh7th/nvim-cmp/wiki/List-of-sources).
+
+J'ai aussi ajouté l'affichage d'un petit pictogramme à la vscode devant chaque entrée de complétion via le plugin [`lspkind`](https://github.com/onsails/lspkind.nvim).
+
+Pour ceux qui se posent la question : pour l'instant, il n'y a pas de complétion des fonctions/du code source, ça vient dans le prochaine chapitre !
+
+## Support des LSP (Language Server Protocol)
+
+Les LSP sont des protocoles qui vont permettre à _Neovim_ de « connaître » le langage de programmation sur lequel vous travaillez. C'est grâce à eux que vous pourrez obtenir la complétion automatique ou encore le « go to definition » qui permet de facilement naviguer dans son code. Ces protocoles ne sont pas spécifiques à _Neovim_ et sont utilisés par les principaux éditeurs de texte.
+
+Les LSP et la complétion automatique du code sont un peu les **boss de fin de niveau d'un jeu vidéo pour _Neovim_**. Et comme tout jeu vidéo qui se respecte, vous pouvez y jouer avec plusieurs niveaux de difficulté.
+
+Il y a tout d'abord le niveau de **difficulté hardcore** décrit dans ce post de blog : [A guide on Neovim's LSP client](https://vonheikemen.github.io/devlog/tools/neovim-lsp-client-guide/). Ce post explique comment configurer la complétion automatique sans utiliser aucun plugin.
+
+Ensuite il y a le **niveau intermédiaire** expliqué dans ce post de blog : [You might not need lsp-zero](https://lsp-zero.netlify.app/v3.x/blog/you-might-not-need-lsp-zero). L'idée ici est d'utiliser des plugins qui gèrent l'installation des LSP, la complétion, etc et de les mettre ensemble soi-même. C'est d'ailleurs ce que je fais dans [cette configuration là](https://github.com/vjousse/dotfiles/tree/b35c4654c589f2bcbdcda64dc3cfd14d2feaedfb/nvim-lazy).
+
+Et puis il y a le **niveau c'est pas hyper facile mais ça va quand même** qu'on va décrire ici, via l'utilisation de [`lsp-zero`](https://lsp-zero.netlify.app/v4.x/).
+
+### Explication de la problématique
+
+Avant toute chose, je vais je vous expliquer pourquoi mettre en place la complétion avec les LSP n'est pas si trivial.
+
+Premièrement, vous allez devoir disposer localement des LSP. Les LSP sont juste des programmes qui doivent être présents sur votre système. Il en faut un (ou des fois plusieurs) pour chaque langage de programmation pour lequel vous voudrez la complétion et les actions automatiques de type IDE (renommage, etc). Vous pourriez tout à fait les installer via votre système d'exploitation, mais il est possible d'installer un gestionnaire de paquets directement dans _Neovim_ qui va gérer tout ça pour vous : [mason.nvim](https://github.com/williamboman/mason.nvim). En plus d'automatiser l'installation des LSP il va rendre notre configuration de _Neovim_ complètement portable car les LSP requis seront spécifiés dans des fichiers _Lua_ et installés automatiquement (vous pourrez donc versionner tout ça sur Git).
+
+Ensuite, nous allons avoir besoin d'un moyen pour configurer ces LSP de manière unifiée. Si par exemple vous voulez rajouter telle option à votre LSP python ou telle autre à votre LSP javascript. Pour ce faire, nous allons utiliser [`nvim-lspconfig`](https://github.com/neovim/nvim-lspconfig).
+
+Maintenant que nous avons de quoi installer nos LSP et de quoi les configurer, il va falloir faire le lien entre les deux : les installer automatiquement avec `mason.nvim` et les configurer via `nvim-lspconfig` lorsqu'ils sont installés et chargés par `mason.nvim`. C'est le plugin [`mason-lspconfig`](https://github.com/williamboman/mason-lspconfig.nvim) qui va nous aider à faire ce lien.
+
+Et pour finir nous utiliserons le plugin [`lsp-zero`](https://lsp-zero.netlify.app/v4.x/) qui rendra pas mal de code un peu plus simple.
+
+### Préparation du répertoire
+
+Dans le répertoire `lua/plugins` créez un nouveau répertoire nommé `lsp` dans lequel nous allons mettre la configuration de tout ce qui est relatif aux LSP :
+
+```bash
+mkdir lua/plugins/lsp
+```
+
+Éditez ensuite `lua/config/lazy.lua` pour y ajouter l'import du répertoire `plugins/lsp` :
+
+**`lua/config/lazy.lua`**
+
+```lua
+-- … début du fichier
+
+-- Configuration de lazy.nvim et importation des répertoires `plugins` et `plugins.lsp`
+require("lazy").setup({ { import = "plugins" }, { import = "plugins.lsp"} }, {
+  -- vérifie automatiquement les mises à jour des plugins mais sans notifier
+  -- lualine va se charger de nous afficher un icône
+  checker = {
+    enabled = true,
+    notify = false,
+  },
+  -- thème utilisé lors de l'installation de plugins
+  install = { colorscheme = { "tokyonight" } },
+  -- désactive la pénible notification au démarrage
+  change_detection = {
+    notify = false,
+  },
+})
+
+```
+
+### Installation des LSP : [`mason.nvim`](https://github.com/williamboman/mason.nvim)
+
+Afin de ne pas avoir à installer ces LSP à la main, nous allons utiliser [`mason.nvim`](https://github.com/williamboman/mason.nvim) qui va gérer tout cela pour nous.
+
+Éditez `lua/plugins/lsp/mason.lua` avec le code suivant :
+
+**`lua/plugins/lsp/mason.lua`**
+
+```lua
+return {
+  "williamboman/mason.nvim",
+  dependencies = {
+    "williamboman/mason-lspconfig.nvim",
+  },
+  config = function()
+    -- import de mason
+    local mason = require("mason")
+
+    -- import de mason-lspconfig
+    local mason_lspconfig = require("mason-lspconfig")
+
+    -- active mason et configure les icones
+    mason.setup({
+      ui = {
+        icons = {
+          package_installed = "✓",
+          package_pending = "➜",
+          package_uninstalled = "✗",
+        },
+      },
+    })
+
+    mason_lspconfig.setup({
+      -- liste des serveurs à installer par défaut
+      ensure_installed = {
+        "cssls",
+        "elmls",
+        "graphql",
+        "html",
+        "lua_ls",
+        "pylsp",
+        "ruff_lsp",
+        "rust_analyzer",
+        "sqlls",
+        "svelte",
+        "tsserver",
+        "yamlls",
+      },
+    })
+  end,
+}
+```
+
+Évidemment, libre à vous de modifier la liste des serveurs installés par défaut en fonction de vos préférences. Vous trouverez sur le site de l'auteur une [liste de tous les serveurs pris en charge](https://mason-registry.dev/registry/list).
+
+### Configuration des LSP : [`nvim-lspconfig`](https://github.com/neovim/nvim-lspconfig)
+
+Maintenant que nous avons géré l'installation les LSP, il nous reste à gérer leur configuration via [`nvim-lspconfig`](https://github.com/neovim/nvim-lspconfig).
+
+Basé sur post de blog [You might not need lsp-zero ](https://lsp-zero.netlify.app/v3.x/blog/you-might-not-need-lsp-zero.html)
+[A guide on Neovim's LSP client](https://vonheikemen.github.io/devlog/tools/neovim-lsp-client-guide/)
+
+**`lua/plugins/lsp/lspconfig.lua`**
+
+```lua
+
+```
