@@ -858,7 +858,7 @@ Et pour finir nous utiliserons le plugin [`lsp-zero`](https://lsp-zero.netlify.a
 
 ### Préparation du répertoire
 
-Dans le répertoire `lua/plugins` créez un nouveau répertoire nommé `lsp` dans lequel nous allons mettre la configuration de tout ce qui est relatif aux LSP :
+Dans le répertoire `lua/plugins` créez un nouveau répertoire nommé `lsp` dans lequel vous mettrez la configuration de tout ce qui est relatif aux LSP :
 
 ```bash
 mkdir lua/plugins/lsp
@@ -889,9 +889,108 @@ require("lazy").setup({ { import = "plugins" }, { import = "plugins.lsp"} }, {
 
 ```
 
+### Configuration des LSP : [`nvim-lspconfig`](https://github.com/neovim/nvim-lspconfig)
+
+Commençons par installer de quoi configurer nos LSP via [`nvim-lspconfig`](https://github.com/neovim/nvim-lspconfig) et [`lsp-zero`](https://lsp-zero.netlify.app/v4.x/).
+
+Éditez `lua/plugins/lsp/lspconfig.lua` et placez-y le contenu suivant :
+
+**`lua/plugins/lsp/lspconfig.lua`**
+
+```lua
+return {
+  "neovim/nvim-lspconfig",
+  event = { "BufReadPre", "BufNewFile" },
+  dependencies = {
+    -- Va permetre de remplir le plugin de complétion automatique nvim-cmp
+    -- avec les résultats des LSP
+    "hrsh7th/cmp-nvim-lsp",
+    -- Ajoute les « code actions » de type renommage de fichiers intelligent, etc
+    { "antosha417/nvim-lsp-file-operations", config = true },
+  },
+  config = function()
+    -- import de lsp-zero
+    local lsp_zero = require("lsp-zero")
+
+    -- lsp_attach sert à activer des fonctionnalités qui ne seront disponibles
+    -- que s'il il y a un LSP d'activé pour le fichier courant
+    local lsp_attach = function(_, bufnr)
+      local opts = { buffer = bufnr, silent = true }
+
+      -- configuration des raccourcis
+      -- je ne vous les traduis pas, ils me semblent parler d'eux-même ;)
+      opts.desc = "Show LSP references"
+      vim.keymap.set("n", "gR", "<cmd>Telescope lsp_references<CR>", opts) -- show definition, references
+
+      opts.desc = "Go to declaration"
+      vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts) -- go to declaration
+
+      opts.desc = "Show LSP definitions"
+      vim.keymap.set("n", "gd", "<cmd>Telescope lsp_definitions<CR>", opts) -- show lsp definitions
+
+      opts.desc = "Show LSP implementations"
+      vim.keymap.set("n", "gi", "<cmd>Telescope lsp_implementations<CR>", opts) -- show lsp implementations
+
+      opts.desc = "Show LSP type definitions"
+      vim.keymap.set("n", "gt", "<cmd>Telescope lsp_type_definitions<CR>", opts) -- show lsp type definitions
+
+      opts.desc = "Show LSP signature help"
+      vim.keymap.set("n", "gs", vim.lsp.buf.signature_help, opts)
+
+      opts.desc = "See available code actions"
+      vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts) -- see available code actions, in visual mode will apply to selection
+
+      opts.desc = "Smart rename"
+      vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts) -- smart rename
+
+      opts.desc = "Show buffer diagnostics"
+      vim.keymap.set("n", "<leader>D", "<cmd>Telescope diagnostics bufnr=0<CR>", opts) -- show  diagnostics for file
+
+      opts.desc = "Show line diagnostics"
+      vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, opts) -- show diagnostics for line
+
+      opts.desc = "Go to previous diagnostic"
+      vim.keymap.set("n", "[d", function()
+        vim.diagnostic.jump({ count = -1, float = true })
+      end, opts) -- jump to previous diagnostic in buffer
+
+      opts.desc = "Go to next diagnostic"
+      vim.keymap.set("n", "]d", function()
+        vim.diagnostic.jump({ count = 1, float = true })
+      end, opts) -- jump to next diagnostic in buffer
+
+      opts.desc = "Show documentation for what is under cursor"
+      vim.keymap.set("n", "K", vim.lsp.buf.hover, opts) -- show documentation for what is under cursor
+
+      opts.desc = "Format buffer"
+      vim.keymap.set({ "n", "x" }, "F", "<cmd>lua vim.lsp.buf.format({async = true})<cr>", opts)
+
+      opts.desc = "Restart LSP"
+      vim.keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
+    end
+
+    lsp_zero.extend_lspconfig({
+      sign_text = true,
+      lsp_attach = lsp_attach,
+      capabilities = require("cmp_nvim_lsp").default_capabilities(),
+    })
+
+    lsp_zero.ui({
+      float_border = "rounded",
+      sign_text = {
+        error = " ",
+        warn = " ",
+        hint = "󰠠 ",
+        info = " ",
+      },
+    })
+  end,
+}
+```
+
 ### Installation des LSP : [`mason.nvim`](https://github.com/williamboman/mason.nvim)
 
-Afin de ne pas avoir à installer ces LSP à la main, nous allons utiliser [`mason.nvim`](https://github.com/williamboman/mason.nvim) qui va gérer tout cela pour nous.
+Comme nous l'avons vu, afin de ne pas avoir à installer ces LSP à la main, nous allons utiliser [`mason.nvim`](https://github.com/williamboman/mason.nvim) qui va gérer tout cela pour nous.
 
 Éditez `lua/plugins/lsp/mason.lua` avec le code suivant :
 
@@ -943,16 +1042,3 @@ return {
 ```
 
 Évidemment, libre à vous de modifier la liste des serveurs installés par défaut en fonction de vos préférences. Vous trouverez sur le site de l'auteur une [liste de tous les serveurs pris en charge](https://mason-registry.dev/registry/list).
-
-### Configuration des LSP : [`nvim-lspconfig`](https://github.com/neovim/nvim-lspconfig)
-
-Maintenant que nous avons géré l'installation les LSP, il nous reste à gérer leur configuration via [`nvim-lspconfig`](https://github.com/neovim/nvim-lspconfig).
-
-Basé sur post de blog [You might not need lsp-zero ](https://lsp-zero.netlify.app/v3.x/blog/you-might-not-need-lsp-zero.html)
-[A guide on Neovim's LSP client](https://vonheikemen.github.io/devlog/tools/neovim-lsp-client-guide/)
-
-**`lua/plugins/lsp/lspconfig.lua`**
-
-```lua
-
-```
