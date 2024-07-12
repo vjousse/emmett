@@ -1018,7 +1018,7 @@ return {
     -- import de lspoconfig
     local lspconfig = require("lspconfig")
 
-    -- active mason et configure les icônes
+    -- active mason et personnalise les icônes
     mason.setup({
       ui = {
         icons = {
@@ -1031,6 +1031,7 @@ return {
 
     mason_lspconfig.setup({
       -- Liste des serveurs à installer par défaut
+      -- List des serveurs possibles : https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
       -- Vous pouvez ne pas en mettre ici et tout installer en utilisant :Mason
       -- Mais au lieu de passer par :Mason pour installer, je vous recommande d'ajouter une entrée à cette liste
       -- Ça permettra à votre configuration d'être plus portable
@@ -1066,6 +1067,8 @@ return {
         -- le nom du lsp avant le `= function()` doit être le même que celui après `lspconfig.`
         -- le premier est la clé utilisée par mason_lspoconfig, le deuxième est celle utilisée par lspconfig (ce sont les mêmes)
         -- ils correspondent aux entrées du ensure_installed
+
+        -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#pylsp
         pylsp = function()
           lspconfig.pylsp.setup({
             settings = {
@@ -1082,6 +1085,7 @@ return {
           })
         end,
 
+        -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#ruff_lsp
         ruff_lsp = function()
           lspconfig.ruff_lsp.setup({
             init_options = {
@@ -1093,6 +1097,25 @@ return {
             },
           })
         end,
+
+        -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#rust_analyzer
+        rust_analyzer = function()
+          lspconfig.rust_analyzer.setup({
+            settings = {
+              ["rust-analyzer"] = {
+                diagnostics = {
+                  enable = true,
+                  styleLints = {
+                    enable = true,
+                  },
+                  experimental = {
+                    enable = true,
+                  },
+                },
+              },
+            },
+          })
+        end,
       },
     })
   end,
@@ -1100,3 +1123,48 @@ return {
 ```
 
 Évidemment, libre à vous de modifier la liste des serveurs installés par défaut en fonction de vos préférences. Vous trouverez sur le site du plugin une [liste de tous les serveurs pris en charge](https://mason-registry.dev/registry/list).
+
+### Ajout des LSP à l'autocomplétion
+
+Nous avons fait le plus dur, il ne reste plus qu'à ajouter les LSP comme source de données de notre système de complétion `nvim-cmp`.
+
+Éditez `lua/plugins/nvim-cmp.lua` et éditez le code pour y ajouter `nvim_lsp` comme source :
+
+**`lua/plugins/nvim-cmp.lua`**
+
+```lua
+  -- … début du fichier
+
+  -- sources pour l'autocompletion
+  sources = cmp.config.sources({
+    { name = "nvim_lsp" }, -- lsp
+    { name = "nvim_lua" },
+    { name = "luasnip" }, -- snippets
+    { name = "buffer" }, -- texte du buffer courant
+    { name = "path" }, -- chemins dy système de fichier
+    { name = "emoji" }, -- emojis
+  }),
+
+  formatting = {
+    -- Comportement par défaut
+    expandable_indicator = true,
+    -- Champs affichés par défaut
+    fields = { "abbr", "kind", "menu" },
+    format = lspkind.cmp_format({
+      mode = "symbol_text",
+      -- On suffixe chaque entrée par son type
+      menu = {
+        nvim_lsp = "[LSP]",
+        buffer = "[Buffer]",
+        luasnip = "[LuaSnip]",
+        nvim_lua = "[Lua]",
+        path = "[Path]",
+        emoji = "[Emoji]",
+      },
+    }),
+  },
+```
+
+Notez l'ajout de `{ name = "nvim_lsp" }, -- lsp` et de `nvim_lsp = "[LSP]",`.
+
+Voilà, sauvegardez, quittez et relancez : la boucle est bouclée, vous devriez maintenant avoir un _Neovim_ avec les complétions automatiques et les raccourcis LSP configuré pour les langages de votre choix.
