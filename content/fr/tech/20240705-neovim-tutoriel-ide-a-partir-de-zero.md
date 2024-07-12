@@ -2,7 +2,7 @@
 title: "Configurer Neovim comme IDE/éditeur de code à partir de zéro"
 date: "2024-07-05 09:33:20+01:00"
 slug: configurer-neovim-comme-ide-a-partir-de-zero-tutoriel-guide
-tags: neovim, tutorial, lua, vim
+tags: neovim, tutoriel, lua, vim
 status: draft
 ---
 
@@ -1168,3 +1168,110 @@ Nous avons fait le plus dur, il ne reste plus qu'à ajouter les LSP comme source
 Notez l'ajout de `{ name = "nvim_lsp" }, -- lsp` et de `nvim_lsp = "[LSP]",`.
 
 Voilà, sauvegardez, quittez et relancez : la boucle est bouclée, vous devriez maintenant avoir un _Neovim_ avec les complétions automatiques et les raccourcis LSP configuré pour les langages de votre choix.
+
+## Affichage des données et diagnostics des LSP : [`trouble.nvim`](https://github.com/folke/trouble.nvim)
+
+Le LSP par défaut va déjà vous afficher des conseils et des diagnostics dans votre code, mais grâce à [`trouble.nvim`](https://github.com/folke/trouble.nvim) vous pourrez aller un cran plus loin : voir tous les soucis remonté par votre LSP dans tous vos fichiers, voir en un clin d'œil les définitions de fonctions de votre fichier, etc.
+
+Éditez `lua/plugins/trouble.lua` et placez-y le code suivant :
+
+**`lua/plugins/trouble.lua`**
+
+```lua
+return {
+  "folke/trouble.nvim",
+  opts = {}, -- for default options, refer to the configuration section for custom setup.
+  cmd = "Trouble",
+  keys = {
+    {
+      "<leader>xx",
+      "<cmd>Trouble diagnostics toggle<cr>",
+      desc = "Diagnostics (Trouble)",
+    },
+    {
+      "<leader>xX",
+      "<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
+      desc = "Buffer Diagnostics (Trouble)",
+    },
+    {
+      "<leader>cs",
+      "<cmd>Trouble symbols toggle focus=false<cr>",
+      desc = "Symbols (Trouble)",
+    },
+    {
+      "<leader>cl",
+      "<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
+      desc = "LSP Definitions / references / ... (Trouble)",
+    },
+    {
+      "<leader>xL",
+      "<cmd>Trouble loclist toggle<cr>",
+      desc = "Location List (Trouble)",
+    },
+    {
+      "<leader>xQ",
+      "<cmd>Trouble qflist toggle<cr>",
+      desc = "Quickfix List (Trouble)",
+    },
+  },
+}
+```
+
+## Amélioration du formatage et formatage automatique : [`conform.nvim`](https://github.com/stevearc/conform.nvim)
+
+Certains LSP proposent des options pour formatter automatiquement les fichiers à la sauvegarde mais ce n'est pas le cas pour tous et, quand ils le font, il le font généralement « mal » en remplaçant tout le contenu du buffer (ce qui va perdre vos folds par exemple). [`conform.nvim`](https://github.com/stevearc/conform.nvim) règle ce souci et permet en plus quelques configurations sympathiques comme le formattage automatique à la sauvegarde.
+
+Éditez `lua/plugins/conform.lua` et placez-y le code suivant :
+
+**`lua/plugins/conform.lua`**
+
+```lua
+return {
+  "stevearc/conform.nvim",
+  opts = {},
+  event = { "BufReadPre", "BufNewFile" },
+  config = function()
+    local conform = require("conform")
+
+    conform.setup({
+      formatters_by_ft = {
+        css = { "prettier" },
+        elm = { "elm_format" },
+        graphql = { "prettier" },
+        json = { "prettier" },
+        html = { "prettier" },
+        liquid = { "prettier" },
+        lua = { "stylua" },
+        markdown = { "prettier" },
+        python = { "ruff_fix", "ruff_format", "ruff_organize_import" },
+        rust = { "rustfmt" },
+        svelte = { "prettier" },
+        javascript = { "prettier" },
+        javascriptreact = { "prettier" },
+        typescript = { "prettier" },
+        typescriptreact = { "prettier" },
+        yaml = { "prettier" },
+      },
+      format_on_save = {
+        lsp_fallback = true,
+        async = false,
+        timeout_ms = 1000,
+      },
+    })
+
+    vim.keymap.set({ "n", "v" }, "<leader>mp", function()
+      conform.format({
+        lsp_fallback = true,
+        async = false,
+        timeout_ms = 1000,
+      })
+    end, { desc = "Format file or range (in visual mode)" })
+  end,
+}
+```
+
+Encore une fois, c'est à configurer selon vos LSP. J'ai ajouté un raccourci qui permet de lancer le formatage via `<leader>mp`. Les formatteurs peuvent être installés directement sur votre système ou via `mason.nvim` comme nous allons le voir dans la section suivante.
+
+## Installation automatique d'outils via [`mason-tools-installer.nvim`](https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim)
+
+Jusqu'ici nous avons utilisé Mason pour installer des LSP. Mais c'est un gestionnaire de paques
