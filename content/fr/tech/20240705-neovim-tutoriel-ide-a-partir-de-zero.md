@@ -889,7 +889,7 @@ require("lazy").setup({ { import = "plugins" }, { import = "plugins.lsp"} }, {
 
 ```
 
-### Configuration des LSP : [`nvim-lspconfig`](https://github.com/neovim/nvim-lspconfig)
+### Préparer la configuration des LSP : [`nvim-lspconfig`](https://github.com/neovim/nvim-lspconfig)
 
 Commençons par installer de quoi configurer nos LSP via [`nvim-lspconfig`](https://github.com/neovim/nvim-lspconfig) et [`lsp-zero`](https://lsp-zero.netlify.app/v4.x/).
 
@@ -970,11 +970,15 @@ return {
     end
 
     lsp_zero.extend_lspconfig({
+      -- On affiche les signes des diagnostics dans la gouttière de gauche
       sign_text = true,
+      -- On attache notre fonction qui définit les raccourcis
       lsp_attach = lsp_attach,
+      -- On augmente les capacités de complétion par défaut avec les propositions du LSP
       capabilities = require("cmp_nvim_lsp").default_capabilities(),
     })
 
+    -- On utilise lsp_zero pour configurer quelques éléments de design
     lsp_zero.ui({
       float_border = "rounded",
       sign_text = {
@@ -988,9 +992,11 @@ return {
 }
 ```
 
+Je vous laisse déduire l'utilité des raccourcis configurés. Vous noterez que pas mal d'entre eux utilisent quand c'est possible un affichage directement dans _Telescope_.
+
 ### Installation des LSP : [`mason.nvim`](https://github.com/williamboman/mason.nvim)
 
-Comme nous l'avons vu, afin de ne pas avoir à installer ces LSP à la main, nous allons utiliser [`mason.nvim`](https://github.com/williamboman/mason.nvim) qui va gérer tout cela pour nous.
+Comme nous l'avons vu, afin de ne pas avoir à installer les LSP à la main, nous allons utiliser [`mason.nvim`](https://github.com/williamboman/mason.nvim) qui va gérer tout cela pour nous.
 
 Éditez `lua/plugins/lsp/mason.lua` avec le code suivant :
 
@@ -1009,7 +1015,10 @@ return {
     -- import de mason-lspconfig
     local mason_lspconfig = require("mason-lspconfig")
 
-    -- active mason et configure les icones
+    -- import de lspoconfig
+    local lspconfig = require("lspconfig")
+
+    -- active mason et configure les icônes
     mason.setup({
       ui = {
         icons = {
@@ -1021,7 +1030,10 @@ return {
     })
 
     mason_lspconfig.setup({
-      -- liste des serveurs à installer par défaut
+      -- Liste des serveurs à installer par défaut
+      -- Vous pouvez ne pas en mettre ici et tout installer en utilisant :Mason
+      -- Mais au lieu de passer par :Mason pour installer, je vous recommande d'ajouter une entrée à cette liste
+      -- Ça permettra à votre configuration d'être plus portable
       ensure_installed = {
         "cssls",
         "elmls",
@@ -1036,9 +1048,55 @@ return {
         "tsserver",
         "yamlls",
       },
+      handlers = {
+        -- Fonction appelée au chargement de chaque LSP de la liste ensure_installed
+        function(server_name)
+          -- On active tous les LSP de ensure_installed avec sa configuration par défaut
+          lspconfig[server_name].setup({})
+        end,
+
+        -- On peut ensuite configurer chaque LSP comme on veut
+        -- Les détails des configurations possibles sont disponibles ici :
+        -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
+        -- Quelques exemples avec Python (pylsp et ruff) ainsi que Rust ci-dessous
+        --
+        -- Pour désactiver un LSP il suffit de faire
+        -- mon_lsp = require("lsp-zero").noop,
+
+        -- le nom du lsp avant le `= function()` doit être le même que celui après `lspconfig.`
+        -- le premier est la clé utilisée par mason_lspoconfig, le deuxième est celle utilisée par lspconfig (ce sont les mêmes)
+        -- ils correspondent aux entrées du ensure_installed
+        pylsp = function()
+          lspconfig.pylsp.setup({
+            settings = {
+              pylsp = {
+                plugins = {
+                  pyflakes = { enabled = false },
+                  pycodestyle = {
+                    enabled = true,
+                    ignore = { "E501" },
+                  },
+                },
+              },
+            },
+          })
+        end,
+
+        ruff_lsp = function()
+          lspconfig.ruff_lsp.setup({
+            init_options = {
+              settings = {
+                -- Arguments par défaut de la ligne de commande ruff
+                -- (on ajoute les warnings pour le tri des imports)
+                args = { "--extend-select", "I" },
+              },
+            },
+          })
+        end,
+      },
     })
   end,
 }
 ```
 
-Évidemment, libre à vous de modifier la liste des serveurs installés par défaut en fonction de vos préférences. Vous trouverez sur le site de l'auteur une [liste de tous les serveurs pris en charge](https://mason-registry.dev/registry/list).
+Évidemment, libre à vous de modifier la liste des serveurs installés par défaut en fonction de vos préférences. Vous trouverez sur le site du plugin une [liste de tous les serveurs pris en charge](https://mason-registry.dev/registry/list).
