@@ -1,6 +1,6 @@
 ---
-title: "Configurer Neovim comme IDE/éditeur de code à partir de zéro"
-date: "2024-07-05 09:33:20+01:00"
+title: "Tutoriel : configurer Neovim comme IDE/éditeur de code à partir de zéro"
+date: "2024-07-013 09:33:20+01:00"
 slug: configurer-neovim-comme-ide-a-partir-de-zero-tutoriel-guide
 tags: neovim, tutoriel, lua, vim
 status: draft
