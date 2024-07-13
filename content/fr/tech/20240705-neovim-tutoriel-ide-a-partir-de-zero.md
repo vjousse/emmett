@@ -1,6 +1,6 @@
 ---
-title: "Tutoriel : configurer Neovim comme IDE/éditeur de code à partir de zéro"
-date: "2024-07-013 09:33:20+01:00"
+title: "Tutoriel : configurer Neovim comme IDE/éditeur de code à partir de zéro"
+date: "2024-07-13 09:33:20+01:00"
 slug: configurer-neovim-comme-ide-a-partir-de-zero-tutoriel-guide
 tags: neovim, tutoriel, lua, vim
 status: draft
@@ -1588,6 +1588,55 @@ return {
 ```lua
 return {
   "hiphish/rainbow-delimiters.nvim",
+}
+```
+
+## Cerise sur le gâteau ou plugin de trop ? [`noice.nvim`](https://github.com/folke/noice.nvim) une interface repensée
+
+[`noice.nvim`](https://github.com/folke/noice.nvim) est un plugin qui va changer l'affichage des erreurs et des notifications par défaut et va les mettre en notifications en haut à droite de votre _Neovim_. Il va aussi changer l'interface utilisateur pour la recherche ou encore les `cmdline` de _Neovim_ en vous affichant une popup au milieu de votre _Neovim_.
+
+![Capture d'écran montrant Neovim avec noice](/images/configurer-neovim-comme-ide-a-partir-de-zero-tutoriel-guide/noice.png "Capture d'écran montrant Neovim avec noice")
+
+**`lua/plugins/noice.lua`**
+
+```lua
+return {
+  "folke/noice.nvim",
+  event = "VeryLazy",
+  opts = {
+    -- add any options here
+  },
+  dependencies = {
+    -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+    "MunifTanjim/nui.nvim",
+    -- OPTIONAL:
+    --   `nvim-notify` is only needed, if you want to use the notification view.
+    --   If not available, we use `mini` as the fallback
+    "rcarriga/nvim-notify",
+  },
+
+  config = function()
+    local noice = require("noice")
+
+    noice.setup({
+      lsp = {
+        -- override markdown rendering so that **cmp** and other plugins use **Treesitter**
+        override = {
+          ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
+          ["vim.lsp.util.stylize_markdown"] = true,
+          ["cmp.entry.get_documentation"] = true, -- requires hrsh7th/nvim-cmp
+        },
+      },
+      -- you can enable a preset for easier configuration
+      presets = {
+        bottom_search = true, -- use a classic bottom cmdline for search
+        command_palette = true, -- position the cmdline and popupmenu together
+        long_message_to_split = true, -- long messages will be sent to a split
+        inc_rename = false, -- enables an input dialog for inc-rename.nvim
+        lsp_doc_border = false, -- add a border to hover docs and signature help
+      },
+    })
+  end,
 }
 ```
 
