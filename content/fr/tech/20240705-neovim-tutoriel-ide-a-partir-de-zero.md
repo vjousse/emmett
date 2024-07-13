@@ -28,6 +28,10 @@ Voilà ce à quoi vous devriez à peu près arriver :
 
 ![Capture d'écran montrant mon Neovim configuré comme un IDE](/images/configurer-neovim-comme-ide-a-partir-de-zero-tutoriel-guide/my-neovim.png "Capture d'écran montrant mon Neovim configuré comme un IDE")
 
+## TL;DR
+
+[La configuration finale est disponible sur Github](https://github.com/vjousse/neovim-from-scratch).
+
 ## Préambule
 
 _Neovim_ sans [Lua](https://www.lua.org/) c'est comme Milan sans Rémo, ça n'a aucun sens (seuls les vieux auront [la référence](https://www.bide-et-musique.com/song/149.html), les autres vous pouvez continuer de lire en ignorant cette disgression 🤓).
@@ -1586,3 +1590,11 @@ return {
   "hiphish/rainbow-delimiters.nvim",
 }
 ```
+
+## Conclusion
+
+Nous avons fait le tour des principaux plugins que j'utilise pour faire de _Neovim_ mon IDE. N'hésitez pas à m'envoyer des retours sur [Mastodon vjousse@mamot.fr](https://mamot.fr/@vjousse) ou à contribuer directement à l'édition de ce tutoriel sur [Github](https://github.com/vjousse/emmett/blob/main/content/fr/tech/20240705-neovim-tutoriel-ide-a-partir-de-zero.md).
+
+La [configuration complète est disponible sur Github](https://github.com/vjousse/neovim-from-scratch).
+
+Et pour finir, si vous souhaitez diffuser la bonne parole au sujet de _Vim_ n'hésitez pas à télécharger et à partager mon livre [« Vim pour les humains »](https://vimebook.com).
