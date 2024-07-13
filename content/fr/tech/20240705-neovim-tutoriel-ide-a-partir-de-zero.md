@@ -4,6 +4,7 @@ date: "2024-07-13 09:33:20+01:00"
 slug: configurer-neovim-comme-ide-a-partir-de-zero-tutoriel-guide
 tags: neovim, tutoriel, lua, vim
 status: draft
+toc: false
 ---
 
 Vous avez envie d'utiliser [_Neovim_](https://neovim.io/) mais ne savez pas par où commencer ? Vous voulez comprendre ce que vous faites au lieu d'utiliser des configurations déjà toutes prêtes ? Vous n'avez aucune idée de comment faire du _Lua_ ou ne savez même pas pourquoi vous devriez ? Cet article est fait pour vous !
@@ -1097,9 +1098,6 @@ return {
                 diagnostics = {
                   enable = true,
                   styleLints = {
-                    enable = true,
-                  },
-                  experimental = {
                     enable = true,
                   },
                 },
