@@ -1523,3 +1523,66 @@ return {
   end,
 }
 ```
+
+## Ajout de guides d'indentation : [`indent-blankline`](https://github.com/lukas-reineke/indent-blankline.nvim)
+
+**`lua/plugins/indent-blankline.lua`**
+
+```lua
+return {
+  "lukas-reineke/indent-blankline.nvim",
+  event = { "BufReadPre", "BufNewFile" },
+  main = "ibl",
+  opts = {
+    indent = { char = "┊" },
+  },
+}
+```
+
+## Pairing des parenthèses automatique : [`nvim-autopairs`](https://github.com/windwp/nvim-autopairs)
+
+**`lua/plugins/autopairs.lua`**
+
+```lua
+return {
+  "windwp/nvim-autopairs",
+  event = { "InsertEnter" },
+  dependencies = {
+    "hrsh7th/nvim-cmp",
+  },
+  config = function()
+    -- import nvim-autopairs
+    local autopairs = require("nvim-autopairs")
+
+    -- configure autopairs
+    autopairs.setup({
+      check_ts = true, -- enable treesitter
+      disable_filetype = { "TelescopePrompt" },
+      ts_config = {
+        lua = { "string" }, -- don't add pairs in lua string treesitter nodes
+        javascript = { "template_string" }, -- don't add pairs in javscript template_string treesitter nodes
+        java = false, -- don't check treesitter on java
+      },
+    })
+
+    -- import nvim-autopairs completion functionality
+    local cmp_autopairs = require("nvim-autopairs.completion.cmp")
+
+    -- import nvim-cmp plugin (completions plugin)
+    local cmp = require("cmp")
+
+    -- make autopairs and completion work together
+    cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
+  end,
+}
+```
+
+## Parenthèses de couleurs différentes : [`rainbow-delimiters.nvim`](https://github.com/HiPhish/rainbow-delimiters.nvim)
+
+**`lua/plugins/rainbow-delimiters.lua`**
+
+```lua
+return {
+  "hiphish/rainbow-delimiters.nvim",
+}
+```
