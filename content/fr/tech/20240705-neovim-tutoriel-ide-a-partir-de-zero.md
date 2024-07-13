@@ -278,6 +278,8 @@ Pour information, à ce stade, votre répertoire `~/.config/nvim/` devrait avoir
 
 Nous allons utiliser [lazy.nvim](https://lazy.folke.io/) pour gérer l'installation et la configuration de nos différents plugins. C'est le gestionnaire de plugins le plus utilisé actuellement dans la communauté et il remplace avantageusement [packer.nvim](https://github.com/wbthomason/packer.nvim).
 
+![Capture d'écran montrant Neovim avec lazy-nvim](/images/configurer-neovim-comme-ide-a-partir-de-zero-tutoriel-guide/lazy-nvim.png "Capture d'écran montrant Neovim avec lazy-nvim")
+
 > ⚠️ **Attention** nous parlons bien ici du gestionnaire de plugins `lazy.nvim` et non de la _distribution Neovim_ [LazyVim](https://www.lazyvim.org/) basée sur ce gestionnaire de plugins. La distribution _LazyVim_ a pour but de vous fournir un _Neovim_ entièrement configuré et prêt à l'emploi, ce qui est le complet opposé du but de cet article.
 
 Commençons par créer le répertoire et le fichier qui va accueillir la configuration de `lazy.nvim`.
@@ -637,21 +639,6 @@ require("lazy").setup({ { import = "plugins" } }, {
     notify = false,
   },
 })
-```
-
-## Amélioration des fenêtres de sélection et d'inputs : [`dressing.nvim`](https://github.com/stevearc/dressing.nvim)
-
-Si vous ne savez pas pourquoi c'est une bonne idée, faites moi-confiance, ça en est une. Sinon, vous pouvez aussi allez voir la page de [`dressing.nvim`](https://github.com/stevearc/dressing.nvim) et comprendre le pourquoi du comment.
-
-Éditez `lua/plugins/dressing.vim` et placez-y le code suivant :
-
-**`lua/plugins/dressing.lua`**
-
-```lua
-return {
-  "stevearc/dressing.nvim",
-  event = "VeryLazy",
-}
 ```
 
 ## Installation de [`nvim-treesitter`](https://github.com/nvim-treesitter/nvim-treesitter)
@@ -1015,7 +1002,7 @@ return {
     -- import de mason-lspconfig
     local mason_lspconfig = require("mason-lspconfig")
 
-    -- import de lspoconfig
+    -- import de lspconfig
     local lspconfig = require("lspconfig")
 
     -- active mason et personnalise les icônes
@@ -1065,7 +1052,7 @@ return {
         -- mon_lsp = require("lsp-zero").noop,
 
         -- le nom du lsp avant le `= function()` doit être le même que celui après `lspconfig.`
-        -- le premier est la clé utilisée par mason_lspoconfig, le deuxième est celle utilisée par lspconfig (ce sont les mêmes)
+        -- le premier est la clé utilisée par mason_lspconfig, le deuxième est celle utilisée par lspconfig (ce sont les mêmes)
         -- ils correspondent aux entrées du ensure_installed
 
         -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#pylsp
@@ -1173,6 +1160,8 @@ Voilà, sauvegardez, quittez et relancez : la boucle est bouclée, vous devriez
 
 Le LSP par défaut va déjà vous afficher des conseils et des diagnostics dans votre code, mais grâce à [`trouble.nvim`](https://github.com/folke/trouble.nvim) vous pourrez aller un cran plus loin : voir tous les soucis remonté par votre LSP dans tous vos fichiers, voir en un clin d'œil les définitions de fonctions de votre fichier, etc.
 
+![Capture d'écran montrant Neovim avec trouble.nvim](/images/configurer-neovim-comme-ide-a-partir-de-zero-tutoriel-guide/trouble.png "Capture d'écran montrant Neovim avec trouble.nvim")
+
 Éditez `lua/plugins/trouble.lua` et placez-y le code suivant :
 
 **`lua/plugins/trouble.lua`**
@@ -1215,6 +1204,27 @@ return {
     },
   },
 }
+```
+
+## Undefined global `vim`
+
+Si comme moi vous avez installé le lsp `lua_ls` il va vous afficher un warning à chaque fois que vous éditez un fichier avec la variable globale `vim` dedans.
+
+Pour faire disparaître cette erreur, configurez `lua_ls` dans `lua/plugins/lsp/mason.lua` pour y ajouter la variable globale `vim` :
+
+```lua
+        lua_ls = function()
+          lspconfig.lua_ls.setup({
+            settings = {
+              Lua = {
+                diagnostics = {
+                  -- Force le LSP à reconnaître la variable globale `vim`
+                  globals = { "vim" },
+                },
+              },
+            },
+          })
+        end,
 ```
 
 ## Amélioration du formatage et formatage automatique : [`conform.nvim`](https://github.com/stevearc/conform.nvim)
@@ -1274,4 +1284,242 @@ Encore une fois, c'est à configurer selon vos LSP. J'ai ajouté un raccourci qu
 
 ## Installation automatique d'outils via [`mason-tools-installer.nvim`](https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim)
 
-Jusqu'ici nous avons utilisé Mason pour installer des LSP. Mais c'est un gestionnaire de paques
+Jusqu'ici nous avons utilisé `mason.nvim` pour installer des LSP. Mais comme nous l'avons vu c'est avant tout un gestionnaire de paquets et il est donc possible de l'utiliser pour installer d'autres choses que les LSP, notamment les formatteurs utilisés dans la section du dessus.
+
+Pour ce faire éditez `lua/plugins/lsp/mason.lua` et ajoutez-y [`mason-tools-installer.nvim`](https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim).
+
+**`lua/plugins/lsp/mason.lua`**
+
+```lua
+return {
+  "williamboman/mason.nvim",
+  dependencies = {
+    "williamboman/mason-lspconfig.nvim",
+    "WhoIsSethDaniel/mason-tool-installer.nvim",
+  },
+  config = function()
+    -- import de mason
+    local mason = require("mason")
+
+    -- import de mason-lspconfig
+    local mason_lspconfig = require("mason-lspconfig")
+
+    -- import de lspconfig
+    local lspconfig = require("lspconfig")
+
+    -- import de mason-tool-installer
+    local mason_tool_installer = require("mason-tool-installer")
+
+    -- active mason et personnalise les icônes
+    mason.setup({
+      ui = {
+        icons = {
+          package_installed = "✓",
+          package_pending = "➜",
+          package_uninstalled = "✗",
+        },
+      },
+    })
+
+    mason_tool_installer.setup({
+      ensure_installed = {
+        "elm-format", -- elm formater
+        "prettier", -- prettier formatter
+        "ruff", -- ruff formater (différent du LSP)
+        "stylua", -- lua formater
+      },
+    })
+
+    mason_lspconfig.setup({
+
+-- … reste du fichier
+```
+
+## Amélioration du linting : [`nvim-lint`](https://github.com/mfussenegger/nvim-lint)
+
+À l'instar de `conform.nvim`, [`nvim-lint`](https://github.com/mfussenegger/nvim-lint) va venir complémenter le linting fourni par les LSP. Il va vous permettre d'utiliser des outils de linting externes si celui de votre LSP n'est pas suffisant. Personnellement je n'en ai pas besoin car les LSP de Rust, Python et Elm fournissent tout ce qu'il faut. Mais si ce n'est pas votre cas, éditez `lua/plugins/nvim-lint.lua` et placez-y le code suivant :
+
+**`lua/plugins/nvim-lint.lua`**
+
+```lua
+return {
+  "mfussenegger/nvim-lint",
+  event = { "BufReadPre", "BufNewFile" },
+  config = function()
+    local lint = require("lint")
+
+    lint.linters_by_ft = {
+      javascript = { "eslint_d" },
+      typescript = { "eslint_d" },
+      javascriptreact = { "eslint_d" },
+      typescriptreact = { "eslint_d" },
+      svelte = { "eslint_d" },
+    }
+
+    local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
+
+    vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave" }, {
+      group = lint_augroup,
+      callback = function()
+        lint.try_lint()
+      end,
+    })
+
+    vim.keymap.set("n", "<leader>l", function()
+      lint.try_lint()
+    end, { desc = "Trigger linting for current file" })
+  end,
+}
+```
+
+N'oubliez pas de mettre à jour la liste des outils à installer automatiquement dans `lua/plugins/lsp/mason.lua` en ajoutant `eslint_d` par exemple :
+
+```lua
+    mason_tool_installer.setup({
+      ensure_installed = {
+        "elm-format", -- elm formater
+        "prettier", -- prettier formatter
+        "ruff", -- ruff formater (différent du LSP)
+        "stylua", -- lua formater
+        "eslint_d", -- eslint formater
+      },
+    })
+```
+
+## Intégration des différences Git : [`gitsigns.nvim`](https://github.com/lewis6991/gitsigns.nvim)
+
+[`gitsigns.nvim`](https://github.com/lewis6991/gitsigns.nvim) va vous permettre d'afficher, dans la gouttière de gauche, les endroits où vous avez des ajouts ou des suppressions trackées avec Git.
+
+**`lua/plugins/gitsigns.lua`**
+
+```lua
+return {
+  "lewis6991/gitsigns.nvim",
+  event = { "BufReadPre", "BufNewFile" },
+  opts = {
+
+    signs = {
+      add = { text = "▎" },
+      change = { text = "▎" },
+      changedelete = { text = "▎" },
+    },
+    on_attach = function(bufnr)
+      local gs = package.loaded.gitsigns
+
+      local function map(mode, l, r, desc)
+        vim.keymap.set(mode, l, r, { buffer = bufnr, desc = desc })
+      end
+
+      -- Navigation
+      map("n", "]h", gs.next_hunk, "Next Hunk")
+      map("n", "[h", gs.prev_hunk, "Prev Hunk")
+
+      -- Actions
+      map("n", "<leader>hs", gs.stage_hunk, "Stage hunk")
+      map("n", "<leader>hr", gs.reset_hunk, "Reset hunk")
+      map("v", "<leader>hs", function()
+        gs.stage_hunk({ vim.fn.line("."), vim.fn.line("v") })
+      end, "Stage hunk")
+      map("v", "<leader>hr", function()
+        gs.reset_hunk({ vim.fn.line("."), vim.fn.line("v") })
+      end, "Reset hunk")
+
+      map("n", "<leader>hS", gs.stage_buffer, "Stage buffer")
+      map("n", "<leader>hR", gs.reset_buffer, "Reset buffer")
+
+      map("n", "<leader>hu", gs.undo_stage_hunk, "Undo stage hunk")
+
+      map("n", "<leader>hp", gs.preview_hunk, "Preview hunk")
+
+      map("n", "<leader>hb", function()
+        gs.blame_line({ full = true })
+      end, "Blame line")
+      map("n", "<leader>hB", gs.toggle_current_line_blame, "Toggle line blame")
+
+      map("n", "<leader>hd", gs.diffthis, "Diff this")
+      map("n", "<leader>hD", function()
+        gs.diffthis("~")
+      end, "Diff this ~")
+
+      -- Text object
+      map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>", "Gitsigns select hunk")
+    end,
+  },
+}
+```
+
+## Améliorer les fenêtres de sélection et d'inputs : [`dressing.nvim`](https://github.com/stevearc/dressing.nvim)
+
+Si vous ne savez pas pourquoi c'est une bonne idée, faites moi-confiance, ça en est une. Sinon, vous pouvez aussi allez voir la page de [`dressing.nvim`](https://github.com/stevearc/dressing.nvim) et comprendre le pourquoi du comment.
+
+Éditez `lua/plugins/dressing.vim` et placez-y le code suivant :
+
+**`lua/plugins/dressing.lua`**
+
+```lua
+return {
+  "stevearc/dressing.nvim",
+  event = "VeryLazy",
+}
+```
+
+## Se souvenir de vos raccourcis : [`WhichKey`](https://github.com/folke/which-key.nvim)
+
+[`WhichKey`](https://github.com/folke/which-key.nvim) est complètement incroyable pour se souvenir de vos raccourcis, notamment depuis la dernière version qui peut être lancée à la demande.
+
+![Capture d'écran montrant Neovim avec whichkey](/images/configurer-neovim-comme-ide-a-partir-de-zero-tutoriel-guide/whichkey.png "Capture d'écran montrant Neovim avec whichkey")
+
+Éditez `lua/plugins/whichkey.lua` et placez-y le code suivant :
+
+**`lua/plugins/whichkey.lua`**
+
+```lua
+return {
+  "folke/which-key.nvim",
+  event = "VeryLazy",
+  opts = {},
+  keys = {
+    {
+      "<leader>?",
+      function()
+        require("which-key").show({ global = true })
+      end,
+      desc = "Buffer Local Keymaps (which-key)",
+    },
+  },
+}
+```
+
+Lorsque vous appuierez sur `<leader>?` il vous affichera tous les raccourcis possibles dans le contexte actuel. Ce plugin est juste complètement bluffant pour les personnes comme moi qui ont tendance oublier régulièrement les raccourcis qu'ils n'utilisent pas.
+
+## Affichage des commentaires TODO, FIX, etc : [`todo-comments`](https://github.com/folke/todo-comments.nvim)
+
+![Capture d'écran montrant Neovim avec todo-comments](/images/configurer-neovim-comme-ide-a-partir-de-zero-tutoriel-guide/todo-comments.png "Capture d'écran montrant Neovim avec todo-comments")
+
+Éditez `lua/plugins/todo-comments.lua` et placez-y le code suivant :
+
+**`lua/plugins/todo-comments.lua`**
+
+```lua
+return {
+  "folke/todo-comments.nvim",
+  event = { "BufReadPre", "BufNewFile" },
+  dependencies = { "nvim-lua/plenary.nvim" },
+  config = function()
+    local todo_comments = require("todo-comments")
+
+    -- set keymaps
+    local keymap = vim.keymap -- for conciseness
+
+    keymap.set("n", "]t", function()
+      todo_comments.jump_next()
+    end, { desc = "Next todo comment" })
+
+    keymap.set("n", "[t", function()
+      todo_comments.jump_prev()
+    end, { desc = "Previous todo comment" })
+
+    todo_comments.setup()
+  end,
+}
+```
