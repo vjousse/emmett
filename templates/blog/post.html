@@ -36,6 +36,13 @@
     {%endif%}
     <h1>{{ title }}</h1>
   </header>
+  {% if toc %}
+    <h2>Table des matières</h2>
+    <div id="toc">
+    {{ toc }}
+    </div>
+    <hr />
+  {% endif %}
   {{ post_content }}
 </article>
 {% endblock content %}

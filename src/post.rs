@@ -120,6 +120,7 @@ pub struct FrontMatter {
     #[serde(default)]
     #[serde(with = "optional_custom_date_format")]
     pub updated_at: Option<DateTime<FixedOffset>>,
+    pub toc: Option<bool>,
 }
 
 #[derive(Clone, Debug, Serialize, Eq, Ord, PartialEq, PartialOrd)]

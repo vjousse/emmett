@@ -533,7 +533,10 @@ dependencies = [
  "gray_matter",
  "lazy_static",
  "log",
+ "once_cell",
  "pulldown-cmark 0.11.0",
+ "pulldown-cmark-toc",
+ "regex",
  "serde",
  "serde_derive",
  "serde_json",
@@ -1102,6 +1105,17 @@ name = "pulldown-cmark-escape"
 version = "0.11.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "007d8adb5ddab6f8e3f491ac63566a7d5002cc7ed73901f72057943fa71ae1ae"
+
+[[package]]
+name = "pulldown-cmark-toc"
+version = "0.5.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "c0ed3182dbf40217212a399f9283c0acb08bd4214d2ccdc215f3878ca09c370b"
+dependencies = [
+ "once_cell",
+ "pulldown-cmark 0.11.0",
+ "regex",
+]
 
 [[package]]
 name = "quick-xml"

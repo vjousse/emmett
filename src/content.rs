@@ -9,7 +9,10 @@ use anyhow::Result;
 use form_urlencoded::byte_serialize;
 use gray_matter::engine::YAML;
 use gray_matter::Matter;
-use pulldown_cmark as cmark;
+use once_cell::sync::Lazy;
+use pulldown_cmark::{self as cmark};
+use pulldown_cmark_toc::TableOfContents;
+use regex::Regex;
 use slug::slugify;
 use std::collections::HashMap;
 use std::error::Error;
@@ -17,11 +20,86 @@ use std::fs;
 use std::fs::File;
 use std::io::Write;
 use std::path::{Path, PathBuf};
+use std::slice::Iter;
 use strip_markdown::strip_markdown;
 use tera::{Context, Tera};
 use walkdir::WalkDir;
 
 type FilePath = String;
+
+/// Represents a heading.
+#[derive(Debug, Clone)]
+pub struct CustomHeading<'a> {
+    /// The Markdown events between the heading tags.
+    events: Vec<Event<'a>>,
+    /// The heading level.
+    tag: Tag<'a>,
+}
+
+impl CustomHeading<'_> {
+    /// The raw events contained between the heading tags.
+    pub fn events(&self) -> Iter<Event> {
+        self.events.iter()
+    }
+
+    /// The heading level.
+    pub fn tag(&self) -> Tag {
+        self.tag.clone()
+    }
+
+    /// The heading text with all Markdown code stripped out.
+    ///
+    /// The output of this this function can be used to generate an anchor.
+    pub fn text(&self) -> String {
+        let mut buf = String::new();
+        for event in self.events() {
+            if let Event::Text(s) | Event::Code(s) = event {
+                buf.push_str(s);
+            }
+        }
+
+        buf
+    }
+}
+
+/// A trait to specify the anchor calculation.
+pub trait Slugify {
+    fn slugify(&mut self, str: String) -> String;
+}
+
+/// A slugifier that attempts to mimic GitHub's behavior.
+///
+/// Unfortunately GitHub's behavior is not documented anywhere by GitHub.
+/// This should really be part of the [GitHub Flavored Markdown Spec][gfm]
+/// but alas it's not. And there also does not appear to be a public issue
+/// tracker for the spec where that issue could be raised.
+///
+/// [gfm]: https://github.github.com/gfm/
+#[derive(Default)]
+pub struct GitHubSlugifier {
+    counts: HashMap<String, i32>,
+}
+
+impl Slugify for GitHubSlugifier {
+    fn slugify(&mut self, str: String) -> String {
+        static RE: Lazy<Regex> = Lazy::new(|| Regex::new(r"[^\w\- ]").unwrap());
+        let anchor = RE
+            .replace_all(&str.to_lowercase().replace(' ', "-"), "")
+            .into_owned();
+
+        let i = self
+            .counts
+            .entry(anchor.clone())
+            .and_modify(|i| *i += 1)
+            .or_insert(0);
+
+        match *i {
+            0 => anchor,
+            i => format!("{}-{}", anchor, i),
+        }
+        .into()
+    }
+}
 
 pub fn create_content(site: &Site, publish_drafts: bool) -> Result<()> {
     // Get the list of files
@@ -83,21 +161,73 @@ pub fn create_content(site: &Site, publish_drafts: bool) -> Result<()> {
 pub fn convert_md_to_html(md_content: &str, settings: &Settings, path: Option<&str>) -> String {
     let mut options = Options::empty();
     options.insert(Options::ENABLE_STRIKETHROUGH);
-    //let parser = Parser::new_ext(md_content, options);
+    options.insert(Options::ENABLE_HEADING_ATTRIBUTES);
+    options.insert(Options::ENABLE_GFM);
 
     let mut events = Vec::new();
     let mut code_block: Option<CodeBlock> = None;
 
+    let mut current: Option<CustomHeading> = None;
+    let mut slugifier = GitHubSlugifier::default();
+
     for (event, mut _range) in Parser::new_ext(md_content, options).into_offset_iter() {
         match event {
             Event::Text(text) => {
-                if let Some(ref mut code_block) = code_block {
-                    let html = code_block.highlight(&text);
-                    events.push(Event::Html(html.into()));
+                if let Some(heading) = current.as_mut() {
+                    heading.events.push(Event::Text(text));
                 } else {
-                    events.push(Event::Text(text));
-                    continue;
+                    if let Some(ref mut code_block) = code_block {
+                        let html = code_block.highlight(&text);
+                        events.push(Event::Html(html.into()));
+                    } else {
+                        events.push(Event::Text(text));
+                        continue;
+                    }
                 }
+            }
+
+            Event::Start(Tag::Heading {
+                level,
+                ref id,
+                ref classes,
+                ref attrs,
+            }) => {
+                current = Some(CustomHeading {
+                    events: Vec::new(),
+                    tag: Tag::Heading {
+                        level,
+                        id: id.clone(),
+                        classes: classes.to_vec(),
+                        attrs: attrs.to_vec(),
+                    },
+                });
+            }
+            Event::End(TagEnd::Heading(_level)) => {
+                let heading = current.take().unwrap();
+
+                if let Tag::Heading {
+                    level,
+                    ref id,
+                    ref classes,
+                    ref attrs,
+                } = heading.tag
+                {
+                    let text = heading.text();
+                    let string_text = text.to_string();
+                    let slug = slugifier.slugify(string_text);
+                    events.push(Event::Start(Tag::Heading {
+                        level,
+                        id: id.clone().or(Some(slug.clone().into())).into(),
+                        classes: classes.to_vec(),
+                        attrs: attrs.to_vec(),
+                    }));
+                    let heading_events = heading.events.clone();
+                    for e in heading_events {
+                        events.push(e);
+                    }
+
+                    events.push(Event::End(TagEnd::Heading(level)));
+                };
             }
             Event::Start(Tag::CodeBlock(ref kind)) => {
                 let fence = match kind {
@@ -113,7 +243,13 @@ pub fn convert_md_to_html(md_content: &str, settings: &Settings, path: Option<&s
                 code_block = None;
                 events.push(Event::Html("</code></pre>\n".into()));
             }
-            _ => events.push(event),
+            event => {
+                if let Some(heading) = current.as_mut() {
+                    heading.events.push(event.clone());
+                } else {
+                    events.push(event);
+                }
+            }
         }
     }
 
@@ -215,6 +351,19 @@ pub fn write_posts_html(posts: &[Post], site: &Site) {
         context.insert("category", &front_matter.category);
 
         context.insert("categories", &post.ancestor_directories_names);
+
+        let toc = &post.front_matter.toc.unwrap_or(false);
+
+        if *toc {
+            let table_of_contents = TableOfContents::new(&post.content).to_cmark();
+
+            let html_toc = convert_md_to_html(
+                table_of_contents.as_str(),
+                &site.settings,
+                Some(&post.path[..]),
+            );
+            context.insert("toc", &html_toc);
+        }
 
         context.insert(
             "description",
