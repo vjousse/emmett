@@ -239,14 +239,26 @@ pub fn convert_md_to_html(md_content: &str, settings: &Settings, path: Option<&s
                     cmark::CodeBlockKind::Fenced(fence_info) => FenceSettings::new(fence_info),
                     _ => FenceSettings::new(""),
                 };
-                let (block, begin) = CodeBlock::new(fence, settings, path);
+                let (block, begin) = CodeBlock::new(fence.clone(), settings, path);
                 code_block = Some(block);
+
+                events.push(Event::Html("<div class=\"code-block\">".into()));
+
+                let language = &fence.language.unwrap_or("code");
+
+                events.push(Event::Html(
+                    format!("<div class=\"language-name\">{}</div>", language).into(),
+                ));
+
+                events.push(Event::Html(
+                        "<button class=\"copy-to-clipboard\"><svg class=\"h-6 w-6 fill-white\" xmlns=\"http://www.w3.org/2000/svg\" x=\"0px\" y=\"0px\" viewBox=\"0 0 24 24\"><path d=\"M 4 2 C 2.895 2 2 2.895 2 4 L 2 17 C 2 17.552 2.448 18 3 18 C 3.552 18 4 17.552 4 17 L 4 4 L 17 4 C 17.552 4 18 3.552 18 3 C 18 2.448 17.552 2 17 2 L 4 2 z M 8 6 C 6.895 6 6 6.895 6 8 L 6 20 C 6 21.105 6.895 22 8 22 L 20 22 C 21.105 22 22 21.105 22 20 L 22 8 C 22 6.895 21.105 6 20 6 L 8 6 z M 8 8 L 20 8 L 20 20 L 8 20 L 8 8 z\"></path></svg></button>\n" .into(),
+                ));
                 events.push(Event::Html(begin.into()));
             }
             Event::End(TagEnd::CodeBlock) => {
                 // reset highlight and close the code block
                 code_block = None;
-                events.push(Event::Html("</code></pre>\n".into()));
+                events.push(Event::Html("</code></pre></div>\n".into()));
             }
             event => {
                 if let Some(heading) = current.as_mut() {

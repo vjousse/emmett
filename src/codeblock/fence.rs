@@ -17,7 +17,7 @@ fn parse_range(s: &str) -> Option<RangeInclusive<usize>> {
     }
 }
 
-#[derive(Debug)]
+#[derive(Debug, Clone)]
 pub struct FenceSettings<'a> {
     pub language: Option<&'a str>,
     pub line_numbers: bool,
@@ -65,7 +65,9 @@ struct FenceIter<'a> {
 
 impl<'a> FenceIter<'a> {
     fn new(fence_info: &'a str) -> Self {
-        Self { split: fence_info.split(',') }
+        Self {
+            split: fence_info.split(','),
+        }
     }
 
     fn parse_ranges(token: Option<&str>) -> Vec<RangeInclusive<usize>> {
