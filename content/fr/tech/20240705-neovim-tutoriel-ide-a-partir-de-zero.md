@@ -338,6 +338,21 @@ Ce fichier, lancé au chargement de notre module `lua/plugins` peut contenir tou
 
 À noter que `lazy.nvim` va chercher les plugins par défaut sur _Github_ mais il est possible de directement lui spécifier n'importe quel dépôt git ou n'importe quel répertoire local.
 
+Il nous reste maintenant à charger `lazy.nvim` dans l'`init.lua` à la racine. Éditez `init.lua` :
+
+**`init.lua`**
+
+```bash
+nvim init.lua
+```
+
+Et placez-y le contenu suivant :
+
+```lua
+require("core")
+require("config.lazy")
+```
+
 Quelques subtilités à connaître :
 
 - Vous pouvez lancer la fenêtre de gestion des plugins via `:Lazy`
