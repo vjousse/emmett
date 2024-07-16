@@ -351,31 +351,43 @@ footer p {
 .code-block {
   position: relative;
 }
+
 .code-block button {
-  background-color: transparent;
-  border-radius: var(--standard-border-radius);
+  border-radius: 0.3rem;
   cursor: pointer;
   border: none;
+  transition: 0.3s;
+  padding: 0.5rem;
+}
+
+.code-block button:hover {
+  background-color: var(--text);
 }
 
 .code-block .language-name {
   display: inline-block;
-  background-color: #2b303b;
-  color: #ffffff;
+  background-color: #e0e0e0;
+  color: #333333;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
 
   box-shadow: 0.3rem 0rem 0.3rem -0.05rem rgba(0, 0, 0, 0.2);
-  border-bottom: 1px solid white;
+
+  border-top-right-radius: var(--standard-border-radius);
 }
 
 .copy-to-clipboard {
   position: absolute;
   right: 0.5rem;
-  top: 2.2rem;
+  top: 2rem;
+  background-color: #2b303b;
 }
 .copy-to-clipboard svg {
   width: 1rem;
   height: 1rem;
   fill: white;
+}
+
+.copy-to-clipboard svg.fill-green {
+  fill: #9acc76;
 }
