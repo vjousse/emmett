@@ -1,5 +1,5 @@
 use crate::config::Settings;
-use crate::content::convert_md_to_html;
+use crate::markdown::convert_md_to_html;
 use std::collections::HashMap;
 
 use tera::{to_value, try_get_value, Filter as TeraFilter, Result as TeraResult, Value};

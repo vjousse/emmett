@@ -1,5 +1,5 @@
 use crate::config::Settings;
-use crate::content::convert_md_to_html;
+use crate::markdown::convert_md_to_html;
 use crate::post::Post;
 use atom_syndication::{
     ContentBuilder, Entry, EntryBuilder, Feed, FeedBuilder, LinkBuilder, PersonBuilder,
