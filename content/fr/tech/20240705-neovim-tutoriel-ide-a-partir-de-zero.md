@@ -899,6 +899,19 @@ require("lazy").setup({ { import = "plugins" }, { import = "plugins.lsp"} }, {
 
 Commençons par installer de quoi configurer nos LSP via [`nvim-lspconfig`](https://github.com/neovim/nvim-lspconfig) et [`lsp-zero`](https://lsp-zero.netlify.app/v4.x/).
 
+Éditez `lua/plugins/lsp/lsp-zero.lua` et placez-y le contenu suivant :
+
+**`lua/plugins/lsp/lsp-zero.lua`**
+
+```lua
+return {
+  "VonHeikemen/lsp-zero.nvim",
+  branch = "v4.x",
+  lazy = true,
+  config = false,
+}
+```
+
 Éditez `lua/plugins/lsp/lspconfig.lua` et placez-y le contenu suivant :
 
 **`lua/plugins/lsp/lspconfig.lua`**
