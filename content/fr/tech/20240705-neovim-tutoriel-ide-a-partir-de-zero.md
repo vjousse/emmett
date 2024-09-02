@@ -1,6 +1,7 @@
 ---
 title: "Tutoriel : configurer Neovim comme IDE/éditeur de code à partir de zéro"
 date: "2024-07-16 09:33:20+01:00"
+updated_at: "2024-09-02 09:33:20+01:00"
 slug: configurer-neovim-comme-ide-a-partir-de-zero-tutoriel-guide
 tags: neovim, tutoriel, lua, vim
 toc: true
@@ -1282,7 +1283,7 @@ return {
         liquid = { "prettier" },
         lua = { "stylua" },
         markdown = { "prettier" },
-        python = { "ruff_fix", "ruff_format", "ruff_organize_import" },
+        python = { "ruff_fix", "ruff_format" },
         rust = { "rustfmt" },
         svelte = { "prettier" },
         javascript = { "prettier" },
@@ -1300,7 +1301,7 @@ return {
 
     vim.keymap.set({ "n", "v" }, "<leader>mp", function()
       conform.format({
-        lsp_fallback = true,
+        lsp_format = "fallback",
         async = false,
         timeout_ms = 1000,
       })
