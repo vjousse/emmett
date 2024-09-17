@@ -54,7 +54,7 @@
           </li>
           <li>
             <a title="Contenu en français" href="/blog/fr"{% if "fr" in categories %}class="active"{% endif %}
-              >Français</a
+            >{% if "fr" not in categories %}French{% else %}Articles{% endif %}</a
             >
           </li>
           <li>
