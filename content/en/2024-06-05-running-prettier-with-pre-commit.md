@@ -48,6 +48,8 @@ The corresponding `package.json` script:
 }
 ```
 
+> **Update**: you can also direclty use [this `pre-commit` hook](https://github.com/rbubley/mirrors-prettier) if you prefer.
+
 ## Explaining the `pre-commit` hook
 
 We use a custom hook with the `system` language defined. It will allow us to run a system command in the hook, namely a bash command/script. This hook will be run on every staged file thanks to the `--` at the end of the line meaning that arguments passed to the hook should be forwarded to the `bash` command).
