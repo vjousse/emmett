@@ -53,10 +53,17 @@
             <a title="Retour à l'accueil" href="/" class="svg-icon{% if url_path == '/' %} active{% endif %}">{% if "en" in categories %}Home{% else %}Accueil{% endif%}</a>
           </li>
           <li>
-            <a title="Contenu en français" href="/blog/fr"{% if "fr" in categories %}class="active"{% endif %}
+            <a title="Contenu en français" href="/blog/fr"{% if "fr" in categories and "cv" not in categories %}class="active"{% endif %}
             >{% if "fr" not in categories and url_path != '/' %}French{% else %}Articles{% endif %}</a
             >
           </li>
+
+          {% if "fr" in categories or url_path == '/' %}
+          <li>
+            <a title="CV" {% if "fr" in categories and "cv" in categories %}class="active"{% endif %}href="/cv/fr">CV</a>
+          </li>
+          {% endif %}
+
           <li>
             <a title="English content" href="/blog/en"{% if "en" in categories %}class="active"{% endif %}>English</a>
           </li>
