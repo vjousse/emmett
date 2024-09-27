@@ -1,6 +1,7 @@
 ---
 title: "Le guide complet du débutant avec FastAPI - Partie 3 : réorganisation du code, tests automatisés"
 date: "2021-06-25 19:33:20+01:00"
+updated_at: "2024-02-11 19:33:20+01:00"
 slug: le-guide-complet-du-debutant-avec-fastapi-partie-3
 tags: python, framework, fastapi, web, fastapi-tutorial
 ---

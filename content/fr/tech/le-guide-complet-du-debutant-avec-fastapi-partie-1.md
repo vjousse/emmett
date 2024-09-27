@@ -1,6 +1,7 @@
 ---
 title: "Le guide complet du débutant avec FastAPI - Partie 1: installation et premier programme"
 date: 2021-06-11 19:33:20+01:00
+updated_at: "2024-01-26 19:33:20+01:00"
 slug: le-guide-complet-du-debutant-avec-fastapi-partie-1
 tags: python, framework, fastapi, web, fastapi-tutorial
 ---
@@ -98,7 +99,7 @@ Gardons-le activé pour l'instant.
 Les choses sérieuses commencent. Assurez vous que vous avez bien activé votre virtualenv (notez le `(venv)` avant votre ligne de commande) et tapez la commande suivante :
 
 ```
-(venv) $ pip install fastapi[all]
+(venv) $ pip install "fastapi[all]"
 ```
 
 Et voilà ! FastAPI et toutes ses dépendances (le `[all]`] sont installés. Il ne nous reste plus qu'à créer notre premier programme de test pour s'assurer que tout fonctionne bien.

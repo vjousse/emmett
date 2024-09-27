@@ -189,6 +189,7 @@ nav > ul li:not(:first-child):before {
 
 .list ul li .post-info {
   padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .list ul li {

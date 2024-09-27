@@ -127,6 +127,7 @@ pub struct FrontMatter {
 pub struct Post {
     pub front_matter: FrontMatter,
     pub date_rfc3339: String,
+    pub updated_at_rfc3339: Option<String>,
     pub excerpt: Option<String>,
     pub content: String,
     pub path: String,
@@ -148,6 +149,7 @@ impl Post {
         ancestor_directories_names: Vec<String>,
     ) -> Self {
         let rfc_date = front_matter.date.to_rfc3339();
+        let rfc_updated_at = front_matter.updated_at.map(|d| d.to_rfc3339());
         Post {
             content,
             front_matter,
@@ -156,6 +158,7 @@ impl Post {
             url_path,
             url_path_encoded,
             date_rfc3339: rfc_date,
+            updated_at_rfc3339: rfc_updated_at,
             ancestor_directories_paths,
             ancestor_directories_names,
         }

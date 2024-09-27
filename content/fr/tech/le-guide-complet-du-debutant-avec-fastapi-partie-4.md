@@ -1,6 +1,7 @@
 ---
 title: "Le guide complet du débutant avec FastAPI - Partie 4 : création, récupération et suppression des articles"
 date: "2021-09-29 09:33:20+01:00"
+updated_at: "2024-02-16 19:33:20+01:00"
 slug: le-guide-complet-du-debutant-avec-fastapi-partie-4
 tags: python, framework, fastapi, web, fastapi-tutorial
 ---

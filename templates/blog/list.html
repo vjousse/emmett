@@ -18,7 +18,12 @@
 
       <div class="post-info">
         <time datetime="{{ post.date_rfc3339|date(format="%Y-%m-%d") }}">{% if "en" in categories %}Published on{% else %}Publié le{% endif %} <span class="accent-data">{{ post.date_rfc3339|date(format="%d-%m-%Y") }}</span></time>
+
         <address rel="author">{% if "en" in categories %}by{% else %}par{% endif %} <span class="accent-data">Vincent Jousse</span></address>
+
+        {% if post.updated_at_rfc3339 %}
+        <time datetime="{{ post.updated_at_rfc3339|date(format="%Y-%m-%d") }}" style="display: block;"><em>{% if "en" in categories %}Last updated on{% else %}Dernière mise à jour le{% endif %} <span class="accent-data">{{ post.updated_at_rfc3339|date(format="%d-%m-%Y") }}</span></em></time>
+        {% endif %}
       </div>
       {% if post.excerpt %}
       <div class="post-excerpt">{{ post.excerpt|markdown }}</div>
