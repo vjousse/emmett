@@ -44,6 +44,8 @@ pub fn convert_md_to_html(md_content: &str, settings: &Settings, path: Option<&s
     options.insert(Options::ENABLE_STRIKETHROUGH);
     options.insert(Options::ENABLE_HEADING_ATTRIBUTES);
     options.insert(Options::ENABLE_GFM);
+    options.insert(Options::ENABLE_FOOTNOTES);
+    options.insert(Options::ENABLE_TASKLISTS);
 
     let mut events = Vec::new();
     let mut code_block: Option<CodeBlock> = None;
@@ -56,14 +58,12 @@ pub fn convert_md_to_html(md_content: &str, settings: &Settings, path: Option<&s
             Event::Text(text) => {
                 if let Some(heading) = current.as_mut() {
                     heading.events.push(Event::Text(text));
+                } else if let Some(ref mut code_block) = code_block {
+                    let html = code_block.highlight(&text);
+                    events.push(Event::Html(html.into()));
                 } else {
-                    if let Some(ref mut code_block) = code_block {
-                        let html = code_block.highlight(&text);
-                        events.push(Event::Html(html.into()));
-                    } else {
-                        events.push(Event::Text(text));
-                        continue;
-                    }
+                    events.push(Event::Text(text));
+                    continue;
                 }
             }
 

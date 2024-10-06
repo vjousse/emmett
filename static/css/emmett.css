@@ -394,3 +394,10 @@ footer p {
 .copy-to-clipboard svg.fill-green {
   fill: #9acc76;
 }
+
+.footnote-definition {
+  padding-bottom: 10px;
+}
+.footnote-definition p {
+  display: inline;
+}
