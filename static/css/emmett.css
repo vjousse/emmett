@@ -35,7 +35,11 @@ ul {
 
 ol li,
 ul li {
-  padding-bottom: 1rem;
+  padding-bottom: 0.5rem;
+}
+
+ul li ul {
+  padding-top: 0.5rem;
 }
 
 ul li p {
@@ -173,36 +177,36 @@ nav > ul li:not(:first-child):before {
   font-style: italic;
 }
 
-.list ul {
+.list > ul {
   padding-left: 1rem;
 }
 
-.list ul li {
+.list > ul li {
   padding-bottom: 3rem;
   padding-left: 0.3rem;
 }
 
-.list ul li > a {
+.list > ul li > a {
   font-size: 1.2rem;
   font-weight: 700;
 }
 
-.list ul li .post-info {
+.list > ul li .post-info {
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
 
-.list ul li {
+.list > ul li {
   list-style-type: "» ";
 }
 
-.list ul li::marker {
+.list > ul li::marker {
   font-weight: 700;
   font-size: 1.4rem;
   color: var(--accent);
 }
 
-.list ul li:hover::marker {
+.list > ul li:hover::marker {
   content: "# ";
   font-weight: 700;
   color: var(--link);
@@ -221,7 +225,7 @@ address {
 }
 
 div.post-excerpt ul li {
-  padding-bottom: 0;
+  padding-bottom: 0.5rem;
 }
 
 div.post-excerpt ul li::marker {
