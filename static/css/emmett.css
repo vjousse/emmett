@@ -405,3 +405,87 @@ footer p {
 .footnote-definition p {
   display: inline;
 }
+
+/** Github alert quote styles **/
+
+.markdown-alert-note,
+.markdown-alert-tip,
+.markdown-alert-important,
+.markdown-alert-warning,
+.markdown-alert-caution {
+  border-left: 0.4em solid;
+  padding: 0.5rem 1rem 0 1rem;
+  margin: 1rem 0 2rem 0;
+}
+
+.markdown-alert-note::before,
+.markdown-alert-tip::before,
+.markdown-alert-important::before,
+.markdown-alert-warning::before,
+.markdown-alert-caution::before {
+  display: block;
+}
+
+.markdown-alert {
+  font-style: normal;
+  color: var(--text);
+}
+
+.markdown-alert-title {
+  margin-top: 0;
+  align-items: center;
+  line-height: 1;
+  display: flex;
+}
+
+.markdown-alert-title svg {
+  display: inline-block;
+  overflow: visible !important;
+  margin-right: 0.5rem !important;
+  padding-bottom: 0.2rem;
+}
+
+.markdown-alert-note {
+  border-left-color: #0756b2;
+}
+
+.markdown-alert-note .markdown-alert-title {
+  color: #0756b2;
+  fill: #0756b2;
+}
+
+.markdown-alert-tip {
+  border-left-color: #14652c;
+}
+
+.markdown-alert-tip .markdown-alert-title {
+  color: #14652c;
+  fill: #14652c;
+}
+
+.markdown-alert-important {
+  border-left-color: #692dd8;
+}
+
+.markdown-alert-important .markdown-alert-title {
+  color: #692dd8;
+  fill: #692dd8;
+}
+
+.markdown-alert-warning {
+  border-left-color: #725000;
+}
+
+.markdown-alert-warning .markdown-alert-title {
+  color: #725000;
+  fill: #725000;
+}
+
+.markdown-alert-caution {
+  border-left-color: #ab1c26;
+}
+
+.markdown-alert-caution .markdown-alert-title {
+  color: #ab1c26;
+  fill: #ab1c26;
+}
