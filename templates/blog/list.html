@@ -29,7 +29,7 @@
       <div class="post-excerpt">{{ post.excerpt|markdown }}</div>
       {% endif %}
       <div class="next"> 
-        <a href="/{{ post.url_path }}" class="outline">{% if "en" in categories %}Next{% else %}Lire la suite{% endif %}</a>
+        <a href="/{{ post.url_path }}" class="outline">{% if "en" in categories %}Read more{% else %}Lire la suite{% endif %}</a>
       </div>
     </li>
     {% endfor %}
