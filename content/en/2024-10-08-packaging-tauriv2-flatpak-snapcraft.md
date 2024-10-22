@@ -1,7 +1,7 @@
 ---
-title: Packaging a Tauri v2 app on Linux for flatpak/flathub and snapcraft with rust, npm and elm
+title: Packaging a Tauri v2 app on Linux for flatpak/flathub and Snapcraft with rust, npm and elm
 slug: packaging-tauri-v2-flatpak-snapcraft-elm
-date: "2024-10-18 09:36:00+00:00"
+date: "2024-10-22 09:36:00+00:00"
 tags: flatpak, snapcraft, tauri, rust, elm, linux
 category:
 link:
@@ -28,11 +28,11 @@ A few weeks ago I decided to package it on Linux for [Flathub](https://flathub.o
 
 ## TL;DR
 
-You can find the **flatpak build files** on the [Flathub repository of Pomodorolm](https://github.com/flathub/org.jousse.vincent.Pomodorolm), and the **`snapcraft.yml` file** on the [Github of Pomodorolm](https://github.com/vjousse/pomodorolm/blob/main/snapcraft.yaml) (with the required [`asound.conf` file](https://github.com/vjousse/pomodorolm/tree/main/snapcraft)).
+You can find the **flatpak build files** on the [Flathub repository of Pomodorolm](https://github.com/flathub/org.jousse.vincent.Pomodorolm/tree/2ab1d72c8a44325882374f0c85ee75fecdf9ed9a), and the **`snapcraft.yml` file** on the [Github of Pomodorolm](https://github.com/vjousse/pomodorolm/blob/9f4a7679ef81c3daa2f74c1ab97fd7ac720abfe4/snapcraft.yaml) (with the required [`asound.conf` file](https://github.com/vjousse/pomodorolm/blob/9f4a7679ef81c3daa2f74c1ab97fd7ac720abfe4/snapcraft/asound.conf)).
 
-Rust code to manage the `/app` prefix for `Flatpak`: @TODO
+[Rust code](https://github.com/vjousse/pomodorolm/blob/9f4a7679ef81c3daa2f74c1ab97fd7ac720abfe4/src-tauri/src/lib.rs#L815) to manage the `/app` prefix for `Flatpak`.
 
-Rust code to make tray icons work: @TODO
+[Rust code](https://github.com/vjousse/pomodorolm/blob/9f4a7679ef81c3daa2f74c1ab97fd7ac720abfe4/src-tauri/src/lib.rs#L531) to make tray icons work.
 
 ## `Flatpak` and `Flathub`
 
@@ -154,9 +154,7 @@ modules:
 
 ### Build `libappindicator`
 
-<!-- @FIX: give link to the submodule -->
-
-We start by adding a line that will build `libappindicator` required for the system tray. The recommended way to get this file and its dependencies is by adding X as a submodule of your repository like described [here](@TODO).
+We start by adding a line that will build `libappindicator` required for the system tray. The recommended way to get this file and its dependencies is by adding [https://github.com/flathub/shared-modules](https://github.com/flathub/shared-modules) as a submodule of your repository like described [in the README](https://github.com/flathub/shared-modules?tab=readme-ov-file#adding).
 
 ```yaml
 - shared-modules/libappindicator/libappindicator-gtk3-12.10.json
@@ -199,14 +197,12 @@ sources:
 - cargo-sources.json
 ```
 
-Those files are generated using [flatpak-builder-tools](@TODO) a set of Python scripts that will parse your `package-lock.json` and your `Cargo.lock` files to generate the required `*-sources.json` files. So you will first need to install the `flatpak-builder-tools`.
+Those files are generated using [flatpak-builder-tools](https://github.com/flatpak/flatpak-builder-tools/) a set of Python scripts that will parse your `package-lock.json` and your `Cargo.lock` files to generate the required `*-sources.json` files. So you will first need to install the `flatpak-builder-tools`.
 
-<!-- @FIX: give details on how to setup the python venvs -->
-
-<!-- @FIX: link to the issue -->
+For `node` packages use [`flatpak-node-generator`](https://github.com/flatpak/flatpak-builder-tools/blob/master/node/README.md) and for `Cargo` packages use [`flatpak-cargo-generator`](https://github.com/flatpak/flatpak-builder-tools/tree/master/cargo).
 
 > [!CAUTION]
-> For `flatpak-node-generator` to run properly, you will need to call from a directory where there is no `node_modules/` present. You can either run it from outside your project or you can delete the `node_modules/` directory from your project directory first. See this issue for more details.
+> For `flatpak-node-generator` to run properly, you will need to call it from a directory where there is no `node_modules/` present. You can either run it from outside your project or you can delete the `node_modules/` directory from your project directory first. See this [issue for more details](https://github.com/flatpak/flatpak-builder-tools/issues/354#issuecomment-1478518442).
 
 ### Provide offline dependencies for `Elm`
 
@@ -353,23 +349,59 @@ let resource_path = resolve_resource_path(
 );
 ```
 
-<!-- @FIX: give link to the rust source code of the snippets above -->
+You can find the [complete source code on Github](https://github.com/vjousse/pomodorolm/blob/9f4a7679ef81c3daa2f74c1ab97fd7ac720abfe4/src-tauri/src/lib.rs#L815).
 
 ### Build your `flatpak` with `flatpak-builder`
 
-<!-- @TODO: write this section -->
+#### Installation
+
+Be sure to [install `flatpak` for your distribution](https://flatpak.org/setup/) and then install the `Gnome 46` platform and SDK:
+
+    flatpak install flathub org.gnome.Platform//46 org.gnome.Sdk//46
+
+#### Build
+
+To build your application, use the following command with your manifest file instead of mine:
+
+    flatpak-builder --force-clean --user --repo=repo --install builddir org.jousse.vincent.Pomodorolm.yml
+
+To be sure that your are building your application entirely from scratch, you can delete the build dirs that `flatpak` creates:
+
+    rm -rf builddir .flatpak-builder repo
+
+#### Run
+
+    flatpak run org.jousse.vincent.Pomodorolm
+
+#### Lint
+
+To check that your manifest file doesn't contain any errors:
+
+    flatpak run --command=flatpak-builder-lint org.flatpak.Builder manifest org.jousse.vincent.Pomodorolm.yml
+
+#### Debug
+
+You can start a shell into your `flatpak` by issuing the following command:
+
+    flatpak run --command=bash org.jousse.vincent.Pomodorolm
 
 ### Create `metainfo.xml`
 
-Use `appstreamcli validate your.metainfo.xml` to check for errors.
+The `metainfo.xml` file is used to descibre your application using the [AppStream specification](https://www.freedesktop.org/software/appstream/docs/).
+
+"AppStream is a collaborative effort for enhancing the way we interact with the software repositories provided by the distribution by standardizing sets of additional metadata.
+
+AppStream provides the foundation to build software-center applications. It additionally provides specifications for things like a unified software metadata database, screenshot services and various other things needed to create user-friendly application-centers for software distributions."
+
+You can create your `metainfo.xml` file by [following the specification](https://www.freedesktop.org/software/appstream/docs/) or by using a [Metainfo Generator](https://bilelmoussaoui.github.io/metainfo-generator/).
+
+You can then use `appstreamcli validate your.metainfo.xml` to check for errors.
 
 ## Manage tray icon generation for `flatpak` and `Snapcraft`
 
 Here is the problem: by default, Tauri will store the tray icon image into `/tmp` in the sandboxed `flatpak`/`Snapcraft` environment and will tell `libappindicator` that the icon is in `/tmp`. The Dbus message that `libappindicator` emits will be received by your Desktop environment and it will look for the icon in `/tmp` on the host. But of course, there is no icon in `/tmp` on the host as it is in `/tmp` but in the **sandboxed `flatpak`/`Snapcraft` environment**.
 
 Once you've understood the problem, the solution is pretty straightforward: store the icon in a path shared by the sandboxed environment and the host.
-
-<!-- @FIX: give link to the rust source code -->
 
 ```rust
 let icon_path = tauri::image::Image::from_path(icon_path_buf.clone()).ok();
@@ -388,9 +420,9 @@ let _ = tray.set_temp_dir_path(Some(local_data_path));
 let _ = tray.set_icon(icon_path);
 ```
 
-So here, I'm storing the icon in `$XDG_DATA_HOME/tray-icon/` directory because **`$XDG_DATA_HOME` is shared between `flatpak` and the host**. For the record, as we can see in the Tauri source code, `AppLocalData` is resolved to `$XDG_DATA_HOME`.
+You can find the [complete source code on Github](https://github.com/vjousse/pomodorolm/blob/9f4a7679ef81c3daa2f74c1ab97fd7ac720abfe4/src-tauri/src/lib.rs#L531).
 
-<!-- @FIX: give link to the rust source code -->
+So here, I'm storing the icon in `$XDG_DATA_HOME/tray-icon/` directory because **`$XDG_DATA_HOME` is shared between `flatpak` and the host**. For the record, as we can see in the [Tauri source code](https://github.com/tauri-apps/tauri/blob/36eee37220cff34a1fab35791dcd0775ae86ec7c/crates/tauri/src/path/desktop.rs#L46), `AppLocalData` is resolved to `$XDG_DATA_HOME`.
 
 ```rust
 /// Returns the path to the user's local data directory.
@@ -409,13 +441,99 @@ pub fn data_local_dir() -> Option<PathBuf> {
 
 ## `Snapcraft`
 
+### The `snapcraft.yaml` file
+
+I will not go in details through the whole [`snapcraft.yml`](https://github.com/vjousse/pomodorolm/blob/9f4a7679ef81c3daa2f74c1ab97fd7ac720abfe4/snapcraft.yaml) file as it was pretty straightforward to make it work: no offline build required and we can directly use the `.deb` generated by Tauri. Just be sure to use `base: core24` instead of `core22` if you want `rodio` to build properly.
+
+```yaml
+name: pomodorolm
+base: core24
+platforms:
+  amd64:
+  arm64:
+
+version: "0.2.1"
+summary: A simple, good looking and multi-platform pomodoro tracker
+description: |
+  Pomodorolm is a simple and configurable Pomodoro timer. It aims to provide a visually-pleasing and reliable way to track productivity using the Pomodoro Technique.
+
+grade: stable
+confinement: strict
+
+layout:
+  /usr/lib/$CRAFT_ARCH_TRIPLET/webkit2gtk-4.1:
+    bind: $SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/webkit2gtk-4.1
+  /usr/lib/pomodorolm:
+    symlink: $SNAP/usr/lib/pomodorolm
+
+apps:
+  pomodorolm:
+    command: usr/bin/pomodorolm
+    desktop: usr/share/applications/pomodorolm.desktop
+    extensions: [gnome]
+    environment:
+      ALSA_CONFIG_PATH: "$SNAP/etc/asound.conf"
+    plugs:
+      - home
+      - browser-support
+      - network
+      - network-status
+      - gsettings
+      - pulseaudio
+      - opengl
+      - desktop
+    # Add whatever plugs you need here, see https://snapcraft.io/docs/snapcraft-interfaces for more info.
+    # The gnome extension already includes [ desktop, desktop-legacy, gsettings, opengl, wayland, x11, mount-observe, calendar-service ]
+
+package-repositories:
+  - type: apt
+    components: [main]
+    suites: [noble]
+    key-id: 78E1918602959B9C59103100F1831DDAFC42E99D
+    url: http://ppa.launchpad.net/snappy-dev/snapcraft-daily/ubuntu
+
+parts:
+  build-app:
+    plugin: dump
+    build-snaps:
+      - node/20/stable
+      - rustup/latest/stable
+    build-packages:
+      - libwebkit2gtk-4.1-dev
+      - build-essential
+      - curl
+      - wget
+      - file
+      - libxdo-dev
+      - libssl-dev
+      - libayatana-appindicator3-dev
+      - librsvg2-dev
+      - dpkg
+      - libasound2-dev
+    stage-packages:
+      - libwebkit2gtk-4.1-0
+      - libayatana-appindicator3-1
+      - libasound2
+      - libpulse0
+      - libasound2-plugins
+
+    # For pulse/alsa see: https://forum.snapcraft.io/t/help-needed-with-bombsquad-snap/36744/2
+
+    source: .
+
+    override-build: |
+      set -eu
+      npm install
+      rustup default stable
+      npm run tauri build -- --bundles deb
+      cp snapcraft/asound.conf $SNAPCRAFT_PART_INSTALL/etc/
+      dpkg -x src-tauri/target/release/bundle/deb/*.deb $SNAPCRAFT_PART_INSTALL/
+      sed -i -e "s|Icon=pomodorolm|Icon=/usr/share/icons/hicolor/32x32/apps/pomodorolm.png|g" $SNAPCRAFT_PART_INSTALL/usr/share/applications/pomodorolm.desktop
+```
+
 ### Configure `ALSA`/`pulseaudio` to play audio files
 
-<!-- @FIX: give link to the snapcraft file -->
-
-I will not go in details through the whole `snapcraft.yml` file as it was pretty straightforward to make it work: no offline build required and we can directly use the `.deb` generated by Tauri. Just be sure to use `base: core24` instead of `core22` if you want `rodio` to build properly.
-
-For the sound to work, you need to provide a configuration file for Alsa:
+For the sound to work, you will need to provide a configuration file for ALSA:
 
 **`asound.conf`**
 
@@ -444,9 +562,41 @@ After that, everything should work as expected.
 
 ### Build your `snap`
 
+To build your `snap` just run `snapcraft` at the root of your project where the `snapcraft.yml` file should be located. If you want to activate debug and to automatically start a shell in the `snap` if the build fails, build the `snap` with the following command:
+
+    snapcraft -v --debug
+
+### Run your `snap`
+
+    snapcraft run pomodorolm
+
+The app name is provided in your `snapcraft.yml`:
+
+```yaml
+apps:
+  pomodorolm:
+```
+
 ## Cherry on the cake: checking version numbers
 
-<!-- @TODO: write the section -->
+The more stuff you package, the more version numbers in files you have to manage.
+
+Here is a list of the files in my project containing version numbers:
+
+```python
+METAINFO = "org.jousse.vincent.Pomodorolm.metainfo.xml"
+PACKAGE_JSON = "package.json"
+PACKAGE_LOCK_JSON = "package-lock.json"
+SNAPCRAFT = "snapcraft.yaml"
+TAURI_CONF = "src-tauri/tauri.conf.json"
+CARGO_TOML = "src-tauri/Cargo.toml"
+CARGO_LOCK = "src-tauri/Cargo.lock"
+AUR_PKGBUILD = "aur/PKGBUILD"
+```
+
+I've written a [Python script](https://github.com/vjousse/pomodorolm/blob/98fe901b39ffc8981e37dcf90e62a731533875a9/bin/release.py) that can automatically bump the version number using [`git-cliff`](https://git-cliff.org/) and write it down to the corresponding files. It can also update the versions of your `metainfo.xml` file and check that your version numbers are consistent across all your files.
+
+Don't hesitate to try it and provide feedback!
 
 ## Troubleshooting
 
@@ -472,4 +622,8 @@ For example, for `flatpak`:
 
 ## Conclusion
 
-Snapcraft way simpler but better review and selection process for on Flathub.
+Packaging my app for Linux took me a lot longer than expected. The hardest part was to be able to **build it offline** for `Flatpak/Flathub`. The **review process** for `Flathub` was pretty serious too, two reviewers guided me through the process and asked for a lot of changes to improve the security of the app.
+
+On the other hand, building for `Snapcraft` was easy. No need for offline builds and no review process. It compiles? Ship it to the store!
+
+So as a user of Linux apps **I would recommend using `flatpaks` instead of `snaps`**. The **manual review process** of `flathub` implies that the apps have the minimum **quality** required by the `flathub` reviewers, and now that I know how it works, I have a lot more trust in `flatpaks` than in `snaps`.
