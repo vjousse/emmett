@@ -1106,11 +1106,11 @@ return {
         end,
 
         -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md#
-         = function()
+         ruff = function()
           lspconfig.ruff.setup({
             init_options = {
               settings = {
-                -- Arguments par défaut de la ligne de commande ruff
+                -- Arguments par défaut de la ligne de commande "ruff server"
                 -- (on ajoute les warnings pour le tri des imports)
                 args = { "--extend-select", "I" },
               },
@@ -1355,7 +1355,7 @@ return {
       ensure_installed = {
         "elm-format", -- elm formater
         "prettier", -- prettier formatter
-        "ruff", -- ruff formater (différent du LSP)
+        "ruff", -- ruff formater (different du LSP, mais dans le même executable)
         "stylua", -- lua formater
       },
     })
@@ -1409,7 +1409,7 @@ N'oubliez pas de mettre à jour la liste des outils à installer automatiquement
       ensure_installed = {
         "elm-format", -- elm formater
         "prettier", -- prettier formatter
-        "ruff", -- ruff formater (différent du LSP)
+        "ruff", -- ruff formater (différent du LSP, mais dans le même executable)
         "stylua", -- lua formater
         "eslint_d", -- eslint formater
       },
