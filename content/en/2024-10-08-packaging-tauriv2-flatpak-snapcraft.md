@@ -7,7 +7,6 @@ category:
 link:
 description:
 type: text
-status: draft
 toc: true
 ---
 
