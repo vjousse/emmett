@@ -1051,7 +1051,7 @@ return {
 
     mason_lspconfig.setup({
       -- Liste des serveurs à installer par défaut
-      -- List des serveurs possibles : https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
+      -- List des serveurs possibles : https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md
       -- Vous pouvez ne pas en mettre ici et tout installer en utilisant :Mason
       -- Mais au lieu de passer par :Mason pour installer, je vous recommande d'ajouter une entrée à cette liste
       -- Ça permettra à votre configuration d'être plus portable
@@ -1062,7 +1062,7 @@ return {
         "html",
         "lua_ls",
         "pylsp",
-        "ruff_lsp",
+        "ruff",
         "rust_analyzer",
         "sqlls",
         "svelte",
@@ -1078,7 +1078,7 @@ return {
 
         -- On peut ensuite configurer chaque LSP comme on veut
         -- Les détails des configurations possibles sont disponibles ici :
-        -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
+        -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md
         -- Quelques exemples avec Python (pylsp et ruff) ainsi que Rust ci-dessous
         --
         -- Pour désactiver un LSP il suffit de faire
@@ -1088,7 +1088,7 @@ return {
         -- le premier est la clé utilisée par mason_lspconfig, le deuxième est celle utilisée par lspconfig (ce sont les mêmes)
         -- ils correspondent aux entrées du ensure_installed
 
-        -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#pylsp
+        -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md#pylsp
         pylsp = function()
           lspconfig.pylsp.setup({
             settings = {
@@ -1105,12 +1105,12 @@ return {
           })
         end,
 
-        -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#ruff_lsp
-        ruff_lsp = function()
-          lspconfig.ruff_lsp.setup({
+        -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md#
+         ruff = function()
+          lspconfig.ruff.setup({
             init_options = {
               settings = {
-                -- Arguments par défaut de la ligne de commande ruff
+                -- Arguments par défaut de la ligne de commande "ruff server"
                 -- (on ajoute les warnings pour le tri des imports)
                 args = { "--extend-select", "I" },
               },
@@ -1118,7 +1118,7 @@ return {
           })
         end,
 
-        -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#rust_analyzer
+        -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md#rust_analyzer
         rust_analyzer = function()
           lspconfig.rust_analyzer.setup({
             settings = {
@@ -1355,7 +1355,7 @@ return {
       ensure_installed = {
         "elm-format", -- elm formater
         "prettier", -- prettier formatter
-        "ruff", -- ruff formater (différent du LSP)
+        "ruff", -- ruff formater (different du LSP, mais dans le même executable)
         "stylua", -- lua formater
       },
     })
@@ -1409,7 +1409,7 @@ N'oubliez pas de mettre à jour la liste des outils à installer automatiquement
       ensure_installed = {
         "elm-format", -- elm formater
         "prettier", -- prettier formatter
-        "ruff", -- ruff formater (différent du LSP)
+        "ruff", -- ruff formater (différent du LSP, mais dans le même executable)
         "stylua", -- lua formater
         "eslint_d", -- eslint formater
       },
