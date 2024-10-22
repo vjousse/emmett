@@ -1051,7 +1051,7 @@ return {
 
     mason_lspconfig.setup({
       -- Liste des serveurs à installer par défaut
-      -- List des serveurs possibles : https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
+      -- List des serveurs possibles : https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md
       -- Vous pouvez ne pas en mettre ici et tout installer en utilisant :Mason
       -- Mais au lieu de passer par :Mason pour installer, je vous recommande d'ajouter une entrée à cette liste
       -- Ça permettra à votre configuration d'être plus portable
@@ -1078,7 +1078,7 @@ return {
 
         -- On peut ensuite configurer chaque LSP comme on veut
         -- Les détails des configurations possibles sont disponibles ici :
-        -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
+        -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md
         -- Quelques exemples avec Python (pylsp et ruff) ainsi que Rust ci-dessous
         --
         -- Pour désactiver un LSP il suffit de faire
@@ -1088,7 +1088,7 @@ return {
         -- le premier est la clé utilisée par mason_lspconfig, le deuxième est celle utilisée par lspconfig (ce sont les mêmes)
         -- ils correspondent aux entrées du ensure_installed
 
-        -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#pylsp
+        -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md#pylsp
         pylsp = function()
           lspconfig.pylsp.setup({
             settings = {
@@ -1118,7 +1118,7 @@ return {
           })
         end,
 
-        -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#rust_analyzer
+        -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md#rust_analyzer
         rust_analyzer = function()
           lspconfig.rust_analyzer.setup({
             settings = {
