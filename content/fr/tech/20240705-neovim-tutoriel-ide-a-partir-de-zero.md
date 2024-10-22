@@ -1,7 +1,7 @@
 ---
 title: "Tutoriel : configurer Neovim comme IDE/éditeur de code à partir de zéro"
 date: "2024-07-16 09:33:20+01:00"
-updated_at: "2024-09-02 09:33:20+01:00"
+updated_at: "2024-10-22 09:33:20+01:00"
 slug: configurer-neovim-comme-ide-a-partir-de-zero-tutoriel-guide
 tags: neovim, tutoriel, lua, vim
 toc: true
@@ -1355,7 +1355,7 @@ return {
       ensure_installed = {
         "elm-format", -- elm formater
         "prettier", -- prettier formatter
-        "ruff", -- ruff formater (different du LSP, mais dans le même executable)
+        "ruff", -- ruff formater (différent du LSP, mais dans le même executable)
         "stylua", -- lua formater
       },
     })
