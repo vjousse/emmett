@@ -1062,7 +1062,7 @@ return {
         "html",
         "lua_ls",
         "pylsp",
-        "ruff_lsp",
+        "ruff",
         "rust_analyzer",
         "sqlls",
         "svelte",
@@ -1105,9 +1105,9 @@ return {
           })
         end,
 
-        -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#ruff_lsp
-        ruff_lsp = function()
-          lspconfig.ruff_lsp.setup({
+        -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md#
+         = function()
+          lspconfig.ruff.setup({
             init_options = {
               settings = {
                 -- Arguments par défaut de la ligne de commande ruff
