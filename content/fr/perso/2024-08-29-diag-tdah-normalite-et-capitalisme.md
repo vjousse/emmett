@@ -1,7 +1,7 @@
 ---
-title: "TDAH : trouble, traitement, normalité et néolibéralisme"
+title: "TDAH : diagnostic, traitement et néolibéralisme"
 slug: mon-diagnostic-tdah-trouble-traitement-normalite-neoliberalisme
-date: "2024-09-18 07:00:00+01:00"
+date: "2025-01-27 07:00:00+01:00"
 tags: tdah, néolibéralisme, capitalisme
 category:
 link:
@@ -129,7 +129,7 @@ On se retrouve donc avec **deux cas de figure** :
 
 Santé à deux vitesses ? Mais non voyons, je ne vois pas pourquoi vous dites ça 🙄
 
-### Résultat de mon diagnostic
+### Résultat du diagnostic
 
 Après plusieurs séances avec la psychologue, quelques questionnaires de remplis, des entretiens entre mes proches et la psychologue, elle m’a remis un rapport complet sur ce qu’elle avait pu voir (tout cela a pris environ deux mois).
 
@@ -151,11 +151,53 @@ Il semblait donc faire peu de doute pour elle que j’avais des **symptômes de 
 
 J’ai donc pris rendez-vous avec un psychiatre qui a ensuite confirmé la présence d’un **TDAH Présentation Inattentive Prédominante**.
 
-### Déculpabilisation
+## Prises en charge : Thérapies Comportementales et Cognitives (TCC) et traitement par _méthylphénidate_ (Ritaline)
 
-## Le traitement par Ritaline (méthylphénidate)
+Il existe deux approches principales et complémentaires pour aider à mieux vivre avec son TDAH : psychothérapeutique et médicamenteuse.
 
-## Normalité et néolibéralisme
+L’**approche psychothérapeutique** repose principalement sur des **Thérapies Comportementales et Cognitives** (TCC). Vous trouverez quelques pistes sur [la page dédiée du site TDAH France](https://www.tdah-france.fr/Therapie-comportementale-et-cognitive-du-TDAH-Frederic-Kochman-2005.html).
+
+En France, l’**approche médicamenteuse** repose sur une molécule qui répond au doux nom de **_méthylphénidate_** mise à disposition via des médicaments dont les deux plus connus sont la Ritaline et le Concerta. Pour faire simple et court, c’est une molécule qui aide à la concentration/l’attention en diminuant la recapture de la dopamine sécrétée naturellement par l’organisme. Cette moindre recapture permet d’augmenter le taux de dopamine effectivement présent dans le sang et donc d’améliorer les facultés de concentration.
+
+Le traitement médicamenteux est souvent donné en première intention car il a l’avantage d’être efficace de suite et de ne présenter aucun risque de dépendance. Il suffit de prendre le médicament et d’attendre qu’il fasse effet ou bout de 30 minutes environ. En fonction du type de libération (immédiate ou prolongée), il fera effet entre 4H et 8H à peu près.
+
+## Conséquences du diagnostic et prise de Ritaline
+
+Je crois que la conséquence la plus positive de ce diagnostic sur mon quotidien a été **d’arrêter de culpabiliser** à propos de certains comportements que je pouvais avoir et qui m’énervaient au plus haut point. J’ai arrêté de me dire que j’étais juste fainéant, que j’avais juste à faire un peu plus d’efforts, que franchement si j’avais un peu plus de volonté je pourrais faire beaucoup mieux que ce que je faisais.
+
+C’est quelque chose que j’ai toujours entendu depuis que je suis gamin : « *bien, mais s’il travaillait un peu plus il pourrait faire beaucoup mieux* ».
+
+Maintenant j’ai compris que ce n’était **pas qu’une question de volonté et/ou de fainéantise**. J’ai compris que **mon cerveau avait un fonctionnement particulier** et qu’il fallait que je le prenne en compte pour pouvoir arriver à faire ce que je souhaitais faire.
+
+Le diagnostic m’a aussi **aidé dans mes relations sociales**. Connaissant maintenant un peu plus une partie de mon fonctionnement, je n’hésite pas à en expliquer certains aspects à mes proches. Par exemple, ce n’est pas parce que je ne réponds pas aux messages que les personnes ne m’intéressent pas, c’est plus probablement que j’ai lu le message et que j’ai été distrait par quelque chose d’autre et qu’y répondre m’est complètement sorti de la tête.
+
+Il est important pour moi de **ne pas me servir de ce diagnostic comme d’une excuse**, mais plutôt comme d’une explication qui permet de trouver des solutions ou d’autres façons de voir les choses. Mes proches ont le droit d’être en colère si je ne réponds pas à un message important, mais au moins maintenant ils savent que ce n’est pas parce que je les ignore. Ça me permet aussi de mettre en place des stratégies pour moins oublier (les rappels Siri sont devenus mes meilleurs amis).
+
+J’ai aussi choisi de me faire aider en prenant du _méthylphénidate_ via de la _Ritaline LP 30mg_, et je dois me rendre à l’évidence : **ça a changé ma vie**. C’est comme si, étant malvoyant, je découvrais l’existence des lunettes. J’ai découvert qu’il était possible de décider de faire quelque chose et de le faire juste car je l’avais décidé. C’était quelque chose qui m’était complètement inconnu jusqu’ici. Avant, pour que je fasse quelque chose et que j’arrive à me concentrer dessus, il fallait que ça soit stimulant, neuf, original et intéressant. Avec la _Ritaline_ j’ai juste à décider de m’y mettre… et je m’y mets. C’est révolutionnaire pour moi.
+
+Ça m’a permis de refaire une nouvelle version de mon livre sur Vim, de reprendre confiance en moi professionnellement et de finir plein de choses qui attendaient depuis des années. La Ritaline n’étant pas addictive, je n’ai en plus pas cette peur d’être dépendant du médicament. Je peux l’arrêter et le reprendre quand je veux.
+
+On m’a souvent posé la question suivante : « **mais ça ne t’embête pas de devoir prendre un médicament à vie ?** ». Ce à quoi je réponds généralement : « **tu crois que ça n’embête pas les personnes avec une mauvaise vue de devoir porter des lunettes à vie ?** ». Pour moi c’est la même problématique. Oui je préférerais ne pas avoir à le prendre, mais je ne vois pas pourquoi je ne le ferais pas alors que ça m’aide dans mon quotidien.
+
+Et lorsque j’arrête de le prendre, j’ai juste **plus de mal à me concentrer** sur des trucs que je « dois » faire versus les choses qui me paraissent hyper stimulantes mais pas forcément prioritaires… mais comme c’était le cas avant mon diagnostic. Là j’ai juste en plus l’avantage d’avoir plus de recul sur ce qui me motive et sur la façon dont je fonctionne.
+
+## Normalité, néolibéralisme et volonté
+
+Je ne peux pas terminer ce billet sans aborder un angle un peu plus systémique et politique de ce trouble et du diagnostic.
+
+**Est-ce que ne pas être capable de se concentrer sur une tâche qu’on ne trouve pas passionnante pendant des heures est un problème en soi, ou est-ce que le problème n’est pas l’environnement dans lequel nous évoluons qui impose ce besoin ?**
+
+Il est de plus en plus difficile de choisir ce sur quoi on travaille et dans quelle entreprise on a envie de travailler. Le chômage de masse étant une réalité de nos sociétés actuelles, beaucoup d’entre nous se contentent de ce qu’ils ont car il faut bien « gagner sa vie ».
+
+Dans ce contexte, être stimulé par la nouveauté, le changement permanent, et quelque part « l’instabilité » que provoque le TDAH est quelque chose qui n’est pas bien vu et qu’il faut « traiter ». Ceux qui arrivent à bosser toute la journée voire plus sont des _winners_, les autres sont des fainéants et des assistés.
+
+Si on couple ça au mythe du mérite et du « quand on veut on peut » prôné pas le néolibéralisme, on se retrouve avec un monde où notre « valeur » est corrélée à notre capacité à être bien adapté au système néolibéral : être toujours plus productif.
+
+J’ai personnellement la chance de maintenant faire un boulot qui me plait dans un projet qui a du sens pour moi. Mais ça ne m’empêche pas pour autant de me questionner sur pourquoi je suis considéré comme ayant un « trouble psychiatrique » uniquement car c’est compliqué pour moi de me concentrer et de « pouvoir quand je veux ».
+
+Et même si ce que je fais me plait, il m’est difficile de ne pas me poser la question suivante : **est-ce qu’être en capacité de bosser des dizaines d’heures par jour est vraiment quelque chose de souhaitable** ? Est-ce qu’au final, ce qu’on considère comme un trouble chez moi, n’est pas juste une caractéristique humaine comme une autre qui n’est considéré comme un problème qu’à cause des exigences d’efficacité toujours plus grandes du néolibéralisme ?
+
+<hr />
 
 [^1]: [Simon, V., Czobor, P., Balint, S., Meszaros, A., Bitter, I., 2009. Prevalence and correlates of adult attention-deficit hyperactivity disorder: meta-analysis. Br J Psychiatry 194, 204-211](https://pubmed.ncbi.nlm.nih.gov/19252145/)
 [^2]: [Fayyad, J., Sampson, N.A., Hwang, I., Adamowski, T., Aguilar-Gaxiola, S., Al-Hamzawi, A., Andrade, L.H., Borges, G., de Girolamo, G., Florescu, S., Gureje, O., Haro, J.M., Hu, C., Karam, E.G., Lee, S., Navarro- Mateu, F., O'Neill, S., Pennell, B.E., Piazza, M., Posada-Villa, J., Ten Have, M., Torres, Y., Xavier, M., Zaslavsky, A.M., Kessler, R.C., 2017. The descriptive epidemiology of DSM-IV Adult ADHD in the World Health Organization World Mental Health Surveys. Atten Defic Hyperact Disord 9, 47-65.](https://pubmed.ncbi.nlm.nih.gov/27866355/)
