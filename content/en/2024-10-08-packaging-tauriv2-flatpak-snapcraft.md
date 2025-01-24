@@ -2,6 +2,7 @@
 title: Packaging a Tauri v2 app on Linux for flatpak/flathub and Snapcraft with rust, npm and elm
 slug: packaging-tauri-v2-flatpak-snapcraft-elm
 date: "2024-10-22 09:36:00+00:00"
+updated_at: "2025-01-24 15:00:00+01:00"
 tags: flatpak, snapcraft, tauri, rust, elm, linux
 category:
 link:
@@ -451,7 +452,7 @@ platforms:
   amd64:
   arm64:
 
-version: "0.2.1"
+version: "0.3.4"
 summary: A simple, good looking and multi-platform pomodoro tracker
 description: |
   Pomodorolm is a simple and configurable Pomodoro timer. It aims to provide a visually-pleasing and reliable way to track productivity using the Pomodoro Technique.
@@ -460,29 +461,37 @@ grade: stable
 confinement: strict
 
 layout:
-  /usr/lib/$CRAFT_ARCH_TRIPLET/webkit2gtk-4.1:
-    bind: $SNAP/usr/lib/$CRAFT_ARCH_TRIPLET/webkit2gtk-4.1
+  /usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/webkit2gtk-4.1:
+    bind: $SNAP/gnome-platform/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/webkit2gtk-4.1
   /usr/lib/pomodorolm:
     symlink: $SNAP/usr/lib/pomodorolm
+  /usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/alsa-lib:
+    bind: $SNAP/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/alsa-lib
+  /usr/share/alsa:
+    bind: $SNAP/usr/share/alsa
 
 apps:
   pomodorolm:
     command: usr/bin/pomodorolm
+    command-chain:
+      - bin/gpu-2404-wrapper
+      - snap/command-chain/alsa-launch
     desktop: usr/share/applications/pomodorolm.desktop
-    extensions: [gnome]
+    extensions:
+      - gnome
     environment:
-      ALSA_CONFIG_PATH: "$SNAP/etc/asound.conf"
+      LD_LIBRARY_PATH: $LD_LIBRARY_PATH:$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/blas:$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/lapack:$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/samba:$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/vdpau:$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/dri
+      ALWAYS_USE_PULSEAUDIO: "1"
     plugs:
       - home
       - browser-support
       - network
       - network-status
       - gsettings
-      - pulseaudio
-      - opengl
       - desktop
-    # Add whatever plugs you need here, see https://snapcraft.io/docs/snapcraft-interfaces for more info.
-    # The gnome extension already includes [ desktop, desktop-legacy, gsettings, opengl, wayland, x11, mount-observe, calendar-service ]
+      - opengl
+      - alsa
+      - audio-playback
 
 package-repositories:
   - type: apt
@@ -494,6 +503,8 @@ package-repositories:
 parts:
   build-app:
     plugin: dump
+    after:
+      - alsa-mixin
     build-snaps:
       - node/20/stable
       - rustup/latest/stable
@@ -512,11 +523,6 @@ parts:
     stage-packages:
       - libwebkit2gtk-4.1-0
       - libayatana-appindicator3-1
-      - libasound2
-      - libpulse0
-      - libasound2-plugins
-
-    # For pulse/alsa see: https://forum.snapcraft.io/t/help-needed-with-bombsquad-snap/36744/2
 
     source: .
 
@@ -525,39 +531,46 @@ parts:
       npm install
       rustup default stable
       npm run tauri build -- --bundles deb
-      cp snapcraft/asound.conf $SNAPCRAFT_PART_INSTALL/etc/
       dpkg -x src-tauri/target/release/bundle/deb/*.deb $SNAPCRAFT_PART_INSTALL/
       sed -i -e "s|Icon=pomodorolm|Icon=/usr/share/icons/hicolor/32x32/apps/pomodorolm.png|g" $SNAPCRAFT_PART_INSTALL/usr/share/applications/pomodorolm.desktop
+
+  alsa-mixin:
+    plugin: dump
+    source: https://github.com/diddlesnaps/snapcraft-alsa.git
+    source-subdir: snapcraft-assets
+    build-packages:
+      - libasound2-dev
+    stage-packages:
+      - libasound2-plugins
+      - yad
+    stage:
+      - etc/asound.conf
+      - snap/command-chain/alsa-launch
+      - usr/bin/yad*
+      - usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/alsa-lib
+      - usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/libasound*
+      - usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/libdnsfile*
+      - usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/libFLAC*
+      - usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/libjack*
+      - usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/libpulse*
+      - usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/libsamplerate*
+      - usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/libspeex*
+      - usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/libvorbis*
+      - usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/pulseaudio
+
+  gpu-2404:
+    after:
+      - build-app
+    source: https://github.com/canonical/gpu-snap.git
+    plugin: dump
+    override-prime: |
+      craftctl default
+      ${CRAFT_PART_SRC}/bin/gpu-2404-cleanup mesa-2404 nvidia-2404
+    prime:
+      - bin/gpu-2404-wrapper
 ```
 
-### Configure `ALSA`/`pulseaudio` to play audio files
-
-For the sound to work, you will need to provide a configuration file for ALSA:
-
-**`asound.conf`**
-
-```conf
-pcm.!default {
-    type pulse
-    fallback "sysdefault"
-    hint {
-        show on
-        description "Default ALSA Output (currently PulseAudio Sound Server)"
-    }
-}
-ctl.!default {
-    type pulse
-    fallback "sysdefault"
-}
-```
-
-That you will need to copy at build time:
-
-```yaml
-cp snapcraft/asound.conf $SNAPCRAFT_PART_INSTALL/etc/
-```
-
-After that, everything should work as expected.
+For the sound part, this build file was heavily inspired by the one of [bluebubbles-app](https://github.com/BlueBubblesApp/bluebubbles-app/blob/a744a27c9f067578549edab0a75920f99569e25b/snap/snapcraft.yaml).
 
 ### Build your `snap`
 
@@ -565,9 +578,13 @@ To build your `snap` just run `snapcraft` at the root of your project where the 
 
     snapcraft -v --debug
 
+### Install your `snap`
+
+    sudo snap install ./pomodorolm_0.3.0_amd64.snap --dangerous --devmode
+
 ### Run your `snap`
 
-    snapcraft run pomodorolm
+    snap run pomodorolm
 
 The app name is provided in your `snapcraft.yml`:
 
