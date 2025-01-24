@@ -10,11 +10,11 @@
 {% if tag_name %}
 <h1 style="padding-bottom: 2rem;">{{tag_name}}</h1>
 {% endif %}
-<div class="list">
+<div id="index" class="list">
   <ul>
     {% for post in posts %}
     <li>
-      <a href="/{{ post.url_path }}">{{ post.front_matter.title }}</a>
+      <a class="post-link" href="/{{ post.url_path }}">{{ post.front_matter.title }}</a>
 
       <div class="post-info">
         <time datetime="{{ post.date_rfc3339|date(format="%Y-%m-%d") }}">{% if "en" in categories %}Published on{% else %}Publié le{% endif %} <span class="accent-data">{{ post.date_rfc3339|date(format="%d-%m-%Y") }}</span></time>

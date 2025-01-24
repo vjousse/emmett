@@ -192,7 +192,7 @@ nav > ul li:not(:first-child):before {
   padding-left: 0.3rem;
 }
 
-.list > ul li > a {
+.list > ul li > a.post-link {
   font-size: 1.5rem;
 }
 
