@@ -321,11 +321,16 @@ footer p {
   margin: 0;
 }
 
+footer ul {
+  padding: 0;
+}
+
 #newsletter {
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
   padding-bottom: 1.5rem;
+  padding-top: 1rem;
 }
 
 #newsletter em {
@@ -493,4 +498,8 @@ footer p {
 .markdown-alert-caution .markdown-alert-title {
   color: #ab1c26;
   fill: #ab1c26;
+}
+
+form .nonce {
+  display: none;
 }

@@ -4,7 +4,7 @@ title: "Ma vie, mon œuvre, mon Linkedin sans les bots"
 date: "2022-05-03 09:00:00+01:00"
 ---
 
-Pour me contacter : par mail sur [vincent@jousse.org](vincent@jousse.org) ou directement via [Mastodon](https://mamot.fr/@vjousse).
+Pour me contacter : par mail sur [vincent@jousse.org](mailto:vincent@jousse.org) ou directement via [Mastodon](https://mamot.fr/@vjousse).
 
 **TL;DR** : je fais beaucoup de **Python**, de **Elm** et de plus en plus de **Rust**. Je travaille majoritairement à distance depuis plus de 10 ans et je parle couramment anglais. [Mon Github](https://github.com).
 
@@ -17,6 +17,10 @@ Pour me contacter : par mail sur [vincent@jousse.org](vincent@jousse.org) ou d
 - **[Vim pour les humains](https://vimebook.com)** - [Code](https://github.com/vjousse/vim-for-humans-book)
 
   Livre à prix libre pour apprendre à utiliser l'éditeur de texte _Vim_.
+
+- **[Fedicli](https://codeberg.org/vjousse/fedicli/)** (_Rust_)
+
+  Une interface graphique en ligne de commande pour le Fediverse.
 
 - **[Tooty](https://n1k0.github.io/tooty/v2/)** (_Elm_) - [Code](https://github.com/n1k0/tooty)
 

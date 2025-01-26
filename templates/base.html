@@ -99,28 +99,33 @@
       {% block content %} {% endblock content %}
     </main>
     <footer>
-      {% if ("fr" in categories or url_path == "/") and "tech" not in categories %}
       <hr />
 
-        <h4>Recevoir les nouveaux articles par mail</h4>
+      {% if ("fr" in categories or url_path == "/") %}
+      <ul>
+        <li><img src="/images/mastodon.png" alt="Mastodon" style="width:1.2rem; height:1.2rem;border-radius:0;box-shadow:none;vertical-align:middle;"/> Me contacter sur <a href="https://mamot.fr/@vjousse" target="_blank">Mastodon</a></li>
+        <li>✉️ Me contacter par <a href="mailto:vincent@jousse.org" target="_blank">mail</a></li>
+        <li>🛜 S’abonner au flux <a title="RSS feed, atom format" href="/atom.xml">RSS</a></li>
+        <li>📬 Recevoir les nouveaux articles par mail
+          <form method="post" action="https://newsletter.jousse.org/subscription/form" class="listmonk-form">
 
 
-        <form method="post" action="https://newsletter.jousse.org/subscription/form" class="listmonk-form">
+            <div id="newsletter">
+              <p><input type="email" name="email" required placeholder="E-mail" /></p>
+              <p><input type="submit" value="Recevoir" /></p>
+              <p><em>(votre adresse ne sera jamais partagée à des tiers)</em></p>
+              <input name="nonce" class="nonce" value="" />
+            </div>
+            <p style="display: none;">
+              <input id="786f8" type="checkbox" name="l" checked value="786f8dc1-f889-4c7f-a550-a70a2502c8af" />
+              <label for="786f8">Vince et ses cogitations</label><br /><span>La newsletter de mon blog https://vincent.jousse.org</span>
+            </p>
 
+            <input type="hidden" name="nonce" />
+          </form>
+        </li>
+      </ul>
 
-          <div id="newsletter">
-            <p><input type="email" name="email" required placeholder="E-mail" /></p>
-            <p><input type="submit" value="S'inscrire" /></p>
-            <p><em>(votre adresse ne sera jamais partagée à des tiers)</em></p>
-
-          </div>
-          <p style="display: none;">
-            <input id="786f8" type="checkbox" name="l" checked value="786f8dc1-f889-4c7f-a550-a70a2502c8af" />
-            <label for="786f8">Vince et ses cogitations</label><br /><span>La newsletter de mon blog https://vincent.jousse.org</span>
-          </p>
-
-          <input type="hidden" name="nonce" />
-        </form>
       {% endif %}
 
       <hr />
