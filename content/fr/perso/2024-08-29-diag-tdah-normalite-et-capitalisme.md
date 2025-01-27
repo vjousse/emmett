@@ -7,7 +7,6 @@ category:
 link:
 description:
 type: text
-status: draft
 ---
 
 J’ai été diagnostiqué avec un [TDAH](https://fr.wikipedia.org/wiki/Trouble_d%C3%A9ficit_de_l%27attention_avec_ou_sans_hyperactivit%C3%A9) (_Trouble Déficit de l’Attention avec ou sans Hyperactivité_) fin mars 2024 à l’âge de 42 ans. Qu’on soit clair, ça ne fait pas de moi un expert du TDAH, mais vu que je me suis documenté sur ce trouble, autant vous en faire profiter. Dans cet article je vais donc vous **expliquer ce qu’est le TDAH** (en particulier chez l’adulte) en me basant sur l'état actuel de la **recherche scientifique**. Je vous partagerai aussi mon expérience avec ce trouble, ses conséquences et comment ce diagnostic a changé ma vie. Je finirai par **questionner l’existence du diagnostic d’un tel trouble** et ce que ça dit de la société dans laquelle nous évoluons.
@@ -159,7 +158,7 @@ L’**approche psychothérapeutique** repose principalement sur des **Thérapies
 
 En France, l’**approche médicamenteuse** repose sur une molécule qui répond au doux nom de **_méthylphénidate_** mise à disposition via des médicaments dont les deux plus connus sont la Ritaline et le Concerta. Pour faire simple et court, c’est une molécule qui aide à la concentration/l’attention en diminuant la recapture de la dopamine sécrétée naturellement par l’organisme. Cette moindre recapture permet d’augmenter le taux de dopamine effectivement présent dans le sang et donc d’améliorer les facultés de concentration.
 
-Le traitement médicamenteux est souvent donné en première intention car il a l’avantage d’être efficace de suite et de ne présenter aucun risque de dépendance. Il suffit de prendre le médicament et d’attendre qu’il fasse effet ou bout de 30 minutes environ. En fonction du type de libération (immédiate ou prolongée), il fera effet entre 4H et 8H à peu près.
+Le traitement médicamenteux est souvent donné en première intention car il a l’avantage d’être efficace de suite et de ne présenter aucun risque de dépendance. Il suffit de prendre le médicament et d’attendre qu’il fasse effet au bout de 30 minutes environ. En fonction du type de libération (immédiate ou prolongée), il fera effet entre 4H et 8H à peu près.
 
 ## Conséquences du diagnostic et prise de Ritaline
 
