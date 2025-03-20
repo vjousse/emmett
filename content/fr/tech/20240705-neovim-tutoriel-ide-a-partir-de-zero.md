@@ -529,7 +529,7 @@ return {
 J'ai configuré quelques raccourcis par défaut adaptés à mon utilisation :
 
 - `Ctrl-k` pour remonter dans la liste de sélection
-- `Ctrl-j` pour descencdre dans la liste de sélection
+- `Ctrl-j` pour descendre dans la liste de sélection
 - `<leader>ff` pour chercher dans les noms de fichiers
 - `<leader>fg` pour chercher dans les contenus des fichiers
 - `<leader>fb` pour chercher dans les noms de buffers
