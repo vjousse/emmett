@@ -43,11 +43,15 @@ Le contenu de cet article devrait fonctionner aussi bien sous Mac OS X que sous 
 
 ## Pré-requis
 
+### `neovim` >= 0.11
+
+Ce tutoriel requiert une version de Neovim supérieure ou égale à la `0.11` qui inclut de nouvelles configurations pour la complétion de code.
+
 ### Un terminal moderne
 
 Je vous conseille vivement d'utiliser [Wez's Terminal Emulator](https://wezfurlong.org/wezterm/index.html). C'est le terminal que j'utilise tous les jours pour ces principales raisons : il supporte les ligatures (vous savez les jolies →, ⇒, ≠ et autres symboles de programmation qu'on voit sur la capture d'écran), il peut afficher des images dans le terminal, il est hyper rapide, écrit en Rust et très bien documenté. Je l'utilise pour ma part avec le thème [Tokyo Night](https://wezfurlong.org/wezterm/colorschemes/t/index.html#tokyo-night). Ma [configuration est disponible sur Github](https://github.com/vjousse/dotfiles/blob/master/wezterm/wezterm.lua).
 
-D'autres bonnes alternatives sont [Alacritty](https://alacritty.org/), [Kitty](https://sw.kovidgoyal.net/kitty/) ou encore [foot](https://codeberg.org/dnkl/foot).
+D'autres bonnes alternatives sont [Alacritty](https://alacritty.org/), [Kitty](https://sw.kovidgoyal.net/kitty/), [Ghostty](https://ghostty.org/) ou encore [foot](https://codeberg.org/dnkl/foot).
 
 ### Une police _Nerd font_
 
@@ -843,14 +847,6 @@ Pour ceux qui se posent la question : pour l'instant, il n'y a pas de compléti
 
 Les LSP sont des protocoles qui vont permettre à _Neovim_ de « connaître » le langage de programmation sur lequel vous travaillez. C'est grâce à eux que vous pourrez obtenir la complétion automatique ou encore le « go to definition » qui permet de facilement naviguer dans son code. Ces protocoles ne sont pas spécifiques à _Neovim_ et sont utilisés par les principaux éditeurs de texte.
 
-Les LSP et la complétion automatique du code sont un peu les **boss de fin de niveau d'un jeu vidéo pour _Neovim_**. Et comme tout jeu vidéo qui se respecte, vous pouvez y jouer avec plusieurs niveaux de difficulté.
-
-Il y a tout d'abord le niveau de **difficulté hardcore** décrit dans ce post de blog : [A guide on Neovim's LSP client](https://vonheikemen.github.io/devlog/tools/neovim-lsp-client-guide/). Ce post explique comment configurer la complétion automatique sans utiliser aucun plugin.
-
-Ensuite il y a le **niveau intermédiaire** expliqué dans ce post de blog : [You might not need lsp-zero](https://lsp-zero.netlify.app/v3.x/blog/you-might-not-need-lsp-zero). L'idée ici est d'utiliser des plugins qui gèrent l'installation des LSP, la complétion, etc et de les mettre ensemble soi-même. C'est d'ailleurs ce que je fais dans [cette configuration là](https://github.com/vjousse/dotfiles/tree/b35c4654c589f2bcbdcda64dc3cfd14d2feaedfb/nvim-lazy).
-
-Et puis il y a le **niveau c'est pas hyper facile mais ça va quand même** qu'on va décrire ici, via l'utilisation de [`lsp-zero`](https://lsp-zero.netlify.app/v4.x/).
-
 ### Explication de la problématique
 
 Avant toute chose, je vais je vous expliquer pourquoi mettre en place la complétion avec les LSP n'est pas si trivial.
@@ -860,8 +856,6 @@ Premièrement, vous allez devoir disposer localement des LSP. Les LSP sont juste
 Ensuite, nous allons avoir besoin d'un moyen pour configurer ces LSP de manière unifiée. Si par exemple vous voulez rajouter telle option à votre LSP python ou telle autre à votre LSP javascript. Pour ce faire, nous allons utiliser [`nvim-lspconfig`](https://github.com/neovim/nvim-lspconfig).
 
 Maintenant que nous avons de quoi installer nos LSP et de quoi les configurer, il va falloir faire le lien entre les deux : les installer automatiquement avec `mason.nvim` et les configurer via `nvim-lspconfig` lorsqu'ils sont installés et chargés par `mason.nvim`. C'est le plugin [`mason-lspconfig`](https://github.com/williamboman/mason-lspconfig.nvim) qui va nous aider à faire ce lien.
-
-Et pour finir nous utiliserons le plugin [`lsp-zero`](https://lsp-zero.netlify.app/v4.x/) qui rendra pas mal de code un peu plus simple.
 
 ### Préparation du répertoire
 
@@ -898,20 +892,7 @@ require("lazy").setup({ { import = "plugins" }, { import = "plugins.lsp"} }, {
 
 ### Préparer la configuration des LSP : [`nvim-lspconfig`](https://github.com/neovim/nvim-lspconfig)
 
-Commençons par installer de quoi configurer nos LSP via [`nvim-lspconfig`](https://github.com/neovim/nvim-lspconfig) et [`lsp-zero`](https://lsp-zero.netlify.app/v4.x/).
-
-Éditez `lua/plugins/lsp/lsp-zero.lua` et placez-y le contenu suivant :
-
-**`lua/plugins/lsp/lsp-zero.lua`**
-
-```lua
-return {
-  "VonHeikemen/lsp-zero.nvim",
-  branch = "v4.x",
-  lazy = true,
-  config = false,
-}
-```
+Commençons par installer de quoi configurer nos LSP via [`nvim-lspconfig`](https://github.com/neovim/nvim-lspconfig).
 
 Éditez `lua/plugins/lsp/lspconfig.lua` et placez-y le contenu suivant :
 
@@ -922,97 +903,129 @@ return {
   "neovim/nvim-lspconfig",
   event = { "BufReadPre", "BufNewFile" },
   dependencies = {
-    -- Va permetre de remplir le plugin de complétion automatique nvim-cmp
+    -- Va permettre de remplir le plugin de complétion automatique nvim-cmp
     -- avec les résultats des LSP
     "hrsh7th/cmp-nvim-lsp",
     -- Ajoute les « code actions » de type renommage de fichiers intelligent, etc
     { "antosha417/nvim-lsp-file-operations", config = true },
+    -- Utile pour éditer les fichiers lua spécifiques à la config neovim
+    -- Notamment pour éviter le "Undefined global `vim`"
+    { "folke/lazydev.nvim", opts = {} },
+  },
+  keys = {
+    { "<leader>ca", vim.lsp.buf.code_action, desc = "Code Action", mode = { "n", "v" } },
+    { "gR", "<cmd>Telescope lsp_references<CR>", desc = "Show LSP references", mode = "n" },
+    { "gD", vim.lsp.buf.declaration, desc = "Go to declaration", mode = "n" },
+    { "gd", "<cmd>Telescope lsp_definitions<CR>", desc = "Show LSP definitions", mode = "n" },
+    { "gi", "<cmd>Telescope lsp_implementations<CR>", desc = "Show LSP implementations", mode = "n" },
+    { "gt", "<cmd>Telescope lsp_type_definitions<CR>", desc = "Show LSP type definitions", mode = "n" },
+    { "gs", vim.lsp.buf.signature_help, desc = "Show LSP signature help", mode = "n" },
+    { "<leader>rn", vim.lsp.buf.rename, desc = "Smart rename", mode = "n" },
+    { "<leader>D", "<cmd>Telescope diagnostics bufnr=0<CR>", desc = "Show buffer diagnostics", mode = "n" },
+    { "<leader>d", vim.diagnostic.open_float, desc = "Show line diagnostics", mode = "n" },
+    {
+      "[d",
+      function()
+        vim.diagnostic.jump({ count = -1, float = true })
+      end,
+      desc = "Go to previous diagnostic",
+      mode = "n",
+    },
+    {
+      "]d",
+      function()
+        vim.diagnostic.jump({ count = 1, float = true })
+      end,
+      desc = "Go to next diagnostic",
+      mode = "n",
+    },
+    { "K", vim.lsp.buf.hover, desc = "Show documentation for what is under cursor", mode = "n" },
+    { "<leader>F", "<cmd>lua vim.lsp.buf.format({async = true})<cr>", desc = "Format buffer", mode = { "n", "x" } },
+    { "<leader>rs", ":LspRestart<CR>", desc = "Restart LSP", mode = "n" },
   },
   config = function()
-    -- import de lsp-zero
-    local lsp_zero = require("lsp-zero")
-
-    -- lsp_attach sert à activer des fonctionnalités qui ne seront disponibles
-    -- que s'il il y a un LSP d'activé pour le fichier courant
-    local lsp_attach = function(_, bufnr)
-      local opts = { buffer = bufnr, silent = true }
-
-      -- configuration des raccourcis
-      -- je ne vous les traduis pas, ils me semblent parler d'eux-même ;)
-      opts.desc = "Show LSP references"
-      vim.keymap.set("n", "gR", "<cmd>Telescope lsp_references<CR>", opts) -- show definition, references
-
-      opts.desc = "Go to declaration"
-      vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts) -- go to declaration
-
-      opts.desc = "Show LSP definitions"
-      vim.keymap.set("n", "gd", "<cmd>Telescope lsp_definitions<CR>", opts) -- show lsp definitions
-
-      opts.desc = "Show LSP implementations"
-      vim.keymap.set("n", "gi", "<cmd>Telescope lsp_implementations<CR>", opts) -- show lsp implementations
-
-      opts.desc = "Show LSP type definitions"
-      vim.keymap.set("n", "gt", "<cmd>Telescope lsp_type_definitions<CR>", opts) -- show lsp type definitions
-
-      opts.desc = "Show LSP signature help"
-      vim.keymap.set("n", "gs", vim.lsp.buf.signature_help, opts)
-
-      opts.desc = "See available code actions"
-      vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts) -- see available code actions, in visual mode will apply to selection
-
-      opts.desc = "Smart rename"
-      vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts) -- smart rename
-
-      opts.desc = "Show buffer diagnostics"
-      vim.keymap.set("n", "<leader>D", "<cmd>Telescope diagnostics bufnr=0<CR>", opts) -- show  diagnostics for file
-
-      opts.desc = "Show line diagnostics"
-      vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, opts) -- show diagnostics for line
-
-      opts.desc = "Go to previous diagnostic"
-      vim.keymap.set("n", "[d", function()
-        vim.diagnostic.jump({ count = -1, float = true })
-      end, opts) -- jump to previous diagnostic in buffer
-
-      opts.desc = "Go to next diagnostic"
-      vim.keymap.set("n", "]d", function()
-        vim.diagnostic.jump({ count = 1, float = true })
-      end, opts) -- jump to next diagnostic in buffer
-
-      opts.desc = "Show documentation for what is under cursor"
-      vim.keymap.set("n", "K", vim.lsp.buf.hover, opts) -- show documentation for what is under cursor
-
-      opts.desc = "Format buffer"
-      vim.keymap.set({ "n", "x" }, "F", "<cmd>lua vim.lsp.buf.format({async = true})<cr>", opts)
-
-      opts.desc = "Restart LSP"
-      vim.keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
-    end
-
-    lsp_zero.extend_lspconfig({
-      -- On affiche les signes des diagnostics dans la gouttière de gauche
-      sign_text = true,
-      -- On attache notre fonction qui définit les raccourcis
-      lsp_attach = lsp_attach,
-      -- On augmente les capacités de complétion par défaut avec les propositions du LSP
-      capabilities = require("cmp_nvim_lsp").default_capabilities(),
+    -- Customize error signs
+    vim.diagnostic.config({
+      signs = {
+        text = {
+          [vim.diagnostic.severity.ERROR] = "",
+          [vim.diagnostic.severity.WARN] = "",
+          [vim.diagnostic.severity.INFO] = "",
+          [vim.diagnostic.severity.HINT] = "󰌵",
+        },
+      },
+    })
+    -- Python
+    vim.lsp.config("pylsp", {
+      settings = {
+        pylsp = {
+          plugins = {
+            -- formatter options
+            black = { enabled = true },
+            autopep8 = { enabled = false },
+            yapf = { enabled = false },
+            -- linter options
+            pyflakes = { enabled = false },
+            pycodestyle = {
+              enabled = true,
+              ignore = { "E501" },
+            },
+            -- type checker
+            pylsp_mypy = { enabled = true },
+            -- auto-completion options
+            jedi_completion = { fuzzy = true },
+            -- import sorting
+            pylsp_isort = { enabled = true },
+            rope_completion = { enabled = true },
+            rope_autoimport = {
+              enabled = true,
+            },
+          },
+        },
+      },
     })
 
-    -- On utilise lsp_zero pour configurer quelques éléments de design
-    lsp_zero.ui({
-      float_border = "rounded",
-      sign_text = {
-        error = " ",
-        warn = " ",
-        hint = "󰠠 ",
-        info = " ",
+    vim.lsp.config("ruff", {
+      settings = {
+        init_options = {
+          settings = {
+            -- Arguments par défaut de la ligne de commande ruff
+            -- (on ajoute les warnings pour le tri des imports)
+            args = { "--extend-select", "I" },
+          },
+        },
+      },
+    })
+
+    -- Rust
+    vim.lsp.config("rust_analyzer", {
+      settings = {
+        ["rust-analyzer"] = {
+          check = {
+            command = "clippy",
+          },
+          inlayHints = {
+            renderColons = true,
+            typeHints = {
+              enable = true,
+              hideClosureInitialization = false,
+              hideNamedConstructor = false,
+            },
+          },
+          diagnostics = {
+            enable = true,
+            styleLints = {
+              enable = true,
+            },
+          },
+        },
       },
     })
   end,
 }
 ```
 
-Je vous laisse déduire l'utilité des raccourcis configurés. Vous noterez que pas mal d'entre eux utilisent quand c'est possible un affichage directement dans _Telescope_.
+Je vous laisse déduire l'utilité des raccourcis configurés. Vous noterez que pas mal d'entre eux utilisent quand c'est possible un affichage directement dans _Telescope_. C’est le plugin `lazy.nvim` qui nous permet de facilement ajouter des raccorcis avec la clé `keys`, il appelle automatiquement les `vim.keymap.set` requis.
 
 ### Installation des LSP : [`mason.nvim`](https://github.com/williamboman/mason.nvim)
 
@@ -1024,9 +1037,9 @@ Comme nous l'avons vu, afin de ne pas avoir à installer les LSP à la main, nou
 
 ```lua
 return {
-  "williamboman/mason.nvim",
+  "mason-org/mason.nvim",
   dependencies = {
-    "williamboman/mason-lspconfig.nvim",
+    "mason-org/mason-lspconfig.nvim",
   },
   config = function()
     -- import de mason
@@ -1035,10 +1048,7 @@ return {
     -- import de mason-lspconfig
     local mason_lspconfig = require("mason-lspconfig")
 
-    -- import de lspconfig
-    local lspconfig = require("lspconfig")
-
-    -- active mason et personnalise les icônes
+    -- Active mason et personnalise les icônes
     mason.setup({
       ui = {
         icons = {
@@ -1050,8 +1060,9 @@ return {
     })
 
     mason_lspconfig.setup({
+      automatic_enable = true,
       -- Liste des serveurs à installer par défaut
-      -- List des serveurs possibles : https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md
+      -- List des serveurs possibles : https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
       -- Vous pouvez ne pas en mettre ici et tout installer en utilisant :Mason
       -- Mais au lieu de passer par :Mason pour installer, je vous recommande d'ajouter une entrée à cette liste
       -- Ça permettra à votre configuration d'être plus portable
@@ -1066,73 +1077,8 @@ return {
         "rust_analyzer",
         "sqlls",
         "svelte",
-        "tsserver",
+        "ts_ls",
         "yamlls",
-      },
-      handlers = {
-        -- Fonction appelée au chargement de chaque LSP de la liste ensure_installed
-        function(server_name)
-          -- On active tous les LSP de ensure_installed avec sa configuration par défaut
-          lspconfig[server_name].setup({})
-        end,
-
-        -- On peut ensuite configurer chaque LSP comme on veut
-        -- Les détails des configurations possibles sont disponibles ici :
-        -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md
-        -- Quelques exemples avec Python (pylsp et ruff) ainsi que Rust ci-dessous
-        --
-        -- Pour désactiver un LSP il suffit de faire
-        -- mon_lsp = require("lsp-zero").noop,
-
-        -- le nom du lsp avant le `= function()` doit être le même que celui après `lspconfig.`
-        -- le premier est la clé utilisée par mason_lspconfig, le deuxième est celle utilisée par lspconfig (ce sont les mêmes)
-        -- ils correspondent aux entrées du ensure_installed
-
-        -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md#pylsp
-        pylsp = function()
-          lspconfig.pylsp.setup({
-            settings = {
-              pylsp = {
-                plugins = {
-                  pyflakes = { enabled = false },
-                  pycodestyle = {
-                    enabled = true,
-                    ignore = { "E501" },
-                  },
-                },
-              },
-            },
-          })
-        end,
-
-        -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md#
-         ruff = function()
-          lspconfig.ruff.setup({
-            init_options = {
-              settings = {
-                -- Arguments par défaut de la ligne de commande "ruff server"
-                -- (on ajoute les warnings pour le tri des imports)
-                args = { "--extend-select", "I" },
-              },
-            },
-          })
-        end,
-
-        -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md#rust_analyzer
-        rust_analyzer = function()
-          lspconfig.rust_analyzer.setup({
-            settings = {
-              ["rust-analyzer"] = {
-                diagnostics = {
-                  enable = true,
-                  styleLints = {
-                    enable = true,
-                  },
-                },
-              },
-            },
-          })
-        end,
       },
     })
   end,
@@ -1236,27 +1182,6 @@ return {
 }
 ```
 
-## Undefined global `vim`
-
-Si comme moi vous avez installé le lsp `lua_ls` il va vous afficher un warning à chaque fois que vous éditez un fichier avec la variable globale `vim` dedans.
-
-Pour faire disparaître cette erreur, configurez `lua_ls` dans `lua/plugins/lsp/mason.lua` pour y ajouter la variable globale `vim` :
-
-```lua
-        lua_ls = function()
-          lspconfig.lua_ls.setup({
-            settings = {
-              Lua = {
-                diagnostics = {
-                  -- Force le LSP à reconnaître la variable globale `vim`
-                  globals = { "vim" },
-                },
-              },
-            },
-          })
-        end,
-```
-
 ## Amélioration du formatage et formatage automatique : [`conform.nvim`](https://github.com/stevearc/conform.nvim)
 
 Certains LSP proposent des options pour formatter automatiquement les fichiers à la sauvegarde mais ce n'est pas le cas pour tous et, quand ils le font, il le font généralement « mal » en remplaçant tout le contenu du buffer (ce qui va perdre vos folds par exemple). [`conform.nvim`](https://github.com/stevearc/conform.nvim) règle ce souci et permet en plus quelques configurations sympathiques comme le formattage automatique à la sauvegarde.
@@ -1311,110 +1236,6 @@ return {
 ```
 
 Encore une fois, c'est à configurer selon vos LSP. J'ai ajouté un raccourci qui permet de lancer le formatage via `<leader>mp`. Les formatteurs peuvent être installés directement sur votre système ou via `mason.nvim` comme nous allons le voir dans la section suivante.
-
-## Installation automatique d'outils via [`mason-tools-installer.nvim`](https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim)
-
-Jusqu'ici nous avons utilisé `mason.nvim` pour installer des LSP. Mais comme nous l'avons vu c'est avant tout un gestionnaire de paquets et il est donc possible de l'utiliser pour installer d'autres choses que les LSP, notamment les formatteurs utilisés dans la section du dessus.
-
-Pour ce faire éditez `lua/plugins/lsp/mason.lua` et ajoutez-y [`mason-tools-installer.nvim`](https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim).
-
-**`lua/plugins/lsp/mason.lua`**
-
-```lua
-return {
-  "williamboman/mason.nvim",
-  dependencies = {
-    "williamboman/mason-lspconfig.nvim",
-    "WhoIsSethDaniel/mason-tool-installer.nvim",
-  },
-  config = function()
-    -- import de mason
-    local mason = require("mason")
-
-    -- import de mason-lspconfig
-    local mason_lspconfig = require("mason-lspconfig")
-
-    -- import de lspconfig
-    local lspconfig = require("lspconfig")
-
-    -- import de mason-tool-installer
-    local mason_tool_installer = require("mason-tool-installer")
-
-    -- active mason et personnalise les icônes
-    mason.setup({
-      ui = {
-        icons = {
-          package_installed = "✓",
-          package_pending = "➜",
-          package_uninstalled = "✗",
-        },
-      },
-    })
-
-    mason_tool_installer.setup({
-      ensure_installed = {
-        "elm-format", -- elm formater
-        "prettier", -- prettier formatter
-        "ruff", -- ruff formater (différent du LSP, mais dans le même executable)
-        "stylua", -- lua formater
-      },
-    })
-
-    mason_lspconfig.setup({
-
--- … reste du fichier
-```
-
-## Amélioration du linting : [`nvim-lint`](https://github.com/mfussenegger/nvim-lint)
-
-À l'instar de `conform.nvim`, [`nvim-lint`](https://github.com/mfussenegger/nvim-lint) va venir complémenter le linting fourni par les LSP. Il va vous permettre d'utiliser des outils de linting externes si celui de votre LSP n'est pas suffisant. Personnellement je n'en ai pas besoin car les LSP de Rust, Python et Elm fournissent tout ce qu'il faut. Mais si ce n'est pas votre cas, éditez `lua/plugins/nvim-lint.lua` et placez-y le code suivant :
-
-**`lua/plugins/nvim-lint.lua`**
-
-```lua
-return {
-  "mfussenegger/nvim-lint",
-  event = { "BufReadPre", "BufNewFile" },
-  config = function()
-    local lint = require("lint")
-
-    lint.linters_by_ft = {
-      javascript = { "eslint_d" },
-      typescript = { "eslint_d" },
-      javascriptreact = { "eslint_d" },
-      typescriptreact = { "eslint_d" },
-      svelte = { "eslint_d" },
-    }
-
-    local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
-
-    vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave" }, {
-      group = lint_augroup,
-      callback = function()
-        lint.try_lint()
-      end,
-    })
-
-    vim.keymap.set("n", "<leader>l", function()
-      lint.try_lint()
-    end, { desc = "Trigger linting for current file" })
-  end,
-}
-```
-
-N'oubliez pas de mettre à jour la liste des outils à installer automatiquement dans `lua/plugins/lsp/mason.lua` en ajoutant `eslint_d` par exemple :
-
-```lua
-    mason_tool_installer.setup({
-      ensure_installed = {
-        "elm-format", -- elm formater
-        "prettier", -- prettier formatter
-        "ruff", -- ruff formater (différent du LSP, mais dans le même executable)
-        "stylua", -- lua formater
-        "eslint_d", -- eslint formater
-      },
-    })
-```
 
 ## Intégration des différences Git : [`gitsigns.nvim`](https://github.com/lewis6991/gitsigns.nvim)
 
@@ -1475,21 +1296,6 @@ return {
       map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>", "Gitsigns select hunk")
     end,
   },
-}
-```
-
-## Améliorer les fenêtres de sélection et d'inputs : [`dressing.nvim`](https://github.com/stevearc/dressing.nvim)
-
-Si vous ne savez pas pourquoi c'est une bonne idée, faites moi-confiance, ça en est une. Sinon, vous pouvez aussi allez voir la page de [`dressing.nvim`](https://github.com/stevearc/dressing.nvim) et comprendre le pourquoi du comment.
-
-Éditez `lua/plugins/dressing.vim` et placez-y le code suivant :
-
-**`lua/plugins/dressing.lua`**
-
-```lua
-return {
-  "stevearc/dressing.nvim",
-  event = "VeryLazy",
 }
 ```
 
