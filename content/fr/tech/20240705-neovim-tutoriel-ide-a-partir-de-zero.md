@@ -1,17 +1,21 @@
 ---
 title: "Tutoriel : configurer Neovim comme IDE/éditeur de code à partir de zéro"
-date: "2024-07-16 09:33:20+01:00"
+date: "2025-06-08 09:33:20+01:00"
 updated_at: "2024-10-22 09:33:20+01:00"
 slug: configurer-neovim-comme-ide-a-partir-de-zero-tutoriel-guide
 tags: neovim, tutoriel, lua, vim
 toc: true
 ---
 
+> [!NOTE]
+> ✅ _Mise à jour du **08/06/2025** : utilisation des dernières fonctionnalitée de Neovim pour la configuration des LSP. Le commit avec le détail est [disponible sur Github](https://github.com/vjousse/neovim-from-scratch/commit/e7df44749ceec84a07a8e360c8de49677eb0c09f)._
+
 Vous avez envie d'utiliser [_Neovim_](https://neovim.io/) mais ne savez pas par où commencer ? Vous voulez comprendre ce que vous faites au lieu d'utiliser des configurations déjà toutes prêtes ? Vous n'avez aucune idée de comment faire du _Lua_ ou ne savez même pas pourquoi vous devriez ? Cet article est fait pour vous !
 
 <!-- TEASER_END -->
 
-> 📙 Cet article a pour unique but de vous apprendre à configurer **_Neovim_**. Si vous voulez apprendre à l'utiliser efficacement pour coder/éditer du texte, « [Vim pour les humains](https://vimebook.com/fr) » sera plus adapté pour vous.
+> [!TIP]
+> Cet article a pour unique but de vous apprendre à configurer **_Neovim_**. Si vous voulez apprendre à l'utiliser efficacement pour coder/éditer du texte, « [Vim pour les humains](https://vimebook.com/fr) » sera plus adapté pour vous.
 
 À la fin de cet article, vous devriez avoir un _Neovim_ entièrement utilisable comme IDE pour coder tout ce que vous voulez avec les fonctionnalités suivantes :
 
@@ -102,7 +106,8 @@ Voilà à quoi devrait ressembler votre arborescence pour l'instant :
     └── plugins
 ```
 
-> ℹ️ À noter que cette arborescence est totalement arbitraire et est issue de mes préférences personnelles. Libre à vous de ranger les choses différemment une fois que vous aurez compris comment tout cela fonctionne.
+> [!NOTE]
+> À noter que cette arborescence est totalement arbitraire et est issue de mes préférences personnelles. Libre à vous de ranger les choses différemment une fois que vous aurez compris comment tout cela fonctionne.
 
 ## Options par défaut
 
