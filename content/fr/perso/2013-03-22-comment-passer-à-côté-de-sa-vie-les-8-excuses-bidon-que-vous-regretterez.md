@@ -5,6 +5,11 @@ date: "2013-03-22 11:07:26+01:00"
 tags: Développement personnel
 ---
 
+> [!CAUTION]
+> Contenu ancien à prendre avec des pincettes : j’explique [dans cet article pourquoi je ne cautionne plus le « développement personnel »](/blog/fr/perso/developpement-personnel-pourquoi-j-ai-arrete-pourquoi-faut-il-s-en-mefier/)
+
+On a trop tendance à oublier l'**importance de prendre le temps d'être fier de soi**. Ah ça, pour se reprocher ce qu'on n'aurait pas du faire, il y a du monde, mais dès qu'il faut se féliciter, il n'y a souvent plus personne. Et pourtant, il n'y a pas de petite victoire, surtout quand il s'agit de remonter l'estime que l'on a de nous-mêmes. **Vous avez un potentiel formidable**, votre voisin aussi, alors ne l'oubliez pas.
+
 1. **J'ai une famille à nourrir.** Certes moi aussi. Mais vous avez aussi une famille à rendre heureuse, et cela passe d'abord par votre bonheur. Si vous devez vous renier pour nourrir votre famille, il est temps pour vous de changer quelque chose. Lorsque vous ferez le bilan de votre vie, c'est avec vous et avec vous seul que vous vous retrouverez.
 2. **Je n'ai pas le temps**. [Le temps ça se prend](/blog/fr/perso/jai-pas-le-temps-la-pire-excuse-qui-soit/). Soyez honnête envers vous et votre entourage, assumez de dire : je ne veux pas prendre le temps pour l'instant.
 3. **Ce n'est pas fait pour moi, je n'y arriverai pas.** Vous créez vous-même vos propres limites. Si vous pensez que vous ne pourrez y arriver, vous ne pourrez en effet pas y arriver. Autorisez-vous le bénéfice du doute, vous devez être la première personne à y croire, les autres ne le feront pas pour vous.

@@ -3,11 +3,16 @@ title: Comment être simplement fier de soi
 slug: comment-être-simplement-fier-de-soi
 date: "2013-06-24 13:00:26+02:00"
 tags: Développement personnel, Réflexion
-category: 
-link: 
-description: 
+category:
+link:
+description:
 type: text
 ---
+
+> [!CAUTION]
+> Contenu ancien à prendre avec des pincettes : j’explique [dans cet article pourquoi je ne cautionne plus le « développement personnel »](/blog/fr/perso/developpement-personnel-pourquoi-j-ai-arrete-pourquoi-faut-il-s-en-mefier/)
+
+On a trop tendance à oublier l'**importance de prendre le temps d'être fier de soi**. Ah ça, pour se reprocher ce qu'on n'aurait pas du faire, il y a du monde, mais dès qu'il faut se féliciter, il n'y a souvent plus personne. Et pourtant, il n'y a pas de petite victoire, surtout quand il s'agit de remonter l'estime que l'on a de nous-mêmes. **Vous avez un potentiel formidable**, votre voisin aussi, alors ne l'oubliez pas.
 
 <p>J'ai quelque chose à vous avouer : pendant longtemps, peu importe ce que je faisais, je n'ai jamais vraiment été fier de moi-même. Et j'ai dans l'idée que c'est le cas de pas mal d'entre vous aussi. J'ai récemment trouvé la raison, et la solution qui va avec.</p>
 <!-- TEASER_END -->

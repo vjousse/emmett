@@ -3,11 +3,16 @@ title: Que faire de sa vie ?
 slug: que-faire-de-sa-vie
 date: "2013-06-19 08:30:43+02:00"
 tags: Développement personnel, Réflexion
-category: 
-link: 
-description: 
+category:
+link:
+description:
 type: text
 ---
+
+> [!CAUTION]
+> Contenu ancien à prendre avec des pincettes : j’explique [dans cet article pourquoi je ne cautionne plus le « développement personnel »](/blog/fr/perso/developpement-personnel-pourquoi-j-ai-arrete-pourquoi-faut-il-s-en-mefier/)
+
+On a trop tendance à oublier l'**importance de prendre le temps d'être fier de soi**. Ah ça, pour se reprocher ce qu'on n'aurait pas du faire, il y a du monde, mais dès qu'il faut se féliciter, il n'y a souvent plus personne. Et pourtant, il n'y a pas de petite victoire, surtout quand il s'agit de remonter l'estime que l'on a de nous-mêmes. **Vous avez un potentiel formidable**, votre voisin aussi, alors ne l'oubliez pas.
 
 <p><p>Je ne sais pas ce que je veux faire, mais <strong>je sais ce que je ne veux pas faire</strong>. Ça vous semble familier comme sentiment ? Bienvenue au club ! La question qui suit est généralement : « <strong>mais qu'est-ce que je vais faire de ma vie</strong> » ? Voici la conclusion à laquelle je suis arrivé : pour savoir ce que vous ferez, il faut commencer par <strong>savoir ce que vous voulez être</strong>.</p></p>
 <!-- TEASER_END -->

@@ -3,11 +3,16 @@ title: "Comment réussir dans la vie : dompter l'échec"
 slug: comment-réussir-dans-la-vie-dompter-léchec
 date: "2012-09-22 10:00:58+02:00"
 tags: Développement personnel
-category: 
-link: 
-description: 
+category:
+link:
+description:
 type: text
 ---
+
+> [!CAUTION]
+> Contenu ancien à prendre avec des pincettes : j’explique [dans cet article pourquoi je ne cautionne plus le « développement personnel »](/blog/fr/perso/developpement-personnel-pourquoi-j-ai-arrete-pourquoi-faut-il-s-en-mefier/)
+
+On a trop tendance à oublier l'**importance de prendre le temps d'être fier de soi**. Ah ça, pour se reprocher ce qu'on n'aurait pas du faire, il y a du monde, mais dès qu'il faut se féliciter, il n'y a souvent plus personne. Et pourtant, il n'y a pas de petite victoire, surtout quand il s'agit de remonter l'estime que l'on a de nous-mêmes. **Vous avez un potentiel formidable**, votre voisin aussi, alors ne l'oubliez pas.
 
 <p><em>Ahhhh</em> l'échec, la réussite, la chance, tant de notions qui nous font rêver et pleurer au quotidien. Certains semblent avoir plus de chance que d'autres et il semblerait même que <strong>ça tombe toujours sur les mêmes</strong>. Et si le <em>problème</em> ne venait <strong>pas des autres</strong>, mais <strong>de vous</strong> ?</p>
 <!-- TEASER_END -->

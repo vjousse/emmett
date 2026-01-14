@@ -3,11 +3,16 @@ title: Le courage de vivre consciemment
 slug: le-courage-de-vivre-consciemment
 date: "2013-01-23 11:00:50+01:00"
 tags: Développement personnel, Carrière et travail
-category: 
-link: 
-description: 
+category:
+link:
+description:
 type: text
 ---
+
+> [!CAUTION]
+> Contenu ancien à prendre avec des pincettes : j’explique [dans cet article pourquoi je ne cautionne plus le « développement personnel »](/blog/fr/perso/developpement-personnel-pourquoi-j-ai-arrete-pourquoi-faut-il-s-en-mefier/)
+
+On a trop tendance à oublier l'**importance de prendre le temps d'être fier de soi**. Ah ça, pour se reprocher ce qu'on n'aurait pas du faire, il y a du monde, mais dès qu'il faut se féliciter, il n'y a souvent plus personne. Et pourtant, il n'y a pas de petite victoire, surtout quand il s'agit de remonter l'estime que l'on a de nous-mêmes. **Vous avez un potentiel formidable**, votre voisin aussi, alors ne l'oubliez pas.
 
 <p></p><p>Je vous propose ici une <strong>traduction de l'article</strong> <a href="http://www.stevepavlina.com/articles/courage-to-live-consciously.htm">The Courage to Live Consciously de Steve Pavlina</a> (par mes soins). J'adore cet article, c'est un des seuls que je relis régulièrement. Il est très long (c'est quasi un chapitre de livre), mais il en vaut le coup. J'ai essayé de mettre en gras les thèmes principaux pour permettre une lecture en diagonale, mais je vous conseille vraiment de prendre le temps de le lire en entier. <strong>S'il n'y en avait qu'un à lire, ça serait celui-là</strong>. Place à <a href="http://www.stevepavlina.com">Steve Pavlina</a> maintenant.</p><p></p>
 <!-- TEASER_END -->

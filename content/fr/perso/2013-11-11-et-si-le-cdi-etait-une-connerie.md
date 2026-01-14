@@ -3,14 +3,21 @@ title: Et si le CDI était une connerie ?
 slug: et-si-le-cdi-etait-une-connerie
 date: "2013-11-11 22:48:22+01:00"
 tags: Développement personnel, Carrière et travail, Revenu de base
-category: 
-link: 
-description: 
+category:
+link:
+description:
 type: text
 ---
 
+> [!CAUTION]
+> Contenu ancien à prendre avec des pincettes : j’explique [dans cet article pourquoi je ne cautionne plus le « développement personnel »](/blog/fr/perso/developpement-personnel-pourquoi-j-ai-arrete-pourquoi-faut-il-s-en-mefier/)
+
+On a trop tendance à oublier l'**importance de prendre le temps d'être fier de soi**. Ah ça, pour se reprocher ce qu'on n'aurait pas du faire, il y a du monde, mais dès qu'il faut se féliciter, il n'y a souvent plus personne. Et pourtant, il n'y a pas de petite victoire, surtout quand il s'agit de remonter l'estime que l'on a de nous-mêmes. **Vous avez un potentiel formidable**, votre voisin aussi, alors ne l'oubliez pas.
+
 Il semblerait que le CDI (Contrat à Durée Indéterminée) soit la solution à tout. Le CDI c'est la solution au travail précaire, le CDI c'est la solution à l'exploitation des travailleurs, le CDI c'est la solution à son prêt bancaire. Le CDI c'est la vie ©. Et si on réfléchissait un peu ? Et si le **CDI était finalement ce qui nous posait le plus de soucis** ?
+
 <!-- TEASER_END -->
+
 ## Commençons par le début
 
 Qu'est-ce qu'on cherche quand on veut obtenir un CDI ? On veut quelque chose de stable pour pouvoir planifier sa vie, être sûr de ce qui rentre à la fin du mois, on veut réduire les risques. On peut alors faire des projets : envisager d'acheter une maison, d'avoir des enfants, de voyager, de s'endetter. Je parle en connaissance de cause, je suis passé par là. Grosso modo, le CDI, c'est notre passeport de vie : **CDI =&gt; vie facile, pas de CDI =&gt; vie galère**.
@@ -21,7 +28,7 @@ Le CDI serait alors la solution de facilité. La **facilité de vivre la vie que
 
 ## La soumission à un contrat
 
-Ce qu'il ne faut pas oublier, lorsqu'on signe un CDI en France, c'est qu'on se retrouve de fait dans une **position dominant/dominé**. 
+Ce qu'il ne faut pas oublier, lorsqu'on signe un CDI en France, c'est qu'on se retrouve de fait dans une **position dominant/dominé**.
 
 Tout d'abord, après s'être mis d'accord initialement sur la valeur de votre travail avec l'entreprise, cette valeur n'est que très rarement réévaluée par la suite. C'est votre salaire. Ensuite, l'entreprise détient un pouvoir quasiment unilatéral. Elle peut changer les règles du jeu sans changer le contrat : vous demander plus de travail (vous comprenez, c'est la crise), se plaindre de votre efficacité (vous n'avez pas atteint vos objectifs !), … Le **salarié n'a quasi qu'un échappatoire** : la démission. En effet, le contrat, après avoir été fixé à l'embauche, n'est que très rarement revu.
 
@@ -39,9 +46,9 @@ Lorsque l'on gère une entreprise, tout le monde vous met en garde contre le cli
 
 ## Rester en CDI est très risqué
 
-Rester en CDI c'est donc **prendre d'énormes risques** : 
+Rester en CDI c'est donc **prendre d'énormes risques** :
 
-- Le risque de **se retrouver sans rien** du jour au lendemain lorsque vous en aurez marre. 
+- Le risque de **se retrouver sans rien** du jour au lendemain lorsque vous en aurez marre.
 - Le risque pour votre **santé morale** de rester dans un emploi qui vous mine de l'intérieur.
 - Le risque de **se retrouver bloqué dans votre emploi** à cause d'un prêt que vous aviez contracté à hauteur de votre salaire en CDI.
 - Le risque de **ne plus avoir qu'une corde à votre arc** professionnellement : celle que vous avez développée pour votre employeur.
@@ -56,15 +63,15 @@ C'est finalement le plus grand risque du CDI : celui d'oublier que vous êtes [
 
 C'est bien beau tout ça, mais je fais quoi moi ?
 
-L'idée va être ici, de ne pas succomber aux sirènes de la **stabilité mode CDI**. La stabilité ce n'est pas avoir un salaire fixe, travailler pour la même personne pendant des années et avoir un Contrat à Durée Indéterminée. Ça c'est au contraire une **situation très instable**. Toute votre vie dépend d'un seul élément : votre emploi. Et cet emploi dépend de conditions qui sont externes à vous même : la santé de votre entreprise, le bon vouloir du patron, le contexte économique. C'est comme un funambule à 100 mètres de hauteur sans filet : s'il tombe ou si la corde casse, ça risque de piquer un peu. 
+L'idée va être ici, de ne pas succomber aux sirènes de la **stabilité mode CDI**. La stabilité ce n'est pas avoir un salaire fixe, travailler pour la même personne pendant des années et avoir un Contrat à Durée Indéterminée. Ça c'est au contraire une **situation très instable**. Toute votre vie dépend d'un seul élément : votre emploi. Et cet emploi dépend de conditions qui sont externes à vous même : la santé de votre entreprise, le bon vouloir du patron, le contexte économique. C'est comme un funambule à 100 mètres de hauteur sans filet : s'il tombe ou si la corde casse, ça risque de piquer un peu.
 
-Il y a pour moi deux solutions au problème du funambule. Ou il faut mettre en place des filets, ou il faut changer de voie. 
+Il y a pour moi deux solutions au problème du funambule. Ou il faut mettre en place des filets, ou il faut changer de voie.
 
 ## Protéger ses arrières
 
 Si vous n'êtes pas encore prêts à quitter le CDI, vous avez tout intérêt à **changer d'entreprise régulièrement**. Plus vous vous habituerez à changer d'environnement, à vous remettre en question, moins vous aurez peur de perdre ce que vous avez. La chute risque de faire un peu peur mais, à l'instar du funambule travaillant avec filets, elle ne sera pas fatale. Vous pourrez rebondir vers quelque chose d'autre plus facilement : vous n'aurez pas été endormi par la fausse stabilité du CDI.
 
-Il n'est pas toujours évident de trouver une autre entreprise, surtout en ces *temps de crise*, mais le faire en ayant un CDI est quand même bien plus confortable qu'attendre d'avoir été licencié ou d'être à bout. Ne sacrifiez pas votre santé mentale et/ou physique pour quelques euros de plus à la fin du mois. **Votre vie n'attend pas**.
+Il n'est pas toujours évident de trouver une autre entreprise, surtout en ces _temps de crise_, mais le faire en ayant un CDI est quand même bien plus confortable qu'attendre d'avoir été licencié ou d'être à bout. Ne sacrifiez pas votre santé mentale et/ou physique pour quelques euros de plus à la fin du mois. **Votre vie n'attend pas**.
 
 ## Changer de voie
 
@@ -85,4 +92,3 @@ Personnellement je souhaite que tout le monde puisse **grandir intérieurement**
 Comme j'en avais déjà parlé ici, la bonne nouvelle c'est que [nous manquons enfin de travail](/blog/fr/on-manque-enfin-de-travail-vive-le-revenu-de-base/). Nous avons enfin pu automatiser la majorité des tâches qui permettent la survie. Il est donc possible que les générations à venir n'aient plus à se demander comment elles pourront faire pour subvenir à leurs besoins vitaux. Il est possible que leur seule préoccupation soit celle de **se développer en tant que personne humaine**.
 
 Peut-être qu'un jour, sur cette planète, chacun pourra contribuer de manière **utile et choisie** au monde qui l'entoure. Peut-être que plus personne n'aura à se renier pour survivre. Utopie ou monde de demain ? Allez vous renseigner vous-même : [le revenu de base](http://revenudebase.info/).
-

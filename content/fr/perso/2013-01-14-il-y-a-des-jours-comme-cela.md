@@ -3,11 +3,16 @@ title: Il y a des jours comme cela
 slug: il-y-a-des-jours-comme-cela
 date: "2013-01-14 13:00:36+01:00"
 tags: Réflexion
-category: 
-link: 
-description: 
+category:
+link:
+description:
 type: text
 ---
+
+> [!CAUTION]
+> Contenu ancien à prendre avec des pincettes : j’explique [dans cet article pourquoi je ne cautionne plus le « développement personnel »](/blog/fr/perso/developpement-personnel-pourquoi-j-ai-arrete-pourquoi-faut-il-s-en-mefier/)
+
+On a trop tendance à oublier l'**importance de prendre le temps d'être fier de soi**. Ah ça, pour se reprocher ce qu'on n'aurait pas du faire, il y a du monde, mais dès qu'il faut se féliciter, il n'y a souvent plus personne. Et pourtant, il n'y a pas de petite victoire, surtout quand il s'agit de remonter l'estime que l'on a de nous-mêmes. **Vous avez un potentiel formidable**, votre voisin aussi, alors ne l'oubliez pas.
 
 <p><p>Il y a des jours comme cela. Des jours, des heures, des minutes qui vous paraissent des années. Vous faites de votre iPhone votre animal de compagnie et de Facebook votre vie sociale. Vous n'avez jamais eu autant d'amis, vous communiquez avec eux via votre mur Facebook et vous pouvez même les « poker » à longueur de journée. Paradoxalement, plus vous avez d'amis, plus vous avez le sentiment d'en manquer.</p></p>
 <!-- TEASER_END -->

@@ -3,14 +3,23 @@ title: Comment arrêter de se plaindre ?
 slug: comment-arreter-de-se-plaindre
 date: "2014-04-27 17:15:11+02:00"
 tags: Développement personnel
-category: 
-link: 
-description: 
+category:
+link:
+description:
 type: text
 ---
 
-Ne pas s'identifier à ses pensées négatives et assumer l'entière responsabilité de ses actes : un bien vaste programme… Je vous propose ici __une traduction__ par mes soins __d'un article de Steve Pavlina__ : [How to stop complaining](http://www.stevepavlina.com/blog/2007/08/how-to-stop-complaining/). J'ai beaucoup aimé cet article car il va droit au but : nous sommes responsables de ce que nous créons.
-<!-- TEASER_END --><hr>
+> [!CAUTION]
+> Contenu ancien à prendre avec des pincettes : j’explique [dans cet article pourquoi je ne cautionne plus le « développement personnel »](/blog/fr/perso/developpement-personnel-pourquoi-j-ai-arrete-pourquoi-faut-il-s-en-mefier/)
+
+On a trop tendance à oublier l'**importance de prendre le temps d'être fier de soi**. Ah ça, pour se reprocher ce qu'on n'aurait pas du faire, il y a du monde, mais dès qu'il faut se féliciter, il n'y a souvent plus personne. Et pourtant, il n'y a pas de petite victoire, surtout quand il s'agit de remonter l'estime que l'on a de nous-mêmes. **Vous avez un potentiel formidable**, votre voisin aussi, alors ne l'oubliez pas.
+
+Ne pas s'identifier à ses pensées négatives et assumer l'entière responsabilité de ses actes : un bien vaste programme… Je vous propose ici **une traduction** par mes soins **d'un article de Steve Pavlina** : [How to stop complaining](http://www.stevepavlina.com/blog/2007/08/how-to-stop-complaining/). J'ai beaucoup aimé cet article car il va droit au but : nous sommes responsables de ce que nous créons.
+
+<!-- TEASER_END -->
+
+<hr>
+
 L'étape la plus importante pour arrêter de se plaindre est certainement de déconnecter ce comportement indésirable de votre propre identité. L'erreur récurrente que font les personnes qui se plaignent tout le temps est de s'auto-identifier aux pensées négatives qui passent dans leur esprit. Ce type de personne pourrait admettre quelque chose comme : « Je sais que je suis responsable de mes pensées, mais je ne sais pas comment arrêter de penser tout le temps négativement ». Ça ressemble à un pas dans la bonne direction et, d'une certaine manière, ça en est un. Mais c'est aussi un piège. C'est une bonne chose d'assumer la responsabilité de vos pensées, mais il n'est pas souhaitable de s'y identifier à un point où vous allez finir par vous en vouloir et vous sentir encore plus mal.
 
 Une meilleure tournure pourrait être : « Je reconnais que ces pensées négatives traversent mon esprit. Mais ces pensées ne sont pas moi. Au fur et à mesure que j'élève ma conscience, je peux remplacer ces pensées par des pensées alternatives plus positives ». Vous avez le pouvoir de reconditionner vos pensées, mais pour cela il faut garder votre conscience en dehors de ce bourbier de reproches. Vous devez réaliser que ces pensées, bien qu'elles traversent votre esprit, ne sont pas vous pour autant. Vous êtes le canal conscient par lequel elles transitent.
@@ -27,7 +36,7 @@ Il est difficile de se sortir de cette situation qu'est la pensée négative car
 
 À vrai dire, c'est tellement compliqué de s'en sortir que la majeure partie des personnes qui entre dans ce cercle vicieux ne s'en échappe jamais. Même s'ils se hissent contre leur propre négativité, ils la perpétuent sans s'en rendre compte en continuant de s'identifier à elle. Si vous vous en voulez d'être trop négatif, vous renforcez le processus, vous ne vous en sortez pas.
 
-Je pense que toutes les personnes qui sont prisonnières de ce processus vont le rester tant qu'elles ne connaitront pas une élévation de leur niveau de conscience. Elles doivent reconnaître qu'elles sont prisent au piège et que continuer à battre sa propre négativité tout en continuant de s'y identifier est une bataille qu'il est impossible de gagner. Réfléchissez-y deux minutes : si constamment vous en vouloir de pleurnicher était une bonne stratégie, est-ce que ça n'aurait pas déjà dû prouver son efficacité depuis un bout de temps ? Est-ce que vous vous sentez plus prêt de vous en sortir après tous les efforts que vous y avez consacrés ? 
+Je pense que toutes les personnes qui sont prisonnières de ce processus vont le rester tant qu'elles ne connaitront pas une élévation de leur niveau de conscience. Elles doivent reconnaître qu'elles sont prisent au piège et que continuer à battre sa propre négativité tout en continuant de s'y identifier est une bataille qu'il est impossible de gagner. Réfléchissez-y deux minutes : si constamment vous en vouloir de pleurnicher était une bonne stratégie, est-ce que ça n'aurait pas déjà dû prouver son efficacité depuis un bout de temps ? Est-ce que vous vous sentez plus prêt de vous en sortir après tous les efforts que vous y avez consacrés ?
 
 En conséquence, la solution que je préfère est d'arrêter de se battre et se rendre. Au lieu de résister à la négativité tête baissée, reconnaissez et acceptez sa présence. Ça aura pour effet d'élever votre niveau de conscience.
 
@@ -70,4 +79,3 @@ Se plaindre c'est dénier ses responsabilités. Et s'accuser est juste une autre
 La création consciente est en effet une énorme responsabilité. Mais, à mon avis, c'est la meilleure partie dans le fait d'être humain. Il n'existe aucun substitut au fait de créer une vie pleine de bonheur, même si ça demande d'assumer ses responsabilités pour toutes les saloperies qui se sont manifestées jusqu'ici.
 
 Lorsque vous vous surprenez en train de vous plaindre, arrêtez-vous et demandez vous si vous souhaitez continuer à fuir les responsabilités de votre réalité ou bien si vous souhaitez de nouveau gérer un peu plus de responsabilités. Peut-être êtes-vous prêt à assumer plus de responsabilités, ou peut-être pas, mais quoiqu'il en soit, faites de votre mieux pour prendre ces décision consciemment. Est-ce que vous voulez de la sympathie pour la création de ce que vous ne voulez pas, ou est-ce que vous voulez des félicitations pour la création de ce que vous souhaitez ?
-

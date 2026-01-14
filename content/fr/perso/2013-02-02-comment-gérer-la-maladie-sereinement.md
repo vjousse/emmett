@@ -3,11 +3,16 @@ title: Comment gérer la maladie sereinement
 slug: comment-gérer-la-maladie-sereinement
 date: "2013-02-02 11:30:53+01:00"
 tags: Réflexion
-category: 
-link: 
-description: 
+category:
+link:
+description:
 type: text
 ---
+
+> [!CAUTION]
+> Contenu ancien à prendre avec des pincettes : j’explique [dans cet article pourquoi je ne cautionne plus le « développement personnel »](/blog/fr/perso/developpement-personnel-pourquoi-j-ai-arrete-pourquoi-faut-il-s-en-mefier/)
+
+On a trop tendance à oublier l'**importance de prendre le temps d'être fier de soi**. Ah ça, pour se reprocher ce qu'on n'aurait pas du faire, il y a du monde, mais dès qu'il faut se féliciter, il n'y a souvent plus personne. Et pourtant, il n'y a pas de petite victoire, surtout quand il s'agit de remonter l'estime que l'on a de nous-mêmes. **Vous avez un potentiel formidable**, votre voisin aussi, alors ne l'oubliez pas.
 
 <p></p><p>À un moment où à un autre, la maladie ou plus généralement la souffrance viendra s'introduire dans votre vie, c'est inévitable. Cela peut aller du simple mal de tête à la maladie chronique incurable. Et pourtant, ce n'est pas la maladie elle même qui importe, c'est la façon dont vous allez la gérer.</p><p></p>
 <!-- TEASER_END -->

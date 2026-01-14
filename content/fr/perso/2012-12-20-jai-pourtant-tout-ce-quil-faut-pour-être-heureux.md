@@ -3,11 +3,16 @@ title: J'ai pourtant tout ce qu'il faut pour être heureux !
 slug: jai-pourtant-tout-ce-quil-faut-pour-être-heureux
 date: "2012-12-20 17:03:34+01:00"
 tags: Développement personnel
-category: 
-link: 
-description: 
+category:
+link:
+description:
 type: text
 ---
+
+> [!CAUTION]
+> Contenu ancien à prendre avec des pincettes : j’explique [dans cet article pourquoi je ne cautionne plus le « développement personnel »](/blog/fr/perso/developpement-personnel-pourquoi-j-ai-arrete-pourquoi-faut-il-s-en-mefier/)
+
+On a trop tendance à oublier l'**importance de prendre le temps d'être fier de soi**. Ah ça, pour se reprocher ce qu'on n'aurait pas du faire, il y a du monde, mais dès qu'il faut se féliciter, il n'y a souvent plus personne. Et pourtant, il n'y a pas de petite victoire, surtout quand il s'agit de remonter l'estime que l'on a de nous-mêmes. **Vous avez un potentiel formidable**, votre voisin aussi, alors ne l'oubliez pas.
 
 <p><p>Essayer de se persuader que l'on doit être heureux parce que l'on a tout ce qu'il faut pour l'être est une <strong>totale aberration</strong>. Pensez-y un peu 2 secondes. Le fait même de prononcer cette phrase affirme le contraire : si vous aviez tout ce qu'il fallait pour être heureux, vous ne seriez pas en train de vous demander pourquoi vous ne l'êtes pas, ou pas totalement.</p></p>
 <!-- TEASER_END -->

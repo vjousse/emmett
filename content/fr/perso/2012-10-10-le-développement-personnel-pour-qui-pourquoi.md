@@ -3,11 +3,16 @@ title: "Le développement personnel : pour qui, pourquoi"
 slug: le-développement-personnel-pour-qui-pourquoi
 date: "2012-10-10 17:00:11+02:00"
 tags: Développement personnel, Carrière et travail
-category: 
-link: 
-description: 
+category:
+link:
+description:
 type: text
 ---
+
+> [!CAUTION]
+> Contenu ancien à prendre avec des pincettes : j’explique [dans cet article pourquoi je ne cautionne plus le « développement personnel »](/blog/fr/perso/developpement-personnel-pourquoi-j-ai-arrete-pourquoi-faut-il-s-en-mefier/)
+
+On a trop tendance à oublier l'**importance de prendre le temps d'être fier de soi**. Ah ça, pour se reprocher ce qu'on n'aurait pas du faire, il y a du monde, mais dès qu'il faut se féliciter, il n'y a souvent plus personne. Et pourtant, il n'y a pas de petite victoire, surtout quand il s'agit de remonter l'estime que l'on a de nous-mêmes. **Vous avez un potentiel formidable**, votre voisin aussi, alors ne l'oubliez pas.
 
 <p>Plus j'avance dans la vie plus je réalise qu'il est <strong>important d'apprendre à se connaître</strong>. Pas seulement pour améliorer sa vie au quotidien, mais aussi pour apprendre à connaître les autres et pour comprendre nos comportements au jour le jour. En tant que développeur informatique, apprendre de nouvelles choses est ce qui me motive quotidiennement. C'est ce que je retrouve en pratiquant le développement personnel : <strong>un apprentissage quotidien</strong> et sans limites de soi-même.</p>
 <!-- TEASER_END -->

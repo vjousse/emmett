@@ -3,11 +3,16 @@ title: "Travailler moins pour gagner plus : La semaine de 4 heures"
 slug: travailler-moins-pour-gagner-plus-la-semaine-de-4-heures
 date: "2012-10-19 11:00:43+02:00"
 tags: Développement personnel, Carrière et travail, Livres
-category: 
-link: 
-description: 
+category:
+link:
+description:
 type: text
 ---
+
+> [!CAUTION]
+> Contenu ancien à prendre avec des pincettes : j’explique [dans cet article pourquoi je ne cautionne plus le « développement personnel »](/blog/fr/perso/developpement-personnel-pourquoi-j-ai-arrete-pourquoi-faut-il-s-en-mefier/)
+
+On a trop tendance à oublier l'**importance de prendre le temps d'être fier de soi**. Ah ça, pour se reprocher ce qu'on n'aurait pas du faire, il y a du monde, mais dès qu'il faut se féliciter, il n'y a souvent plus personne. Et pourtant, il n'y a pas de petite victoire, surtout quand il s'agit de remonter l'estime que l'on a de nous-mêmes. **Vous avez un potentiel formidable**, votre voisin aussi, alors ne l'oubliez pas.
 
 <p>Qui n'a pas rêvé de travailler quatre heures par semaine tout en gagnant bien sa vie ? C'est ce que <a href="http://www.fourhourworkweek.com/">Timothy Ferriss</a> vous propose de découvrir dans son best-seller « <a href="http://www.amazon.fr/gp/product/2744064173/ref=as_li_ss_tl?ie=UTF8&amp;tag=vincjous-21&amp;linkCode=as2&amp;camp=1642&amp;creative=19458&amp;creativeASIN=2744064173">La Semaine de 4 heures: Travaillez moins, gagnez plus et vivez mieux !</a> ». Ce livre a été pour moi une révélation : il ouvre la voix à une autre façon de vivre sa vie.</p>
 <!-- TEASER_END -->

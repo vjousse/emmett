@@ -3,11 +3,16 @@ title: Le bonheur est à portée de la main, voici comment l'attraper
 slug: le-bonheur-est-à-portée-de-la-main-voici-comment-lattraper
 date: "2013-05-14 11:14:33+02:00"
 tags: Développement personnel, Réflexion
-category: 
-link: 
-description: 
+category:
+link:
+description:
 type: text
 ---
+
+> [!CAUTION]
+> Contenu ancien à prendre avec des pincettes : j’explique [dans cet article pourquoi je ne cautionne plus le « développement personnel »](/blog/fr/perso/developpement-personnel-pourquoi-j-ai-arrete-pourquoi-faut-il-s-en-mefier/)
+
+On a trop tendance à oublier l'**importance de prendre le temps d'être fier de soi**. Ah ça, pour se reprocher ce qu'on n'aurait pas du faire, il y a du monde, mais dès qu'il faut se féliciter, il n'y a souvent plus personne. Et pourtant, il n'y a pas de petite victoire, surtout quand il s'agit de remonter l'estime que l'on a de nous-mêmes. **Vous avez un potentiel formidable**, votre voisin aussi, alors ne l'oubliez pas.
 
 <p><p>Nous compliquons tout. Tout doit être contrôlé, mesuré, optimisé, maitrisé et calculé. Nous avons besoin d'une iApp pour tout. Il nous faudra bientôt une iApp pour choisir quelle iApp installer et quels amis fréquenter. Mais nous oublions le facteur essentiel pour attraper ce bonheur qui nous tend les bras : <strong>la simplicité</strong>.</p></p>
 <!-- TEASER_END -->

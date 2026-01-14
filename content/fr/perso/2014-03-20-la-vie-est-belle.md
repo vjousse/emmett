@@ -3,14 +3,21 @@ title: La vie est belle
 slug: la-vie-est-belle
 date: "2014-03-20 16:26:06+01:00"
 tags: Zen, Développement personnel
-category: 
-link: 
-description: 
+category:
+link:
+description:
 type: text
 ---
 
-Hier, j'étais en train de me demander comment j'allais bien pouvoir faire pour payer une facture. Être indépendant c'est chouette, mais on ne contrôle pas toujours les paiements et il arrive que certains mois passent sans une seule rentrée d'argent. Je me disais même qu'être salarié à plein temps avait quand même des avantages : on savait combien on allait toucher à la fin du mois. Je stressais. Je me demandais comment j'allais bien pouvoir faire pour m'en sortir. Et puis j'ai réalisé que le souci ne venait pas de la facture. 
+> [!CAUTION]
+> Contenu ancien à prendre avec des pincettes : j’explique [dans cet article pourquoi je ne cautionne plus le « développement personnel »](/blog/fr/perso/developpement-personnel-pourquoi-j-ai-arrete-pourquoi-faut-il-s-en-mefier/)
+
+On a trop tendance à oublier l'**importance de prendre le temps d'être fier de soi**. Ah ça, pour se reprocher ce qu'on n'aurait pas du faire, il y a du monde, mais dès qu'il faut se féliciter, il n'y a souvent plus personne. Et pourtant, il n'y a pas de petite victoire, surtout quand il s'agit de remonter l'estime que l'on a de nous-mêmes. **Vous avez un potentiel formidable**, votre voisin aussi, alors ne l'oubliez pas.
+
+Hier, j'étais en train de me demander comment j'allais bien pouvoir faire pour payer une facture. Être indépendant c'est chouette, mais on ne contrôle pas toujours les paiements et il arrive que certains mois passent sans une seule rentrée d'argent. Je me disais même qu'être salarié à plein temps avait quand même des avantages : on savait combien on allait toucher à la fin du mois. Je stressais. Je me demandais comment j'allais bien pouvoir faire pour m'en sortir. Et puis j'ai réalisé que le souci ne venait pas de la facture.
+
 <!-- TEASER_END -->
+
 ## Les oiseaux chantent
 
 Que ça soit cette facture ou quelque chose d'autre, la vie est faite de choses à gérer. Éliminer les problèmes est impossible, alors autant apprendre à les gérer au mieux.
@@ -25,7 +32,7 @@ On oublie trop souvent que la vie est belle. Qu'il suffit de rien pour être heu
 
 Lorsque l'on est stressé, ou lorsque l'on a tellement de trucs à faire qu'on ne sait pas par où commencer, il suffit de commencer par ne rien faire. Enfin pas exactement, il suffit de commencer par se poser.
 
-Se préparer un thé nature est un très bon exercice. Le thé est parfait pour apprendre à apprécier les choses : il demande du temps d'infusion, du temps pour refroidir, et du temps pour l'apprécier sans sucre. 
+Se préparer un thé nature est un très bon exercice. Le thé est parfait pour apprendre à apprécier les choses : il demande du temps d'infusion, du temps pour refroidir, et du temps pour l'apprécier sans sucre.
 
 Il suffit d'apprendre à apprécier ce moment. Si vous posez votre thé dans un coin en attendant qu'il infuse et qu'il refroidisse il n'y a aucun intérêt, ça va de soi. Si vous êtes plutôt café, ça peut marcher aussi. Apprenez à apprécier la senteur de votre breuvage, la chaleur qu'il produit dans vos mains. Appréciez ce moment de calme et de bien être que vous vous offrez. Écoutez votre respiration, fermez les yeux, prenez conscience de la chance que vous avez d'être là. Souriez.
 
@@ -40,4 +47,3 @@ Pas qu'étendre le linge soit devenu passionnant en soi, ce qui est devenu passi
 C'est maintenant comme ça que je considère les problèmes de la vie : des occasions de voir la vie du bon côté. Avoir des factures à régler et du linge à étendre c'est excellent non ? Je considère que ce sont de bons problèmes à avoir car le jour où je n'aurais plus de problèmes, ou je m'ennuierai profondément, ou je serai mort. Dans les deux cas, je préfère avoir des problèmes à m'occuper !
 
 Bonne journée du bonheur à tous et n'oubliez pas, la vie n'est belle que si vous décidez de la voir ainsi !
-

@@ -3,11 +3,16 @@ title: Amusez-vous !
 slug: amusez-vous
 date: "2013-03-12 11:55:41+01:00"
 tags: Développement personnel, Carrière et travail, Zen
-category: 
-link: 
-description: 
+category:
+link:
+description:
 type: text
 ---
+
+> [!CAUTION]
+> Contenu ancien à prendre avec des pincettes : j’explique [dans cet article pourquoi je ne cautionne plus le « développement personnel »](/blog/fr/perso/developpement-personnel-pourquoi-j-ai-arrete-pourquoi-faut-il-s-en-mefier/)
+
+On a trop tendance à oublier l'**importance de prendre le temps d'être fier de soi**. Ah ça, pour se reprocher ce qu'on n'aurait pas du faire, il y a du monde, mais dès qu'il faut se féliciter, il n'y a souvent plus personne. Et pourtant, il n'y a pas de petite victoire, surtout quand il s'agit de remonter l'estime que l'on a de nous-mêmes. **Vous avez un potentiel formidable**, votre voisin aussi, alors ne l'oubliez pas.
 
 <p><p>« Sois un peu sérieux, il va falloir grandir un jour. Trouve un travail stable avec un salaire confortable pour payer ta maison. C'est une question de bon sens. » Han, que c'est fatiguant, <strong>cette notion de bon sens me rendra toujours perplexe</strong>. « Les gens » n'ont de cesse de reporter leurs peurs et leur propre insécurité sur les autres. Essayez de faire culpabiliser les autres de ne pas vivre le même calvaire qu'eux soulage temporairement ce type de personnes. Et si ces tirades devenaient plutôt « <strong>Sois un peu heureux</strong>, il va bien falloir te faire plaisir un jour, sur ton lit de mort il sera trop tard. Trouve <strong>un travail qui te plait</strong> et qui te permet de t'épanouir, le reste coulera tout seul. C'est une question de bonheur. ». Ça en jette un peu plus je trouve. Et croyez-moi, ce n'est pas qu'un doux rêve.</p></p>
 <!-- TEASER_END -->
