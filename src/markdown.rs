@@ -15,12 +15,12 @@ pub struct CustomHeading<'a> {
 
 impl CustomHeading<'_> {
     /// The raw events contained between the heading tags.
-    pub fn events(&self) -> Iter<Event> {
+    pub fn events(&self) -> Iter<'_, Event<'_>> {
         self.events.iter()
     }
 
     /// The heading level.
-    pub fn tag(&self) -> Tag {
+    pub fn tag(&self) -> Tag<'_> {
         self.tag.clone()
     }
 
